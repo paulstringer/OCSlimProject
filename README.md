@@ -1,7 +1,7 @@
 # Slim-iOS-TestRunner
-Scripts to get running your iOS based System Under Test with Fitnesse.
+Scripts and Project templates to help build your iOS Acceptance Tests using Fitnesse.
 
-# Script Acknoweldgements
+# Acknowledgements
 The owner of this repository takes no credit for the contents herein. This is just convienience pulling together of several scripts and tools to make running iOS apps with Fitnesse simpler.
 
 ios-sim

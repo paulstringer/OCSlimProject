@@ -40,10 +40,12 @@ How to Use
 * Start the Fitnesse server using the included script ./StartFitnesse
 * Edit the [Root page](http://localhost:8080/root) and add the following:
    
-    ```!define TEST_SYSTEM {slim}
+    ```
+    !define TEST_SYSTEM {slim}
     !define TEST_RUNNER {!-./RunTestsTargetWithSlimPort-!}
     !define SLIM_VERSION {0.0}
     !define COMMAND_PATTERN {%m}
     ```
+
 * Add a new Test page and run the Test
 * You're project is now ready to start writing [Acceptance tests and Fixtures](http://stringerstheory.net/acceptance-testing-with-ios/) using Fitnesse.

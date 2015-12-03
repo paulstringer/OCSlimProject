@@ -1,6 +1,0 @@
-framework module Pods_CocoaSlim_AcceptanceTests {
-  umbrella header "Pods-CocoaSlim_AcceptanceTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

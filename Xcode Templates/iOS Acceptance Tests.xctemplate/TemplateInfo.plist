@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Swift</key>
+	<dict>
+		<key>Nodes</key>
+		<array/>
+		<key>Definitions</key>
+		<dict>
+			<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
+			<dict>
+				<key>Path</key>
+				<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Ancestors</key>
@@ -10,7 +23,7 @@
 		<string>com.apple.dt.unit.iosBase</string>
 	</array>
 	<key>Description</key>
-	<string>This target builds an iOS Application for Acceptance Testing your App using the Fitnesse framework.</string>
+	<string>This target builds an iOS Application for Acceptance Testing your App using the Fitnesse framework. Requires a project that uses CocoaPods.</string>
 	<key>Identifier</key>
 	<string>io.cleankit.iosAcceptanceTests</string>
 	<key>Concrete</key>
@@ -24,6 +37,8 @@
 			<string>com.apple.product-type.application</string>
 			<key>SharedSettings</key>
 			<dict>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAMEASIDENTIFIER___/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 			</dict>
@@ -35,25 +50,65 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>DIR=${PROJECT_DIR}
-export | egrep &apos;(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)&apos; &gt; ${DIR}/env.sh</string>
+					<string>POD_COCOASLIM_BUNDLENAME=CocoaSlim
+POD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_COCOASLIM_BUNDLENAME}.bundle
+
+export | egrep &apos;(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)&apos; &gt; ${POD_BUNDLE_DIR}/env.sh
+
+if [ ! -f &quot;${PROJECT_DIR}/CocoaSlimTestRunner.sh&quot; ]; then
+	echo  &apos;#!/bin/sh&apos; &gt; ${PROJECT_DIR}/CocoaSlimTestRunner.sh
+	echo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort &apos;$1&apos; &gt;&gt; ${PROJECT_DIR}/CocoaSlimTestRunner.sh
+	chmod +x ${PROJECT_DIR}/CocoaSlimTestRunner.sh
+fi
+
+if [ ! -f &quot;${PROJECT_DIR}/LaunchFitnesse&quot; ]; then
+	ln -s ${POD_BUNDLE_DIR}/LaunchFitnesse ${PROJECT_DIR}/LaunchFitnesse
+fi</string>
 				</dict>
 			</array>
 		</dict>
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>Slim.swift</string>
+		<string>___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
+		<string>FixtureExample.swift</string>
+		<string>SlimTables.h</string>
+		<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 		<string>Info.plist:iPhone</string>
 		<string>Info.plist:UIRequiredDeviceCapabilities:base</string>
 		<string>Info.plist:PackageType</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
-		<key>Slim.swift</key>
+		<key>___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</key>
 		<dict>
 			<key>Path</key>
-			<string>Slim.swift</string>
+			<string>___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>SortOrder</key>
+			<integer>100</integer>
+		</dict>
+		<key>FixtureExample.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>FixtureExample.swift</string>
+			<key>Group</key>
+			<string>Fixtures</string>
+		</dict>
+		<key>___PACKAGENAMEASIDENTIFIER___.m</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAMEASIDENTIFIER___.m</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+		<key>SlimTables.h</key>
+		<dict>
+			<key>Path</key>
+			<string>SlimTables.h</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
 		</dict>
 		<key>Info.plist:iPhone</key>
 		<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;

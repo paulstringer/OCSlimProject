@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+pod "cslim", :path => '../../ObjectiveCSlim/cslim', :branch => 'ocslim'
+
+target 'CocoaSlim_AcceptanceTests', :exclusive => true do
+  pod "CocoaSlim", :path => "../"
+end

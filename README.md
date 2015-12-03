@@ -1,3 +1,37 @@
+# CocoaSlim
+
+[![CI Status](http://img.shields.io/travis/Paul Stringer/CocoaSlim.svg?style=flat)](https://travis-ci.org/Paul Stringer/CocoaSlim)
+[![Version](https://img.shields.io/cocoapods/v/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
+[![License](https://img.shields.io/cocoapods/l/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
+[![Platform](https://img.shields.io/cocoapods/p/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
+
+## Usage
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+CocoaSlim is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "CocoaSlim"
+```
+
+## Author
+
+Paul Stringer, paul.stringer@crowdmix.me
+
+## License
+
+CocoaSlim is available under the MIT license. See the LICENSE file for more info.
+
+
+----------
+
+
 # Slim-iOS-TestRunner
 Scripts and Project templates to help build your iOS Acceptance Tests using Fitnesse.
 

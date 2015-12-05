@@ -1,5 +1,3 @@
-*THIS IS CURRENTLY A WORK IN PROGRESS AND NOT YET AVAILABLE THROUGH COCOAPODS.*
-
 # OCSlimProject
 
 [![CI Status](http://img.shields.io/travis/Paul Stringer/OCSlimProject.svg?style=flat)](https://travis-ci.org/Paul Stringer/OCSlimProject)

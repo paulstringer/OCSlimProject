@@ -69,11 +69,11 @@ How to Use
 * Add an 'Acceptance Testing' target to your Project using the 'iOS Acceptance Test' template under iOS -> Test
 * With CocoaPods link CocoaSlimProject to your Acceptance Tests target
     
-```
+	```
     target 'AcceptanceTests' do
 	    pod 'CocoaSlimProject'
     end
-```
+	```
     
 * Build the project to create the Application (repeat this after code changes)
 * Launch Fitnesse by running the script ./LaunchFitnesse

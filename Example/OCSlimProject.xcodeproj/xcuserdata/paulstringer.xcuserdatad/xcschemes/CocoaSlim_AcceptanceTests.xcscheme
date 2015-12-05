@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CEE49BF1C10ECC200FE428C"
-               BuildableName = "OCSlimProject_Example.app"
+               BlueprintIdentifier = "8C3A9BF41C13689500011499"
+               BuildableName = "OCSlimProject_AcceptanceTests.app"
                BlueprintName = "OCSlimProject_AcceptanceTests"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
@@ -32,8 +32,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE49BF1C10ECC200FE428C"
-            BuildableName = "OCSlimProject_Example.app"
+            BlueprintIdentifier = "8C3A9BF41C13689500011499"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
@@ -55,8 +55,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE49BF1C10ECC200FE428C"
-            BuildableName = "OCSlimProject_Example.app"
+            BlueprintIdentifier = "8C3A9BF41C13689500011499"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
@@ -74,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE49BF1C10ECC200FE428C"
-            BuildableName = "OCSlimProject_Example.app"
+            BlueprintIdentifier = "8C3A9BF41C13689500011499"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>

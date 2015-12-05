@@ -12,8 +12,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		8CEE49C41C10ECC200FE428C /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE49C31C10ECC200FE428C /* FixtureExample.swift */; };
-		8CEE49C81C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */; };
+		8C3A9BF91C13689500011499 /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A9BF81C13689500011499 /* FixtureExample.swift */; };
+		8C3A9BFD1C13689500011499 /* OCSlimProject_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3A9BFC1C13689500011499 /* OCSlimProject_AcceptanceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,12 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8CEE49C01C10ECC200FE428C /* OCSlimProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CEE49C31C10ECC200FE428C /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
-		8CEE49C61C10ECC200FE428C /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
-		8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests.m; sourceTree = "<group>"; };
-		8CEE49C91C10ECC200FE428C /* OCSlimProject_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		8CEE49CA1C10ECC200FE428C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C3A9BF51C13689500011499 /* OCSlimProject_AcceptanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_AcceptanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3A9BF81C13689500011499 /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
+		8C3A9BFB1C13689500011499 /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
+		8C3A9BFC1C13689500011499 /* OCSlimProject_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests.m; sourceTree = "<group>"; };
+		8C3A9BFE1C13689500011499 /* OCSlimProject_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C3A9BFF1C13689500011499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64212E34011403DA3EA430E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +43,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CEE49BC1C10ECC200FE428C /* Frameworks */ = {
+		8C3A9BF11C13689500011499 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,7 +58,7 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
-				8CEE49C11C10ECC200FE428C /* Example AcceptanceTests */,
+				8C3A9BF61C13689500011499 /* Example AcceptanceTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */,
-				8CEE49C01C10ECC200FE428C /* OCSlimProject_Example.app */,
+				8C3A9BF51C13689500011499 /* OCSlimProject_AcceptanceTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,31 +104,31 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8CEE49C11C10ECC200FE428C /* Example AcceptanceTests */ = {
+		8C3A9BF61C13689500011499 /* Example AcceptanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CEE49CA1C10ECC200FE428C /* Info.plist */,
-				8CEE49C21C10ECC200FE428C /* Fixtures */,
-				8CEE49C51C10ECC200FE428C /* Supporting Files */,
+				8C3A9BFF1C13689500011499 /* Info.plist */,
+				8C3A9BF71C13689500011499 /* Fixtures */,
+				8C3A9BFA1C13689500011499 /* Supporting Files */,
 			);
 			name = "Example AcceptanceTests";
 			path = OCSlimProject_AcceptanceTests;
 			sourceTree = "<group>";
 		};
-		8CEE49C21C10ECC200FE428C /* Fixtures */ = {
+		8C3A9BF71C13689500011499 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				8CEE49C31C10ECC200FE428C /* FixtureExample.swift */,
+				8C3A9BF81C13689500011499 /* FixtureExample.swift */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
-		8CEE49C51C10ECC200FE428C /* Supporting Files */ = {
+		8C3A9BFA1C13689500011499 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8CEE49C61C10ECC200FE428C /* SlimTables.h */,
-				8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */,
-				8CEE49C91C10ECC200FE428C /* OCSlimProject_AcceptanceTests-Bridging-Header.h */,
+				8C3A9BFB1C13689500011499 /* SlimTables.h */,
+				8C3A9BFC1C13689500011499 /* OCSlimProject_AcceptanceTests.m */,
+				8C3A9BFE1C13689500011499 /* OCSlimProject_AcceptanceTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,22 +153,22 @@
 			productReference = 607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8CEE49BF1C10ECC200FE428C /* OCSlimProject_AcceptanceTests */ = {
+		8C3A9BF41C13689500011499 /* OCSlimProject_AcceptanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CEE49CB1C10ECC200FE428C /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */;
+			buildConfigurationList = 8C3A9C001C13689500011499 /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */;
 			buildPhases = (
-				8CEE49BB1C10ECC200FE428C /* Sources */,
-				8CEE49BC1C10ECC200FE428C /* Frameworks */,
-				8CEE49BD1C10ECC200FE428C /* Resources */,
-				8CEE49BE1C10ECC200FE428C /* ShellScript */,
+				8C3A9BF01C13689500011499 /* Sources */,
+				8C3A9BF11C13689500011499 /* Frameworks */,
+				8C3A9BF21C13689500011499 /* Resources */,
+				8C3A9BF31C13689500011499 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = OCSlimProject_AcceptanceTests;
-			productName = CocoaSlim_AcceptanceTests;
-			productReference = 8CEE49C01C10ECC200FE428C /* OCSlimProject_Example.app */;
+			productName = OCSlimProject_AcceptanceTests;
+			productReference = 8C3A9BF51C13689500011499 /* OCSlimProject_AcceptanceTests.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +184,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
-					8CEE49BF1C10ECC200FE428C = {
+					8C3A9BF41C13689500011499 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -203,7 +203,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
-				8CEE49BF1C10ECC200FE428C /* OCSlimProject_AcceptanceTests */,
+				8C3A9BF41C13689500011499 /* OCSlimProject_AcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CEE49BD1C10ECC200FE428C /* Resources */ = {
+		8C3A9BF21C13689500011499 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,7 +229,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8CEE49BE1C10ECC200FE428C /* ShellScript */ = {
+		8C3A9BF31C13689500011499 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "POD_COCOASLIM_BUNDLENAME=CocoaSlim\nPOD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_COCOASLIM_BUNDLENAME}.bundle\n\nexport | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)' > ${POD_BUNDLE_DIR}/env.sh\n\nif [ ! -f \"${PROJECT_DIR}/CocoaSlimTestRunner.sh\" ]; then\n\techo  '#!/bin/sh' > ${PROJECT_DIR}/CocoaSlimTestRunner.sh\n\techo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort '$1' >> ${PROJECT_DIR}/CocoaSlimTestRunner.sh\n\tchmod +x ${PROJECT_DIR}/CocoaSlimTestRunner.sh\nfi\n\nif [ ! -f \"${PROJECT_DIR}/LaunchFitnesse\" ]; then\n\tln -s ${POD_BUNDLE_DIR}/LaunchFitnesse ${PROJECT_DIR}/LaunchFitnesse\nfi";
+			shellScript = "POD_OCSLIMPROJECT_BUNDLENAME=OCSlimProject\nPOD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_COCOASLIM_BUNDLENAME}.bundle\n\nexport | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)' > ${POD_BUNDLE_DIR}/env.sh\n\nif [ ! -f \"${PROJECT_DIR}/OCSlimProjectTestRunner.sh\" ]; then\n\techo  '#!/bin/sh' > ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\techo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort '$1' >> ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\tchmod +x ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\nfi\n\nif [ ! -f \"${PROJECT_DIR}/LaunchFitnesse\" ]; then\n\tln -s ${POD_BUNDLE_DIR}/LaunchFitnesse ${PROJECT_DIR}/LaunchFitnesse\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -254,12 +254,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CEE49BB1C10ECC200FE428C /* Sources */ = {
+		8C3A9BF01C13689500011499 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEE49C41C10ECC200FE428C /* FixtureExample.swift in Sources */,
-				8CEE49C81C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m in Sources */,
+				8C3A9BF91C13689500011499 /* FixtureExample.swift in Sources */,
+				8C3A9BFD1C13689500011499 /* OCSlimProject_AcceptanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +391,7 @@
 			};
 			name = Release;
 		};
-		8CEE49CC1C10ECC200FE428C /* Debug */ = {
+		8C3A9C011C13689500011499 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -399,20 +399,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTests";
-				PRODUCT_NAME = OCSlimProject_Example;
-				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/CocoaSlim_AcceptanceTests-Bridging-Header.h";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/OCSlimProject_AcceptanceTests-Bridging-Header.h";
 			};
 			name = Debug;
 		};
-		8CEE49CD1C10ECC200FE428C /* Release */ = {
+		8C3A9C021C13689500011499 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTests";
-				PRODUCT_NAME = OCSlimProject_Example;
-				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/CocoaSlim_AcceptanceTests-Bridging-Header.h";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/OCSlimProject_AcceptanceTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -437,14 +437,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CEE49CB1C10ECC200FE428C /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */ = {
+		8C3A9C001C13689500011499 /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CEE49CC1C10ECC200FE428C /* Debug */,
-				8CEE49CD1C10ECC200FE428C /* Release */,
+				8C3A9C011C13689500011499 /* Debug */,
+				8C3A9C021C13689500011499 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

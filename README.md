@@ -9,6 +9,22 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+If you see the following error,
+
+    Update all pods
+    Updating local specs repositories
+    Analyzing dependencies
+    Fetching podspec for `CocoaSlim` from `../`
+    Fetching podspec for `cslim` from `../../ObjectiveCSlim/cslim`
+    [!] No podspec found for `cslim` in `../../ObjectiveCSlim/cslim`
+
+then you must clone [ObjectiveCSlim](https://github.com/ericmeyer/ObjectiveCSlim.git) and 
+try again. You must clone ObjectiveCSlim beside Slim-iOS-TestRunner:
+
+	.
+    ├── ObjectiveCSlim
+    └── Slim-iOS-TestRunner
+    
 ## Requirements
 
 ## Installation

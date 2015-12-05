@@ -13,7 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		8CEE49C41C10ECC200FE428C /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE49C31C10ECC200FE428C /* FixtureExample.swift */; };
-		8CEE49C81C10ECC200FE428C /* CocoaSlim_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE49C71C10ECC200FE428C /* CocoaSlim_AcceptanceTests.m */; };
+		8CEE49C81C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		8CEE49C01C10ECC200FE428C /* OCSlimProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEE49C31C10ECC200FE428C /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
 		8CEE49C61C10ECC200FE428C /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
-		8CEE49C71C10ECC200FE428C /* CocoaSlim_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaSlim_AcceptanceTests.m; sourceTree = "<group>"; };
-		8CEE49C91C10ECC200FE428C /* CocoaSlim_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaSlim_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests.m; sourceTree = "<group>"; };
+		8CEE49C91C10ECC200FE428C /* OCSlimProject_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CEE49CA1C10ECC200FE428C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64212E34011403DA3EA430E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				8CEE49C61C10ECC200FE428C /* SlimTables.h */,
-				8CEE49C71C10ECC200FE428C /* CocoaSlim_AcceptanceTests.m */,
-				8CEE49C91C10ECC200FE428C /* CocoaSlim_AcceptanceTests-Bridging-Header.h */,
+				8CEE49C71C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m */,
+				8CEE49C91C10ECC200FE428C /* OCSlimProject_AcceptanceTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEE49C41C10ECC200FE428C /* FixtureExample.swift in Sources */,
-				8CEE49C81C10ECC200FE428C /* CocoaSlim_AcceptanceTests.m in Sources */,
+				8CEE49C81C10ECC200FE428C /* OCSlimProject_AcceptanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

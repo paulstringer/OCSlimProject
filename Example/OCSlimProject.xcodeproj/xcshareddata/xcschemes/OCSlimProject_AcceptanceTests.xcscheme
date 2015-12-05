@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CEDB5EF1C136A4E009E0997"
+               BlueprintIdentifier = "8C2FA15F1C13757800A15270"
                BuildableName = "OCSlimProject_AcceptanceTests.app"
                BlueprintName = "OCSlimProject_AcceptanceTests"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEDB5EF1C136A4E009E0997"
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
             BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEDB5EF1C136A4E009E0997"
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
             BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEDB5EF1C136A4E009E0997"
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
             BuildableName = "OCSlimProject_AcceptanceTests.app"
             BlueprintName = "OCSlimProject_AcceptanceTests"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">

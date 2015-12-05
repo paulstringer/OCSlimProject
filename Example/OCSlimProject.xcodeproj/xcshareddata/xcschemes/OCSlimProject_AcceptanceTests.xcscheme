@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CEE496F1C10C38300FE428C"
-               BuildableName = "CocoaSlim_AcceptanceTests.app"
-               BlueprintName = "CocoaSlim_AcceptanceTests"
-               ReferencedContainer = "container:CocoaSlim.xcodeproj">
+               BlueprintIdentifier = "8C2FA15F1C13757800A15270"
+               BuildableName = "OCSlimProject_AcceptanceTests.app"
+               BlueprintName = "OCSlimProject_AcceptanceTests"
+               ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE496F1C10C38300FE428C"
-            BuildableName = "CocoaSlim_AcceptanceTests.app"
-            BlueprintName = "CocoaSlim_AcceptanceTests"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
+            BlueprintName = "OCSlimProject_AcceptanceTests"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE496F1C10C38300FE428C"
-            BuildableName = "CocoaSlim_AcceptanceTests.app"
-            BlueprintName = "CocoaSlim_AcceptanceTests"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
+            BlueprintName = "OCSlimProject_AcceptanceTests"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8CEE496F1C10C38300FE428C"
-            BuildableName = "CocoaSlim_AcceptanceTests.app"
-            BlueprintName = "CocoaSlim_AcceptanceTests"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BlueprintIdentifier = "8C2FA15F1C13757800A15270"
+            BuildableName = "OCSlimProject_AcceptanceTests.app"
+            BlueprintName = "OCSlimProject_AcceptanceTests"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

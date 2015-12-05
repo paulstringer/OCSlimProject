@@ -1,11 +1,11 @@
 *THIS IS CURRENTLY A WORK IN PROGRESS AND NOT YET AVAILABLE THROUGH COCOAPODS.*
 
-# CocoaSlimProject
+# OCSlimProject
 
-[![CI Status](http://img.shields.io/travis/Paul Stringer/CocoaSlim.svg?style=flat)](https://travis-ci.org/Paul Stringer/CocoaSlim)
-[![Version](https://img.shields.io/cocoapods/v/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
-[![License](https://img.shields.io/cocoapods/l/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
-[![Platform](https://img.shields.io/cocoapods/p/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/CocoaSlim)
+[![CI Status](http://img.shields.io/travis/Paul Stringer/OCSlimProject.svg?style=flat)](https://travis-ci.org/Paul Stringer/OCSlimProject)
+[![Version](https://img.shields.io/cocoapods/v/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
+[![License](https://img.shields.io/cocoapods/l/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
+[![Platform](https://img.shields.io/cocoapods/p/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
 
 ## Usage
 
@@ -18,11 +18,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-CocoaSlimProject is available through [CocoaPods](http://cocoapods.org). To install
+OCSlimProject is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "CocoaSlim"
+pod "OCSlimProject"
 ```
 
 ## Author
@@ -31,13 +31,13 @@ Paul Stringer, paulstringer@mac.com
 
 ## License
 
-CocoaSlim is available under the MIT license. See the LICENSE file for more info.
+OCSlimProject is available under the MIT license. See the LICENSE file for more info.
 
 
 ----------
 
 
-# CocoaSlimProject
+# OCSlimProject
 A lightweight Project Template and scripts to help you get setup writing fast, rock solid, non UI based Acceptance Tests using [Fitnesse](http://fitnesse.org).
 
 # Acknowledgements
@@ -67,13 +67,13 @@ https://github.com/paulstringer/Slim-iOS-TestRunner
 How to Use
 ==========
 
-* Run ```$ make```. This adds the CocoaSlimProject Template for creating Acceptance Test targets within Xcode
+* Run ```$ make```. This adds the OCSlimProject Template for creating Acceptance Test targets within Xcode
 * Add an 'Acceptance Testing' target to your Project using the 'iOS Acceptance Test' template under iOS -> Test
-* With CocoaPods link CocoaSlimProject to your Acceptance Tests target
+* With CocoaPods link OCSlimProject to your Acceptance Tests target
     
 	```
     target 'AcceptanceTests' do
-	    pod 'CocoaSlimProject'
+	    pod 'OCSlimProject'
     end
 	```
     

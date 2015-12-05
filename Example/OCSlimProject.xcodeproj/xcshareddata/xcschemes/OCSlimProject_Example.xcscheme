@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "CocoaSlim_Example.app"
-               BlueprintName = "CocoaSlim_Example"
-               ReferencedContainer = "container:CocoaSlim.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CocoaSlim_Tests.xctest"
-               BlueprintName = "CocoaSlim_Tests"
-               ReferencedContainer = "container:CocoaSlim.xcodeproj">
+               BuildableName = "OCSlimProject_Example.app"
+               BlueprintName = "OCSlimProject_Example"
+               ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CocoaSlim_Tests.xctest"
-               BlueprintName = "CocoaSlim_Tests"
-               ReferencedContainer = "container:CocoaSlim.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CocoaSlim_Example.app"
-            BlueprintName = "CocoaSlim_Example"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BuildableName = "OCSlimProject_Example.app"
+            BlueprintName = "OCSlimProject_Example"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CocoaSlim_Example.app"
-            BlueprintName = "CocoaSlim_Example"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BuildableName = "OCSlimProject_Example.app"
+            BlueprintName = "OCSlimProject_Example"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CocoaSlim_Example.app"
-            BlueprintName = "CocoaSlim_Example"
-            ReferencedContainer = "container:CocoaSlim.xcodeproj">
+            BuildableName = "OCSlimProject_Example.app"
+            BlueprintName = "OCSlimProject_Example"
+            ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

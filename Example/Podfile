@@ -3,6 +3,6 @@ use_frameworks!
 
 pod "cslim", :git => 'https://github.com/paulstringer/cslim.git', :branch => 'ocslim'
 
-target 'CocoaSlim_AcceptanceTests', :exclusive => true do
-  pod "CocoaSlim", :path => "../"
+target 'OCSlimProject_AcceptanceTests', :exclusive => true do
+  pod "OCSlimProject", :path => "../"
 end

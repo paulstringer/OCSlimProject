@@ -1,3 +1,5 @@
+*THIS IS CURRENTLY A WORK IN PROGRESS AND NOT YET AVAILABLE THROUGH COCOAPODS.*
+
 # CocoaSlimProject
 
 [![CI Status](http://img.shields.io/travis/Paul Stringer/CocoaSlim.svg?style=flat)](https://travis-ci.org/Paul Stringer/CocoaSlim)

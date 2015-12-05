@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'OCSlimProject' => ['Pod/Support/*']
   }
- s.dependency 'cslim'
+  s.dependency 'cslim'
  
 end

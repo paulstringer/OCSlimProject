@@ -50,15 +50,15 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>POD_COCOASLIM_BUNDLENAME=CocoaSlim
+					<string>POD_OCSLIMPROJECT_BUNDLENAME=OCSlimProject
 POD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_COCOASLIM_BUNDLENAME}.bundle
 
 export | egrep &apos;(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)&apos; &gt; ${POD_BUNDLE_DIR}/env.sh
 
-if [ ! -f &quot;${PROJECT_DIR}/CocoaSlimTestRunner.sh&quot; ]; then
-	echo  &apos;#!/bin/sh&apos; &gt; ${PROJECT_DIR}/CocoaSlimTestRunner.sh
-	echo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort &apos;$1&apos; &gt;&gt; ${PROJECT_DIR}/CocoaSlimTestRunner.sh
-	chmod +x ${PROJECT_DIR}/CocoaSlimTestRunner.sh
+if [ ! -f &quot;${PROJECT_DIR}/OCSlimProjectTestRunner.sh&quot; ]; then
+	echo  &apos;#!/bin/sh&apos; &gt; ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
+	echo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort &apos;$1&apos; &gt;&gt; ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
+	chmod +x ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
 fi
 
 if [ ! -f &quot;${PROJECT_DIR}/LaunchFitnesse&quot; ]; then

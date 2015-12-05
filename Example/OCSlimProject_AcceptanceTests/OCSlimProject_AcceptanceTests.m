@@ -4,9 +4,9 @@
 //
 #import <Foundation/Foundation.h>
 
-#if __has_include(<CocoaSlim/CocoaSlim.h>)
+#if __has_include(<OCSlimProject/OCSlimProject.h>)
 #else
-#pragma GCC error "'CocoaSlim' pod not found. Add \" 'CocoaSlim', '~> 1.0' \" to the current targets pod configuration."
+#pragma GCC error "'OCSlimProject' pod not found. Add \" 'OCSlimProject' \" to the current targets pod configuration."
 #endif
 
 @interface OCSlimProject_AcceptanceTests : NSObject

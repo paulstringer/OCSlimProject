@@ -9,6 +9,22 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+If you see the following error,
+
+    Update all pods
+    Updating local specs repositories
+    Analyzing dependencies
+    Fetching podspec for `CocoaSlim` from `../`
+    Fetching podspec for `cslim` from `../../ObjectiveCSlim/cslim`
+    [!] No podspec found for `cslim` in `../../ObjectiveCSlim/cslim`
+
+then you must clone [ObjectiveCSlim](https://github.com/ericmeyer/ObjectiveCSlim.git) and 
+try again. You must clone ObjectiveCSlim beside Slim-iOS-TestRunner:
+
+	.
+    ├── ObjectiveCSlim
+    └── Slim-iOS-TestRunner
+    
 ## Requirements
 - Xcode 7
 - Java 6 (required for Fitnesse)
@@ -74,6 +90,23 @@ How to Use
 	    pod 'OCSlimProject'
     end
 	```
+<<<<<<< HEAD
+
+* Download [Fitnesse](http://www.fitnesse.org/FitNesseDownload) to the same root of your project location
+* Copy the files from ./Scripts to the root of your Xcode project. 
+* Start the Fitnesse server using the included script ./StartFitnesse
+* Edit the [Root page](http://localhost:8080/root) and add the following:
+   
+    ```
+    !define TEST_SYSTEM {slim}
+    !define TEST_RUNNER {!-./RunTestsTargetWithSlimPort-!}
+    !define SLIM_VERSION {0.0}
+    !define COMMAND_PATTERN {%m}
+    ```
+
+* Add a new Test page and run the Test
+* You're project is now ready to start writing [Acceptance tests and Fixtures](http://stringerstheory.net/acceptance-testing-with-ios/) using Fitnesse.
+=======
     
 * Build the project to create the Application (repeat this after code changes)
 * Launch Fitnesse by running the script ./LaunchFitnesse
@@ -86,3 +119,4 @@ Gotchas
 
 * Return values from Swift fixtures must be explicitly returned as NSString and not String.
 * Likewise all input values must be explicitly of String types and converted as needed by your fixtures.
+>>>>>>> 58edd77122b103c7e49d8451548d1f2f0a27492f

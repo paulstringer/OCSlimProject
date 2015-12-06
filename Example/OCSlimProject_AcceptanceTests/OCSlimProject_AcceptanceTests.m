@@ -9,7 +9,7 @@
 #pragma GCC error "'OCSlimProject' pod not found. Add \" 'OCSlimProject' \" to the current targets pod configuration."
 #endif
 
-@interface ___PACKAGENAMEASIDENTIFIER___ : NSObject
+@interface OCSlimProject_AcceptanceTests : NSObject
 @end
-@implementation ___PACKAGENAMEASIDENTIFIER___
+@implementation OCSlimProject_AcceptanceTests
 @end

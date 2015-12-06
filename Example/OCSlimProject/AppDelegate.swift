@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CocoaSlim
+//  OCSlimProject
 //
 //  Created by Paul Stringer on 11/29/2015.
 //  Copyright (c) 2015 Paul Stringer. All rights reserved.

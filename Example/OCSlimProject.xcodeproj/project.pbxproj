@@ -240,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "POD_OCSLIMPROJECT_BUNDLENAME=OCSlimProject\nPOD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_OCSLIMPROJECT_BUNDLENAME}.bundle\n\nexport | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)' > ${POD_BUNDLE_DIR}/env.sh\n\nif [ ! -f \"${PROJECT_DIR}/OCSlimProjectTestRunner.sh\" ]; then\n\techo  '#!/bin/sh' > ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\techo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort '$1' >> ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\tchmod +x ${PROJECT_DIR}/OCSlimProjectTestRunner.sh\nfi\n\nif [ ! -f \"${PROJECT_DIR}/LaunchFitnesse\" ]; then\n\tln -s ${POD_BUNDLE_DIR}/LaunchFitnesse ${PROJECT_DIR}/LaunchFitnesse\nfi";
+			shellScript = "POD_OCSLIMPROJECT_BUNDLENAME=OCSlimProject\nPOD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_OCSLIMPROJECT_BUNDLENAME}.bundle\nENV_TARGET=$POD_BUNDLE_DIR/env.sh\n\nTESTRUNNER_BIN_FILE=${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort\nTESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\nLAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse\nLAUNCHFITNESSE_SOURCE=${POD_BUNDLE_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\nLAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\n\n# Export Build Environment to Bundle Location\nmkdir -p \"$(dirname \"$ENV_TARGET\")\" && touch \"$ENV_TARGET\"\nexport | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)' > $ENV_TARGET\n\n# Write Test Runner Script To Project Root\nif [ ! -f \"$TESTRUNNER_TARGET\" ]; then\necho  '#!/bin/sh' > $TESTRUNNER_TARGET\necho $TESTRUNNER_BIN_FILE '$1' >> $TESTRUNNER_TARGET\nchmod +x $TESTRUNNER_TARGET\nfi\n\n# Copy Symbolic Link to LaunchFitnesse to Project Root\nif [ ! -f \"$LAUNCHFITNESSE_TARGET\" ]; then\nln -s $LAUNCHFITNESSE_SOURCE $(dirname \"$LAUNCHFITNESSE_TARGET\")\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -444,6 +444,7 @@
 				8C2FA16D1C13757800A15270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

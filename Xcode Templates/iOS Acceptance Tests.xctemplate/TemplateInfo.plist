@@ -52,17 +52,29 @@
 					<key>ShellScript</key>
 					<string>POD_OCSLIMPROJECT_BUNDLENAME=OCSlimProject
 POD_BUNDLE_DIR=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${POD_OCSLIMPROJECT_BUNDLENAME}.bundle
+ENV_TARGET=$POD_BUNDLE_DIR/env.sh
 
-export | egrep &apos;(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)&apos; &gt; ${POD_BUNDLE_DIR}/env.sh
+TESTRUNNER_BIN_FILE=${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort
+TESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh
 
-if [ ! -f &quot;${PROJECT_DIR}/OCSlimProjectTestRunner.sh&quot; ]; then
-	echo  &apos;#!/bin/sh&apos; &gt; ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
-	echo ${POD_BUNDLE_DIR}/RunTestsTargetWithSlimPort &apos;$1&apos; &gt;&gt; ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
-	chmod +x ${PROJECT_DIR}/OCSlimProjectTestRunner.sh
+LAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse
+LAUNCHFITNESSE_SOURCE=${POD_BUNDLE_DIR}/$LAUNCHFITNESSE_SCRIPTNAME
+LAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME
+
+# Export Build Environment to Bundle Location
+mkdir -p &quot;$(dirname &quot;$ENV_TARGET&quot;)&quot; &amp;&amp; touch &quot;$ENV_TARGET&quot;
+export | egrep &apos;(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)&apos; &gt; $ENV_TARGET
+
+# Write Test Runner Script To Project Root
+if [ ! -f &quot;$TESTRUNNER_TARGET&quot; ]; then
+echo  &apos;#!/bin/sh&apos; &gt; $TESTRUNNER_TARGET
+echo $TESTRUNNER_BIN_FILE &apos;$1&apos; &gt;&gt; $TESTRUNNER_TARGET
+chmod +x $TESTRUNNER_TARGET
 fi
 
-if [ ! -f &quot;${PROJECT_DIR}/LaunchFitnesse&quot; ]; then
-	ln -s ${POD_BUNDLE_DIR}/LaunchFitnesse ${PROJECT_DIR}/LaunchFitnesse
+# Copy Symbolic Link to LaunchFitnesse to Project Root
+if [ ! -f &quot;$LAUNCHFITNESSE_TARGET&quot; ]; then
+ln -s $LAUNCHFITNESSE_SOURCE $(dirname &quot;$LAUNCHFITNESSE_TARGET&quot;)
 fi</string>
 				</dict>
 			</array>

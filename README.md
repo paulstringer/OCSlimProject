@@ -1,9 +1,9 @@
 # OCSlimProject
 
 [![CI Status](http://img.shields.io/travis/Paul Stringer/OCSlimProject.svg?style=flat)](https://travis-ci.org/Paul Stringer/OCSlimProject)
-[![Version](https://img.shields.io/cocoapods/v/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
-[![License](https://img.shields.io/cocoapods/l/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
-[![Platform](https://img.shields.io/cocoapods/p/CocoaSlim.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
+[![Version](https://img.shields.io/cocoapods/v/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
+[![License](https://img.shields.io/cocoapods/l/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
+[![Platform](https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
 
 ## Usage
 

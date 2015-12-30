@@ -1,0 +1,7 @@
+MYPATH=$(dirname $0)
+source ${MYPATH}/env.sh
+APP_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
+SLIM_PORT=$1
+
+echo 'Running Test Target "'$FULL_PRODUCT_NAME'" ("'$APP_PATH'") with Slim Port "'$SLIM_PORT'"'
+$APP_PATH $SLIM_PORT

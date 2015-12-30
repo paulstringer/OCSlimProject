@@ -23,12 +23,17 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => s.version.to_s }
   s.social_media_url = 'https://uk.linkedin.com/in/paulstringer'
 
-  s.platform     = :ios, '8.0'
-
-  s.source_files = 'Pod/Classes/**'
-  s.resource_bundles = {
-    'OCSlimProject' => ['Pod/Support/*']
-  }
   s.dependency 'cslim'
+  s.source_files = 'Pod/Classes/**'
+  
+  s.osx.resource_bundles = {
+    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+  }
+  s.ios.resource_bundles = {
+    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+  }
+
+  s.osx.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources' }
+  s.ios.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/OCSlimProject.bundle' }
  
-end
+ end

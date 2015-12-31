@@ -82,8 +82,8 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
-				8C07D1EE1C35385100CF88BE /* Example of iOS Acceptance Tests */,
-				8C07D2011C35388000CF88BE /* Example of Mac Acceptance Tests */,
+				8C07D1EE1C35385100CF88BE /* Example iOS Acceptance Tests */,
+				8C07D2011C35388000CF88BE /* Example Mac Acceptance Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				2A5423F02B114B4F42D45049 /* Frameworks */,
 			);
@@ -131,14 +131,14 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8C07D1EE1C35385100CF88BE /* Example of iOS Acceptance Tests */ = {
+		8C07D1EE1C35385100CF88BE /* Example iOS Acceptance Tests */ = {
 			isa = PBXGroup;
 			children = (
 				8C07D1F71C35385100CF88BE /* Info.plist */,
 				8C07D1F21C35385100CF88BE /* Fixtures */,
 				8C07D1EF1C35385100CF88BE /* Supporting Files */,
 			);
-			name = "Example of iOS Acceptance Tests";
+			name = "Example iOS Acceptance Tests";
 			path = OCSlimProject_AcceptanceTests;
 			sourceTree = "<group>";
 		};
@@ -160,14 +160,14 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
-		8C07D2011C35388000CF88BE /* Example of Mac Acceptance Tests */ = {
+		8C07D2011C35388000CF88BE /* Example Mac Acceptance Tests */ = {
 			isa = PBXGroup;
 			children = (
 				8C07D20C1C35388000CF88BE /* Info.plist */,
 				8C07D2051C35388000CF88BE /* Fixtures */,
 				8C07D2021C35388000CF88BE /* Supporting Files */,
 			);
-			name = "Example of Mac Acceptance Tests";
+			name = "Example Mac Acceptance Tests";
 			path = OCSlimProject_AcceptanceTestsMac;
 			sourceTree = "<group>";
 		};
@@ -256,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -577,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -592,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -630,6 +632,7 @@
 				8C07D1FA1C35385100CF88BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C07D20D1C35388000CF88BE /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */ = {
 			isa = XCConfigurationList;
@@ -638,6 +641,7 @@
 				8C07D20F1C35388000CF88BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

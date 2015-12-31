@@ -15,6 +15,16 @@
 	</array>
 	<key>Concrete</key>
 	<true/>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+			</dict>
+		</dict>
+	</array>
 	<key>Nodes</key>
 	<array>
 		<string>Info.plist:iPhone</string>

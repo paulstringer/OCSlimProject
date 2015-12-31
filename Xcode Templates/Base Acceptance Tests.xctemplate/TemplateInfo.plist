@@ -34,10 +34,10 @@
 			<string>com.apple.product-type.application</string>
 			<key>SharedSettings</key>
 			<dict>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>___PACKAGENAMEASIDENTIFIER___/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/../Frameworks</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAMEASIDENTIFIER___/___PACKAGENAMEASIDENTIFIER___-Bridging-Header.h</string>
 			</dict>
 			<key>BuildPhases</key>
 			<array>

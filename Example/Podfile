@@ -1,7 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'cslim'
-
 target 'OCSlimProject_AcceptanceTests', :exclusive => true do
   platform :ios, 8.0
   pod "OCSlimProject", :path => "../"

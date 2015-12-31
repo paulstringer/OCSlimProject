@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "OCSlimProject_Example.app"
-               BlueprintName = "OCSlimProject_Example"
+               BlueprintIdentifier = "8C07D1FF1C35388000CF88BE"
+               BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
+               BlueprintName = "OCSlimProject_AcceptanceTestsMac"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OCSlimProject_Example.app"
-            BlueprintName = "OCSlimProject_Example"
+            BlueprintIdentifier = "8C07D1FF1C35388000CF88BE"
+            BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
+            BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OCSlimProject_Example.app"
-            BlueprintName = "OCSlimProject_Example"
+            BlueprintIdentifier = "8C07D1FF1C35388000CF88BE"
+            BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
+            BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OCSlimProject_Example.app"
-            BlueprintName = "OCSlimProject_Example"
+            BlueprintIdentifier = "8C07D1FF1C35388000CF88BE"
+            BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
+            BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

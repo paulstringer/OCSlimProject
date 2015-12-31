@@ -1,7 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod "cslim", :git => 'https://github.com/paulstringer/cslim.git', :branch => 'ocslim'
-#pod "cslim", :path => '../../ObjectiveCSlim/cslim', :branch => 'ocslim'
+pod 'cslim'
 
 target 'OCSlimProject_AcceptanceTests', :exclusive => true do
   platform :ios, 8.0

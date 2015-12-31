@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "OCSlimProject"
-  s.version          = "1.1.0"
+  s.version          = "1.1"
   s.summary          = "Lightweight Xcode Project wrapper of cslim to help you get setup writing fast, rock solid, non UI based Acceptance Tests using Fitnesse"
   s.description      = <<-DESC
   OCSlimProject is a lightweight wrapper around a collection of scripts that automates the steps of creating 'ocslim' 

@@ -2,6 +2,8 @@ FITNESSE_PORT=8080
 START=1
 CURL_CONNECTION_REFUSED_CODE=7
 FITNESSE_ROOT_CONTENT_FILE=FitnesseRoot/content.txt
+MY_PATH=$(dirname $0)
+
 ####################################
 # Command Line Argument Processing #
 ####################################
@@ -30,6 +32,7 @@ function fitnesse_kill {
 }
 
 function fitnesse_check {
+	pushd $MY_PATH
 	if [ ! -f "fitnesse-standalone.jar" ]; then
 		echo "Fitnesse-Standalone.jar missing!"
     	echo "Download the latest fitnesse-standlalone.jar to the current directory from Fitnesse.org"
@@ -39,12 +42,16 @@ function fitnesse_check {
 				"Not Now" ) break;;
 			esac
 		done
+		popd
 		exit 0
 	fi
+	popd
 }
 
 function fitnesse_start {
+	pushd $MY_PATH
 	java -jar fitnesse-standalone.jar -e 0 -p ${FITNESSE_PORT} &
+	popd
 }
 
 function fitnesse_wait {

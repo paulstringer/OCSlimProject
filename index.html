@@ -48,8 +48,8 @@
 <ul>
 <li>Download OCSlimProject</li>
 <li>Run <code>$ make</code>. This adds the Xcode project templates for creating Acceptance Test targets within Xcode (iOS &amp; OS X).</li>
-<li>Add an 'Acceptance Testing' target to your Project using the <em>Acceptance Test</em> templates now installed under the Test project categories</li>
-<li>Using CocoaPods link <em>OCSlimProject</em> to your Acceptance Tests target with the following Podfile entry</li>
+<li>Add an 'AcceptanceTests' target to your Project using the <em>Acceptance Test</em> templates now installed under the Test project categories</li>
+<li>Using CocoaPods link <em>OCSlimProject</em> to your <em>AcceptanceTests</em> target with the following Podfile entry</li>
 </ul>
 
 <pre><code>    target 'AcceptanceTests' do
@@ -59,7 +59,7 @@
 
 <ul>
 <li>Run <code>pod install</code> or  <code>pod update</code> as needed</li>
-<li>Build the project to generate the Application (repeat this after each code change)</li>
+<li>Build the <em>AcceptanceTests</em> target to generate the Application (repeat this after each code change)</li>
 <li>Launch Fitnesse by running the script <code>./LaunchFitnesse</code> that's generated automatically in your project's root directory</li>
 <li>Follow the prompt to download <a href="http://www.fitnesse.org/FitNesseDownload">Fitnesse</a> to the  root of your project</li>
 <li>With Fitnesse running, check out the <a href="http://localhost:8080/CocoaSlimExamplePage">example</a> provided in Fitnesse.</li>

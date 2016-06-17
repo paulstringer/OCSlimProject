@@ -23,13 +23,14 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://uk.linkedin.com/in/paulstringer'
 
   s.dependency 'cslim'
+#  s.dependency 'cslim', :path => "../../ObjectiveCSlim/cslim"
   s.source_files = 'Pod/Classes/**'
   
   s.osx.resource_bundles = {
-    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/*']
   }
   s.ios.resource_bundles = {
-    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/*']
   }
 
   s.osx.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources' }

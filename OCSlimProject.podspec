@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
   s.name             = "OCSlimProject"
-  s.version          = "1.1"
+  s.version          = "1.2"
   s.summary          = "Lightweight Xcode Project wrapper of cslim to help you get setup writing fast, rock solid, non UI based Acceptance Tests using Fitnesse"
   s.description      = <<-DESC
   OCSlimProject is a lightweight wrapper around a collection of scripts that automates the steps of creating 'ocslim' 
   based Xcode Projects for testing using Fitnesse. These tools help you write rock solid, non UI based 
-  acceptance tests for your iOS application.
+  acceptance tests for your Mac or iOS application.
                        DESC
 
   s.homepage         = "https://github.com/paulstringer/OCSlimProject"
@@ -23,13 +23,14 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://uk.linkedin.com/in/paulstringer'
 
   s.dependency 'cslim'
+#  s.dependency 'cslim', :path => "../../ObjectiveCSlim/cslim"
   s.source_files = 'Pod/Classes/**'
   
   s.osx.resource_bundles = {
-    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/*']
   }
   s.ios.resource_bundles = {
-    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/LaunchFitnesse']
+    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/*']
   }
 
   s.osx.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources' }

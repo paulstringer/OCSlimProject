@@ -16,7 +16,7 @@ Check out this [video from NSLondon](http://stringerstheory.net/nslondon-video/)
 
 ### Requirements
 - Xcode 7
-- Java 6 (required for Fitnesse)
+- [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (required for Fitnesse)
 
 ### Installation
 
@@ -49,8 +49,12 @@ pod "OCSlimProject"
 
 
 # Acknowledgements
-The owner of this repository takes no credit for the following included resources (except for the ones credited to the owner). This is a convienient lightweight wrapper either inspired by or using these resources together with some project glue to automate the process of creating 'ocslim' based Apps for use with Fitnesse. 
+The owner of this repository takes no credit for the following included resources (except for the ones credited to the owner). This is a convienient lightweight wrapper either inspired by or using these resources together with some project glue. The aim has been to automate the process of setting up Xcode projects so as to more easily be able to use 'ocslim' and integrate with Fitnesse. 
 
+### Fitnesse
+Created by: Fitnesse.org
+
+<http://fitnesse.org>
 
 ### OCSlim, RunTestsTargetWithSlimPort
 Created by: Erik Meyer, 8th Light 

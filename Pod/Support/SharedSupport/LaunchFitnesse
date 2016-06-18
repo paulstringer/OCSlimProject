@@ -1,8 +1,19 @@
-FITNESSE_PORT=8080
+##############
+# PROPERTIES #
+##############
+
+SCRIPT_DIR=$(dirname "$(readlink "${BASH_SOURCE[0]}")")
 START=1
 CURL_CONNECTION_REFUSED_CODE=7
+
+#################
+# CONFIGURATION #
+#################
+
+FITNESSE_PORT=8080
+FITNESSE_ROOT_HOME=$(pwd)
+FITNESSE_EXECUTABLE_PATH=${SCRIPT_DIR}/fitnesse-standalone.jar
 FITNESSE_ROOT_CONTENT_FILE=FitnesseRoot/content.txt
-MY_PATH=$(dirname $0)
 
 ####################################
 # Command Line Argument Processing #
@@ -14,7 +25,7 @@ while [ "$1" != "" ]; do
 		-p | --port )			shift
 								FITNESSE_PORT=$1
                                 ;;
-                                
+								
 		-k | --kill )			shift
 								START=0
                                 ;;
@@ -32,8 +43,7 @@ function fitnesse_kill {
 }
 
 function fitnesse_check {
-	pushd $MY_PATH 2>&1 > /dev/null
-	if [ ! -f "fitnesse-standalone.jar" ]; then
+	if [ ! -f "${FITNESSE_EXECUTABLE_PATH}" ]; then
 		echo "Fitnesse-Standalone.jar missing!"
     	echo "Download the latest fitnesse-standlalone.jar to the current directory from Fitnesse.org"
 		select yn in "Goto http://fitnesse.org" "Not Now"; do
@@ -42,16 +52,16 @@ function fitnesse_check {
 				"Not Now" ) break;;
 			esac
 		done
-		popd 2>&1 > /dev/null
 		exit 0
 	fi
-	popd 2>&1 > /dev/null
 }
 
 function fitnesse_start {
-	pushd $MY_PATH 2>&1 > /dev/null
-	java -jar fitnesse-standalone.jar -e 0 -p ${FITNESSE_PORT} &
-	popd 2>&1 > /dev/null
+	echo "# Fitnesse Info     "
+	echo "# Jar=${FITNESSE_EXECUTABLE_PATH}"
+	echo "# Port=${FITNESSE_PORT}"
+	echo "# Root=${FITNESSE_ROOT_HOME}"
+	java -jar ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT_HOME} &
 }
 
 function fitnesse_wait {
@@ -112,7 +122,7 @@ function main {
 	0)  echo "Killing Processes on Port $FITNESSE_PORT"
 		fitnesse_kill
 		;;
-	1)  echo  "Starting Fitnesse on Port $FITNESSE_PORT"
+	1)  echo  "Launching Fitnesse"
 		fitnesse_main
 		;;
 	esac

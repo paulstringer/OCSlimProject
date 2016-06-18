@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Paul Stringer" => "paulstringer@mac.me" }
   s.source           = { :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://uk.linkedin.com/in/paulstringer'
+  s.social_media_url = 'https://twitter.com/paulstringer'
 
   s.dependency 'cslim'
 #  s.dependency 'cslim', :path => "../../ObjectiveCSlim/cslim"

@@ -36,15 +36,16 @@ pod "OCSlimProject"
     
 	```
     target 'AcceptanceTests' do
+        platform :ios
 	    pod 'OCSlimProject'
     end
 	```
 * Run either ```pod install``` or ```pod update``` as needed
 * Build the 'AcceptanceTests' target to generate the Application (repeat this after each code change)
 * Launch Fitnesse by running the script ```./LaunchFitnesse``` that's generated automatically in your project's root directory
-* Follow the prompt to download [Fitnesse](http://www.fitnesse.org/FitNesseDownload) to the root of your project
+* Follow the prompt to download [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) if needed.
 * Copy the folder at OCSlimProject/Example/FitNesseRoot/OCSlimProjectExamplePage into your project's own FitNesseRoot folder
-* With Fitnesse running, check out the [example](http://localhost:8080/CocoaSlimExamplePage) provided in Fitnesse.
+* With Fitnesse running, check out the [example](http://localhost:8080/OCSlimProjectExamplePage) you just copied.
 * You're now ready to start writing [Acceptance tests and Fixtures](http://stringerstheory.net/acceptance-testing-with-ios/)  in Obj-C or Swift and excercising them with Fitnesse.
 
 

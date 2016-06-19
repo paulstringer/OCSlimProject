@@ -1,77 +1,93 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="OCSlimProject : The lightweight Xcode project template for creating fast, rock solid, non UI based Acceptance Tests using Fitnesse">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>OCSlimProject</title>
+    <meta charset="UTF-8">
+    <title>OCSlimProject by paulstringer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">OCSlimProject</h1>
+      <h2 class="project-tagline">The lightweight Xcode project template for creating fast, rock solid, non UI based Acceptance Tests using Fitnesse</h2>
+      <a href="https://github.com/paulstringer/OCSlimProject" class="btn">View on GitHub</a>
+      <a href="https://github.com/paulstringer/OCSlimProject/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/paulstringer/OCSlimProject/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/paulstringer/OCSlimProject">View on GitHub</a>
+    <section class="main-content">
+      <h1>
+<a id="ocslimproject" class="anchor" href="#ocslimproject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject</h1>
 
-          <h1 id="project_title">OCSlimProject</h1>
-          <h2 id="project_tagline">The lightweight Xcode project template for creating fast, rock solid, non UI based Acceptance Tests using Fitnesse</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/paulstringer/OCSlimProject/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/paulstringer/OCSlimProject/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p><img src="http://img.shields.io/travis/paulstringer/OCSlimProject.svg?style=flat" alt="CI Status">
-<img src="https://img.shields.io/cocoapods/v/OCSlimProject.svg?style=flat" alt="Version">
-<img src="https://img.shields.io/cocoapods/l/OCSlimProject.svg?style=flat" alt="License">
-<img src="https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat" alt="Platform"></p>
+<p><a href="https://travis-ci.org/paulstringer/OCSlimProject"><img src="http://img.shields.io/travis/paulstringer/OCSlimProject.svg?style=flat" alt="CI Status"></a>
+<a href="http://cocoapods.org/pods/OCSlimProject"><img src="https://img.shields.io/cocoapods/v/OCSlimProject.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/OCSlimProject"><img src="https://img.shields.io/cocoapods/l/OCSlimProject.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/OCSlimProject"><img src="https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat" alt="Platform"></a></p>
 
 <h3>
 <a id="ocslimproject-is-a-lightweight-xcode-project-template-and-set-of-scripts-for-creating-fast-rock-solid-non-ui-based-acceptance-tests-on-ios-and-os-x-using-fitnesse" class="anchor" href="#ocslimproject-is-a-lightweight-xcode-project-template-and-set-of-scripts-for-creating-fast-rock-solid-non-ui-based-acceptance-tests-on-ios-and-os-x-using-fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject is a lightweight Xcode project template and set of scripts for creating fast, rock solid, non UI based Acceptance Tests on iOS and OS X using <a href="http://fitnesse.org">Fitnesse</a>.</h3>
 
-<p>Check out this <a href="http://stringerstheory.net/nslondon-video/">video from NSLondon</a> to see it in action.</p>
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
-<hr>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first. 
+Check out this <a href="http://stringerstheory.net/nslondon-video/">video from NSLondon</a> to see it in action.</p>
 
 <h3>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use</h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>Xcode 7</li>
+<li>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java 1.8</a> (required for Fitnesse)</li>
+</ul>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<p>OCSlimProject is available to your own projects through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">"</span>OCSlimProject<span class="pl-pds">"</span></span></pre></div>
+
+<h2>
+<a id="how-to-use-in-your-own-project" class="anchor" href="#how-to-use-in-your-own-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use in your own Project</h2>
 
 <ul>
 <li>Download OCSlimProject</li>
 <li>Run <code>$ make</code>. This adds the Xcode project templates for creating Acceptance Test targets within Xcode (iOS &amp; OS X).</li>
-<li>Add an 'AcceptanceTests' target to your Project using the <em>Acceptance Test</em> templates now installed under the Test project categories</li>
-<li>Using CocoaPods link <em>OCSlimProject</em> to your <em>AcceptanceTests</em> target with the following Podfile entry</li>
-</ul>
+<li>Add an 'AcceptanceTests' target to your Project using the Acceptance Test templates now installed under the Test project categories</li>
+<li>
+<p>Using CocoaPods link OCSlimProject to your 'AcceptanceTests' target with the following Podfile entry</p>
 
-<pre><code>    target 'AcceptanceTests' do
-        pod 'OCSlimProject'
-    end
-</code></pre>
-
-<ul>
-<li>Run either <code>pod install</code> or  <code>pod update</code> as needed</li>
+<div class="highlight highlight-source-ruby"><pre>target <span class="pl-s"><span class="pl-pds">'</span>AcceptanceTests<span class="pl-pds">'</span></span> <span class="pl-k">do</span>
+    platform <span class="pl-c1">:ios</span>
+    pod <span class="pl-s"><span class="pl-pds">'</span>OCSlimProject<span class="pl-pds">'</span></span>
+<span class="pl-k">end</span></pre></div>
+</li>
+<li>Run either <code>pod install</code> or <code>pod update</code> as needed</li>
 <li>Build the 'AcceptanceTests' target to generate the Application (repeat this after each code change)</li>
 <li>Launch Fitnesse by running the script <code>./LaunchFitnesse</code> that's generated automatically in your project's root directory</li>
-<li>Follow the prompt to download <a href="http://www.fitnesse.org/FitNesseDownload">Fitnesse</a> to the  root of your project</li>
-<li>Copy the folder at OCSlimProject/Example/FitNesseRoot/OCSlimProjectExamplePage into your project's FitNesseRoot folder</li>
-<li>With Fitnesse running now check out the <a href="http://localhost:8080/OCSlimProjectExamplePage">OCSlimProjectExamplePage</a>.</li>
+<li>Follow the prompt to download <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java 1.8</a> if needed.</li>
+<li>Copy the folder at OCSlimProject/Example/FitNesseRoot/OCSlimProjectExamplePage into your project's own FitNesseRoot folder</li>
+<li>With Fitnesse running, check out the <a href="http://localhost:8080/OCSlimProjectExamplePage">example</a> you just copied.</li>
 <li>You're now ready to start writing <a href="http://stringerstheory.net/acceptance-testing-with-ios/">Acceptance tests and Fixtures</a>  in Obj-C or Swift and excercising them with Fitnesse.</li>
 </ul>
 
 <h1>
 <a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgements</h1>
 
-<p>The owner of this repository takes no credit for the following included resources (except for the ones credited to the owner). This is a convienient lightweight wrapper either inspired by or using these resources together with some project glue to automate the process of creating 'ocslim' based Apps for use with Fitnesse. </p>
+<p>The owner of this repository takes no credit for the following included resources (except for the ones credited to the owner). This is a convienient lightweight wrapper either inspired by or using these resources together with some project glue. The aim has been to automate the process of setting up Xcode projects so as to more easily be able to use 'ocslim' and integrate with Fitnesse. </p>
+
+<h3>
+<a id="fitnesse" class="anchor" href="#fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fitnesse</h3>
+
+<p>Created by: Fitnesse.org</p>
+
+<p><a href="http://fitnesse.org">http://fitnesse.org</a></p>
 
 <h3>
 <a id="ocslim-runteststargetwithslimport" class="anchor" href="#ocslim-runteststargetwithslimport" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlim, RunTestsTargetWithSlimPort</h3>
@@ -107,18 +123,16 @@
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
 
 <p>OCSlimProject is available under the MIT license. See the LICENSE file for more info.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">OCSlimProject maintained by <a href="https://github.com/paulstringer">paulstringer</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/paulstringer/OCSlimProject">OCSlimProject</a> is maintained by <a href="https://github.com/paulstringer">paulstringer</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-              <script type="text/javascript">
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -128,7 +142,6 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>

@@ -1,11 +1,3 @@
-//
-//  OCSlimProject_FitnesseTests.m
-//  OCSlimProject_FitnesseTests
-//
-//  Created by Paul Stringer on 22/06/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface OCSlimProject_FitnesseTests : XCTestCase

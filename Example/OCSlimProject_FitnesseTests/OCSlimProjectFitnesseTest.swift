@@ -2,6 +2,7 @@ import XCTest
 
 public class OCSlimProjectFitnesseTest: XCTestCase {
     
+  
     func exampleFail() {
         XCTAssertTrue(false)
     }

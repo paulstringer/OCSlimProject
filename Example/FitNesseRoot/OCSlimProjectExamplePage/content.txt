@@ -2,5 +2,5 @@
 !2 Try to make this !-DecisionTable-! [[test][?test]] go green!
 
 |Fixture Example|
-|input |output?|
-|foo   |bar    |
+|input |output? |
+|foo   |        |

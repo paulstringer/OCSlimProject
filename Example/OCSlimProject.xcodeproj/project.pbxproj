@@ -17,6 +17,7 @@
 		8C07D2041C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2031C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m */; };
 		8C07D2071C35388000CF88BE /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2061C35388000CF88BE /* FixtureExample.swift */; };
 		8C07D20B1C35388000CF88BE /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C07D20A1C35388000CF88BE /* Empty.xib */; };
+		8CBAFE671D1A817D007D52D2 /* OCSlimProject_FitnesseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE661D1A817D007D52D2 /* OCSlimProject_FitnesseTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,9 @@
 		8C07D2091C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTestsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C07D20A1C35388000CF88BE /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		8C07D20C1C35388000CF88BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBAFE641D1A817D007D52D2 /* OCSlimProject_FitnesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_FitnesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CBAFE661D1A817D007D52D2 /* OCSlimProject_FitnesseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_FitnesseTests.m; sourceTree = "<group>"; };
+		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CEDB5D71C1369E0009E0997 /* OCSlimProject.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = OCSlimProject.podspec; path = ../OCSlimProject.podspec; sourceTree = "<group>"; };
 		C64212E34011403DA3EA430E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CBAFE611D1A817D007D52D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +95,7 @@
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
 				8C07D1EE1C35385100CF88BE /* Example iOS Acceptance Tests */,
 				8C07D2011C35388000CF88BE /* Example Mac Acceptance Tests */,
+				8CBAFE651D1A817D007D52D2 /* OCSlimProject_FitnesseTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				2A5423F02B114B4F42D45049 /* Frameworks */,
 			);
@@ -95,6 +107,7 @@
 				607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */,
 				8C07D1ED1C35385100CF88BE /* OCSlimProject_AcceptanceTests.app */,
 				8C07D2001C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.app */,
+				8CBAFE641D1A817D007D52D2 /* OCSlimProject_FitnesseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +203,15 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		8CBAFE651D1A817D007D52D2 /* OCSlimProject_FitnesseTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CBAFE661D1A817D007D52D2 /* OCSlimProject_FitnesseTests.m */,
+				8CBAFE681D1A817D007D52D2 /* Info.plist */,
+			);
+			path = OCSlimProject_FitnesseTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +268,23 @@
 			productReference = 8C07D2001C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8CBAFE631D1A817D007D52D2 /* OCSlimProject_FitnesseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CBAFE6B1D1A817D007D52D2 /* Build configuration list for PBXNativeTarget "OCSlimProject_FitnesseTests" */;
+			buildPhases = (
+				8CBAFE601D1A817D007D52D2 /* Sources */,
+				8CBAFE611D1A817D007D52D2 /* Frameworks */,
+				8CBAFE621D1A817D007D52D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCSlimProject_FitnesseTests;
+			productName = OCSlimProject_FitnesseTests;
+			productReference = 8CBAFE641D1A817D007D52D2 /* OCSlimProject_FitnesseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +304,9 @@
 					8C07D1FF1C35388000CF88BE = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					8CBAFE631D1A817D007D52D2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OCSlimProject" */;
@@ -283,6 +325,7 @@
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
 				8C07D1EC1C35385100CF88BE /* OCSlimProject_AcceptanceTests */,
 				8C07D1FF1C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac */,
+				8CBAFE631D1A817D007D52D2 /* OCSlimProject_FitnesseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +353,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C07D20B1C35388000CF88BE /* Empty.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CBAFE621D1A817D007D52D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +419,14 @@
 			files = (
 				8C07D2071C35388000CF88BE /* FixtureExample.swift in Sources */,
 				8C07D2041C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CBAFE601D1A817D007D52D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CBAFE671D1A817D007D52D2 /* OCSlimProject_FitnesseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +614,31 @@
 			};
 			name = Release;
 		};
+		8CBAFE691D1A817D007D52D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = OCSlimProject_FitnesseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-FitnesseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CBAFE6A1D1A817D007D52D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = OCSlimProject_FitnesseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-FitnesseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -594,6 +677,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8CBAFE6B1D1A817D007D52D2 /* Build configuration list for PBXNativeTarget "OCSlimProject_FitnesseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CBAFE691D1A817D007D52D2 /* Debug */,
+				8CBAFE6A1D1A817D007D52D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,12 +19,21 @@
 		8C07D2041C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2031C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m */; };
 		8C07D2071C35388000CF88BE /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2061C35388000CF88BE /* FixtureExample.swift */; };
 		8C07D20B1C35388000CF88BE /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C07D20A1C35388000CF88BE /* Empty.xib */; };
+		8C4869B81D1BF6BF003E4448 /* Fitnesse-Test-Report.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C4869B71D1BF6BF003E4448 /* Fitnesse-Test-Report.xml */; };
+		8C4869BA1D1BF783003E4448 /* OCSlimFitnesseTestReportReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4869B91D1BF783003E4448 /* OCSlimFitnesseTestReportReader.swift */; };
+		8CAB865B1D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB865A1D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.m */; };
+		8CAB865D1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB865C1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m */; };
+		8CAB86601D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB865F1D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift */; };
+		8CAB86621D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB86611D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift */; };
 		8CBAFE671D1A817D007D52D2 /* OCSlimProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE661D1A817D007D52D2 /* OCSlimProjectTests.m */; };
 		8CBAFE711D1A8B40007D52D2 /* OCSlimProjectFitnesseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE701D1A8B40007D52D2 /* OCSlimProjectFitnesseTest.swift */; };
 		8CF88A561D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A551D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift */; };
 		8CF88A581D1A9ECF001C6C5E /* SuiteTestResultFailures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CF88A571D1A9ECF001C6C5E /* SuiteTestResultFailures.xml */; };
 		8CF88A5B1D1AAAE7001C6C5E /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CF88A5A1D1AAAE7001C6C5E /* SuiteTestResultSuccess.xml */; };
 		8CF88A5D1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A5C1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift */; };
+		8CF88A611D1AC050001C6C5E /* OCSlimProjectFitnesseTestMainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A601D1AC050001C6C5E /* OCSlimProjectFitnesseTestMainTests.m */; };
+		8CF88A621D1AC145001C6C5E /* OCSlimProjectFitnesseTestsMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE6D1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.m */; };
+		8CF88A6C1D1AD0F5001C6C5E /* OCSlimProjectTestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A681D1ACD95001C6C5E /* OCSlimProjectTestDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +61,13 @@
 		8C07D2091C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTestsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C07D20A1C35388000CF88BE /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		8C07D20C1C35388000CF88BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4869B71D1BF6BF003E4448 /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Fitnesse-Test-Report.xml"; sourceTree = "<group>"; };
+		8C4869B91D1BF783003E4448 /* OCSlimFitnesseTestReportReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimFitnesseTestReportReader.swift; sourceTree = "<group>"; };
+		8CAB86591D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSlimProjectJUnitTestAsserter.h; sourceTree = "<group>"; };
+		8CAB865A1D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectJUnitTestAsserter.m; sourceTree = "<group>"; };
+		8CAB865C1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectJUnitTestAsserterTests.m; sourceTree = "<group>"; };
+		8CAB865F1D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimProjectAssertRecorder.swift; sourceTree = "<group>"; };
+		8CAB86611D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimFitnesseTestReportReaderTests.swift; sourceTree = "<group>"; };
 		8CBAFE641D1A817D007D52D2 /* OCSlimProject_FitnesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_FitnesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBAFE661D1A817D007D52D2 /* OCSlimProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTests.m; sourceTree = "<group>"; };
 		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +80,8 @@
 		8CF88A571D1A9ECF001C6C5E /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultFailures.xml; sourceTree = "<group>"; };
 		8CF88A5A1D1AAAE7001C6C5E /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
 		8CF88A5C1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnesseTestSuiteXMLResultParser.swift; sourceTree = "<group>"; };
+		8CF88A601D1AC050001C6C5E /* OCSlimProjectFitnesseTestMainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectFitnesseTestMainTests.m; sourceTree = "<group>"; };
+		8CF88A681D1ACD95001C6C5E /* OCSlimProjectTestDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimProjectTestDataManager.swift; sourceTree = "<group>"; };
 		A1D08F98F35CCEE991C6CD88 /* Pods-OCSlimProject_AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTests/Pods-OCSlimProject_AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		C44AFA44BC46EA63A14182D1 /* libPods-OCSlimProject_AcceptanceTestsMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceTestsMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64212E34011403DA3EA430E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -240,17 +258,26 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		8CAB865E1D1C074600773B43 /* JUnit Test Asserter */ = {
+			isa = PBXGroup;
+			children = (
+				8CAB86591D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.h */,
+				8CAB865A1D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.m */,
+				8CAB865C1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m */,
+				8CAB865F1D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift */,
+			);
+			name = "JUnit Test Asserter";
+			sourceTree = "<group>";
+		};
 		8CBAFE651D1A817D007D52D2 /* Example Fitnesse Acceptance Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8CBAFE661D1A817D007D52D2 /* OCSlimProjectTests.m */,
 				8CBAFE701D1A8B40007D52D2 /* OCSlimProjectFitnesseTest.swift */,
-				8CBAFE6C1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.h */,
-				8CBAFE6D1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.m */,
-				8CF88A5C1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift */,
-				8CF88A551D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift */,
+				8CAB865E1D1C074600773B43 /* JUnit Test Asserter */,
+				8CF88A6A1D1ACDB2001C6C5E /* Fitnesse Test Main */,
+				8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */,
+				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
 				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,
-				8CF88A591D1AA2F7001C6C5E /* Fitnesse Test Result Examples */,
 			);
 			name = "Example Fitnesse Acceptance Tests";
 			path = OCSlimProject_FitnesseTests;
@@ -261,17 +288,57 @@
 			children = (
 				8CBAFE681D1A817D007D52D2 /* Info.plist */,
 				8CBAFE6F1D1A8B40007D52D2 /* OCSlimProject_FitnesseTests-Bridging-Header.h */,
+				8CBAFE661D1A817D007D52D2 /* OCSlimProjectTests.m */,
+				8C4869B71D1BF6BF003E4448 /* Fitnesse-Test-Report.xml */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8CF88A591D1AA2F7001C6C5E /* Fitnesse Test Result Examples */ = {
+		8CF88A591D1AA2F7001C6C5E /* Test Data Examples */ = {
 			isa = PBXGroup;
 			children = (
 				8CF88A571D1A9ECF001C6C5E /* SuiteTestResultFailures.xml */,
 				8CF88A5A1D1AAAE7001C6C5E /* SuiteTestResultSuccess.xml */,
 			);
-			name = "Fitnesse Test Result Examples";
+			name = "Test Data Examples";
+			sourceTree = "<group>";
+		};
+		8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */ = {
+			isa = PBXGroup;
+			children = (
+				8CF88A671D1ACD5C001C6C5E /* Test Data Reader */,
+				8CF88A591D1AA2F7001C6C5E /* Test Data Examples */,
+			);
+			name = "Fitnesse Test Data Support";
+			sourceTree = "<group>";
+		};
+		8CF88A671D1ACD5C001C6C5E /* Test Data Reader */ = {
+			isa = PBXGroup;
+			children = (
+				8C4869B91D1BF783003E4448 /* OCSlimFitnesseTestReportReader.swift */,
+				8CAB86611D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift */,
+				8CF88A681D1ACD95001C6C5E /* OCSlimProjectTestDataManager.swift */,
+			);
+			name = "Test Data Reader";
+			sourceTree = "<group>";
+		};
+		8CF88A6A1D1ACDB2001C6C5E /* Fitnesse Test Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CBAFE6C1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.h */,
+				8CBAFE6D1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.m */,
+				8CF88A601D1AC050001C6C5E /* OCSlimProjectFitnesseTestMainTests.m */,
+			);
+			name = "Fitnesse Test Main";
+			sourceTree = "<group>";
+		};
+		8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8CF88A5C1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift */,
+				8CF88A551D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift */,
+			);
+			name = "Fitnesse Test Results XML Parser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4869B81D1BF6BF003E4448 /* Fitnesse-Test-Report.xml in Resources */,
 				8CF88A5B1D1AAAE7001C6C5E /* SuiteTestResultSuccess.xml in Resources */,
 				8CF88A581D1A9ECF001C6C5E /* SuiteTestResultFailures.xml in Resources */,
 			);
@@ -586,10 +654,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF88A611D1AC050001C6C5E /* OCSlimProjectFitnesseTestMainTests.m in Sources */,
 				8CBAFE711D1A8B40007D52D2 /* OCSlimProjectFitnesseTest.swift in Sources */,
+				8CF88A621D1AC145001C6C5E /* OCSlimProjectFitnesseTestsMain.m in Sources */,
+				8CAB865B1D1C063900773B43 /* OCSlimProjectJUnitTestAsserter.m in Sources */,
+				8CAB86601D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift in Sources */,
 				8CF88A5D1D1AAF85001C6C5E /* FitnesseTestSuiteXMLResultParser.swift in Sources */,
+				8CAB86621D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift in Sources */,
 				8CF88A561D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift in Sources */,
+				8CAB865D1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m in Sources */,
 				8CBAFE671D1A817D007D52D2 /* OCSlimProjectTests.m in Sources */,
+				8C4869BA1D1BF783003E4448 /* OCSlimFitnesseTestReportReader.swift in Sources */,
+				8CF88A6C1D1AD0F5001C6C5E /* OCSlimProjectTestDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

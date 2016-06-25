@@ -2,7 +2,6 @@ import XCTest
 
 public class OCSlimProjectFitnesseTest: XCTestCase {
     
-  
     func exampleFail() {
         XCTAssertTrue(false)
     }
@@ -14,5 +13,7 @@ public class OCSlimProjectFitnesseTest: XCTestCase {
     func example(assert: Bool) {
         XCTAssertTrue(assert);
     }
+    
+    static let testSuiteName = NSStringFromClass(OCSlimProjectFitnesseTest.self).componentsSeparatedByString(".").last
     
 }

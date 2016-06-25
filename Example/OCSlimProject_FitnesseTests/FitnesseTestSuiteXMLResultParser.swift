@@ -1,22 +1,9 @@
-//
-//  FitnesseTestSuiteXMLResultParser.swift
-//  OCSlimProject
-//
-//  Created by Paul Stringer on 22/06/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
+import Foundation
 
-import XCTest
-
-class FitnesseTestSuiteXMLResultParser: XCTestCase, NSXMLParserDelegate {
+class FitnesseTestSuiteXMLResultParser: NSObject, NSXMLParserDelegate {
     
     var failedTestSuiteCount = 0
     
-    func assertResultWithJUnitTestSuiteData(data: NSData) {
-        let result = resultForTestSuiteXMLData(data)
-        XCTAssertTrue(result)
-    }
-
     internal func resultForTestSuiteXMLData(data: NSData) -> Bool {
         parseTestSuiteXMLData(data)
         return failedTestSuiteCount == 0

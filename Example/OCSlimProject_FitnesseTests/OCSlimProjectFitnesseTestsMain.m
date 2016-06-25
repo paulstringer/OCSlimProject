@@ -1,10 +1,6 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
-#import <XCTest/XCTest.h>
 #import "OCSlimProject_FitnesseTests-Swift.h"
-
-@interface OCSlimProjectFitnesseTestsMain () <XCTestObservation>
-
-@end
+#import "OCSlimProjectJUnitTestAsserter.h"
 
 @implementation OCSlimProjectFitnesseTestsMain
 
@@ -19,25 +15,46 @@
     return self;
 }
 
+
 #pragma mark - XCTestObservation
 
 - (void)testSuiteWillStart:(XCTestSuite *)testSuite {
     
-    NSString *testSuiteName = NSStringFromClass([OCSlimProjectFitnesseTest class]).pathExtension;
+    NSString *testSuiteName = [OCSlimProjectFitnesseTest testSuiteName];
     
     for (XCTest *suite in [testSuite tests]) {
         
         if ([suite.name isEqualToString:testSuiteName]) {
             
-            [OCSlimProjectFitnesseTestsMain addFitnesseTestsToSuite:(XCTestSuite*)suite];
+            XCTestCase *test = [self test];
+            
+            [(XCTestSuite*)suite addTest:test];
             
         }
     }
 }
 
+- (void)testBundleDidFinish:(NSBundle *)testBundle {
+    
+    [[XCTestObservationCenter sharedTestObservationCenter] removeTestObserver:self];
+    
+}
+
+#pragma mark - Private
+
+- (XCTestCase *)test {
+    
+    NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
+    
+    XCTestCase *test = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:data];
+    
+    return test;
+
+}
+
 #pragma mark - Dynamic Test Case Helpers
 
-+ (void)addFitnesseTestsToSuite:(XCTestSuite *)suite {
++ (void)addDummyFitnesseTestsToSuite:(XCTestSuite *)suite {
     
     // Example Standard Test Invocations
     [OCSlimProjectFitnesseTestsMain addFitnesseTestWithSelector:@selector(exampleFail) toSuite:suite];
@@ -72,3 +89,19 @@
 }
 
 @end
+
+
+//            NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
+
+//            NSInvocation *invocation = [FitnesseTestSuiteXMLResultParser instanceMethodSignatureForSelector:@selector(assertResultWithJUnitTestSuiteData:)];
+//
+//            [invocation setArgument:&data atIndex:2];
+//
+//            [invocation retainArguments];
+//
+//            FitnesseTestSuiteXMLResultParser *test = [[FitnesseTestSuiteXMLResultParser alloc] initWithInvocation:invocation];
+//
+//            [(XCTestSuite*) suite addTest:test];
+
+
+//            [OCSlimProjectFitnesseTestsMain addDummyFitnesseTestsToSuite:(XCTestSuite*)suite];

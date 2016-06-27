@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} --test OCSlimProjectExamplePage  &gt; ${PROJECT_DIR}OCSlimProjectFitnesseTestsMac.log">
+               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} --test OCSlimProjectExamplePage  &gt; ${PROJECT_DIR}/OCSlimProjectFitnesseTestsMac.log">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

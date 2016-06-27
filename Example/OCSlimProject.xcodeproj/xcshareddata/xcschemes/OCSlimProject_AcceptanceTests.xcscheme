@@ -32,13 +32,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} --test OCSlimProjectExamplePage &gt; ${PROJECT_DIR}OCSlimProjectFitnesseTest.log">
+               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} --test OCSlimProjectExamplePage &gt; ${PROJECT_DIR}/OCSlimProjectFitnesseTest.log">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "8CBAFE631D1A817D007D52D2"
-                     BuildableName = "OCSlimProject_FitnesseTests.xctest"
-                     BlueprintName = "OCSlimProject_FitnesseTests"
+                     BlueprintIdentifier = "8C07D1EC1C35385100CF88BE"
+                     BuildableName = "OCSlimProject_AcceptanceTests.app"
+                     BlueprintName = "OCSlimProject_AcceptanceTests"
                      ReferencedContainer = "container:OCSlimProject.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>

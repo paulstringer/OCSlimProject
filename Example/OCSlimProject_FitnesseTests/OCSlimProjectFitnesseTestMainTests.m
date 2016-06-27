@@ -6,8 +6,6 @@
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
 
 @property (nonatomic, strong) OCSlimProjectFitnesseTestsMain* main;
-@property (nonatomic, strong) XCTestSuite *allTestsSuite;
-@property (nonatomic, strong) XCTestSuite *fitnesseTestSuite;
 @end
 
 @implementation OCSlimProjectFitnesseTestMainTests
@@ -18,97 +16,54 @@
     
     self.main = [[OCSlimProjectFitnesseTestsMain alloc] init];
 
-    [self createAllTestsSuite];
-
 }
 
-- (void)testSuiteWillStartAddsFitnesseTestSuiteResult {
+- (void)testInitialisesAndRunsFitnesseTestSuite {
+
+    XCTAssertNotNil([[OCSlimProjectFitnesseTestsMain testRun] startDate]);
     
-    NSString *path = [[[OCSlimProjectTestDataManager alloc] init] failedResultPath];
+    XCTAssertNotEqual([[OCSlimProjectFitnesseTestsMain testRun] executionCount], 0);
     
-    [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
-    
-    [self.main testSuiteWillStart:self.allTestsSuite];
-    
-    XCTAssertEqual(self.fitnesseTestSuite.testCaseCount, 1);
 }
 
-- (void)testSuiteWillStartAddsFitnesseTestSuiteResultAsJunitAssert{
+- (void)tesFitnesseTestIsJunitAssert{
     
-    NSString *path = [[[OCSlimProjectTestDataManager alloc] init] failedResultPath];
-    
-    [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
-    
-    [self.main testSuiteWillStart:self.allTestsSuite];
-    
-    XCTestCase *test = self.fitnesseTestSuite.tests.firstObject;
+    XCTestCase *test = [self fitnesseTestCase];
     
     XCTAssertEqual([test class], [OCSlimProjectJUnitTestAsserter class]);
 }
 
-- (void)testSuiteCreatesTestWithTestReportData {
+- (void)testFitnesseTestReadsDefaultReaderTestReportData {
+
+    NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
     
-    NSString *path = [[[OCSlimProjectTestDataManager alloc] init] failedResultPath];
+    OCSlimProjectJUnitTestAsserter *test = (OCSlimProjectJUnitTestAsserter *)[self fitnesseTestCase];
     
-    NSData * data = [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
-    
-    [self.main testSuiteWillStart:self.allTestsSuite];
-    
-    OCSlimProjectJUnitTestAsserter *test = self.fitnesseTestSuite.tests.firstObject;
-    
-    XCTAssertEqual(test.data, data);
+    XCTAssertTrue([test.data isEqualToData:data]);
     
 }
-
-- (void)tearDown {
-    
-    [super tearDown];
-    
-    [self.main testBundleDidFinish:[[NSBundle alloc] init]];
-}
-
 
 #pragma mark - Test Helpers
 
-- (void)createAllTestsSuite {
+- (XCTestCase *)fitnesseTestCase {
     
-    self.allTestsSuite = [OCSlimProjectFitnesseTestMainTests allTestsSuiteWithFitnesseTestSuite];
+    XCTestSuite *suite = (XCTestSuite*)[[OCSlimProjectFitnesseTestsMain testRun] test];
     
-    self.fitnesseTestSuite = [OCSlimProjectFitnesseTestMainTests fitnesseTestSuiteInTestsSuite:self.allTestsSuite];
+    XCTestCase *test = [[suite tests] firstObject];
     
-}
-+ (XCTestSuite *)allTestsSuiteWithFitnesseTestSuite {
+    return test;
     
-    XCTestSuite *allTestsSuite = [XCTestSuite defaultTestSuite];
-    
-    XCTestSuite *suite = [XCTestSuite testSuiteWithName:[OCSlimProjectFitnesseTestSuite suiteName]];
-    
-    [allTestsSuite addTest:suite];
-    
-    return allTestsSuite;
 }
 
-+ (XCTestSuite*)fitnesseTestSuiteInTestsSuite:(XCTestSuite*)allTestsSuite {
-    
-    for (XCTestSuite *suite in [allTestsSuite tests]) {
-        
-        if ([suite.name isEqualToString:[OCSlimProjectFitnesseTestSuite suiteName]]) {
-            return suite;
-        }
-    }
-    
-    return nil;
-}
-
-+ (NSData *)createFitnesseTestReportFileWithDataAtFilePath:(NSString *)file {
-
-    NSData *contents = [NSData dataWithContentsOfFile:file];
-    
-    OCSlimFitnesseTestReportReaderStub *reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:contents];
-    
-    [OCSlimFitnesseTestReportCenter setDefaultReader:reader];
-    
-    return contents;
-}
+//+ (NSData *)createFitnesseTestReportFileWithDataAtFilePath:(NSString *)file {
+//
+//    NSData *contents = [NSData dataWithContentsOfFile:file];
+//    
+//    OCSlimFitnesseTestReportReaderStub *reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:contents];
+//    
+//    [OCSlimFitnesseTestReportCenter setDefaultReader:reader];
+//    
+//    return contents;
+//}
 
 @end

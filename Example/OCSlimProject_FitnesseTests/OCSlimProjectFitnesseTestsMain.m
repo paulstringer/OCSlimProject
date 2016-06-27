@@ -2,6 +2,8 @@
 #import "OCSlimProject_FitnesseTests-Swift.h"
 #import "OCSlimProjectJUnitTestAsserter.h"
 
+
+
 @implementation OCSlimProjectFitnesseTestsMain
 
 - (id)init {
@@ -15,27 +17,12 @@
     return self;
 }
 
-
 #pragma mark - XCTestObservation
 
-- (void)testSuiteWillStart:(XCTestSuite *)testSuite {
+- (void)testBundleWillStart:(NSBundle *)testBundle {
     
-    NSString *testSuiteName = [OCSlimProjectFitnesseTestSuite suiteName];
+    [OCSlimProjectFitnesseTestsMain runFitnesseTests];
     
-    NSLog(@"Test Suite %@  will start",testSuite.name);
-    
-    for (XCTest *suite in [testSuite tests]) {
-    
-        NSLog(@"Found Suite %@ in that suite",suite.name);
-        
-        if ([suite.name isEqualToString:testSuiteName]) {
-            
-            XCTestCase *test = [self test];
-            
-            [(XCTestSuite*)suite addTest:test];
-            
-        }
-    }
 }
 
 - (void)testBundleDidFinish:(NSBundle *)testBundle {
@@ -44,15 +31,46 @@
     
 }
 
+#pragma mark - XCTestRun Setup
+
+static XCTestRun *testRun;
+
++ (XCTestRun *)testRun {
+    
+    return testRun;
+    
+}
+
++ (void)runFitnesseTests {
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        
+        XCTestSuite *suite = [self testSuite];
+        
+        [suite runTest];
+        
+        testRun = suite.testRun;
+        
+    });
+    
+}
+
 #pragma mark - Private
 
-- (XCTestCase *)test {
++ (XCTestSuite *)testSuite {
     
     NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
     
     XCTestCase *test = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:data];
     
-    return test;
+    
+    XCTestSuite *suite = [OCSlimProjectFitnesseTestSuite new];
+    
+    [suite addTest:test];
+    
+    return suite;
 
 }
 

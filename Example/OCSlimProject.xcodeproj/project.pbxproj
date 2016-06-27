@@ -25,6 +25,7 @@
 		8CAB865D1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB865C1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m */; };
 		8CAB86601D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB865F1D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift */; };
 		8CAB86621D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB86611D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift */; };
+		8CAB86681D219B1600773B43 /* TestData.xcappdata in Resources */ = {isa = PBXBuildFile; fileRef = 8CAB86671D219B1600773B43 /* TestData.xcappdata */; };
 		8CBAFE711D1A8B40007D52D2 /* OCSlimProjectFitnesseTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE701D1A8B40007D52D2 /* OCSlimProjectFitnesseTestSuite.swift */; };
 		8CF88A561D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A551D1A9B45001C6C5E /* FitnesseTestSuiteXMLResultParserTests.swift */; };
 		8CF88A581D1A9ECF001C6C5E /* SuiteTestResultFailures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CF88A571D1A9ECF001C6C5E /* SuiteTestResultFailures.xml */; };
@@ -34,6 +35,16 @@
 		8CF88A621D1AC145001C6C5E /* OCSlimProjectFitnesseTestsMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAFE6D1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.m */; };
 		8CF88A6C1D1AD0F5001C6C5E /* OCSlimProjectTestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF88A681D1ACD95001C6C5E /* OCSlimProjectTestDataManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CAB86631D214C2D00773B43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C07D1EC1C35385100CF88BE;
+			remoteInfo = OCSlimProject_AcceptanceTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0EDA6381A5ADAE2C29FFD75D /* Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +78,7 @@
 		8CAB865C1D1C074000773B43 /* OCSlimProjectJUnitTestAsserterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectJUnitTestAsserterTests.m; sourceTree = "<group>"; };
 		8CAB865F1D1C2C3300773B43 /* OCSlimProjectAssertRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimProjectAssertRecorder.swift; sourceTree = "<group>"; };
 		8CAB86611D1F250A00773B43 /* OCSlimFitnesseTestReportReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSlimFitnesseTestReportReaderTests.swift; sourceTree = "<group>"; };
+		8CAB86671D219B1600773B43 /* TestData.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestData.xcappdata; sourceTree = "<group>"; };
 		8CBAFE641D1A817D007D52D2 /* OCSlimProject_FitnesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_FitnesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CBAFE6C1D1A8215007D52D2 /* OCSlimProjectFitnesseTestsMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSlimProjectFitnesseTestsMain.h; sourceTree = "<group>"; };
@@ -143,6 +155,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				8CAB86671D219B1600773B43 /* TestData.xcappdata */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
 				8C07D1EE1C35385100CF88BE /* Example iOS Acceptance Tests */,
@@ -411,6 +424,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8CAB86641D214C2D00773B43 /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_FitnesseTests;
 			productName = OCSlimProject_FitnesseTests;
@@ -469,6 +483,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				8CAB86681D219B1600773B43 /* TestData.xcappdata in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +681,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CAB86641D214C2D00773B43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C07D1EC1C35385100CF88BE /* OCSlimProject_AcceptanceTests */;
+			targetProxy = 8CAB86631D214C2D00773B43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {

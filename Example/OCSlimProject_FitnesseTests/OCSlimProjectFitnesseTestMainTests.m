@@ -6,7 +6,7 @@
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
 
 @property (nonatomic, strong) OCSlimProjectFitnesseTestsMain* main;
-@property (nonatomic, strong) XCTestSuite *fitnesseTestSuiteContainer;
+@property (nonatomic, strong) XCTestSuite *allTestsSuite;
 @property (nonatomic, strong) XCTestSuite *fitnesseTestSuite;
 @end
 
@@ -17,18 +17,18 @@
     [super setUp];
     
     self.main = [[OCSlimProjectFitnesseTestsMain alloc] init];
-    
-    self.fitnesseTestSuiteContainer = [OCSlimProjectFitnesseTestMainTests wrappedFitnesseTestSuite];
-    
-    self.fitnesseTestSuite = [OCSlimProjectFitnesseTestMainTests unwrappedFitnesseTestSuite:self.fitnesseTestSuiteContainer];
+
+    [self createAllTestsSuite];
+
 }
 
 - (void)testSuiteWillStartAddsFitnesseTestSuiteResult {
     
     NSString *path = [[[OCSlimProjectTestDataManager alloc] init] failedResultPath];
+    
     [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
     
-    [self.main testSuiteWillStart:self.fitnesseTestSuiteContainer];
+    [self.main testSuiteWillStart:self.allTestsSuite];
     
     XCTAssertEqual(self.fitnesseTestSuite.testCaseCount, 1);
 }
@@ -39,7 +39,7 @@
     
     [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
     
-    [self.main testSuiteWillStart:self.fitnesseTestSuiteContainer];
+    [self.main testSuiteWillStart:self.allTestsSuite];
     
     XCTestCase *test = self.fitnesseTestSuite.tests.firstObject;
     
@@ -52,7 +52,7 @@
     
     NSData * data = [[self class] createFitnesseTestReportFileWithDataAtFilePath:path];
     
-    [self.main testSuiteWillStart:self.fitnesseTestSuiteContainer];
+    [self.main testSuiteWillStart:self.allTestsSuite];
     
     OCSlimProjectJUnitTestAsserter *test = self.fitnesseTestSuite.tests.firstObject;
     
@@ -70,22 +70,29 @@
 
 #pragma mark - Test Helpers
 
-+ (XCTestSuite *)wrappedFitnesseTestSuite {
+- (void)createAllTestsSuite {
     
-    XCTestSuite *parentSuite = [XCTestSuite defaultTestSuite];
+    self.allTestsSuite = [OCSlimProjectFitnesseTestMainTests allTestsSuiteWithFitnesseTestSuite];
     
-    XCTestSuite *suite = [XCTestSuite testSuiteWithName:[OCSlimProjectFitnesseTest testSuiteName]];
+    self.fitnesseTestSuite = [OCSlimProjectFitnesseTestMainTests fitnesseTestSuiteInTestsSuite:self.allTestsSuite];
     
-    [parentSuite addTest:suite];
+}
++ (XCTestSuite *)allTestsSuiteWithFitnesseTestSuite {
     
-    return parentSuite;
+    XCTestSuite *allTestsSuite = [XCTestSuite defaultTestSuite];
+    
+    XCTestSuite *suite = [XCTestSuite testSuiteWithName:[OCSlimProjectFitnesseTestSuite suiteName]];
+    
+    [allTestsSuite addTest:suite];
+    
+    return allTestsSuite;
 }
 
-+ (XCTestSuite*)unwrappedFitnesseTestSuite:(XCTestSuite*)parentSuite {
++ (XCTestSuite*)fitnesseTestSuiteInTestsSuite:(XCTestSuite*)allTestsSuite {
     
-    for (XCTestSuite *suite in [parentSuite tests]) {
+    for (XCTestSuite *suite in [allTestsSuite tests]) {
         
-        if ([suite.name isEqualToString:[OCSlimProjectFitnesseTest testSuiteName]]) {
+        if ([suite.name isEqualToString:[OCSlimProjectFitnesseTestSuite suiteName]]) {
             return suite;
         }
     }

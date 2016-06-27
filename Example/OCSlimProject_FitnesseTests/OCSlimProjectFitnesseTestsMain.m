@@ -20,9 +20,13 @@
 
 - (void)testSuiteWillStart:(XCTestSuite *)testSuite {
     
-    NSString *testSuiteName = [OCSlimProjectFitnesseTest testSuiteName];
+    NSString *testSuiteName = [OCSlimProjectFitnesseTestSuite suiteName];
+    
+    NSLog(@"Test Suite %@  will start",testSuite.name);
     
     for (XCTest *suite in [testSuite tests]) {
+    
+        NSLog(@"Found Suite %@ in that suite",suite.name);
         
         if ([suite.name isEqualToString:testSuiteName]) {
             
@@ -54,39 +58,28 @@
 
 #pragma mark - Dynamic Test Case Helpers
 
-+ (void)addDummyFitnesseTestsToSuite:(XCTestSuite *)suite {
-    
-    // Example Standard Test Invocations
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithSelector:@selector(exampleFail) toSuite:suite];
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithSelector:@selector(examplePass) toSuite:suite];
-    
-    // Example Test Invocations With Arguments
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithSelector:@selector(exampleAssert:) arg:YES toSuite: suite];
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithSelector:@selector(exampleAssert:) arg:NO toSuite: suite];
-}
-
-+ (void)addFitnesseTestWithSelector:(SEL)selector arg:(BOOL)assert toSuite:(XCTestSuite *)suite {
-    NSInvocation *invocation = [self invocationWithSelector:@selector(example:)];
-    [invocation setArgument:&assert atIndex:2];
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithInvocation:invocation toSuite:suite];
-}
-
-+ (void)addFitnesseTestWithSelector:(SEL)selector toSuite:(XCTestSuite *)suite {
-    NSInvocation *invocation = [self invocationWithSelector:selector];
-    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithInvocation:invocation toSuite:suite];
-}
-
-+ (void)addFitnesseTestWithInvocation:(NSInvocation *)invocation toSuite:(XCTestSuite *)suite {
-    XCTestCase *test = [[OCSlimProjectFitnesseTest alloc] initWithInvocation:invocation];
-    [suite addTest:test];
-}
-
-+ (NSInvocation *)invocationWithSelector:(SEL)selector {
-    NSMethodSignature *signature = [OCSlimProjectFitnesseTest instanceMethodSignatureForSelector:selector];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-    [invocation setSelector:selector];
-    return invocation;
-}
+//+ (void)addFitnesseTestWithSelector:(SEL)selector arg:(BOOL)assert toSuite:(XCTestSuite *)suite {
+//    NSInvocation *invocation = [self invocationWithSelector:@selector(example:)];
+//    [invocation setArgument:&assert atIndex:2];
+//    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithInvocation:invocation toSuite:suite];
+//}
+//
+//+ (void)addFitnesseTestWithSelector:(SEL)selector toSuite:(XCTestSuite *)suite {
+//    NSInvocation *invocation = [self invocationWithSelector:selector];
+//    [OCSlimProjectFitnesseTestsMain addFitnesseTestWithInvocation:invocation toSuite:suite];
+//}
+//
+//+ (void)addFitnesseTestWithInvocation:(NSInvocation *)invocation toSuite:(XCTestSuite *)suite {
+//    XCTestCase *test = [[OCSlimProjectFitnesseTest alloc] initWithInvocation:invocation];
+//    [suite addTest:test];
+//}
+//
+//+ (NSInvocation *)invocationWithSelector:(SEL)selector {
+//    NSMethodSignature *signature = [OCSlimProjectFitnesseTest instanceMethodSignatureForSelector:selector];
+//    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+//    [invocation setSelector:selector];
+//    return invocation;
+//}
 
 @end
 

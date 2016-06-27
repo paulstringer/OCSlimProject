@@ -10,13 +10,29 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} -b ${PROJECT_DIR}/${TARGET_NAME}/Fitnesse-Test-Report.xml --test OCSlimProjectExamplePage &gt;&gt; ${PROJECT_DIR}/OCSlimProjectFitnesseTest.log">
+               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;${PROJECT_DIR}/Fitnesse-Test-Report.xml&quot; --test &quot;OCSlimProjectExamplePage&quot; &gt; &quot;${PROJECT_DIR}/OCSlimProjectFitnesseTest.log&quot;&#10;fi&#10;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "8C07D1EC1C35385100CF88BE"
                      BuildableName = "OCSlimProject_AcceptanceTests.app"
                      BlueprintName = "OCSlimProject_AcceptanceTests"
+                     ReferencedContainer = "container:OCSlimProject.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "mkdir -p &quot;${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}&quot;&#10;mv &quot;$PROJECT_DIR/Fitnesse-Test-Report.xml&quot; &quot;${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fitnesse-Test-Report.xml&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "8CBAFE631D1A817D007D52D2"
+                     BuildableName = "OCSlimProject_FitnesseTests.xctest"
+                     BlueprintName = "OCSlimProject_FitnesseTests"
                      ReferencedContainer = "container:OCSlimProject.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>

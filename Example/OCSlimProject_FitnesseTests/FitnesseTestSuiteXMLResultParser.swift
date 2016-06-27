@@ -29,4 +29,9 @@ class FitnesseTestSuiteXMLResultParser: NSObject, NSXMLParserDelegate {
         
         parseTestSuiteFailuresForElementAttributes(attributes: attributeDict)
     }
+    
+    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+        
+        fatalError(parseError.localizedDescription)
+    }
 }

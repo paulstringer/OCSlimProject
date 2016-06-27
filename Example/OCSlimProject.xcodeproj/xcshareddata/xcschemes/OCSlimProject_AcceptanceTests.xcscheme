@@ -5,6 +5,24 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} -b ${PROJECT_DIR}/${TARGET_NAME}/Fitnesse-Test-Report.xml --test OCSlimProjectExamplePage &gt;&gt; ${PROJECT_DIR}/OCSlimProjectFitnesseTest.log">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "8C07D1EC1C35385100CF88BE"
+                     BuildableName = "OCSlimProject_AcceptanceTests.app"
+                     BlueprintName = "OCSlimProject_AcceptanceTests"
+                     ReferencedContainer = "container:OCSlimProject.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -27,24 +45,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <PreActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d ${PROJECT_DIR} --test OCSlimProjectExamplePage &gt; ${PROJECT_DIR}/OCSlimProjectFitnesseTest.log">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "8C07D1EC1C35385100CF88BE"
-                     BuildableName = "OCSlimProject_AcceptanceTests.app"
-                     BlueprintName = "OCSlimProject_AcceptanceTests"
-                     ReferencedContainer = "container:OCSlimProject.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PreActions>
       <Testables>
          <TestableReference
             skipped = "NO">

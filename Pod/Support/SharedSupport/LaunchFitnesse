@@ -3,7 +3,7 @@
 ##############
 
 MY_PATH=$(dirname $0)
-SCRIPT_DIR=$(dirname "$(readlink "${BASH_SOURCE[0]}")")
+BUNDLE_DIR=$(dirname "$(readlink "${BASH_SOURCE[0]}")")
 ACTION=LAUNCH
 CURL_CONNECTION_REFUSED_CODE=7
 
@@ -12,9 +12,10 @@ CURL_CONNECTION_REFUSED_CODE=7
 #################
 
 FITNESSE_PORT=8080
-FITNESSE_EXECUTABLE_PATH=${SCRIPT_DIR}/fitnesse-standalone.jar
+FITNESSE_EXECUTABLE_PATH=${BUNDLE_DIR}/fitnesse-standalone.jar
 FITNESSE_ROOT_CONTENT_FILE=FitnesseRoot/content.txt
 FITNESSE_URL=http:"//localhost:${FITNESSE_PORT}/"
+FITNESSE_TEST_REPORT_NAME=${BUNDLE_DIR}Fitnesse-JUnit-Test-Report.xml
 
 ####################################
 # Command Line Argument Processing #
@@ -141,7 +142,7 @@ function fitnesse_launch_in_browser {
 
 function fitnesse_generate_test_suite_report {
 	fitnesse_main
-	curl $FITNESSE_URL\?suite\&format\=junit > Fitnesse-Test-Report.xml
+	curl $FITNESSE_URL\?suite\&format\=junit > $FITNESSE_TEST_REPORT_NAME
 	fitnesse_shutdown
 }
 

@@ -55,15 +55,4 @@
     
 }
 
-//+ (NSData *)createFitnesseTestReportFileWithDataAtFilePath:(NSString *)file {
-//
-//    NSData *contents = [NSData dataWithContentsOfFile:file];
-//    
-//    OCSlimFitnesseTestReportReaderStub *reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:contents];
-//    
-//    [OCSlimFitnesseTestReportCenter setDefaultReader:reader];
-//    
-//    return contents;
-//}
-
 @end

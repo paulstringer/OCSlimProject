@@ -28,4 +28,15 @@ public class OCSlimProjectTestDataManager : NSObject{
 
     }
     
+    class func createFitnesseTestReportFileWithDataAtFilePath(path: String) -> NSData {
+        
+        let contents = NSData(contentsOfFile: path)!
+        
+        let reader = OCSlimFitnesseTestReportReaderStub(data: contents)
+        
+        OCSlimFitnesseTestReportCenter.defaultReader = reader
+        
+        return contents
+        
+    }
 }

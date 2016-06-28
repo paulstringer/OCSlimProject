@@ -87,9 +87,6 @@
                <Test
                   Identifier = "OCSlimProjectJUnitTestAsserterTests">
                </Test>
-               <Test
-                  Identifier = "OCSlimProjectTests">
-               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>

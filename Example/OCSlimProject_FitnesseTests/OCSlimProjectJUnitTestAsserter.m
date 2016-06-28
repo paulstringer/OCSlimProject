@@ -4,10 +4,16 @@
 @interface OCSlimProjectJUnitTestAsserter ()
 @property (nonatomic, strong) NSData *data;
 @property (nonatomic, strong) id<OCSlimProjectAssertRecorder> assertRecorder;
+@property (nonatomic, strong) NSString *testName;
 @end
 
 @implementation OCSlimProjectJUnitTestAsserter
 
++ (void)initialize {
+    
+    [super initialize];
+    
+}
 - (id)initWitData:(NSData *)data  {
 
     id<OCSlimProjectAssertRecorder> recorder = [[OCSlimProjectXCTestAssertRecorder alloc] init];
@@ -17,14 +23,22 @@
 
 - (id)initWitData:(NSData *)data assertRecorder:(id<OCSlimProjectAssertRecorder>)recorder {
     
-    if (self == [super initWithSelector:@selector(run)]) {
+    return [self initWithName:@"AcceptanceTestSuite" data:data assertRecorder:recorder];
+
+}
+
+- (id)initWithName:(NSString *)name data:(NSData *)data assertRecorder:(id<OCSlimProjectAssertRecorder>)recorder {
+    
+    if (self == [super initWithSelector:NSSelectorFromString(name)]) {
+        _testName = name;
         _data = data;
         _assertRecorder = recorder;
     }
     
     return self;
+    
+    
 }
-
 - (void)run {
     
     FitnesseTestSuiteXMLResultParser *parser = [[FitnesseTestSuiteXMLResultParser alloc] init];
@@ -38,4 +52,28 @@
     }
 }
 
+
+#pragma mark - Arbitrary Test Name Forwarding Mechanism
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    
+    if ([self respondsToSelector:aSelector]) {
+        return [[self class] instanceMethodSignatureForSelector:aSelector];
+    } else {
+        return [super methodSignatureForSelector:@selector(run)];
+    }
+    
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    
+    if  ( anInvocation.selector == NSSelectorFromString(self.testName) ) {
+        anInvocation.selector = @selector(run);
+    }
+    
+    [anInvocation invokeWithTarget:self];
+    
+}
 @end
+
+

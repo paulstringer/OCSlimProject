@@ -279,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				8CBAFE701D1A8B40007D52D2 /* OCSlimProjectFitnesseTestSuite.swift */,
-				8CAB865E1D1C074600773B43 /* JUnit Test Asserter */,
 				8CF88A6A1D1ACDB2001C6C5E /* Fitnesse Test Main */,
+				8CAB865E1D1C074600773B43 /* JUnit Test Asserter */,
 				8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */,
 				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
 				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,

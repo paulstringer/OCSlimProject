@@ -43,9 +43,32 @@
 
 - (void)testInvocationWillRunAssertions {
     
-    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:[NSData new] assertRecorder:self.recorderSpy];
+    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:[NSData data] assertRecorder:self.recorderSpy];
+    
+    [asserter forwardInvocation:asserter.invocation];
     
     XCTAssertEqual(asserter.invocation.selector, @selector(run));
+    
+}
+
+- (void)testInvocationRunsAssertion {
+    
+    NSData *data = [[[OCSlimProjectTestDataManager alloc] init] failedResultData];
+    
+    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWithName:@"ArbitraryTestName" data:data assertRecorder:self.recorderSpy];
+    
+    [asserter.invocation invokeWithTarget:asserter];
+    
+    XCTAssertTrue(self.recorderSpy.didRecordFail);
+    
+}
+
+- (void)testSelectorMethodNameEqualsTestName {
+    
+    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWithName:@"Salami" data:[NSData new] assertRecorder:self.recorderSpy];
+    
+    XCTAssertEqualObjects(NSStringFromSelector(asserter.invocation.selector), @"Salami");
+
     
 }
 

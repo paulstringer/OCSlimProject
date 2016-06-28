@@ -18,7 +18,7 @@ import XCTest
 class OCSlimProjectXCTestAssertRecorder: NSObject, OCSlimProjectAssertRecorder {
     
     func recordFail() {
-        XCTFail()
+        XCTFail("Fitnesse Test Failed")
     }
     
     func recordPass() {

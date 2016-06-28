@@ -18,7 +18,9 @@ class OCSlimFitnesseTestReportFileReaderTests: NSObject, OCSlimFitnesseTestRepor
         
         let bundle = NSBundle(forClass: OCSlimFitnesseTestReportFileReaderTests.self)
         
-        let path = bundle.pathForResource("Fitnesse-Test-Report", ofType: "xml")!
+        guard let path = bundle.pathForResource("Fitnesse-Test-Report", ofType: "xml") else {
+            fatalError("Fitnesse-Test-Report.xml file is missing. Check the setup of your Test target... (provide more details to make this a useful message)")
+        }
         
         return NSData(contentsOfFile: path)!
         
@@ -31,7 +33,9 @@ class OCSlimFitnesseTestReportReaderStub: NSObject, OCSlimFitnesseTestReportRead
     private let data: NSData
     
     init(data: NSData) {
+        
         self.data = data
+        
         super.init()
     }
     

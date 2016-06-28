@@ -10,6 +10,8 @@
 
 - (nonnull id)initWitData:(nonnull NSData *)data assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
 
+- (nonnull id)initWithName:(nonnull NSString *)name data:(nonnull NSData *)data assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
+
 - (void)run;
 
 @end

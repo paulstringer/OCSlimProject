@@ -29,3 +29,9 @@ class FixtureExample : NSObject, SlimDecisionTable {
     }
     
 }
+
+@objc(<#FixtureName#>)
+
+class <#FixtureName#> : NSObject {
+    
+}

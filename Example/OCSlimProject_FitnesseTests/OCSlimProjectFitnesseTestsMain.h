@@ -3,6 +3,6 @@
 
 @interface OCSlimProjectFitnesseTestsMain : NSObject <XCTestObservation>
 
-+ (XCTestRun *)testRun;
++ (XCTestSuite *)testSuite;
 
 @end

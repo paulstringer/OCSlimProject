@@ -3,6 +3,11 @@
 #import "OCSlimProjectJUnitTestAsserter.h"
 
 
+@interface OCSlimProjectFitnesseTestsMain ()
+
+@property (nonatomic, strong) NSString *bundleTestSuiteName;
+
+@end
 
 @implementation OCSlimProjectFitnesseTestsMain
 
@@ -11,7 +16,7 @@
     if (self == [super init]) {
         
         [[XCTestObservationCenter sharedTestObservationCenter] addTestObserver:self];
-        
+       
     }
     
     return self;
@@ -21,10 +26,24 @@
 
 - (void)testBundleWillStart:(NSBundle *)testBundle {
     
-    [OCSlimProjectFitnesseTestsMain runFitnesseTests];
+    self.bundleTestSuiteName = [[testBundle bundleURL] lastPathComponent];
+    
+    NSLog(@"Bundle Test Suite Name %@", self.bundleTestSuiteName);
     
 }
 
+- (void)testSuiteWillStart:(XCTestSuite *)testSuite {
+    
+    
+    if ([[testSuite name] isEqualToString:self.bundleTestSuiteName]) {
+    
+        XCTestSuite *suite = [OCSlimProjectFitnesseTestsMain testSuite];
+    
+        [testSuite addTest:suite];
+        
+    }
+    
+}
 - (void)testBundleDidFinish:(NSBundle *)testBundle {
     
     [[XCTestObservationCenter sharedTestObservationCenter] removeTestObserver:self];
@@ -33,44 +52,22 @@
 
 #pragma mark - XCTestRun Setup
 
-static XCTestRun *testRun;
-
-+ (XCTestRun *)testRun {
-    
-    return testRun;
-    
-}
-
-+ (void)runFitnesseTests {
-    
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        
-        XCTestSuite *suite = [self testSuite];
-        
-        [suite runTest];
-        
-        testRun = suite.testRun;
-        
-    });
-    
-}
-
 #pragma mark - Private
 
 + (XCTestSuite *)testSuite {
+    
     
     NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
     
     XCTestCase *test = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:data];
     
     
-    XCTestSuite *suite = [OCSlimProjectFitnesseTestSuite new];
+    XCTestSuite *currentSuite = [XCTestSuite testSuiteWithName:@"AcceptanceTestSuite"];
     
-    [suite addTest:test];
+    [currentSuite addTest:test];
     
-    return suite;
+    
+    return currentSuite;
 
 }
 

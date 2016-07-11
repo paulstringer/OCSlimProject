@@ -23,7 +23,7 @@
 
 - (id)initWitData:(NSData *)data assertRecorder:(id<OCSlimProjectAssertRecorder>)recorder {
     
-    return [self initWithName:@"AcceptanceTestSuite" data:data assertRecorder:recorder];
+    return [self initWithName:@"Fitnesse.Suite" data:data assertRecorder:recorder];
 
 }
 
@@ -51,7 +51,6 @@
         [self.assertRecorder recordPass];
     }
 }
-
 
 #pragma mark - Arbitrary Test Name Forwarding Mechanism
 

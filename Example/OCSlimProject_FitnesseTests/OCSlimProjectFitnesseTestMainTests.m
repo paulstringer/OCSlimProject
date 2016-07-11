@@ -18,15 +18,7 @@
 
 }
 
-- (void)testInitialisesAndRunsFitnesseTestSuite {
-
-    XCTAssertNotNil([[OCSlimProjectFitnesseTestsMain testRun] startDate]);
-    
-    XCTAssertNotEqual([[OCSlimProjectFitnesseTestsMain testRun] executionCount], 0);
-    
-}
-
-- (void)tesFitnesseTestIsJunitAssert{
+- (void)testFitnesseTestIsJunitAssert{
     
     XCTestCase *test = [self fitnesseTestCase];
     
@@ -43,11 +35,40 @@
     
 }
 
+- (void)testSuiteWillStartWithBundeTestSuiteNameReceivesFitnesseTests {
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    
+    [self.main testBundleWillStart:bundle];
+    
+    XCTestSuite *suite = [XCTestSuite testSuiteWithName:[[bundle bundleURL] lastPathComponent]];
+    
+    [self.main testSuiteWillStart:suite];
+    
+    XCTAssertEqual(1, suite.testCaseCount);
+    
+}
+
+
+- (void)testSuiteWillStartWithNonBundleTestSuiteNameDoesNotAddFitnesseTests {
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    
+    [self.main testBundleWillStart:bundle];
+    
+    XCTestSuite *suite = [XCTestSuite testSuiteWithName:@""];
+    
+    [self.main testSuiteWillStart:suite];
+    
+    XCTAssertEqual(0, suite.testCaseCount);
+    
+}
+
 #pragma mark - Test Helpers
 
 - (XCTestCase *)fitnesseTestCase {
     
-    XCTestSuite *suite = (XCTestSuite*)[[OCSlimProjectFitnesseTestsMain testRun] test];
+    XCTestSuite *suite = [OCSlimProjectFitnesseTestsMain testSuite];
     
     XCTestCase *test = [[suite tests] firstObject];
     

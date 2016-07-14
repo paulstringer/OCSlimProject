@@ -5,7 +5,7 @@
 
 @interface OCSlimFitnesseTestReportReaderTests : XCTestCase
 
-@property (nonatomic, strong) OCSlimFitnesseTestReportFileReaderTests* reader;
+@property (nonatomic, strong) OCSlimFitnesseTestReportFileReader* reader;
 @end
 
 @implementation OCSlimFitnesseTestReportReaderTests
@@ -13,7 +13,7 @@
 - (void)setUp {
     [super setUp];
     
-    self.reader = [[OCSlimFitnesseTestReportFileReaderTests alloc] init];
+    self.reader = [[OCSlimFitnesseTestReportFileReader alloc] init];
     
 }
 

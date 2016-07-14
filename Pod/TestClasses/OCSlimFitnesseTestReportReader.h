@@ -16,8 +16,8 @@
 @end
 
 
-/// OCSlimFitnesseTestReportFileReaderTests (Rename this) ///
+/// OCSlimFitnesseTestReportFileReaderTests ///
 
-@interface OCSlimFitnesseTestReportFileReaderTests : NSObject <OCSlimFitnesseTestReportReader>
+@interface OCSlimFitnesseTestReportFileReader : NSObject <OCSlimFitnesseTestReportReader>
 
 @end

@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "OCSlimProjectTestBundleSupport"
   s.version      = "0.0.1"
-  s.summary      = "Integrates Xcode Test Support for running Acceptance Tests from Fitnesse and reporting them via XCTest within Xcode."
+  s.summary      = "Integrates XCTest with Fitnesse based Acceptance Tests to support execution and reporting from Xcode."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?

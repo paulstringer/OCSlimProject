@@ -12,5 +12,4 @@ end
 
 target 'OCSlimProject_FitnesseTests' do
   use_frameworks!
-  pod "OCSlimProjectTestBundleSupport", :path => "../"
 end

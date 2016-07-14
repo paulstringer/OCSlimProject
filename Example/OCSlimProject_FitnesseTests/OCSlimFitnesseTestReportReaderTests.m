@@ -28,7 +28,9 @@
 
     NSData *data = [OCSlimProjectTestDataManager fitnesseTestReportData];
     
-    XCTAssertEqual(data, [self.reader read]);
+    NSData *readData = [self.reader read];
+    
+    XCTAssertTrue([data isEqualToData:readData]);
 }
 
 @end

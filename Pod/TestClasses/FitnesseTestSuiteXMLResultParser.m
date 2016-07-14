@@ -30,7 +30,7 @@
 
 - (void) parseTestSuiteFailuresForElementAttributes:(NSDictionary*)attributesDict {
     
-    NSUInteger failuresCount = (NSUInteger)[attributesDict valueForKey:@"failures"];
+    NSUInteger failuresCount = [[attributesDict objectForKey:@"failures"] integerValue];
     
     self.failedTestSuiteCount += failuresCount;
     

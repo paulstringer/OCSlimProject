@@ -13,7 +13,11 @@ static NSBundle *_bundle;
 
 + (NSString *)failedResultPath {
     
-    return  [_bundle pathForResource:@"SuiteTestResultFailures" ofType:@"xml"];
+    NSString *path = [_bundle pathForResource:@"SuiteTestResultFailures" ofType:@"xml"];
+    
+    NSParameterAssert(path);
+    
+    return path;
     
 }
 
@@ -25,7 +29,11 @@ static NSBundle *_bundle;
 
 + (NSString *)successResultPath {
     
-    return [_bundle pathForResource:@"SuiteTestResultSuccess" ofType:@"xml"];
+    NSString *path = [_bundle pathForResource:@"SuiteTestResultSuccess" ofType:@"xml"];
+    
+    NSParameterAssert(path);
+    
+    return path;
     
 }
 

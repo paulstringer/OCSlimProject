@@ -4,7 +4,6 @@
 #import "OCSlimProjectTestDataManager.h"
 
 @interface OCSlimProjectJUnitTestAsserterTests : XCTestCase <XCTestObservation>
-@property (nonatomic, strong) OCSlimProjectJUnitTestAsserter *asserter;
 @property (nonatomic, strong) OCSlimProjectAssertRecorderSpy *recorderSpy;
 @end
 
@@ -17,6 +16,8 @@
 }
 
 - (void)tearDown {
+    
+    self.recorderSpy = nil;
     
 }
 
@@ -75,9 +76,9 @@
 
 - (void)runAsserterWithData:(NSData*)data {
     
-    self.asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:data assertRecorder:self.recorderSpy];
+    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWitData:data assertRecorder:self.recorderSpy];
     
-    [self.asserter run];
+    [asserter run];
     
 }
 

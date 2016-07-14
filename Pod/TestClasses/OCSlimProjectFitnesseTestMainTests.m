@@ -1,7 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "OCSlimProjectFitnesseTestsMain.h"
-#import "OCSlimProject_FitnesseTests-Swift.h"
 #import "OCSlimProjectJUnitTestAsserter.h"
+#import "OCSlimFitnesseTestReportReader.h"
 
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
 

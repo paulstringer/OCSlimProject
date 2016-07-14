@@ -1,6 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "OCSlimProjectJUnitTestAsserter.h"
-#import "OCSlimProject_FitnesseTests-Swift.h"
+#import "OCSlimProjectAssertRecorder.h"
+#import "OCSlimProjectTestDataManager.h"
 
 @interface OCSlimProjectJUnitTestAsserterTests : XCTestCase <XCTestObservation>
 @property (nonatomic, strong) OCSlimProjectJUnitTestAsserter *asserter;
@@ -21,7 +22,7 @@
 
 - (void)testResultForXMLDataWithZeroFailures {
     
-    NSData *data = [[[OCSlimProjectTestDataManager alloc] init] successResultData];
+    NSData *data = [OCSlimProjectTestDataManager successResultData];
     
     [self runAsserterWithData:data];
     
@@ -32,7 +33,7 @@
 
 - (void)testResultForXMLDataWithFailures {
     
-    NSData *data = [[[OCSlimProjectTestDataManager alloc] init] failedResultData];
+    NSData *data = [OCSlimProjectTestDataManager failedResultData];
     
     [self runAsserterWithData:data];
     
@@ -53,7 +54,7 @@
 
 - (void)testInvocationRunsAssertion {
     
-    NSData *data = [[[OCSlimProjectTestDataManager alloc] init] failedResultData];
+    NSData *data = [OCSlimProjectTestDataManager failedResultData];
     
     OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWithName:@"ArbitraryTestName" data:data assertRecorder:self.recorderSpy];
     

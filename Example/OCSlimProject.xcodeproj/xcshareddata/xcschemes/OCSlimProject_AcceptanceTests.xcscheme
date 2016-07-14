@@ -5,12 +5,12 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <PreActions>
+      <PostActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;${PROJECT_DIR}/Fitnesse-Test-Report.xml&quot; --test &quot;OCSlimProjectExamplePage&quot; &gt; &quot;${PROJECT_DIR}/OCSlimProjectFitnesseTest.log&quot;&#10;fi&#10;&#10;">
+               scriptText = "${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;${PROJECT_DIR}/Fitnesse-Test-Report.xml&quot; --test &quot;OCSlimProjectExamplePage&quot; &gt; &quot;${PROJECT_DIR}/OCSlimProjectFitnesseTest.log&quot;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -38,7 +38,7 @@
                </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
-      </PreActions>
+      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"

@@ -36,4 +36,4 @@ Pod::Spec.new do |s|
   s.osx.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources' }
   s.ios.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/OCSlimProject.bundle' }
  
- end
+end

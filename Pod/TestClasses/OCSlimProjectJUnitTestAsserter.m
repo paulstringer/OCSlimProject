@@ -1,5 +1,6 @@
 #import "OCSlimProjectJUnitTestAsserter.h"
-#import "OCSlimProject_FitnesseTests-Swift.h"
+#import "OCSlimProjectAssertRecorder.h"
+#import "FitnesseTestSuiteXMLResultParser.h"
 
 @interface OCSlimProjectJUnitTestAsserter ()
 @property (nonatomic, strong) NSData *data;

@@ -1,5 +1,5 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
-#import "OCSlimProject_FitnesseTests-Swift.h"
+#import "OCSlimFitnesseTestReportReader.h"
 #import "OCSlimProjectJUnitTestAsserter.h"
 
 

@@ -28,36 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8CBAFE631D1A817D007D52D2"
-               BuildableName = "OCSlimProject_FitnesseTests.xctest"
-               BlueprintName = "OCSlimProject_FitnesseTests"
-               ReferencedContainer = "container:OCSlimProject.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "FitnesseTestSuiteXMLResultParserTests">
-               </Test>
-               <Test
-                  Identifier = "OCSlimFitnesseTestReportReaderTests">
-               </Test>
-               <Test
-                  Identifier = "OCSlimProjectFitnesseTestMainTests">
-               </Test>
-               <Test
-                  Identifier = "OCSlimProjectJUnitTestAsserter">
-               </Test>
-               <Test
-                  Identifier = "OCSlimProjectJUnitTestAsserterTests">
-               </Test>
-               <Test
-                  Identifier = "OCSlimProjectTests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

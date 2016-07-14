@@ -151,7 +151,7 @@
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
 				8C07D1EE1C35385100CF88BE /* Example iOS Acceptance Tests */,
 				8C07D2011C35388000CF88BE /* Example Mac Acceptance Tests */,
-				8CBAFE651D1A817D007D52D2 /* Example Fitnesse Acceptance Tests */,
+				8CBAFE651D1A817D007D52D2 /* OCSlimProjectTestBundleSupport Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				EC2DD20627292FB91E6267EF /* Pods */,
 				5128ADC1B5E323BF2D907923 /* Frameworks */,
@@ -269,7 +269,7 @@
 			name = "Test Data Manager";
 			sourceTree = "<group>";
 		};
-		8CAB865E1D1C074600773B43 /* JUnit Test Asserter */ = {
+		8CAB865E1D1C074600773B43 /* JUnit Test Assertion */ = {
 			isa = PBXGroup;
 			children = (
 				8C634EB01D379FAD00E95652 /* OCSlimProjectAssertRecorder.h */,
@@ -278,19 +278,19 @@
 				8C2EB3FB1D369246000C22FA /* OCSlimProjectJUnitTestAsserter.m */,
 				8C2EB3FC1D369246000C22FA /* OCSlimProjectJUnitTestAsserterTests.m */,
 			);
-			name = "JUnit Test Asserter";
+			name = "JUnit Test Assertion";
 			sourceTree = "<group>";
 		};
-		8CBAFE651D1A817D007D52D2 /* Example Fitnesse Acceptance Tests */ = {
+		8CBAFE651D1A817D007D52D2 /* OCSlimProjectTestBundleSupport Tests */ = {
 			isa = PBXGroup;
 			children = (
 				8CF88A6A1D1ACDB2001C6C5E /* Fitnesse Test Main */,
-				8CAB865E1D1C074600773B43 /* JUnit Test Asserter */,
+				8CAB865E1D1C074600773B43 /* JUnit Test Assertion */,
 				8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */,
 				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
 				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,
 			);
-			name = "Example Fitnesse Acceptance Tests";
+			name = "OCSlimProjectTestBundleSupport Tests";
 			path = OCSlimProject_FitnesseTests;
 			sourceTree = "<group>";
 		};

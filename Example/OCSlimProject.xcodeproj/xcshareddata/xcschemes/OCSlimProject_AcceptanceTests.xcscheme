@@ -37,11 +37,6 @@
                BlueprintName = "OCSlimProject_AcceptanceXCTests"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "OCSlimProject_AcceptanceXCTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

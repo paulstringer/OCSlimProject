@@ -2,14 +2,15 @@
 
 @implementation OCSlimProjectXCTestAssertRecorder
 
-- (void)recordFail {
+- (void)recordFailWithTestCase:(XCTestCase *)test {
     
-    XCTFail(@"Fitnesse Test Failed");
+    _XCTPrimitiveFail(test, @"Fitnesse Test Failed", nil);
+    
 }
 
-- (void)recordPass {
+- (void)recordPassWithTestCase:(XCTestCase *)test {
     
-    XCTAssertTrue(YES);
+    _XCTPrimitiveAssertTrue(test, YES, @"Fitnesse Test Passed");
     
 }
 
@@ -17,13 +18,13 @@
 
 @implementation OCSlimProjectAssertRecorderSpy
 
-- (void)recordFail {
+- (void)recordFailWithTestCase:(XCTestCase*)testCase {
     
     self.didRecordFail = true;
     
 }
 
-- (void)recordPass {
+- (void)recordPassWithTestCase:(XCTestCase*)testCase {
     
     self.didRecordPass = true;
     

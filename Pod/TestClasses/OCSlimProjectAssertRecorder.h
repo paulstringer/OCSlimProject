@@ -3,8 +3,8 @@
 
 @protocol OCSlimProjectAssertRecorder <NSObject>
 
-- (void)recordFail;
-- (void)recordPass;
+- (void)recordFailWithTestCase:(XCTestCase* _Nonnull)test;
+- (void)recordPassWithTestCase:(XCTestCase* _Nonnull)test;
 
 @end
 

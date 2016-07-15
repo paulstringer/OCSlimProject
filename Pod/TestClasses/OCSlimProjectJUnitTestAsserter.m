@@ -47,9 +47,9 @@
     BOOL result = [parser resultForTestSuiteXMLData:self.data];
     
     if ( !result ) {
-        [self.assertRecorder recordFail];
+        [self.assertRecorder recordFailWithTestCase:self];
     } else {
-        [self.assertRecorder recordPass];
+        [self.assertRecorder recordPassWithTestCase:self];
     }
 }
 

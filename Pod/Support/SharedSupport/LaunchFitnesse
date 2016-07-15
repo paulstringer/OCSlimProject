@@ -160,7 +160,6 @@ function fitnesse_launch_in_browser {
 function fitnesse_generate_test_suite_report {
 	fitnesse_main
 	fitnesse_write_suite_results
-	#fitnesse_shutdown
 }
 
 function fitnesse_write_suite_results {
@@ -186,6 +185,7 @@ function main {
 		
 	TEST)  echo  "Generating Fitnesse Suite Report"
 		fitnesse_generate_test_suite_report
+		fitnesse_shutdown
 		echo  "Fitnesse Suite Report Generated Suite=$FITNESSE_TEST_SUITE Output=$FITNESSE_TEST_OUTPUT "
 		;;
 		

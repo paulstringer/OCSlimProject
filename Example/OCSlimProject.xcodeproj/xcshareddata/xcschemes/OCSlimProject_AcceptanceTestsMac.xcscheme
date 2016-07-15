@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CADF8F01D3958B900731FF5"
-               BuildableName = "OCSlimProject_AcceptanceXCTestsMac.xctest"
-               BlueprintName = "OCSlimProject_AcceptanceXCTestsMac"
+               BuildableName = "OCSlimProject_AcceptanceTestsMac_TestBundle.xctest"
+               BlueprintName = "OCSlimProject_AcceptanceTestsMac_TestBundle"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
          </TestableReference>

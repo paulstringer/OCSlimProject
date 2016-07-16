@@ -29,7 +29,7 @@ pod "OCSlimProject"
 
 ## How to Use in your own Project
 
-* Download OCSlimProject
+* Download [OCSlimProject](http://paulstringer.github.io/OCSlimProject/) from GitHub
 * Run ```$ make```. This adds the Xcode project templates for creating Acceptance Test targets within Xcode (iOS & OS X).
 * Add an 'AcceptanceTests' target to your Project using the Acceptance Test templates now installed under the Test project categories
 * Using CocoaPods link OCSlimProject to your 'AcceptanceTests' target with the following Podfile entry

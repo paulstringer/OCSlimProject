@@ -17,5 +17,15 @@
 	</array>
 	<key>Concrete</key>
 	<true/>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

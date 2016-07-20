@@ -36,8 +36,6 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 					</string>
 				</dict>
 			</array>
-			<key>TargetIdentifier</key>
-			<string>com.apple.dt.cocoaApplicationUnitTestBundleTarget</string>
 		</dict>
 	</array>
 	<key>Options</key>

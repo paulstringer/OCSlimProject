@@ -12,8 +12,6 @@
 	<array>
 		<string>com.apple.dt.unit.unitTestBundleBase</string>
 	</array>
-	<key>Description</key>
-	<string>This target builds a unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode using the XCTest framework.</string>
 	<key>Targets</key>
 	<array>
 		<dict>

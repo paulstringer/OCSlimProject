@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>This target builds an OS X unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode using the XCTest framework.</string>
 	<key>Name</key>
 	<string>Acceptance Unit Test Bundle</string>
 	<key>Kind</key>
@@ -15,5 +17,15 @@
 	</array>
 	<key>Concrete</key>
 	<true/>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

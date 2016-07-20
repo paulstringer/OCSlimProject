@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>This target builds an iOS unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode using the XCTest framework.</string>
 	<key>Name</key>
 	<string>iOS Acceptance Unit Test Bundle</string>
 	<key>Kind</key>

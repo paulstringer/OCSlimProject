@@ -570,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n\t\t\t\t\t\nREPORT_OUTPUT_FILE_PATH=\"${OCSLIMPROJECT_FITNESSE_TEST_REPORT_PATH}\"\n\nLOG_FILE_PATH=\"${PROJECT_DIR}/${TARGET_NAME}.log\"\n\n${PROJECT_DIR}/LaunchFitnesse -d \"${PROJECT_DIR}\" -b \"$REPORT_OUTPUT_FILE_PATH\" --test \"OCSlimProjectExample\" > \"$LOG_FILE_PATH\"\n\n\t\t\t\t\t";
+			shellScript = "\n\t\t\t\t\t\nREPORT_OUTPUT_FILE_PATH=\"${OCSLIMPROJECT_FITNESSE_TEST_REPORT_PATH}\"\n\nLOG_FILE_PATH=\"${PROJECT_DIR}/${TARGET_NAME}.log\"\n\n${PROJECT_DIR}/LaunchFitnesse -d \"${PROJECT_DIR}\" -b \"$REPORT_OUTPUT_FILE_PATH\" --test \"OCSlimProjectExamplePage\" > \"$LOG_FILE_PATH\"\n\n\t\t\t\t\t";
 		};
 /* End PBXShellScriptBuildPhase section */
 

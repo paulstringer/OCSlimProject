@@ -55,6 +55,21 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 			<string>languageChoice</string>
 			<key>Units</key>
 			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAMEASIDENTIFIER___.m</string>
+					</array>
+					<key>Definitions</key>
+					<dict>
+						<key>___PACKAGENAMEASIDENTIFIER___.m</key>
+						<dict>
+							<key>Path</key>
+							<string>___PACKAGENAMEASIDENTIFIER___.m</string>
+						</dict>
+					</dict>
+				</dict>
 				<key>Swift</key>
 				<dict>
 					<key>Nodes</key>

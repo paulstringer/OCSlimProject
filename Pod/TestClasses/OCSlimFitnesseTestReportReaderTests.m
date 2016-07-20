@@ -24,6 +24,11 @@
     [super tearDown];
 }
 
+- (void)testFitnesseReportFileDataExists {
+    
+    XCTAssertNotNil([OCSlimProjectTestDataManager fitnesseTestReportData]);
+    
+}
 - (void) testReaderDataEqualsFitnesseReportFileData {
 
     NSData *data = [OCSlimProjectTestDataManager fitnesseTestReportData];

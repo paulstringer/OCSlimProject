@@ -26,20 +26,17 @@
 
 - (void)testBundleWillStart:(NSBundle *)testBundle {
     
-    self.bundleTestSuiteName = [[testBundle bundleURL] lastPathComponent];
-    
-    NSLog(@"Bundle Test Suite Name %@", self.bundleTestSuiteName);
+    [self registerHostTestBundle:testBundle];
     
 }
 
 - (void)testSuiteWillStart:(XCTestSuite *)testSuite {
     
+    if ( [self isHostTestSuite:testSuite] ) {
     
-    if ([[testSuite name] isEqualToString:self.bundleTestSuiteName]) {
+        XCTestSuite *fitnesseTestSuite = [OCSlimProjectFitnesseTestsMain testSuite];
     
-        XCTestSuite *suite = [OCSlimProjectFitnesseTestsMain testSuite];
-    
-        [testSuite addTest:suite];
+        [testSuite addTest:fitnesseTestSuite];
         
     }
     
@@ -50,9 +47,18 @@
     
 }
 
-#pragma mark - XCTestRun Setup
+#pragma mark - Don't Peek!
 
-#pragma mark - Private
+- (void)registerHostTestBundle:(NSBundle *)bundle {
+    
+    self.bundleTestSuiteName = [[bundle bundleURL] lastPathComponent];
+
+}
+
+- (BOOL)isHostTestSuite:(XCTestSuite *)suite {
+    
+    return [[suite name] isEqualToString:self.bundleTestSuiteName];
+}
 
 + (XCTestSuite *)testSuite {
     

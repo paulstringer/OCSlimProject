@@ -35,7 +35,7 @@
     
 }
 
-- (void)testSuiteWillStartWithBundeTestSuiteNameReceivesFitnesseTests {
+- (void)testSuiteWillStartWithBundlesTestSuiteDoesReceiveFitnesseTests {
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     
@@ -50,7 +50,7 @@
 }
 
 
-- (void)testSuiteWillStartWithNonBundleTestSuiteNameDoesNotAddFitnesseTests {
+- (void)testSuiteWillStartWithNonBundleTestSuiteDoesNotReceiveFitnesseTests {
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     

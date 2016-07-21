@@ -265,7 +265,7 @@
 				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,
 			);
 			name = "OCSlimProject Test Bundle Support Tests";
-			path = OCSlimProject_FitnesseTests;
+			path = OCSlimProject_TestBundleSupport_Tests;
 			sourceTree = "<group>";
 		};
 		8CBAFE721D1A8B4A007D52D2 /* Supporting Files */ = {

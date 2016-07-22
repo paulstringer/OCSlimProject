@@ -73,15 +73,7 @@
     
 }
 
-#pragma mark - Individual Test Suite Result Reporting
-
-- (void)testDataManagerCreatingTestReportsWithData {
-    
-    NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
-    
-    XCTAssertTrue( [[[OCSPTestReportCenter defaultReader] read] isEqualToData:data]);
-    
-}
+#pragma mark - Individual Test Suite Result Reporting Tests
 
 - (void)testFitnesseTestSuiteNumberOfTests {
     
@@ -93,7 +85,7 @@
     
 }
 
-- (void)testFitnesseTestSuiteNumberOfTestsWithMultipleTestCaseData {
+- (void)testFitnesseTestSuiteNumberOfTestsWithOtherTestReportData {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
@@ -120,7 +112,27 @@
     XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase2");
 }
 
+- (void)testAcceptanceTestSuiteResultsAccurate {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertTrue([testCase isPass]);
+    
+}
+
 #pragma mark - Test Helpers
+
+
+- (void)testStubCreatesTestReportsWithData {
+    
+    NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    XCTAssertTrue( [[[OCSPTestReportCenter defaultReader] read] isEqualToData:data]);
+    
+}
+
 
 + (NSData* )stubSuccessfulTestReport {
     

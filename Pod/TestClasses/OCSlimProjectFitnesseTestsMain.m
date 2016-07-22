@@ -75,9 +75,11 @@
     
     for (int i = 0; i < [parser testCaseCount]; i++ ) {
     
-        NSString *name = [parser testCaseNameForTestCaseAtIndex:i];
+        NSString *name = [parser testNameForTestCaseAtIndex:i];
         
-        XCTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:name result:NO];
+        BOOL result = [parser testResultForTestCaseAtIndex:i];
+        
+        XCTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:name result:result];
         
         [acceptanceTestSuite addTest:testCase];
         

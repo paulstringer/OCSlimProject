@@ -6,6 +6,7 @@
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 @property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *testCaseResults;
 
 @end
 
@@ -39,9 +40,15 @@
     
 }
 
-- (NSString *) testCaseNameForTestCaseAtIndex:(NSUInteger)index {
+- (NSString *) testNameForTestCaseAtIndex:(NSUInteger)index {
     
     return (index < self.testCaseNames.count) ? self.testCaseNames[index] : nil;
+    
+}
+
+- (BOOL)testResultForTestCaseAtIndex:(NSUInteger)index {
+    
+    return [self.testCaseResults[index] boolValue];
     
 }
 
@@ -66,6 +73,13 @@
     if ([elementName isEqualToString:@"testcase"]) {
         
         [self takeTestCaseNameFromElementAttributes:attributeDict];
+        
+        [self addTestResultPass];
+    }
+    
+    if ([elementName isEqualToString:@"failure"]) {
+        
+        [self updateTestResultFail];
     }
     
 }
@@ -75,7 +89,6 @@
     NSUInteger count = [[attributesDict objectForKey:@"tests"] integerValue];
     
     self.testCaseCount = count;
-    
     
 }
 
@@ -92,11 +105,34 @@
     NSString* name = (NSString *) attributesDict[@"name"];
     
     if (!self.testCaseNames) {
+        
         self.testCaseNames = [NSMutableArray arrayWithObject:name];
+        
     } else {
+        
         [self.testCaseNames addObject:name];
     }
 }
 
 
+- (void)addTestResultPass {
+    
+    if (!self.testCaseResults) {
+        
+        self.testCaseResults = [NSMutableArray arrayWithObject:@YES];
+        
+    } else {
+        
+        [self.testCaseResults addObject:@YES];
+    }
+    
+}
+
+- (void)updateTestResultFail {
+    
+    NSUInteger lastTestResultIndex = [self.testCaseResults indexOfObject:self.testCaseResults.lastObject];
+    
+    [self.testCaseResults replaceObjectAtIndex:lastTestResultIndex withObject:@NO];
+    
+}
 @end

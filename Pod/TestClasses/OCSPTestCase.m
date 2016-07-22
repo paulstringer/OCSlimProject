@@ -31,7 +31,7 @@
 
 - (void)run {
     
-    if ( self.testResult == NO ) {
+    if ( ![self isPass] ) {
         [self.assertRecorder recordFailWithTestCase:self];
     } else {
         [self.assertRecorder recordPassWithTestCase:self];
@@ -45,6 +45,11 @@
     return [[name componentsSeparatedByString:@" "] lastObject];
     
 }
+
+//- (BOOL)isPass {
+//    
+//    return _testResult == YES;
+//}
 
 #pragma mark - Arbitrary Test Name Forwarding Mechanism
 

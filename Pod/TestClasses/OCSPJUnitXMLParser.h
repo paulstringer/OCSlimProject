@@ -10,6 +10,8 @@
 
 - (BOOL) result;
 
-- (nullable NSString *) testCaseNameForTestCaseAtIndex:(NSUInteger)index;
+- (nullable NSString *) testNameForTestCaseAtIndex:(NSUInteger)index;
+
+- (BOOL) testResultForTestCaseAtIndex:(NSUInteger)index;
 
 @end

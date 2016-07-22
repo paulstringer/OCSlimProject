@@ -51,11 +51,7 @@
 
 - (void)testInvocationRunsAssertion {
     
-//    NSData *data = [OCSlimProjectTestDataManager failedResultData];
-    
     OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"AnyTestName" result:NO assertRecorder:self.recorderSpy];
-    
-//    OCSlimProjectJUnitTestAsserter *asserter = [[OCSlimProjectJUnitTestAsserter alloc] initWithTestCaseName:@"ArbitraryTestName" data:data assertRecorder:self.recorderSpy];
     
     [asserter.invocation invokeWithTarget:asserter];
     

@@ -41,6 +41,8 @@
     
 }
 
+#pragma mark - Number Of Test Cases Tests
+
 - (void) testNumberOfTestCases {
     
     NSData *data = [OCSPTestDataManager successResultData];
@@ -62,6 +64,8 @@
     
 }
 
+#pragma mark - Test Case Name Tests
+
 - (void)testTestCaseNameAtIndex {
     
     NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
@@ -70,9 +74,9 @@
     
     [self.parser parse];
     
-    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:0], @"FakeTestCase0");
-    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:1], @"FakeTestCase1");
-    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:2], @"FakeTestCase2");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"FakeTestCase0");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"FakeTestCase1");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:2], @"FakeTestCase2");
     
     
 }
@@ -82,12 +86,33 @@
     
     NSData *data = [OCSPTestDataManager successResultData];
     
-    self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    [self setupParserWithData:data];
     
-    [self.parser parse];
+    XCTAssertNil([self.parser testNameForTestCaseAtIndex:1]);
     
-    XCTAssertNil([self.parser testCaseNameForTestCaseAtIndex:1]);
     
+}
+
+
+#pragma mark - Test Result Tests
+
+- (void)testResultAtIndexWithSuccessfulResults {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertTrue([self.parser testResultForTestCaseAtIndex:0]);
+    
+}
+
+- (void)testResultAtIndexWithFailedResults {
+    
+    NSData *data = [OCSPTestDataManager failedResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertFalse([self.parser testResultForTestCaseAtIndex:0]);
     
 }
 

@@ -1,6 +1,6 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
 #import "OCSlimFitnesseTestReportReader.h"
-#import "OCSlimProjectJUnitTestAsserter.h"
+#import "OCSPJUnitTestAsserter.h"
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestsMain ()
@@ -77,7 +77,7 @@
     
         NSString *name = [parser testCaseNameForTestCaseAtIndex:i];
         
-        XCTestCase *testCase = [[OCSlimProjectJUnitTestAsserter alloc] initWithTestCaseName:name result:NO];
+        XCTestCase *testCase = [[OCSPJUnitTestAsserter alloc] initWithTestCaseName:name result:NO];
         
         [acceptanceTestSuite addTest:testCase];
         

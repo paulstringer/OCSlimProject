@@ -1,8 +1,9 @@
 #import <XCTest/XCTest.h>
 #import "OCSlimProjectFitnesseTestsMain.h"
-#import "OCSlimProjectJUnitTestAsserter.h"
+
 #import "OCSlimFitnesseTestReportReader.h"
 #import "OCSlimProjectTestDataManager.h"
+#import "OCSPJUnitTestAsserter.h"
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
@@ -24,7 +25,7 @@
     
     XCTestCase *test = [self acceptanceTestCase];
     
-    XCTAssertEqual([test class], [OCSlimProjectJUnitTestAsserter class]);
+    XCTAssertEqual([test class], [OCSPJUnitTestAsserter class]);
 }
 
 - (void)testAcceptanceTestCasesUseTestReportData {
@@ -103,7 +104,7 @@
 
 - (void)testFitnesseTestSuiteTestCaseName {
     
-    OCSlimProjectJUnitTestAsserter *testCase = [self acceptanceTestCase];
+    OCSPJUnitTestAsserter *testCase = [self acceptanceTestCase];
     
     XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase0");
 }
@@ -112,7 +113,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
-    OCSlimProjectJUnitTestAsserter *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPJUnitTestAsserter *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase2");
 }
@@ -160,13 +161,13 @@
 }
 
 
-- (OCSlimProjectJUnitTestAsserter *)acceptanceTestCase {
+- (OCSPJUnitTestAsserter *)acceptanceTestCase {
 
     XCTestSuite *suite = [self acceptanceTestSuite];
 
     XCTestCase *test = [[suite tests] firstObject];
 
-    return (OCSlimProjectJUnitTestAsserter*) test;
+    return (OCSPJUnitTestAsserter*) test;
 
 }
 

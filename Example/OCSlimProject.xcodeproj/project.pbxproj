@@ -20,7 +20,7 @@
 		8C2EB3FF1D369246000C22FA /* OCSlimProjectJUnitTestAsserterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB3FC1D369246000C22FA /* OCSlimProjectJUnitTestAsserterTests.m */; };
 		8C2EB4031D369267000C22FA /* OCSlimProjectFitnesseTestMainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB4001D369267000C22FA /* OCSlimProjectFitnesseTestMainTests.m */; };
 		8C634EC41D37D4F700E95652 /* OCSlimProjectFitnesseTestsMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB4021D369267000C22FA /* OCSlimProjectFitnesseTestsMain.m */; };
-		8C634EC51D37D4FA00E95652 /* OCSlimProjectAssertRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB11D379FAD00E95652 /* OCSlimProjectAssertRecorder.m */; };
+		8C634EC51D37D4FA00E95652 /* OCSPAssertRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */; };
 		8C634EC61D37D4FC00E95652 /* OCSlimProjectJUnitTestAsserter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB3FB1D369246000C22FA /* OCSlimProjectJUnitTestAsserter.m */; };
 		8C634EC71D37D50000E95652 /* OCSPJUnitXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */; };
 		8C634EC81D37D50200E95652 /* OCSlimFitnesseTestReportReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB41D37A1C600E95652 /* OCSlimFitnesseTestReportReader.m */; };
@@ -64,8 +64,8 @@
 		8C2EB4001D369267000C22FA /* OCSlimProjectFitnesseTestMainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimProjectFitnesseTestMainTests.m; path = ../../Pod/TestClasses/OCSlimProjectFitnesseTestMainTests.m; sourceTree = "<group>"; };
 		8C2EB4011D369267000C22FA /* OCSlimProjectFitnesseTestsMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSlimProjectFitnesseTestsMain.h; path = ../../Pod/TestClasses/OCSlimProjectFitnesseTestsMain.h; sourceTree = "<group>"; };
 		8C2EB4021D369267000C22FA /* OCSlimProjectFitnesseTestsMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimProjectFitnesseTestsMain.m; path = ../../Pod/TestClasses/OCSlimProjectFitnesseTestsMain.m; sourceTree = "<group>"; };
-		8C634EB01D379FAD00E95652 /* OCSlimProjectAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSlimProjectAssertRecorder.h; path = ../../Pod/TestClasses/OCSlimProjectAssertRecorder.h; sourceTree = "<group>"; };
-		8C634EB11D379FAD00E95652 /* OCSlimProjectAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSlimProjectAssertRecorder.m; path = ../../Pod/TestClasses/OCSlimProjectAssertRecorder.m; sourceTree = "<group>"; };
+		8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSPAssertRecorder.h; path = ../../Pod/TestClasses/OCSPAssertRecorder.h; sourceTree = "<group>"; };
+		8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSPAssertRecorder.m; path = ../../Pod/TestClasses/OCSPAssertRecorder.m; sourceTree = "<group>"; };
 		8C634EB31D37A1C600E95652 /* OCSlimFitnesseTestReportReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSlimFitnesseTestReportReader.h; path = ../../Pod/TestClasses/OCSlimFitnesseTestReportReader.h; sourceTree = "<group>"; };
 		8C634EB41D37A1C600E95652 /* OCSlimFitnesseTestReportReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimFitnesseTestReportReader.m; path = ../../Pod/TestClasses/OCSlimFitnesseTestReportReader.m; sourceTree = "<group>"; };
 		8C634EB81D37BD4400E95652 /* OCSlimProjectTestDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSlimProjectTestDataManager.h; path = ../../Pod/TestClasses/OCSlimProjectTestDataManager.h; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		8CAB865E1D1C074600773B43 /* JUnit Test Assertion */ = {
 			isa = PBXGroup;
 			children = (
-				8C634EB01D379FAD00E95652 /* OCSlimProjectAssertRecorder.h */,
-				8C634EB11D379FAD00E95652 /* OCSlimProjectAssertRecorder.m */,
+				8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */,
+				8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */,
 				8C2EB3FA1D369246000C22FA /* OCSlimProjectJUnitTestAsserter.h */,
 				8C2EB3FB1D369246000C22FA /* OCSlimProjectJUnitTestAsserter.m */,
 				8C2EB3FC1D369246000C22FA /* OCSlimProjectJUnitTestAsserterTests.m */,
@@ -618,7 +618,7 @@
 				8CADF8EC1D38DA6E00731FF5 /* OCSPJUnitXMLParserTests.m in Sources */,
 				8C634EC71D37D50000E95652 /* OCSPJUnitXMLParser.m in Sources */,
 				8C2EB4031D369267000C22FA /* OCSlimProjectFitnesseTestMainTests.m in Sources */,
-				8C634EC51D37D4FA00E95652 /* OCSlimProjectAssertRecorder.m in Sources */,
+				8C634EC51D37D4FA00E95652 /* OCSPAssertRecorder.m in Sources */,
 				8C634EC91D37D50500E95652 /* OCSlimProjectTestDataManager.m in Sources */,
 				8C634EC81D37D50200E95652 /* OCSlimFitnesseTestReportReader.m in Sources */,
 				8CADF8EB1D38DA6A00731FF5 /* OCSlimFitnesseTestReportReaderTests.m in Sources */,

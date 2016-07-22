@@ -1,17 +1,17 @@
 #import <XCTest/XCTest.h>
 #import "OCSlimProjectJUnitTestAsserter.h"
-#import "OCSlimProjectAssertRecorder.h"
+#import "OCSPAssertRecorder.h"
 #import "OCSlimProjectTestDataManager.h"
 
 @interface OCSlimProjectJUnitTestAsserterTests : XCTestCase <XCTestObservation>
-@property (nonatomic, strong) OCSlimProjectAssertRecorderSpy *recorderSpy;
+@property (nonatomic, strong) OCSPAssertRecorderSpy *recorderSpy;
 @end
 
 @implementation OCSlimProjectJUnitTestAsserterTests
 
 - (void)setUp {
     
-    self.recorderSpy = [[OCSlimProjectAssertRecorderSpy alloc] init];
+    self.recorderSpy = [[OCSPAssertRecorderSpy alloc] init];
     
 }
 

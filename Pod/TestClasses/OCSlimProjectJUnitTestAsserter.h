@@ -1,12 +1,12 @@
 #import <XCTest/XCTest.h>
 
-@protocol OCSlimProjectAssertRecorder;
+@protocol OCSPAssertRecorder;
 
 @interface OCSlimProjectJUnitTestAsserter : XCTestCase
 
 - (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result;
 
-- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSPAssertRecorder>)recorder;
 
 - (void)run;
 

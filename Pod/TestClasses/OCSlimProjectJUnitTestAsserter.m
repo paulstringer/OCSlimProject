@@ -1,9 +1,9 @@
 #import "OCSlimProjectJUnitTestAsserter.h"
-#import "OCSlimProjectAssertRecorder.h"
+#import "OCSPAssertRecorder.h"
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectJUnitTestAsserter ()
-@property (nonatomic, strong) id<OCSlimProjectAssertRecorder> assertRecorder;
+@property (nonatomic, strong) id<OCSPAssertRecorder> assertRecorder;
 @property (nonatomic, strong) NSString *testName;
 @property (nonatomic, assign) BOOL testResult;
 @end
@@ -12,13 +12,13 @@
 
 - (id)initWithTestCaseName:(NSString *)name result:(BOOL)result {
     
-    id<OCSlimProjectAssertRecorder> recorder = [[OCSlimProjectXCTestAssertRecorder alloc] init];
+    id<OCSPAssertRecorder> recorder = [[OCSPXCAssertRecorder alloc] init];
     
     return [self initWithTestCaseName:name result:result assertRecorder:recorder];
 }
 
 
-- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder {
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSPAssertRecorder>)recorder {
     
     if (self == [super initWithSelector:NSSelectorFromString(name)] ) {
         _testName = name;

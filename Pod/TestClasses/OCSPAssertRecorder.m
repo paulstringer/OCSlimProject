@@ -1,6 +1,6 @@
-#import "OCSlimProjectAssertRecorder.h"
+#import "OCSPAssertRecorder.h"
 
-@implementation OCSlimProjectXCTestAssertRecorder
+@implementation OCSPXCAssertRecorder
 
 - (void)recordFailWithTestCase:(XCTestCase *)test {
     
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation OCSlimProjectAssertRecorderSpy
+@implementation OCSPAssertRecorderSpy
 
 - (void)recordFailWithTestCase:(XCTestCase*)testCase {
     

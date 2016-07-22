@@ -6,6 +6,12 @@
 
 + (NSData *)successResultData;
 
++ (NSData *)successResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier;
+
 + (NSData *)fitnesseTestReportData;
 
+void createDefaultTestReportReaderWithData(NSData *data);
+
 @end
+
+

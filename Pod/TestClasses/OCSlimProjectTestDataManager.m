@@ -43,6 +43,25 @@ static NSBundle *_bundle;
     
 }
 
++ (NSData *)successResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier {
+    
+    NSString *path = [self successResultPath];
+    
+    if (modifier) {
+        
+        NSString *pathExtension = [path pathExtension];
+        
+        NSString *suffix = [NSString stringWithFormat:@"-%@",modifier];
+        
+        path = [[[path stringByDeletingPathExtension] stringByAppendingString:suffix] stringByAppendingPathExtension:pathExtension];
+    }
+    
+
+    
+    return [NSData dataWithContentsOfFile:path];
+    
+}
+
 + (NSData *)fitnesseTestReportData {
     
     NSString  *fitnesseReportPath = [_bundle pathForResource:@"Fitnesse-Test-Report" ofType:@"xml"];
@@ -84,14 +103,12 @@ static NSBundle *_bundle;
 @end
 
 
-NSData* createDefaultTestReportReaderWithDataAtFilePath(NSString *path) {
+void createDefaultTestReportReaderWithData(NSData *data) {
     
-    NSData *data = [NSData dataWithContentsOfFile:path];
+    
     
     id<OCSlimFitnesseTestReportReader> reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:data];
     
     [OCSlimFitnesseTestReportCenter setDefaultReader: reader];
-    
-    return data;
     
 }

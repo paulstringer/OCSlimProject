@@ -28,6 +28,7 @@
 		8CA8B2C41D4026DF00DF9423 /* OCSlimProject_AcceptanceTests_TestBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8B2C31D4026DF00DF9423 /* OCSlimProject_AcceptanceTests_TestBundle.m */; };
 		8CADF8EB1D38DA6A00731FF5 /* OCSlimFitnesseTestReportReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E91D38DA5E00731FF5 /* OCSlimFitnesseTestReportReaderTests.m */; };
 		8CADF8EC1D38DA6E00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m */; };
+		8CCDA9BA1D42052800AF6F30 /* SuiteTestResultSuccess-3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */; };
 		8CEAFB051D3FB5950080BE39 /* SuiteTestResultFailures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */; };
 		8CEAFB061D3FB5950080BE39 /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAFB011D3FB29E0080BE39 /* SuiteTestResultSuccess.xml */; };
 		8CEAFB081D3FB6390080BE39 /* Fitnesse-Test-Report.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAFB071D3FB6390080BE39 /* Fitnesse-Test-Report.xml */; };
@@ -76,6 +77,7 @@
 		8CADF8E91D38DA5E00731FF5 /* OCSlimFitnesseTestReportReaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimFitnesseTestReportReaderTests.m; path = ../../Pod/TestClasses/OCSlimFitnesseTestReportReaderTests.m; sourceTree = "<group>"; };
 		8CBAFE641D1A817D007D52D2 /* OCSlimProject_TestBundleSupport_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_TestBundleSupport_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-3.xml"; sourceTree = "<group>"; };
 		8CEAFAFC1D3FB28A0080BE39 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = ../OCSlimProject_TestBundleSupport_Tests/SuiteTestResultFailures.xml; sourceTree = "<group>"; };
 		8CEAFAFD1D3FB28A0080BE39 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultSuccess.xml; path = ../OCSlimProject_TestBundleSupport_Tests/SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
 		8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = OCSlimProject_TestBundleSupport_Tests/SuiteTestResultFailures.xml; sourceTree = SOURCE_ROOT; };
@@ -283,6 +285,7 @@
 				8CEAFB071D3FB6390080BE39 /* Fitnesse-Test-Report.xml */,
 				8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */,
 				8CEAFB011D3FB29E0080BE39 /* SuiteTestResultSuccess.xml */,
+				8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */,
 			);
 			name = "Test Data Example Files";
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEAFB081D3FB6390080BE39 /* Fitnesse-Test-Report.xml in Resources */,
+				8CCDA9BA1D42052800AF6F30 /* SuiteTestResultSuccess-3.xml in Resources */,
 				8CEAFB051D3FB5950080BE39 /* SuiteTestResultFailures.xml in Resources */,
 				8CEAFB061D3FB5950080BE39 /* SuiteTestResultSuccess.xml in Resources */,
 			);

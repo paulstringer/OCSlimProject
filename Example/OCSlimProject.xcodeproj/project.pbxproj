@@ -443,9 +443,10 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = OCSP;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = CleanKit;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;

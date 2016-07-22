@@ -49,16 +49,21 @@ static NSBundle *_bundle;
     
     if (modifier) {
         
-        NSString *pathExtension = [path pathExtension];
+        path = [self path:path byAppendingHypenatedFilenameSuffix:modifier];
         
-        NSString *suffix = [NSString stringWithFormat:@"-%@",modifier];
-        
-        path = [[[path stringByDeletingPathExtension] stringByAppendingString:suffix] stringByAppendingPathExtension:pathExtension];
     }
     
-
-    
     return [NSData dataWithContentsOfFile:path];
+    
+}
+
++ (NSString *)path:(NSString*)path byAppendingHypenatedFilenameSuffix:(NSString *)suffix {
+    
+    NSString *pathExtension = [path pathExtension];
+    
+    NSString *filenameSuffix = [NSString stringWithFormat:@"-%@",suffix];
+    
+    return [[[path stringByDeletingPathExtension] stringByAppendingString:filenameSuffix] stringByAppendingPathExtension:pathExtension];
     
 }
 

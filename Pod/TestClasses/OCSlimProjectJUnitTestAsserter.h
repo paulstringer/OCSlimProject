@@ -4,14 +4,12 @@
 
 @interface OCSlimProjectJUnitTestAsserter : XCTestCase
 
-@property (nonatomic, readonly, nonnull) NSData *data;
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result;
 
-- (nonnull id)initWitData:(nonnull NSData *)data;
-
-- (nonnull id)initWitData:(nonnull NSData *)data assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
-
-- (nonnull id)initWithName:(nonnull NSString *)name data:(nonnull NSData *)data assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder;
 
 - (void)run;
+
+- (nonnull NSString *)testCaseName;
 
 @end

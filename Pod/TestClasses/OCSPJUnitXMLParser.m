@@ -2,33 +2,30 @@
 
 @interface OCSPJUnitXMLParser () <NSXMLParserDelegate>
 
+@property (nonatomic, strong) NSData *data;
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
+@property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
 
 @end
 
 @implementation OCSPJUnitXMLParser
 
-- (BOOL) resultForTestSuiteXMLData:(NSData *) data  {
+- (id)initWithXMLData:(nonnull NSData *) data {
     
-    [self parseTestSuiteXMLData:data];
+    if (self == [super init]) {
     
-    return self.failedTestSuiteCount == 0;
+        _data = data;
+        
+    }
+    
+    return self;
     
 }
 
-- (NSInteger)testCaseCountForXMLData:(NSData *)data {
+- (void)parse {
     
-    [self parseTestSuiteXMLData:data];
-    
-    return self.testCaseCount;
-}
-
-//MARK: Parsing Private Helpers
-
-- (void) parseTestSuiteXMLData:(NSData*) data {
-    
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.data];
     
     parser.delegate = self;
     
@@ -36,6 +33,17 @@
     
 }
 
+- (BOOL) result {
+    
+    return self.failedTestSuiteCount == 0;
+    
+}
+
+- (NSString *) testCaseNameForTestCaseAtIndex:(NSUInteger)index {
+    
+    return (index < self.testCaseNames.count) ? self.testCaseNames[index] : nil;
+    
+}
 
 //MARK: NSXMLParserDelegate
 
@@ -55,6 +63,11 @@
         
     }
     
+    if ([elementName isEqualToString:@"testcase"]) {
+        
+        [self takeTestCaseNameFromElementAttributes:attributeDict];
+    }
+    
 }
 
 - (void) takeTestCaseCountFromElementAttributes:(NSDictionary*)attributesDict {
@@ -72,6 +85,17 @@
     
     self.failedTestSuiteCount += failuresCount;
     
+}
+
+- (void) takeTestCaseNameFromElementAttributes:(NSDictionary*)attributesDict {
+    
+    NSString* name = (NSString *) attributesDict[@"name"];
+    
+    if (!self.testCaseNames) {
+        self.testCaseNames = [NSMutableArray arrayWithObject:name];
+    } else {
+        [self.testCaseNames addObject:name];
+    }
 }
 
 

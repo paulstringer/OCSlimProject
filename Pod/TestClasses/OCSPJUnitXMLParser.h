@@ -2,8 +2,14 @@
 
 @interface OCSPJUnitXMLParser : NSObject <NSXMLParserDelegate>
 
-- (BOOL) resultForTestSuiteXMLData:(NSData *) data;
+@property (nonatomic, readonly) NSUInteger testCaseCount;
 
-- (NSInteger) testCaseCountForXMLData:(NSData *) data;
+- (nonnull id)initWithXMLData:(nonnull NSData *) data;
+
+- (void) parse;
+
+- (BOOL) result;
+
+- (nullable NSString *) testCaseNameForTestCaseAtIndex:(NSUInteger)index;
 
 @end

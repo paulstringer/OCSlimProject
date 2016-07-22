@@ -26,14 +26,18 @@
     
     NSData *data = [OCSlimProjectTestDataManager failedResultData];
     
-    XCTAssertFalse([self.parser resultForTestSuiteXMLData:data]);
+    [self setupParserWithData:data];
+    
+    XCTAssertFalse([self.parser result]);
 }
 
 - (void) testSuiteJUnitXMLSuccessWillPass {
     
     NSData *data = [OCSlimProjectTestDataManager successResultData];
     
-    XCTAssertTrue([self.parser resultForTestSuiteXMLData:data]);
+    [self setupParserWithData:data];
+    
+    XCTAssertTrue([self.parser result]);
     
 }
 
@@ -41,7 +45,9 @@
     
     NSData *data = [OCSlimProjectTestDataManager successResultData];
     
-    XCTAssertEqual([self.parser testCaseCountForXMLData:data], 1);
+    [self setupParserWithData:data];
+    
+    XCTAssertEqual([self.parser testCaseCount], 1);
     
 }
 
@@ -50,7 +56,48 @@
     
     NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
     
-    XCTAssertEqual([self.parser testCaseCountForXMLData:data], 3);
+    [self setupParserWithData:data];
+    
+    XCTAssertEqual([self.parser testCaseCount], 3);
+    
+}
+
+- (void)testTestCaseNameAtIndex {
+    
+    NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    
+    self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    
+    [self.parser parse];
+    
+    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:0], @"FakeTestCase0");
+    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:1], @"FakeTestCase1");
+    XCTAssertEqualObjects([self.parser testCaseNameForTestCaseAtIndex:2], @"FakeTestCase2");
+    
+    
+}
+
+
+- (void)testTestCaseNameAtIndexOutOfRange {
+    
+    NSData *data = [OCSlimProjectTestDataManager successResultData];
+    
+    self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    
+    [self.parser parse];
+    
+    XCTAssertNil([self.parser testCaseNameForTestCaseAtIndex:1]);
+    
+    
+}
+
+#pragma mark - Test Automators
+
+- (void)setupParserWithData:(NSData*)data {
+    
+    self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    
+    [self.parser parse];
     
 }
 

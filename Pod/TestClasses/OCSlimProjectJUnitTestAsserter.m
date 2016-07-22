@@ -3,54 +3,47 @@
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectJUnitTestAsserter ()
-@property (nonatomic, strong) NSData *data;
 @property (nonatomic, strong) id<OCSlimProjectAssertRecorder> assertRecorder;
 @property (nonatomic, strong) NSString *testName;
+@property (nonatomic, assign) BOOL testResult;
 @end
 
 @implementation OCSlimProjectJUnitTestAsserter
 
-+ (void)initialize {
+- (id)initWithTestCaseName:(NSString *)name result:(BOOL)result {
     
-    [super initialize];
-    
-}
-- (id)initWitData:(NSData *)data  {
-
     id<OCSlimProjectAssertRecorder> recorder = [[OCSlimProjectXCTestAssertRecorder alloc] init];
     
-    return [self initWitData:data assertRecorder:recorder];
+    return [self initWithTestCaseName:name result:result assertRecorder:recorder];
 }
 
-- (id)initWitData:(NSData *)data assertRecorder:(id<OCSlimProjectAssertRecorder>)recorder {
-    
-    return [self initWithName:@"Fitnesse.Suite" data:data assertRecorder:recorder];
 
-}
-
-- (id)initWithName:(NSString *)name data:(NSData *)data assertRecorder:(id<OCSlimProjectAssertRecorder>)recorder {
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSlimProjectAssertRecorder>)recorder {
     
-    if (self == [super initWithSelector:NSSelectorFromString(name)]) {
+    if (self == [super initWithSelector:NSSelectorFromString(name)] ) {
         _testName = name;
-        _data = data;
+        _testResult = result;
         _assertRecorder = recorder;
     }
     
     return self;
-    
-    
 }
+
 - (void)run {
     
-    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] init];
-    
-    BOOL result = [parser resultForTestSuiteXMLData:self.data];
-    
-    if ( !result ) {
+    if ( self.testResult == NO ) {
         [self.assertRecorder recordFailWithTestCase:self];
     } else {
         [self.assertRecorder recordPassWithTestCase:self];
     }
+}
+
+- (NSString *)testCaseName {
+    
+    NSString *name = [[self name] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]"]];
+    
+    return [[name componentsSeparatedByString:@" "] lastObject];
+    
 }
 
 #pragma mark - Arbitrary Test Name Forwarding Mechanism

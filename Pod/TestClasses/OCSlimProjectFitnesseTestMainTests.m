@@ -3,6 +3,7 @@
 #import "OCSlimProjectJUnitTestAsserter.h"
 #import "OCSlimFitnesseTestReportReader.h"
 #import "OCSlimProjectTestDataManager.h"
+#import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
 
@@ -19,20 +20,24 @@
 
 }
 
-- (void)testFitnesseTestIsJunitAssert{
+- (void)testAcceptanceTestCasesAreJUnitAsserts{
     
     XCTestCase *test = [self acceptanceTestCase];
     
     XCTAssertEqual([test class], [OCSlimProjectJUnitTestAsserter class]);
 }
 
-- (void)testFitnesseTestReadsDefaultReaderTestReportData {
+- (void)testAcceptanceTestCasesUseTestReportData {
 
+    NSUInteger testCaseCount = [self acceptanceTestSuite].testCaseCount;
+    
     NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
     
-    OCSlimProjectJUnitTestAsserter *test = (OCSlimProjectJUnitTestAsserter *)[self acceptanceTestCase];
+    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
     
-    XCTAssertTrue([test.data isEqualToData:data]);
+    [parser parse];
+    
+    XCTAssertEqual(testCaseCount, [parser testCaseCount]);
     
 }
 
@@ -69,7 +74,7 @@
 
 #pragma mark - Individual Test Suite Result Reporting
 
-- (void)testDataManagerCreatingTestReportsWithDataWorks {
+- (void)testDataManagerCreatingTestReportsWithData {
     
     NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
@@ -87,13 +92,29 @@
     
 }
 
-- (void)testFitnesseTestSuiteNumberOfTestsWithMultipleTestCaseResults {
+- (void)testFitnesseTestSuiteNumberOfTestsWithMultipleTestCaseData {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     
     XCTAssertEqual(suite.testCaseCount, 3);
+}
+
+- (void)testFitnesseTestSuiteTestCaseName {
+    
+    OCSlimProjectJUnitTestAsserter *testCase = [self acceptanceTestCase];
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase0");
+}
+
+- (void)testFitnesseTestSuiteTestCaseNames {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
+    
+    OCSlimProjectJUnitTestAsserter *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase2");
 }
 
 #pragma mark - Test Helpers
@@ -139,13 +160,13 @@
 }
 
 
-- (XCTestCase *)acceptanceTestCase {
+- (OCSlimProjectJUnitTestAsserter *)acceptanceTestCase {
 
     XCTestSuite *suite = [self acceptanceTestSuite];
 
     XCTestCase *test = [[suite tests] firstObject];
 
-    return test;
+    return (OCSlimProjectJUnitTestAsserter*) test;
 
 }
 

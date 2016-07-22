@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 #import "OCSPJUnitXMLParser.h"
-#import "OCSlimProjectTestDataManager.h"
+#import "OCSPTestDataManager.h"
 
 @interface OCSPJUnitXMLParserTests : XCTestCase
 
@@ -24,7 +24,7 @@
 
 - (void) testSuiteJUnitXMLFailureWillFail {
     
-    NSData *data = [OCSlimProjectTestDataManager failedResultData];
+    NSData *data = [OCSPTestDataManager failedResultData];
     
     [self setupParserWithData:data];
     
@@ -33,7 +33,7 @@
 
 - (void) testSuiteJUnitXMLSuccessWillPass {
     
-    NSData *data = [OCSlimProjectTestDataManager successResultData];
+    NSData *data = [OCSPTestDataManager successResultData];
     
     [self setupParserWithData:data];
     
@@ -43,7 +43,7 @@
 
 - (void) testNumberOfTestCases {
     
-    NSData *data = [OCSlimProjectTestDataManager successResultData];
+    NSData *data = [OCSPTestDataManager successResultData];
     
     [self setupParserWithData:data];
     
@@ -54,7 +54,7 @@
 
 - (void) testNumberOfTestCasesWithMultipleTestCases {
     
-    NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
     
     [self setupParserWithData:data];
     
@@ -64,7 +64,7 @@
 
 - (void)testTestCaseNameAtIndex {
     
-    NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
     
     self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
     
@@ -80,7 +80,7 @@
 
 - (void)testTestCaseNameAtIndexOutOfRange {
     
-    NSData *data = [OCSlimProjectTestDataManager successResultData];
+    NSData *data = [OCSPTestDataManager successResultData];
     
     self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
     

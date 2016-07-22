@@ -1,5 +1,5 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
-#import "OCSlimFitnesseTestReportReader.h"
+#import "OCSPTestReportReader.h"
 #import "OCSPTestCase.h"
 #import "OCSPJUnitXMLParser.h"
 
@@ -63,7 +63,7 @@
 + (XCTestSuite *)testSuite {
     
     
-    NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
+    NSData *data = [[OCSPTestReportCenter defaultReader] read];
 
     
     XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:@"AcceptanceTestSuite"];

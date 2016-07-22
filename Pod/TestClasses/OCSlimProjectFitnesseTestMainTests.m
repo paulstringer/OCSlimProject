@@ -1,8 +1,8 @@
 #import <XCTest/XCTest.h>
 #import "OCSlimProjectFitnesseTestsMain.h"
 
-#import "OCSlimFitnesseTestReportReader.h"
-#import "OCSlimProjectTestDataManager.h"
+#import "OCSPTestReportReader.h"
+#import "OCSPTestDataManager.h"
 #import "OCSPTestCase.h"
 #import "OCSPJUnitXMLParser.h"
 
@@ -32,7 +32,7 @@
 
     NSUInteger testCaseCount = [self acceptanceTestSuite].testCaseCount;
     
-    NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
+    NSData *data = [[OCSPTestReportCenter defaultReader] read];
     
     OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
     
@@ -79,7 +79,7 @@
     
     NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
-    XCTAssertTrue( [[[OCSlimFitnesseTestReportCenter defaultReader] read] isEqualToData:data]);
+    XCTAssertTrue( [[[OCSPTestReportCenter defaultReader] read] isEqualToData:data]);
     
 }
 
@@ -127,7 +127,7 @@
 
 + (NSData* )stubSuccessfulTestReportWithFilenameModifier:(NSString*)modifier {
  
-    NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:modifier];
+    NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:modifier];
     
     NSParameterAssert(data);
     

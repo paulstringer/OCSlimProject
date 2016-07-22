@@ -1,7 +1,7 @@
-#import "OCSlimProjectTestDataManager.h"
-#import "OCSlimFitnesseTestReportReader.h"
+#import "OCSPTestDataManager.h"
+#import "OCSPTestReportReader.h"
 
-@implementation OCSlimProjectTestDataManager
+@implementation OCSPTestDataManager
 
 static NSBundle *_bundle;
 
@@ -80,7 +80,7 @@ static NSBundle *_bundle;
 
 /// OCSlimFitnesseTestReportReaderStub ///
 
-@interface OCSlimFitnesseTestReportReaderStub : NSObject <OCSlimFitnesseTestReportReader>
+@interface OCSlimFitnesseTestReportReaderStub : NSObject <OCSPTestReportReader>
 
 @property (nonatomic, strong) NSData *data;
 
@@ -112,8 +112,8 @@ void createDefaultTestReportReaderWithData(NSData *data) {
     
     
     
-    id<OCSlimFitnesseTestReportReader> reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:data];
+    id<OCSPTestReportReader> reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:data];
     
-    [OCSlimFitnesseTestReportCenter setDefaultReader: reader];
+    [OCSPTestReportCenter setDefaultReader: reader];
     
 }

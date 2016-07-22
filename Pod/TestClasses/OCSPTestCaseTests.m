@@ -1,7 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "OCSPTestCase.h"
 #import "OCSPAssertRecorder.h"
-#import "OCSlimProjectTestDataManager.h"
+#import "OCSPTestDataManager.h"
 
 @interface OCSPTestCaseTests : XCTestCase <XCTestObservation>
 @property (nonatomic, strong) OCSPAssertRecorderSpy *recorderSpy;

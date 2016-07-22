@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface OCSlimProjectTestDataManager : NSObject
+@interface OCSPTestDataManager : NSObject
 
 + (NSData *)failedResultData;
 

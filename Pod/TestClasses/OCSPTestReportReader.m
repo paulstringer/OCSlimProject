@@ -1,6 +1,6 @@
-#import "OCSlimFitnesseTestReportReader.h"
+#import "OCSPTestReportReader.h"
 
-@implementation OCSlimFitnesseTestReportFileReader
+@implementation OCSPTestReportFileReader
 
 - (NSData *) read {
     
@@ -19,11 +19,11 @@
 
 /// OCSlimFitnesseTestReportCenter ///
 
-@implementation OCSlimFitnesseTestReportCenter
+@implementation OCSPTestReportCenter
 
-static id<OCSlimFitnesseTestReportReader> _defaultReader;
+static id<OCSPTestReportReader> _defaultReader;
 
-+ (id<OCSlimFitnesseTestReportReader>)defaultReader {
++ (id<OCSPTestReportReader>)defaultReader {
     
     return _defaultReader;
     
@@ -31,11 +31,11 @@ static id<OCSlimFitnesseTestReportReader> _defaultReader;
 
 + (void)initialize {
     
-    _defaultReader = [[OCSlimFitnesseTestReportFileReader alloc] init];
+    _defaultReader = [[OCSPTestReportFileReader alloc] init];
     
 }
 
-+ (void)setDefaultReader:(id<OCSlimFitnesseTestReportReader>)reader {
++ (void)setDefaultReader:(id<OCSPTestReportReader>)reader {
     
     _defaultReader = reader;
     

@@ -104,7 +104,9 @@
 
 - (void)testFitnesseTestSuiteTestCaseName {
     
-    OCSPTestCase *testCase = [self acceptanceTestCase];
+    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
     XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase0");
 }

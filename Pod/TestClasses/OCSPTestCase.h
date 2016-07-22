@@ -2,7 +2,7 @@
 
 @protocol OCSPAssertRecorder;
 
-@interface OCSPJUnitTestAsserter : XCTestCase
+@interface OCSPTestCase : XCTestCase
 
 - (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result;
 

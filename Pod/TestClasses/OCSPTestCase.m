@@ -1,14 +1,14 @@
-#import "OCSPJUnitTestAsserter.h"
+#import "OCSPTestCase.h"
 #import "OCSPAssertRecorder.h"
 #import "OCSPJUnitXMLParser.h"
 
-@interface OCSPJUnitTestAsserter ()
+@interface OCSPTestCase ()
 @property (nonatomic, strong) id<OCSPAssertRecorder> assertRecorder;
 @property (nonatomic, strong) NSString *testName;
 @property (nonatomic, assign) BOOL testResult;
 @end
 
-@implementation OCSPJUnitTestAsserter
+@implementation OCSPTestCase
 
 - (id)initWithTestCaseName:(NSString *)name result:(BOOL)result {
     

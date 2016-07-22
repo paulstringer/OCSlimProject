@@ -1,19 +1,19 @@
 #import <XCTest/XCTest.h>
-#import "FitnesseTestSuiteXMLResultParser.h"
+#import "OCSPJUnitXMLParser.h"
 #import "OCSlimProjectTestDataManager.h"
 
-@interface FitnesseTestSuiteXMLResultParserTests : XCTestCase
+@interface OCSPJUnitXMLParserTests : XCTestCase
 
-@property (nonatomic, strong) FitnesseTestSuiteXMLResultParser *parser;
+@property (nonatomic, strong) OCSPJUnitXMLParser *parser;
 
 @end
 
-@implementation FitnesseTestSuiteXMLResultParserTests
+@implementation OCSPJUnitXMLParserTests
 
 - (void)setUp {
     [super setUp];
     
-    self.parser = [[FitnesseTestSuiteXMLResultParser alloc] init];
+    self.parser = [[OCSPJUnitXMLParser alloc] init];
 }
 
 - (void)tearDown {

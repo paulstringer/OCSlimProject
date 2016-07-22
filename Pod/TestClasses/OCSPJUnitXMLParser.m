@@ -1,13 +1,13 @@
-#import "FitnesseTestSuiteXMLResultParser.h"
+#import "OCSPJUnitXMLParser.h"
 
-@interface FitnesseTestSuiteXMLResultParser () <NSXMLParserDelegate>
+@interface OCSPJUnitXMLParser () <NSXMLParserDelegate>
 
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 
 @end
 
-@implementation FitnesseTestSuiteXMLResultParser
+@implementation OCSPJUnitXMLParser
 
 - (BOOL) resultForTestSuiteXMLData:(NSData *) data  {
     

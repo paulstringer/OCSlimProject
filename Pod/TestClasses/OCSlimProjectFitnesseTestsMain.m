@@ -1,7 +1,7 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
 #import "OCSlimFitnesseTestReportReader.h"
 #import "OCSlimProjectJUnitTestAsserter.h"
-#import "FitnesseTestSuiteXMLResultParser.h"
+#import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestsMain ()
 
@@ -70,7 +70,7 @@
     
     XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:@"AcceptanceTestSuite"];
     
-    FitnesseTestSuiteXMLResultParser *parser = [[FitnesseTestSuiteXMLResultParser alloc] init];
+    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] init];
     
     
     for (int i = 0; i < [parser testCaseCountForXMLData:data]; i++ ) {

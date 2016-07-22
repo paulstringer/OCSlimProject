@@ -22,12 +22,12 @@
 		8C634EC41D37D4F700E95652 /* OCSlimProjectFitnesseTestsMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB4021D369267000C22FA /* OCSlimProjectFitnesseTestsMain.m */; };
 		8C634EC51D37D4FA00E95652 /* OCSlimProjectAssertRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB11D379FAD00E95652 /* OCSlimProjectAssertRecorder.m */; };
 		8C634EC61D37D4FC00E95652 /* OCSlimProjectJUnitTestAsserter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB3FB1D369246000C22FA /* OCSlimProjectJUnitTestAsserter.m */; };
-		8C634EC71D37D50000E95652 /* FitnesseTestSuiteXMLResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EBC1D37BF5500E95652 /* FitnesseTestSuiteXMLResultParser.m */; };
+		8C634EC71D37D50000E95652 /* OCSPJUnitXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */; };
 		8C634EC81D37D50200E95652 /* OCSlimFitnesseTestReportReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB41D37A1C600E95652 /* OCSlimFitnesseTestReportReader.m */; };
 		8C634EC91D37D50500E95652 /* OCSlimProjectTestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB91D37BD4400E95652 /* OCSlimProjectTestDataManager.m */; };
 		8CA8B2C41D4026DF00DF9423 /* OCSlimProject_AcceptanceTests_TestBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8B2C31D4026DF00DF9423 /* OCSlimProject_AcceptanceTests_TestBundle.m */; };
 		8CADF8EB1D38DA6A00731FF5 /* OCSlimFitnesseTestReportReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E91D38DA5E00731FF5 /* OCSlimFitnesseTestReportReaderTests.m */; };
-		8CADF8EC1D38DA6E00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m */; };
+		8CADF8EC1D38DA6E00731FF5 /* OCSPJUnitXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */; };
 		8CCDA9BA1D42052800AF6F30 /* SuiteTestResultSuccess-3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */; };
 		8CEAFB051D3FB5950080BE39 /* SuiteTestResultFailures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */; };
 		8CEAFB061D3FB5950080BE39 /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8CEAFB011D3FB29E0080BE39 /* SuiteTestResultSuccess.xml */; };
@@ -70,10 +70,10 @@
 		8C634EB41D37A1C600E95652 /* OCSlimFitnesseTestReportReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimFitnesseTestReportReader.m; path = ../../Pod/TestClasses/OCSlimFitnesseTestReportReader.m; sourceTree = "<group>"; };
 		8C634EB81D37BD4400E95652 /* OCSlimProjectTestDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSlimProjectTestDataManager.h; path = ../../Pod/TestClasses/OCSlimProjectTestDataManager.h; sourceTree = "<group>"; };
 		8C634EB91D37BD4400E95652 /* OCSlimProjectTestDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimProjectTestDataManager.m; path = ../../Pod/TestClasses/OCSlimProjectTestDataManager.m; sourceTree = "<group>"; };
-		8C634EBB1D37BF5500E95652 /* FitnesseTestSuiteXMLResultParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitnesseTestSuiteXMLResultParser.h; path = ../../Pod/TestClasses/FitnesseTestSuiteXMLResultParser.h; sourceTree = "<group>"; };
-		8C634EBC1D37BF5500E95652 /* FitnesseTestSuiteXMLResultParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitnesseTestSuiteXMLResultParser.m; path = ../../Pod/TestClasses/FitnesseTestSuiteXMLResultParser.m; sourceTree = "<group>"; };
+		8C634EBB1D37BF5500E95652 /* OCSPJUnitXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPJUnitXMLParser.h; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.h; sourceTree = "<group>"; };
+		8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParser.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.m; sourceTree = "<group>"; };
 		8CA8B2C31D4026DF00DF9423 /* OCSlimProject_AcceptanceTests_TestBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests_TestBundle.m; sourceTree = "<group>"; };
-		8CADF8E71D38DA4A00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitnesseTestSuiteXMLResultParserTests.m; path = ../../Pod/TestClasses/FitnesseTestSuiteXMLResultParserTests.m; sourceTree = "<group>"; };
+		8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParserTests.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParserTests.m; sourceTree = "<group>"; };
 		8CADF8E91D38DA5E00731FF5 /* OCSlimFitnesseTestReportReaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSlimFitnesseTestReportReaderTests.m; path = ../../Pod/TestClasses/OCSlimFitnesseTestReportReaderTests.m; sourceTree = "<group>"; };
 		8CBAFE641D1A817D007D52D2 /* OCSlimProject_TestBundleSupport_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_TestBundleSupport_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 			children = (
 				8CF88A6A1D1ACDB2001C6C5E /* Fitnesse Test Main */,
 				8CAB865E1D1C074600773B43 /* JUnit Test Assertion */,
-				8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */,
+				8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */,
 				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
 				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,
 			);
@@ -316,14 +316,14 @@
 			name = "Fitnesse Test Main";
 			sourceTree = "<group>";
 		};
-		8CF88A6B1D1ACDC6001C6C5E /* Fitnesse Test Results XML Parser */ = {
+		8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */ = {
 			isa = PBXGroup;
 			children = (
-				8C634EBB1D37BF5500E95652 /* FitnesseTestSuiteXMLResultParser.h */,
-				8C634EBC1D37BF5500E95652 /* FitnesseTestSuiteXMLResultParser.m */,
-				8CADF8E71D38DA4A00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m */,
+				8C634EBB1D37BF5500E95652 /* OCSPJUnitXMLParser.h */,
+				8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */,
+				8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */,
 			);
-			name = "Fitnesse Test Results XML Parser";
+			name = "JUnit XML Parser";
 			sourceTree = "<group>";
 		};
 		8CFBB16E1D395E7700A6C7DC /* Example OCSlimProject Mac Acceptance Tests (Faster) */ = {
@@ -615,8 +615,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C634EC41D37D4F700E95652 /* OCSlimProjectFitnesseTestsMain.m in Sources */,
-				8CADF8EC1D38DA6E00731FF5 /* FitnesseTestSuiteXMLResultParserTests.m in Sources */,
-				8C634EC71D37D50000E95652 /* FitnesseTestSuiteXMLResultParser.m in Sources */,
+				8CADF8EC1D38DA6E00731FF5 /* OCSPJUnitXMLParserTests.m in Sources */,
+				8C634EC71D37D50000E95652 /* OCSPJUnitXMLParser.m in Sources */,
 				8C2EB4031D369267000C22FA /* OCSlimProjectFitnesseTestMainTests.m in Sources */,
 				8C634EC51D37D4FA00E95652 /* OCSlimProjectAssertRecorder.m in Sources */,
 				8C634EC91D37D50500E95652 /* OCSlimProjectTestDataManager.m in Sources */,

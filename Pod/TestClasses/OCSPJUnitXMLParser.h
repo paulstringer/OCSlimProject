@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface FitnesseTestSuiteXMLResultParser : NSObject <NSXMLParserDelegate>
+@interface OCSPJUnitXMLParser : NSObject <NSXMLParserDelegate>
 
 - (BOOL) resultForTestSuiteXMLData:(NSData *) data;
 

@@ -1,6 +1,6 @@
 #import "OCSlimProjectJUnitTestAsserter.h"
 #import "OCSlimProjectAssertRecorder.h"
-#import "FitnesseTestSuiteXMLResultParser.h"
+#import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectJUnitTestAsserter ()
 @property (nonatomic, strong) NSData *data;
@@ -42,7 +42,7 @@
 }
 - (void)run {
     
-    FitnesseTestSuiteXMLResultParser *parser = [[FitnesseTestSuiteXMLResultParser alloc] init];
+    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] init];
     
     BOOL result = [parser resultForTestSuiteXMLData:self.data];
     

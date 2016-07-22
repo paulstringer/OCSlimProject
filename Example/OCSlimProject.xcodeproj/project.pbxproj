@@ -78,8 +78,6 @@
 		8CBAFE641D1A817D007D52D2 /* OCSlimProject_TestBundleSupport_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_TestBundleSupport_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-3.xml"; sourceTree = "<group>"; };
-		8CEAFAFC1D3FB28A0080BE39 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = ../OCSlimProject_TestBundleSupport_Tests/SuiteTestResultFailures.xml; sourceTree = "<group>"; };
-		8CEAFAFD1D3FB28A0080BE39 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultSuccess.xml; path = ../OCSlimProject_TestBundleSupport_Tests/SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
 		8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = OCSlimProject_TestBundleSupport_Tests/SuiteTestResultFailures.xml; sourceTree = SOURCE_ROOT; };
 		8CEAFB011D3FB29E0080BE39 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultSuccess.xml; path = OCSlimProject_TestBundleSupport_Tests/SuiteTestResultSuccess.xml; sourceTree = SOURCE_ROOT; };
 		8CEAFB071D3FB6390080BE39 /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Fitnesse-Test-Report.xml"; path = "OCSlimProject_TestBundleSupport_Tests/Fitnesse-Test-Report.xml"; sourceTree = SOURCE_ROOT; };
@@ -237,8 +235,6 @@
 		8C634EC21D37D12B00E95652 /* Test Data Manager */ = {
 			isa = PBXGroup;
 			children = (
-				8CEAFAFC1D3FB28A0080BE39 /* SuiteTestResultFailures.xml */,
-				8CEAFAFD1D3FB28A0080BE39 /* SuiteTestResultSuccess.xml */,
 				8C634EB81D37BD4400E95652 /* OCSlimProjectTestDataManager.h */,
 				8C634EB91D37BD4400E95652 /* OCSlimProjectTestDataManager.m */,
 			);

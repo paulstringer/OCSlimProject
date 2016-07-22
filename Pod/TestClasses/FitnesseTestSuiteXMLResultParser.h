@@ -4,4 +4,6 @@
 
 - (BOOL) resultForTestSuiteXMLData:(NSData *) data;
 
+- (NSInteger) testCaseCountForXMLData:(NSData *) data;
+
 @end

@@ -37,4 +37,21 @@
     
 }
 
+- (void) testNumberOfTestCases {
+    
+    NSData *data = [OCSlimProjectTestDataManager successResultData];
+    
+    XCTAssertEqual([self.parser testCaseCountForXMLData:data], 1);
+    
+}
+
+
+- (void) testNumberOfTestCasesWithMultipleTestCases {
+    
+    NSData *data = [OCSlimProjectTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    
+    XCTAssertEqual([self.parser testCaseCountForXMLData:data], 3);
+    
+}
+
 @end

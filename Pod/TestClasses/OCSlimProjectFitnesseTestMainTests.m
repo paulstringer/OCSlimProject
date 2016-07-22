@@ -21,7 +21,7 @@
 
 - (void)testFitnesseTestIsJunitAssert{
     
-    XCTestCase *test = [self fitnesseTestCase];
+    XCTestCase *test = [self acceptanceTestCase];
     
     XCTAssertEqual([test class], [OCSlimProjectJUnitTestAsserter class]);
 }
@@ -30,13 +30,13 @@
 
     NSData *data = [[OCSlimFitnesseTestReportCenter defaultReader] read];
     
-    OCSlimProjectJUnitTestAsserter *test = (OCSlimProjectJUnitTestAsserter *)[self fitnesseTestCase];
+    OCSlimProjectJUnitTestAsserter *test = (OCSlimProjectJUnitTestAsserter *)[self acceptanceTestCase];
     
     XCTAssertTrue([test.data isEqualToData:data]);
     
 }
 
-- (void)testSuiteWillStartWithBundlesTestSuiteDoesReceiveFitnesseTests {
+- (void)testSuiteWillStartWithBundlesTestSuiteDoesReceiveFitnesseTestSuite {
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     
@@ -46,7 +46,7 @@
     
     [self.main testSuiteWillStart:suite];
     
-    XCTAssertEqual(1, suite.testCaseCount);
+    XCTAssertEqual(1, suite.tests.count);
     
     XCTAssertEqual([[OCSlimProjectFitnesseTestsMain testSuite] name], [suite.tests.firstObject name]);
     
@@ -79,12 +79,21 @@
 
 - (void)testFitnesseTestSuiteNumberOfTests {
     
+    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    XCTestSuite *suite = [self acceptanceTestSuite];
+    
+    XCTAssertEqual(suite.testCaseCount, 1);
+    
+}
+
+- (void)testFitnesseTestSuiteNumberOfTestsWithMultipleTestCaseResults {
+    
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
-    XCTestSuite *suite = [self fitnesseTestSuite];
+    XCTestSuite *suite = [self acceptanceTestSuite];
     
     XCTAssertEqual(suite.testCaseCount, 3);
-    
 }
 
 #pragma mark - Test Helpers
@@ -121,7 +130,7 @@
     
 }
 
-- (XCTestSuite *)fitnesseTestSuite {
+- (XCTestSuite *)acceptanceTestSuite {
     
     XCTestSuite *hostTestSuite = [self hostTestSuite];
     
@@ -130,9 +139,9 @@
 }
 
 
-- (XCTestCase *)fitnesseTestCase {
+- (XCTestCase *)acceptanceTestCase {
 
-    XCTestSuite *suite = [self fitnesseTestSuite];
+    XCTestSuite *suite = [self acceptanceTestSuite];
 
     XCTestCase *test = [[suite tests] firstObject];
 

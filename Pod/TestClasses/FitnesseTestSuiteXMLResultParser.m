@@ -2,6 +2,7 @@
 
 @interface FitnesseTestSuiteXMLResultParser () <NSXMLParserDelegate>
 
+@property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 
 @end
@@ -16,6 +17,13 @@
     
 }
 
+- (NSInteger)testCaseCountForXMLData:(NSData *)data {
+    
+    [self parseTestSuiteXMLData:data];
+    
+    return self.testCaseCount;
+}
+
 //MARK: Parsing Private Helpers
 
 - (void) parseTestSuiteXMLData:(NSData*) data {
@@ -28,13 +36,6 @@
     
 }
 
-- (void) parseTestSuiteFailuresForElementAttributes:(NSDictionary*)attributesDict {
-    
-    NSUInteger failuresCount = [[attributesDict objectForKey:@"failures"] integerValue];
-    
-    self.failedTestSuiteCount += failuresCount;
-    
-}
 
 //MARK: NSXMLParserDelegate
 
@@ -46,8 +47,32 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(nonnull NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(nonnull NSDictionary<NSString *,NSString *> *)attributeDict {
     
-    [self parseTestSuiteFailuresForElementAttributes:attributeDict];
+    if ([elementName isEqualToString:@"testsuite"]) {
+        
+        [self takeTestCaseCountFromElementAttributes:attributeDict];
+    
+        [self parseTestSuiteFailuresForElementAttributes:attributeDict];
+        
+    }
     
 }
+
+- (void) takeTestCaseCountFromElementAttributes:(NSDictionary*)attributesDict {
+    
+    NSUInteger count = [[attributesDict objectForKey:@"tests"] integerValue];
+    
+    self.testCaseCount = count;
+    
+    
+}
+
+- (void) parseTestSuiteFailuresForElementAttributes:(NSDictionary*)attributesDict {
+    
+    NSUInteger failuresCount = [[attributesDict objectForKey:@"failures"] integerValue];
+    
+    self.failedTestSuiteCount += failuresCount;
+    
+}
+
 
 @end

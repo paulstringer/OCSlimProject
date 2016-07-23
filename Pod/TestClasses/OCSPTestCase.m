@@ -46,11 +46,6 @@
     
 }
 
-//- (BOOL)isPass {
-//    
-//    return _testResult == YES;
-//}
-
 #pragma mark - Arbitrary Test Name Forwarding Mechanism
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {

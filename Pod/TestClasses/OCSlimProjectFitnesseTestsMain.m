@@ -34,11 +34,27 @@
     
     if ( [self isHostTestSuite:testSuite] ) {
     
-        XCTestSuite *fitnesseTestSuite = [OCSlimProjectFitnesseTestsMain testSuite];
+        XCTestSuite *acceptanceTestSuite = [OCSlimProjectFitnesseTestsMain testSuite];
+        
+        [self applyDisappearingTestCaseFix:acceptanceTestSuite];
     
-        [testSuite addTest:fitnesseTestSuite];
+        [testSuite addTest:acceptanceTestSuite];
         
     }
+    
+}
+
+- (void)applyDisappearingTestCaseFix:(XCTestSuite*)suite {
+    
+    
+    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
+        
+        OCSPTestCase *test = [[OCSPTestCase alloc] initWithTestCaseName:@"TearDown" result:YES];
+        
+        [suite addTest:test];
+        
+    }
+    
     
 }
 - (void)testBundleDidFinish:(NSBundle *)testBundle {

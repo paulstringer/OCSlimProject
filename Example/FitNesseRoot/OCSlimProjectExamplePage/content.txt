@@ -1,6 +1,11 @@
+!contents -R2 -g -p -f -h
+
 !1 Check out ''!-FixtureExample.swift-!'' in the example Xcode project. 
 !2 Try to make this !-DecisionTable-! [[test][?test]] go green!
 
+
 |Fixture Example|
 |input |output? |
-|foo   |        |
+|foo   |bar     |
+|bar   |baz     |
+|baz   |        |

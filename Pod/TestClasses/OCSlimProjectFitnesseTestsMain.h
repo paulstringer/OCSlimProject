@@ -5,4 +5,6 @@
 
 + (XCTestSuite *)testSuite;
 
+@property (nonatomic, assign) BOOL disableFixForXcodeDisappearingTestCaseByAppendingDummyTest;
+
 @end

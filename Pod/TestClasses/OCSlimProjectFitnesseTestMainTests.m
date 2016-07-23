@@ -19,6 +19,7 @@
     
     self.main = [[OCSlimProjectFitnesseTestsMain alloc] init];
 
+    self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
 }
 
 - (void)testAcceptanceTestCasesAreJUnitAsserts{
@@ -122,6 +123,27 @@
     
 }
 
+
+#pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.
+
+- (void)testAcceptanceTestSuiteAddsExtraTest {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    
+    self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = NO;
+    
+    XCTestSuite *suite = [self acceptanceTestSuite];
+    
+    XCTAssertEqual(suite.testCaseCount, 2);
+    
+    OCSPTestCase *testCase = (OCSPTestCase*) suite.tests.lastObject;
+    
+    XCTAssertTrue([testCase isPass]);
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"TearDown");
+    
+}
+
 #pragma mark - Test Helpers
 
 
@@ -139,15 +161,30 @@
     return [self stubSuccessfulTestReportWithFilenameModifier:nil];
 }
 
++ (NSData* )stubFailedTestReport {
+    
+    NSData *data = [OCSPTestDataManager failedResultData];
+    
+    return [self stubTestReportWithData:data];
+    
+}
+
 + (NSData* )stubSuccessfulTestReportWithFilenameModifier:(NSString*)modifier {
  
     NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:modifier];
+    
+    return [self stubTestReportWithData:data];
+
+}
+
++ (NSData *)stubTestReportWithData:(NSData*)data {
     
     NSParameterAssert(data);
     
     createDefaultTestReportReaderWithData(data);
     
     return data;
+    
 }
 
 #pragma mark - Test Suite Extraction

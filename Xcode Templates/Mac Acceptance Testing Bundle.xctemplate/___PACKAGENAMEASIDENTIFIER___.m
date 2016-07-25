@@ -8,10 +8,22 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ___FILEBASENAMEASIDENTIFIER___ : XCTestCase
+#if __has_include(<OCSlimProjectTestBundleSupport/OCSlimProjectFitnesseTestsMain.h>)
+#else
+#pragma GCC error "'OCSlimProjectTestBundleSupport' pod not found. Add \" 'OCSlimProjectTestBundleSupport' \" to this test targets pod configuration."
+#endif
+
+
+@interface OCSPDummyTestCase : XCTestCase
 
 @end
 
-@implementation ___FILEBASENAMEASIDENTIFIER___
+@implementation OCSPDummyTestCase
+
+/*
+ 
+ XCTest bundles require that atleast one XCTestCase class exists within the target for it to be valid. This test case must remain part of your target for the bundle to be a valid XCTest bundle. It is not intended that you add additional tests to this class.
+ 
+ */
 
 @end

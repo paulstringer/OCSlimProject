@@ -10,7 +10,9 @@
     
     NSString *path = [bundle pathForResource:fitnesseTestReportResourceName ofType:@"xml"];
     
-    NSAssert(path != nil, @"The %@.xml file is missing. Ensure your OCSlimProject based Acceptance Test target has been built. Check that you can run Acceptance Tests in the normal way using the command line script './LaunchFitnesse' located at your projects root directory. Check this test targets Run Script build phase for usage of ./LaunchFitnesse which is responsible for generating the %@ file.", fitnesseTestReportResourceName);
+    NSAssert(path != nil, @"The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target has been built.\
+             1. Check you're able to run Acceptance Tests using the command line script './LaunchFitnesse' located at your projects root directory.\
+             2. Check this targets Run Script build phase for usage of ./LaunchFitnesse which is responsible for generating the %@ file.", fitnesseTestReportResourceName);
     
     return [NSData dataWithContentsOfFile:path];
     

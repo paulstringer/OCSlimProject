@@ -11,9 +11,11 @@
 @implementation OCSPJUnitXMLParserTests
 
 - (void)setUp {
+    
     [super setUp];
     
     self.parser = [[OCSPJUnitXMLParser alloc] init];
+    
 }
 
 - (void)tearDown {
@@ -64,7 +66,16 @@
     
 }
 
-#pragma mark - Test Case Name Tests
+#pragma mark - Test Suite and Case name tests
+
+- (void)testSuiteName {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertEqualObjects([self.parser testSuiteName], @"OCSlimProjectExampleSuite");
+}
 
 - (void)testTestCaseNameAtIndex {
     
@@ -74,13 +85,12 @@
     
     [self.parser parse];
     
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"OCSlimProjectExamplePage.TestPage0");
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"OCSlimProjectExamplePage.TestPage1");
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:2], @"OCSlimProjectExamplePage.TestPage2");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"OCSlimProjectExampleSuite.TestPage0");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"OCSlimProjectExampleSuite.TestPage1");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:2], @"OCSlimProjectExampleSuite.TestPage2");
     
     
 }
-
 
 - (void)testTestCaseNameAtIndexOutOfRange {
     
@@ -89,8 +99,7 @@
     [self setupParserWithData:data];
     
     XCTAssertNil([self.parser testNameForTestCaseAtIndex:1]);
-    
-    
+
 }
 
 

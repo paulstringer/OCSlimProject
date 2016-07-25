@@ -55,7 +55,7 @@
     
     XCTAssertEqual(1, suite.tests.count);
     
-    XCTAssertEqual([[OCSlimProjectFitnesseTestsMain testSuite] name], [suite.tests.firstObject name]);
+    XCTAssertEqualObjects([[OCSlimProjectFitnesseTestsMain testSuite] name], [suite.tests.firstObject name]);
     
 }
 
@@ -95,13 +95,28 @@
     XCTAssertEqual(suite.testCaseCount, 3);
 }
 
+
+- (void)testAcceptanceTestSuiteNameEqualsSuiteName {
+    
+    NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    XCTestSuite *suite = [self acceptanceTestSuite];
+    
+    OCSPJUnitXMLParser* parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    
+    [parser parse];
+    
+    XCTAssertEqualObjects(suite.name, [parser testSuiteName]);
+    
+}
+
 - (void)testAcceptanceTestSuiteTestCaseName {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
-    XCTAssertEqualObjects([testCase testCaseName], @"TestPage0");
+    XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuite.TestPage0");
 }
 
 - (void)testAcceptanceTestSuiteTestCaseNames {
@@ -110,16 +125,16 @@
     
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
-    XCTAssertEqualObjects([testCase testCaseName], @"TestPage2");
+    XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuite.TestPage2");
 }
 
-- (void)testAcceptanceTestCaseNameNameRemovesTestSuiteComponent {
+- (void)testAcceptanceTestCaseNameNameDoesNotRemoveTestSuiteComponent {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
-    XCTAssertFalse([[testCase name] containsString:@"."]);
+    XCTAssertTrue([[testCase name] containsString:@"."]);
 }
 
 
@@ -157,7 +172,7 @@
     
     XCTAssertTrue([testCase isPass]);
     
-    XCTAssertEqualObjects([testCase testCaseName], @"TearDown");
+    XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuite.TearDown");
     
 }
 

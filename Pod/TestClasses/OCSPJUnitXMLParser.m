@@ -3,6 +3,7 @@
 @interface OCSPJUnitXMLParser () <NSXMLParserDelegate>
 
 @property (nonatomic, strong) NSData *data;
+@property (nonatomic, strong) NSString *testSuiteName;
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 @property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
@@ -40,6 +41,7 @@
     
 }
 
+
 - (NSString *) testNameForTestCaseAtIndex:(NSUInteger)index {
     
     return (index < self.testCaseNames.count) ? self.testCaseNames[index] : nil;
@@ -63,6 +65,8 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(nonnull NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(nonnull NSDictionary<NSString *,NSString *> *)attributeDict {
     
     if ([elementName isEqualToString:@"testsuite"]) {
+        
+        self.testSuiteName = attributeDict[@"name"];
         
         [self takeTestCaseCountFromElementAttributes:attributeDict];
     

@@ -49,7 +49,9 @@
     
     if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
         
-        OCSPTestCase *test = [[OCSPTestCase alloc] initWithTestCaseName:@"TearDown" result:YES];
+        NSString *testCaseName = [suite.name stringByAppendingString:@".TearDown"];
+        
+        OCSPTestCase *test = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:YES];
         
         [suite addTest:test];
         
@@ -81,19 +83,20 @@
     
     NSData *data = [[OCSPTestReportCenter defaultReader] read];
 
-    
-    XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:@"AcceptanceTestSuite"];
-    
     OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
     
     [parser parse];
     
     
+    NSString *testSuiteName = [parser testSuiteName];
+    
+    XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:testSuiteName];
+    
+    
+    
     for (int i = 0; i < [parser testCaseCount]; i++ ) {
     
-        NSString *fitnesseTestPageName = [parser testNameForTestCaseAtIndex:i];
-        
-        NSString *testCaseName = [OCSlimProjectFitnesseTestsMain testNameByRemovingSuiteNameComponent:fitnesseTestPageName];
+        NSString *testCaseName = [parser testNameForTestCaseAtIndex:i];
         
         BOOL result = [parser testResultForTestCaseAtIndex:i];
         
@@ -106,18 +109,6 @@
     
     return acceptanceTestSuite;
 
-}
-
-+ (NSString *)testNameByRemovingSuiteNameComponent:(NSString *)testName {
-    
-    NSInteger indexOfPageName = [testName rangeOfString:@"."].location;
-    
-    if (indexOfPageName != NSNotFound) {
-        return [testName substringFromIndex:indexOfPageName + 1];
-    } else {
-        return testName;
-    }
-    
 }
 
 @end

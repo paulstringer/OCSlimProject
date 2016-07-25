@@ -1,11 +1,7 @@
 //
-//  ___FILENAME___
-//  ___PACKAGENAME___
+//  Copyright © 2015 stringerstheory. All rights reserved.
 //
-//  Created by OCSlimProject on ___DATE___.
-//  © MIT Licence
 //
-
 #import <Foundation/Foundation.h>
 
 #if __has_include(<OCSlimProject/OCSlimProject.h>)

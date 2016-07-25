@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Macros</key>
+	<dict>
+		<key>OCSLIMPROJECTTESTBUNDLESUPPORTNAME</key>
+		<string>OCSlimProjectTestBundleSupport</string>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
@@ -65,12 +72,14 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 	<key>Options</key>
 	<array>
 		<dict>
+			<key>Default</key>
+			<string>FrontPage</string>
 			<key>Name</key>
 			<string>Fitnesse Suite Name</string>
 			<key>Identifier</key>
 			<string>fitnesseSuiteName</string>
 			<key>Description</key>
-			<string>Specify a specific Fitnesse Suite to target (or leave blank to run all)</string>
+			<string>Specify a specific Fitnesse Suite to target</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>
@@ -83,10 +92,6 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 			<dict>
 				<key>Objective-C</key>
 				<dict>
-					<key>Nodes</key>
-					<array>
-						<string>___PACKAGENAMEASIDENTIFIER___.m</string>
-					</array>
 					<key>Definitions</key>
 					<dict>
 						<key>___PACKAGENAMEASIDENTIFIER___.m</key>
@@ -94,14 +99,17 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 							<key>Path</key>
 							<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 						</dict>
+						<key>Info.plist:PrincipalClass</key>
+						<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;OCSlimProjectFitnesseTestsMain&lt;/string&gt;</string>
 					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAMEASIDENTIFIER___.m</string>
+					</array>
 				</dict>
 				<key>Swift</key>
 				<dict>
-					<key>Nodes</key>
-					<array>
-						<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-					</array>
 					<key>Definitions</key>
 					<dict>
 						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
@@ -109,7 +117,14 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 							<key>Path</key>
 							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
 						</dict>
+						<key>Info.plist:PrincipalClass</key>
+						<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;OCSlimProjectFitnesseTestsMain&lt;/string&gt;</string>
 					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
+					</array>
 				</dict>
 			</dict>
 		</dict>
@@ -117,9 +132,15 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 	<key>Nodes</key>
 	<array>
 		<string>Info.plist:PrincipalClass</string>
+		<string>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
+		<key>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</key>
+		<dict>
+			<key>Path</key>
+			<string>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</string>
+		</dict>
 		<key>Info.plist:PrincipalClass</key>
 		<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
 &lt;string&gt;OCSlimProjectFitnesseTestsMain&lt;/string&gt;</string>

@@ -1,24 +1,18 @@
 //
 //  ___FILENAME___
-//  ___PACKAGENAME___
+//  ___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
+//  Created by OCSlimProject on ___DATE___.
+//  © MIT Licence
 //
 
 #import <XCTest/XCTest.h>
 
-#if __has_include(<OCSlimProjectTestBundleSupport/OCSlimProjectFitnesseTestsMain.h>)
-#else
-#pragma GCC error "'OCSlimProjectTestBundleSupport' pod not found. Add \" 'OCSlimProjectTestBundleSupport' \" to this test targets pod configuration."
-#endif
-
-
-@interface OCSPTestCase : XCTestCase
+@interface ___PACKAGENAMEASIDENTIFIER___ : XCTestCase
 
 @end
 
-@implementation OCSPTestCase
+@implementation ___PACKAGENAMEASIDENTIFIER___
 
 /**
  

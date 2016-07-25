@@ -1,14 +1,14 @@
 //
 //  ___FILENAME___
-//  ___PACKAGENAME___
+//  ___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
+//  Created by OCSlimProject on ___DATE___.
+//  © MIT Licence
 //
 
 import XCTest
 
-class OCSPTestCase: XCTestCase {
+class ___PACKAGENAMEASIDENTIFIER___: XCTestCase {
     
      /*
      

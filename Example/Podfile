@@ -10,6 +10,6 @@ target 'OCSlimProject_AcceptanceTestsMac' do
   pod "OCSlimProject", :path => "../"
 end
 
-target 'OCSlimProject_AcceptanceTests_TestBundle' do
+target 'OCSlimProject_AcceptanceTests_UnitTestBundle' do
     pod "OCSlimProjectTestBundleSupport", :path => "../"
 end

@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C23FB9C1D401D7F00A09FD5"
-               BuildableName = "OCSlimProject_AcceptanceTests_TestBundle.xctest"
-               BlueprintName = "OCSlimProject_AcceptanceTests_TestBundle"
+               BlueprintIdentifier = "8CD64CEB1D46A1F0005C792A"
+               BuildableName = "OCSlimProject_AcceptanceTests_UnitTestBundle.xctest"
+               BlueprintName = "OCSlimProject_AcceptanceTests_UnitTestBundle"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
          </TestableReference>

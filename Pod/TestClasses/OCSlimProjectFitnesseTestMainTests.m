@@ -76,7 +76,7 @@
 
 #pragma mark - Individual Test Suite Result Reporting Tests
 
-- (void)testFitnesseTestSuiteNumberOfTests {
+- (void)testAcceptanceTestSuiteNumberOfTests {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
@@ -86,7 +86,7 @@
     
 }
 
-- (void)testFitnesseTestSuiteNumberOfTestsWithOtherTestReportData {
+- (void)testAcceptanceTestSuiteNumberOfTestsWithOtherTestReportData {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
@@ -95,23 +95,33 @@
     XCTAssertEqual(suite.testCaseCount, 3);
 }
 
-- (void)testFitnesseTestSuiteTestCaseName {
+- (void)testAcceptanceTestSuiteTestCaseName {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
-    XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase0");
+    XCTAssertEqualObjects([testCase testCaseName], @"TestPage0");
 }
 
-- (void)testFitnesseTestSuiteTestCaseNames {
+- (void)testAcceptanceTestSuiteTestCaseNames {
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
-    XCTAssertEqualObjects([testCase testCaseName], @"FakeTestCase2");
+    XCTAssertEqualObjects([testCase testCaseName], @"TestPage2");
 }
+
+- (void)testAcceptanceTestCaseNameNameRemovesTestSuiteComponent {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    
+    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
+    
+    XCTAssertFalse([[testCase name] containsString:@"."]);
+}
+
 
 - (void)testAcceptanceTestSuiteResultsAccurate {
     
@@ -120,6 +130,13 @@
     OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertTrue([testCase isPass]);
+    
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    
+    testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertFalse([testCase isPass]);
     
 }
 

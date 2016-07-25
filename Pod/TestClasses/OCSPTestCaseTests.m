@@ -88,10 +88,13 @@
 
 - (void)testInitWithTestCaseName {
     
-    OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:@"Salami" result:NO];
+    OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:@"TestPage0" result:NO];
     
-    XCTAssertTrue([[testCase name] containsString:@"Salami"]);
+    XCTAssertTrue([[testCase name] containsString:@"TestPage0"]);
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"TestPage0");
 }
+
 
 #pragma mark - Test Automators
 

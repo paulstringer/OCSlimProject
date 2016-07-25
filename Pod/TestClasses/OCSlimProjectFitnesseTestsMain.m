@@ -91,11 +91,13 @@
     
     for (int i = 0; i < [parser testCaseCount]; i++ ) {
     
-        NSString *name = [parser testNameForTestCaseAtIndex:i];
+        NSString *fitnesseTestPageName = [parser testNameForTestCaseAtIndex:i];
+        
+        NSString *testCaseName = [OCSlimProjectFitnesseTestsMain testNameByRemovingSuiteNameComponent:fitnesseTestPageName];
         
         BOOL result = [parser testResultForTestCaseAtIndex:i];
         
-        XCTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:name result:result];
+        XCTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:result];
         
         [acceptanceTestSuite addTest:testCase];
         
@@ -106,6 +108,17 @@
 
 }
 
++ (NSString *)testNameByRemovingSuiteNameComponent:(NSString *)testName {
+    
+    NSInteger indexOfPageName = [testName rangeOfString:@"."].location;
+    
+    if (indexOfPageName != NSNotFound) {
+        return [testName substringFromIndex:indexOfPageName + 1];
+    } else {
+        return testName;
+    }
+    
+}
 
 @end
 

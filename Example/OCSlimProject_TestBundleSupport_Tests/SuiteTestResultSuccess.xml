@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<testsuite name="FakeExampleTestSuitePage" tests="1" failures="0" disabled="0" errors="0" time="0.165">
-<testcase name="FakeTestCase0" assertions="1" time="0.004">
+<testsuite name="OCSlimProjectExamplePage" tests="1" failures="0" disabled="0" errors="0" time="0.165">
+<testcase name="OCSlimProjectExamplePage.TestPage0" assertions="1" time="0.004">
 <system-out>FakeTestCase0?pageHistory&amp;resultDate=20160622121535</system-out>
 </testcase>
 </testsuite>

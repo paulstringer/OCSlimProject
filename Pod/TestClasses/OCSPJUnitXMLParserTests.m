@@ -74,9 +74,9 @@
     
     [self.parser parse];
     
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"FakeTestCase0");
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"FakeTestCase1");
-    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:2], @"FakeTestCase2");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"OCSlimProjectExamplePage.TestPage0");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"OCSlimProjectExamplePage.TestPage1");
+    XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:2], @"OCSlimProjectExamplePage.TestPage2");
     
     
 }

@@ -3,7 +3,7 @@
 
 #import "OCSPTestReportReader.h"
 #import "OCSPTestDataManager.h"
-#import "OCSPTestCase.h"
+#import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
@@ -26,7 +26,7 @@
     
     XCTestCase *test = [self acceptanceTestCase];
     
-    XCTAssertEqual([test class], [OCSPTestCase class]);
+    XCTAssertEqual([test class], [OCSPTestSuite class]);
 }
 
 - (void)testAcceptanceTestCasesUseTestReportData {
@@ -114,7 +114,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
-    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
     XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuite.TestPage0");
 }
@@ -123,7 +123,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
-    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuite.TestPage2");
 }
@@ -132,7 +132,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
-    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] firstObject];
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
     XCTAssertTrue([[testCase name] containsString:@"."]);
 }
@@ -142,7 +142,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
     
-    OCSPTestCase *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertTrue([testCase isPass]);
     
@@ -159,7 +159,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
     
-    OCSPTestCase *testCase = [self acceptanceTestCase];
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
     
     XCTAssertNotNil(testCase.errorMessage);
 }
@@ -176,7 +176,7 @@
     
     XCTAssertEqual(suite.testCaseCount, 2);
     
-    OCSPTestCase *testCase = (OCSPTestCase*) suite.tests.lastObject;
+    OCSPTestSuite *testCase = (OCSPTestSuite*) suite.tests.lastObject;
     
     XCTAssertTrue([testCase isPass]);
     
@@ -252,13 +252,13 @@
 }
 
 
-- (OCSPTestCase *)acceptanceTestCase {
+- (OCSPTestSuite *)acceptanceTestCase {
 
     XCTestSuite *suite = [self acceptanceTestSuite];
 
     XCTestCase *test = [[suite tests] firstObject];
 
-    return (OCSPTestCase*) test;
+    return (OCSPTestSuite*) test;
 
 }
 

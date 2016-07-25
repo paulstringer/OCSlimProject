@@ -1,13 +1,13 @@
 #import <XCTest/XCTest.h>
-#import "OCSPTestCase.h"
+#import "OCSPTestSuite.h"
 #import "OCSPAssertRecorder.h"
 #import "OCSPTestDataManager.h"
 
-@interface OCSPTestCaseTests : XCTestCase <XCTestObservation>
+@interface OCSPTestSuiteTests : XCTestCase <XCTestObservation>
 @property (nonatomic, strong) OCSPAssertRecorderSpy *recorderSpy;
 @end
 
-@implementation OCSPTestCaseTests
+@implementation OCSPTestSuiteTests
 
 - (void)setUp {
     
@@ -41,7 +41,7 @@
 
 - (void)testNilErrorMessageForFailureResult {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
 //    asserter.errorMessage = @"ERROR";
     
@@ -53,7 +53,7 @@
 
 - (void)testGivenErrorMessageForFailureResult {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     asserter.errorMessage = @"ERROR";
     
@@ -64,7 +64,7 @@
 
 - (void)testInvocationWillRunAssertions {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     [asserter forwardInvocation:asserter.invocation];
     
@@ -74,7 +74,7 @@
 
 - (void)testInvocationRunsAssertion {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"AnyTestName" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"AnyTestName" result:NO assertRecorder:self.recorderSpy];
     
     [asserter.invocation invokeWithTarget:asserter];
     
@@ -84,7 +84,7 @@
 
 - (void)testSelectorMethodNameEqualsTestCaseName {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"Salami" result:NO];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"Salami" result:NO];
     
     XCTAssertEqualObjects(NSStringFromSelector(asserter.invocation.selector), @"Salami");
 
@@ -93,7 +93,7 @@
 
 - (void)testInitWithFailedResult {
     
-    OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     [testCase run];
     
@@ -102,7 +102,7 @@
 
 - (void)testInitWithSuccessResult {
     
-    OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:YES assertRecorder:self.recorderSpy];
+    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:YES assertRecorder:self.recorderSpy];
     
     [testCase run];
     
@@ -111,7 +111,7 @@
 
 - (void)testInitWithTestCaseName {
     
-    OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:@"TestPage0" result:NO];
+    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestPage0" result:NO];
     
     XCTAssertTrue([[testCase name] containsString:@"TestPage0"]);
     
@@ -123,7 +123,7 @@
 
 - (void)runAsserterWithResult:(BOOL)result {
     
-    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:result assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:result assertRecorder:self.recorderSpy];
     
     [asserter run];
     

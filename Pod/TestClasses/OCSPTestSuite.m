@@ -1,14 +1,14 @@
-#import "OCSPTestCase.h"
+#import "OCSPTestSuite.h"
 #import "OCSPAssertRecorder.h"
 #import "OCSPJUnitXMLParser.h"
 
-@interface OCSPTestCase ()
+@interface OCSPTestSuite ()
 @property (nonatomic, strong) id<OCSPAssertRecorder> assertRecorder;
 @property (nonatomic, strong) NSString *testName;
 @property (nonatomic, assign) BOOL testResult;
 @end
 
-@implementation OCSPTestCase
+@implementation OCSPTestSuite
 
 - (id)initWithTestCaseName:(NSString *)name result:(BOOL)result {
     
@@ -21,8 +21,11 @@
 - (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result assertRecorder:(nonnull id<OCSPAssertRecorder>)recorder {
     
     if (self == [super initWithSelector:NSSelectorFromString(name)] ) {
+        
         _testName = name;
+        
         _testResult = result;
+        
         _assertRecorder = recorder;
     }
     
@@ -38,7 +41,9 @@
         [self.assertRecorder recordFailWithTestCase:self message:message];
         
     } else {
+        
         [self.assertRecorder recordPassWithTestCase:self];
+        
     }
 }
 

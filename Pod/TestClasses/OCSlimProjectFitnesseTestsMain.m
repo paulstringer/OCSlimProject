@@ -1,6 +1,6 @@
 #import "OCSlimProjectFitnesseTestsMain.h"
 #import "OCSPTestReportReader.h"
-#import "OCSPTestCase.h"
+#import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 
 @interface OCSlimProjectFitnesseTestsMain ()
@@ -51,7 +51,7 @@
         
         NSString *testCaseName = [suite.name stringByAppendingString:@".TearDown"];
         
-        OCSPTestCase *test = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:YES];
+        OCSPTestSuite *test = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:YES];
         
         [suite addTest:test];
         
@@ -100,7 +100,7 @@
         
         BOOL result = [parser testResultForTestCaseAtIndex:i];
         
-        OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:result];
+        OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:result];
         
         [testCase setErrorMessage:[parser testErrorMessageForTestCaseAtIndex:i]];
         

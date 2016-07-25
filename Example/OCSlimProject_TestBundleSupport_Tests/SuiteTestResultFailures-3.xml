@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<testsuite name="OCSlimProjectExampleSuite" tests="3" failures="3" disabled="0" errors="0" time="0.166">
+    <testcase name="OCSlimProjectExampleSuite.TestPage0" assertions="0" time="0.004">
+        <failure message="1 errors"/>
+        <system-out>OCSlimProjectExampleSuite?pageHistory&amp;resultDate=20160622112522</system-out>
+    </testcase>
+    <testcase name="OCSlimProjectExampleSuite.TestPage1" assertions="0" time="0.004">
+        <failure message="2 errors"/>
+        <system-out>OCSlimProjectExampleSuite?pageHistory&amp;resultDate=20160622112522</system-out>
+    </testcase>
+    <testcase name="OCSlimProjectExampleSuite.TestPage2" assertions="0" time="0.004">
+        <failure message="3 errors"/>
+        <system-out>OCSlimProjectExampleSuite?pageHistory&amp;resultDate=20160622112522</system-out>
+    </testcase>
+</testsuite>

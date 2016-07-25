@@ -32,7 +32,11 @@
 - (void)run {
     
     if ( ![self isPass] ) {
-        [self.assertRecorder recordFailWithTestCase:self];
+        
+        NSString *message = (self.errorMessage) ? self.errorMessage : @"Unspecified Acceptance Test Failure";
+        
+        [self.assertRecorder recordFailWithTestCase:self message:message];
+        
     } else {
         [self.assertRecorder recordPassWithTestCase:self];
     }

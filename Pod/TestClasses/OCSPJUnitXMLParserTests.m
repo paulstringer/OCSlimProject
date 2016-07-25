@@ -81,9 +81,7 @@
     
     NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
     
-    self.parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
-    
-    [self.parser parse];
+    [self setupParserWithData:data];
     
     XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:0], @"OCSlimProjectExampleSuite.TestPage0");
     XCTAssertEqualObjects([self.parser testNameForTestCaseAtIndex:1], @"OCSlimProjectExampleSuite.TestPage1");
@@ -101,6 +99,42 @@
     XCTAssertNil([self.parser testNameForTestCaseAtIndex:1]);
 
 }
+
+- (void)testErrorMessageAtIndexForPass {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertNil([self.parser testErrorMessageForTestCaseAtIndex:0]);
+    
+}
+
+- (void)testErrorMessageAtIndexForFail {
+    
+    NSData *data = [OCSPTestDataManager failedResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:0], @"1 errors");
+    
+}
+
+
+- (void)testErrorMessageAtIndexesForFail {
+    
+    NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:0], @"1 errors");
+    
+    XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:1], @"2 errors");
+    
+    XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:2], @"3 errors");
+    
+}
+
 
 
 #pragma mark - Test Result Tests

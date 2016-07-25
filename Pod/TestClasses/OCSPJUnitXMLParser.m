@@ -8,6 +8,7 @@
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 @property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *testCaseResults;
+@property (nonatomic, strong) NSMutableArray<id> *testErrorMessages;
 
 @end
 
@@ -54,6 +55,14 @@
     
 }
 
+- (nullable NSString *)testErrorMessageForTestCaseAtIndex:(NSUInteger)index {
+    
+    NSObject *object = self.testErrorMessages[index];
+    
+    return ([[NSNull null] isEqual:object]) ? nil : (NSString *)object;
+    
+}
+
 //MARK: NSXMLParserDelegate
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -78,12 +87,14 @@
         
         [self takeTestCaseNameFromElementAttributes:attributeDict];
         
-        [self addTestResultPass];
+        [self appendPassTestResult];
+        
+        [self appendNullTestErrorMessage];
     }
     
     if ([elementName isEqualToString:@"failure"]) {
         
-        [self updateTestResultFail];
+        [self updateTestResultFailFromElementAttributes:attributeDict];
     }
     
 }
@@ -119,7 +130,7 @@
 }
 
 
-- (void)addTestResultPass {
+- (void)appendPassTestResult {
     
     if (!self.testCaseResults) {
         
@@ -132,11 +143,29 @@
     
 }
 
-- (void)updateTestResultFail {
+- (void)appendNullTestErrorMessage {
+    
+    if (!self.testErrorMessages) {
+        
+        self.testErrorMessages = [NSMutableArray arrayWithObject:[NSNull null]];
+        
+    } else {
+        
+        [self.testErrorMessages addObject:[NSNull null]];
+    }
+    
+}
+
+- (void)updateTestResultFailFromElementAttributes:(NSDictionary *)attributeDict {
     
     NSUInteger lastTestResultIndex = [self.testCaseResults indexOfObject:self.testCaseResults.lastObject];
     
     [self.testCaseResults replaceObjectAtIndex:lastTestResultIndex withObject:@NO];
+    
+    
+    NSString *message = attributeDict[@"message"];
+    
+    [self.testErrorMessages replaceObjectAtIndex:lastTestResultIndex withObject:message];
     
 }
 @end

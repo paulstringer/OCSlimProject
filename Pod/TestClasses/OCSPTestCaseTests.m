@@ -39,6 +39,29 @@
     
 }
 
+- (void)testNilErrorMessageForFailureResult {
+    
+    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    
+//    asserter.errorMessage = @"ERROR";
+    
+    [asserter run];
+    
+    XCTAssertEqualObjects(self.recorderSpy.didRecordFailMessage, @"Unspecified Acceptance Test Failure");
+}
+
+
+- (void)testGivenErrorMessageForFailureResult {
+    
+    OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    
+    asserter.errorMessage = @"ERROR";
+    
+    [asserter run];
+    
+    XCTAssertEqualObjects(self.recorderSpy.didRecordFailMessage, @"ERROR");
+}
+
 - (void)testInvocationWillRunAssertions {
     
     OCSPTestCase *asserter = [[OCSPTestCase alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];

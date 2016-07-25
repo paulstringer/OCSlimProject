@@ -43,9 +43,18 @@ static NSBundle *_bundle;
     
 }
 
++ (NSData *)failedResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier {
+    
+    return  [self resultDataAtPath:[self failedResultPath] byAppendingHyphenatedFilenameModifier:modifier];
+}
+
 + (NSData *)successResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier {
     
-    NSString *path = [self successResultPath];
+    return  [self resultDataAtPath:[self successResultPath] byAppendingHyphenatedFilenameModifier:modifier];
+    
+}
+
++ (NSData *)resultDataAtPath:(NSString *)path byAppendingHyphenatedFilenameModifier:(NSString *)modifier {
     
     if (modifier) {
         

@@ -155,6 +155,14 @@
     
 }
 
+- (void)testFailingAcceptanceTestCasesNonNilErrorMessage {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    
+    OCSPTestCase *testCase = [self acceptanceTestCase];
+    
+    XCTAssertNotNil(testCase.errorMessage);
+}
 
 #pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.
 

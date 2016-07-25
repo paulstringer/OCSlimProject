@@ -16,6 +16,8 @@
 
 - (BOOL) testResultForTestCaseAtIndex:(NSUInteger)index;
 
+- (nullable NSString *) testErrorMessageForTestCaseAtIndex:(NSUInteger)index;
+
 - (nonnull NSString *) testSuiteName;
 
 @end

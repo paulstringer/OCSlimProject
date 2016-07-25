@@ -100,7 +100,9 @@
         
         BOOL result = [parser testResultForTestCaseAtIndex:i];
         
-        XCTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:result];
+        OCSPTestCase *testCase = [[OCSPTestCase alloc] initWithTestCaseName:testCaseName result:result];
+        
+        [testCase setErrorMessage:[parser testErrorMessageForTestCaseAtIndex:i]];
         
         [acceptanceTestSuite addTest:testCase];
         

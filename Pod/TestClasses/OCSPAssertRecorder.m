@@ -2,15 +2,15 @@
 
 @implementation OCSPXCAssertRecorder
 
-- (void)recordFailWithTestCase:(XCTestCase *)test {
+- (void)recordFailWithTestCase:(XCTestCase *)test message:(NSString *)message{
     
-    _XCTPrimitiveFail(test, @"Fitnesse Test Failed", nil);
+    _XCTPrimitiveFail(test, @"Fitnesse acceptance test page failed with message '%@'", message);
     
 }
 
 - (void)recordPassWithTestCase:(XCTestCase *)test {
     
-    _XCTPrimitiveAssertTrue(test, YES, @"Fitnesse Test Passed");
+    _XCTPrimitiveAssertTrue(test, YES, @"");
     
 }
 
@@ -18,8 +18,9 @@
 
 @implementation OCSPAssertRecorderSpy
 
-- (void)recordFailWithTestCase:(XCTestCase*)testCase {
+- (void)recordFailWithTestCase:(XCTestCase *)test message:(NSString *)message{
     
+    self.didRecordFailMessage = message;
     self.didRecordFail = true;
     
 }

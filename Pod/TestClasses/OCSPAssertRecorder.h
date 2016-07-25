@@ -3,7 +3,7 @@
 
 @protocol OCSPAssertRecorder <NSObject>
 
-- (void)recordFailWithTestCase:(XCTestCase* _Nonnull)test;
+- (void)recordFailWithTestCase:(XCTestCase * _Nonnull)test message:(NSString * _Nonnull)message;
 - (void)recordPassWithTestCase:(XCTestCase* _Nonnull)test;
 
 @end
@@ -15,6 +15,7 @@
 
 @interface OCSPAssertRecorderSpy : NSObject <OCSPAssertRecorder>
 
+@property (nonatomic, strong, nullable) NSString *didRecordFailMessage;
 @property (nonatomic, assign) BOOL didRecordFail;
 @property (nonatomic, assign) BOOL didRecordPass;
 

@@ -4,6 +4,8 @@
 
 + (NSData *)failedResultData;
 
++ (NSData *)failedResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier;
+
 + (NSData *)successResultData;
 
 + (NSData *)successResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier;

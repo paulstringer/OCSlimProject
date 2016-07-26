@@ -14,3 +14,11 @@ pod '___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___' \
 end\"\
 to your Podfile configuration."
 #endif
+
+/* Copy and paste this entry to your projects Podfile and run 'pod install' or 'pod update' as necessary
+
+ target '___PACKAGENAMEASIDENTIFIER___' do
+    pod '___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___'
+ end
+
+*/

@@ -6,7 +6,7 @@
 //  © MIT Licence
 //
 
-#if __has_include(<___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___/OCSLIMPROJECTTESTBUNDLEPRINCIPALCLASS.h>)
+#if __has_include(<OCSlimProjectTestBundleSupport/OCSlimProjectFitnesseTestsMain.h>)
 #else
 #pragma GCC error "'___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___' pod was not found. Add the entry \"\
 target '___PACKAGENAMEASIDENTIFIER___' do \
@@ -20,7 +20,5 @@ to your Podfile configuration."
  target '___PACKAGENAMEASIDENTIFIER___' do
     pod '___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___'
  end
- 
- https://cocoapods.org/?q=___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___
 
 */

@@ -42,6 +42,12 @@ wait_for_simulator() {
 	done
 }
 
+get_booted_devicetypeid() {
+	local BOOTED_DEVICE_NAME=$(xcrun simctl list devices | grep "Booted" | cut -d "(" -f1)
+	local BOOTED_DEVICETYPE_ID=$(xcrun simctl list devicetypes | grep "^$BOOTED_DEVICE_NAME (com.apple" | cut -d "(" -f2 | cut -d ")" -f1)
+	echo "$BOOTED_DEVICE_NAME, $BOOTED_DEVICETYPE_ID"
+	echo "$BOOTED_DEVICETYPE_ID, $DEPLOYMENT_TARGET_VALUE"
+}
 
 boot_device() {
 	local device_identifier=$(getDeviceIdentifier)
@@ -62,6 +68,7 @@ run_app() {
 
 main() {
 
+	
 	get_app_container
 
 	case $? in
@@ -89,4 +96,14 @@ main() {
 
 }
 
-main
+get_booted_devicetypeid
+
+#GETS THE NAME OF THE CURRENTLY BOOTED DEVICE
+#xcrun simctl list devices | grep "Booted" | cut -d "(" -f1
+
+#GETS THE MOST MODERN DEVICE NAME FOR A GIVEN DEVICE FAMILY
+#xcrun simctl list devicetypes | grep "iPhone" | tail -n1 | cut -d "(" -f2 | cut -d ")" -f1
+
+#GETS THE DEVICE TYPE IDENTIFIER FOR A GIVEN DEVICE NAME
+#xcrun simctl list devicetypes | grep "^iPhone 6 (com.apple" | cut -d "(" -f2 | cut -d ")" -f1
+

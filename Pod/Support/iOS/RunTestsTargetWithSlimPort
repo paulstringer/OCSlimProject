@@ -5,88 +5,41 @@ DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cu
 SLIM_PORT=$1
 APP_IDENTIFIER=$(/usr/libexec/PlistBuddy $MYPATH/../Info.plist -c "Print CFBundleIdentifier")
 DEVICE_TYPE=iPhone
-NOTBOOTED_CODE=158
-APPCONTAINER_NOTFOUND_CODE=2
 
-#echo 'Running Test Target "'$FULL_PRODUCT_NAME'" with Slim Port "'$SLIM_PORT'"'
-#echo 'Simulator Device "'$DEVICE_TYPE'", deployment Target "'$DEPLOYMENT_TARGET_VALUE'"'
+get_app_devicetypeid() {
 
-echo "Application Identifier: $APP_IDENTIFIER"
-
-get_app_container() {
-	return $(xcrun simctl get_app_container booted $APP_IDENTIFIER > /dev/null)
-}
-
-install_app() {
-	echo "Installing App on the currently booted device (Path: $APP_PATH)" 
-	xcrun simctl install booted $APP_PATH
-}
-
-getDeviceIdentifier() {
-	local device_identifier=$(xcrun instruments -s | grep "$DEVICE_TYPE" | grep -v "Apple Watch" | grep "9.3" | cut -d "[" -f2 | cut -d "]" -f1 | tail -n 1)
-	if [ -z "$device_identifier" ]; then
-		echo "Couldn't find a $DEVICE_TYPE device to boot, aborting"
-		exit
+	local BOOTED_DEVICETYPE_ID=
+	local BOOTED_DEVICE_NAME=$(xcrun simctl list devices | grep "Booted" | cut -d "(" -f1 | awk '{gsub(/^ +| +$/,"")} {print $0}')
+	
+	if [ ! -z "$BOOTED_DEVICE_NAME" ]; then
+		BOOTED_DEVICETYPE_ID=$(xcrun simctl list devicetypes | grep "^$BOOTED_DEVICE_NAME (com.apple" | cut -d "(" -f2 | cut -d ")" -f1)
+	else
+		BOOTED_DEVICETYPE_ID=$(xcrun simctl list devicetypes | grep "$DEVICE_TYPE" | tail -n1 | cut -d "(" -f2 | cut -d ")" -f1)
 	fi
-	echo $device_identifier
+	
+	echo "$BOOTED_DEVICETYPE_ID, $DEPLOYMENT_TARGET_VALUE"
 }
 
-
-wait_for_simulator() {
-	echo 'Waiting for simulator'
-	get_app_container
-	while [ $? -eq $NOTBOOTED_CODE ] 
-	do
-		sleep 0.2
-		get_app_container
-	done
+ios_sim_launch() {
+	echo "== Begin Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
+	$MYPATH/ios-sim launch $1 --exit --devicetypeid "$2" --args $3 
 }
 
-
-boot_device() {
-	local device_identifier=$(getDeviceIdentifier)
-	echo "Booting Simulator (Device Type=$DEVICE_TYPE)"
-	open -a "Simulator" --args -CurrentDeviceUDID "$device_identifier"
-	echo "$(xcrun simctl list | grep $device_identifier | tail -n 1 )"
-	wait_for_simulator
-}
-
-launch_app() {
-	echo "Launching App on Booted Device ( $(xcrun simctl launch booted $APP_IDENTIFIER $SLIM_PORT) (Port:$SLIM_PORT) )"
-}
-
-run_app() {
-	install_app
-	launch_app
+run_test_system() {
+	local DEVICE_TYPE_IDENTIFIER=$(get_app_devicetypeid)
+	echo "Slim Test System Bundle Identifier: $APP_IDENTIFIER"
+	echo "Slim Test System SDK Deployment Target: $DEPLOYMENT_TARGET_VALUE"
+	echo "Slim Test System Executable Folder Path: $APP_PATH"
+	echo "Simulator Device Identifier: $DEVICE_TYPE_IDENTIFIER"
+	ios_sim_launch $APP_PATH "$DEVICE_TYPE_IDENTIFIER" $SLIM_PORT
 }
 
 main() {
-
-	get_app_container
-
-	case $? in
-		$APPCONTAINER_NOTFOUND_CODE)
-		echo "Some Device Currently Booted, But App Not Installed"
-		run_app
-		;;
-
-		$NOTBOOTED_CODE)
-		boot_device
-		run_app
-		;;
-	
-		0)
-		echo "Detected the App on the currently booted device. Will re-install (ensuring we're running latest build)"
-		run_app
-		;;
-	
-		*)
-		echo "unrecognised exit code, aborted."
-		;;
-	esac
-
+	echo "== OCSlimProject:RunSlimTestTargetWithSlimPort:$SLIM_PORT =="
+	run_test_system
 	exit
-
 }
 
 main
+
+

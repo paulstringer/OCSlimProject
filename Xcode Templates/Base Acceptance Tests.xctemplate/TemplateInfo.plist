@@ -4,6 +4,8 @@
 <dict>
 	<key>Macros</key>
 	<dict>
+		<key>POD_ABBREVIATION</key>
+		<string>OCSP</string>
 		<key>POD_NAME</key>
 		<string>OCSlimProject</string>
 		<key>POD_PLATFORM_IDENTIFIER</key>
@@ -49,6 +51,8 @@
 			<key>BuildPhases</key>
 			<array>
 				<dict>
+					<key>Name</key>
+					<string>[___POD_ABBREVIATION___] Generate Fitnesse Test System Scripts</string>
 					<key>Class</key>
 					<string>ShellScript</string>
 					<key>ShellPath</key>

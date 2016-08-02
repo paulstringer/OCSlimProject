@@ -18,6 +18,7 @@ to your Podfile configuration."
 /* Copy and paste this entry to your projects Podfile and run 'pod install' or 'pod update' as necessary
 
  target '___PACKAGENAMEASIDENTIFIER___' do
+    platform :___POD_PLATFORM___
     pod '___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___'
  end
 

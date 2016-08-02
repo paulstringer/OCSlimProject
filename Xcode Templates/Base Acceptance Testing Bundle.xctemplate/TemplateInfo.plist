@@ -6,6 +6,8 @@
 	<true/>
 	<key>Macros</key>
 	<dict>
+		<key>POD_PLATFORM_IDENTIFIER</key>
+		<string>___POD_PLATFORM_IDENTIFIER___</string>
 		<key>OCSLIMPROJECTTESTBUNDLESUPPORTNAME</key>
 		<string>OCSlimProjectTestBundleSupport</string>
 		<key>OCSLIMPROJECTTESTBUNDLEPRINCIPALCLASS</key>

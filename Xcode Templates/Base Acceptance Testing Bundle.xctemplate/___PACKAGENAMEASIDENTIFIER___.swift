@@ -1,10 +1,12 @@
 //
 //  ___FILENAME___
-//  ___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___
+//  ___POD_NAME___
 //
 //  Created by OCSlimProject on ___DATE___.
-//  © MIT Licence
+//  MIT License
+//  © 2016 Paul Stringer
 //
+
 
 import XCTest
 

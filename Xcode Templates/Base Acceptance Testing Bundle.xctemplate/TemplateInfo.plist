@@ -8,9 +8,9 @@
 	<dict>
 		<key>POD_PLATFORM_IDENTIFIER</key>
 		<string>___POD_PLATFORM_IDENTIFIER___</string>
-		<key>OCSLIMPROJECTTESTBUNDLESUPPORTNAME</key>
+		<key>POD_NAME</key>
 		<string>OCSlimProjectTestBundleSupport</string>
-		<key>OCSLIMPROJECTTESTBUNDLEPRINCIPALCLASS</key>
+		<key>PRINCIPALCLASSNAME</key>
 		<string>OCSlimProjectFitnesseTestsMain</string>
 	</dict>
 	<key>Kind</key>
@@ -108,14 +108,14 @@ ${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUT
 	<key>Nodes</key>
 	<array>
 		<string>Info.plist:PrincipalClass</string>
-		<string>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</string>
+		<string>___POD_NAME___.m</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
-		<key>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</key>
+		<key>___POD_NAME___.m</key>
 		<dict>
 			<key>Path</key>
-			<string>___OCSLIMPROJECTTESTBUNDLESUPPORTNAME___.m</string>
+			<string>___POD_NAME___.m</string>
 		</dict>
 		<key>Info.plist:PrincipalClass</key>
 		<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;

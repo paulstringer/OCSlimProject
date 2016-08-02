@@ -1,7 +1,3 @@
-//
-//  Copyright © 2015 stringerstheory. All rights reserved.
-//
-
 import Foundation
 
 @objc(FixtureExample)

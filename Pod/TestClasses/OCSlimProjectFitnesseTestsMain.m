@@ -2,6 +2,7 @@
 #import "OCSPTestReportReader.h"
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
+#import "OCSPLocalizedMessageTable.h"
 
 @interface OCSlimProjectFitnesseTestsMain ()
 
@@ -81,12 +82,7 @@
 + (XCTestSuite *)testSuite {
     
     
-    NSData *data = [[OCSPTestReportCenter defaultReader] read];
-
-    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
-    
-    [parser parse];
-    
+    OCSPJUnitXMLParser *parser = [self testReportParser];
     
     NSString *testSuiteName = [parser testSuiteName];
     
@@ -102,7 +98,26 @@
         
         OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:result];
         
-        [testCase setErrorMessage:[parser testErrorMessageForTestCaseAtIndex:i]];
+        NSString *testPageErrorMessage = [parser testErrorMessageForTestCaseAtIndex:i];
+        
+        NSString *message = [OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:testPageErrorMessage];
+        
+        [testCase setErrorMessage:message];
+        
+        [acceptanceTestSuite addTest:testCase];
+        
+    }
+    
+    
+    if ( [parser testCaseCount] == 0 ) {
+        
+        NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
+        
+        OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
+        
+        NSString *message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
+        
+        [testCase setErrorMessage:message];
         
         [acceptanceTestSuite addTest:testCase];
         
@@ -111,6 +126,17 @@
     
     return acceptanceTestSuite;
 
+}
+
++ (OCSPJUnitXMLParser *)testReportParser {
+    
+    NSData *data = [[OCSPTestReportCenter defaultReader] read];
+    
+    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
+    
+    [parser parse];
+    
+    return parser;
 }
 
 @end

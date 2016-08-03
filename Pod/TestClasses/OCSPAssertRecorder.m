@@ -4,7 +4,7 @@
 
 - (void)recordFailWithTestCase:(XCTestCase *)test message:(NSString *)message{
     
-    _XCTPrimitiveFail(test, @"Fitnesse acceptance test page failed with message '%@'", message);
+    _XCTPrimitiveFail(test, @"%@", message);
     
 }
 

@@ -5,6 +5,7 @@
 #import "OCSPTestDataManager.h"
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
+#import "OCSPLocalizedMessageTable.h"
 
 @interface OCSlimProjectFitnesseTestMainTests : XCTestCase
 
@@ -162,6 +163,58 @@
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
     XCTAssertNotNil(testCase.errorMessage);
+}
+
+- (void)testFailingAcceptanceTestCaseErrorMessage {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+
+    XCTAssertEqualObjects([OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:@"1 errors"], testCase.errorMessage);    
+}
+
+#pragma mark - Report Empty Test Suites as probably unexpected
+
+- (void)testReportDataWithZeroTestsReturnsSingleTest {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertNotNil(testCase);
+}
+
+
+- (void)testReportDataWithZeroTestsReturnsFail {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertFalse([testCase isPass]);
+}
+
+- (void)testReportDataWithZeroTestsReturnsInformativeTestName {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    XCTAssertEqualObjects(@"EmptyPageTestCaseCountGreaterThanZero", [testCase testCaseName]);
+}
+
+- (void)testReportDataWithZeroTestsReturnsInformativeError {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    
+    NSString *errorMsg = NSLocalizedStringFromTableInBundle(@"EmptyTestSuiteErrorMessage", nil, [NSBundle bundleForClass:[self class]], nil);
+    
+    NSString *message = [NSString stringWithFormat:errorMsg, @"EmptyPage", nil];
+    
+    XCTAssertEqualObjects(message, [testCase errorMessage]);
 }
 
 #pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.

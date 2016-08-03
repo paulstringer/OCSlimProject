@@ -109,23 +109,39 @@
     }
     
     
-    if ( [parser testCaseCount] == 0 ) {
-        
-        NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
-        
-        OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
-        
-        NSString *message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
-        
-        [testCase setErrorMessage:message];
-        
-        [acceptanceTestSuite addTest:testCase];
-        
-    }
-    
+    [self addExceptionParseReportTestCases:parser testSuite:acceptanceTestSuite];
     
     return acceptanceTestSuite;
 
+}
+
++ (void)addExceptionParseReportTestCases:(OCSPJUnitXMLParser *)parser testSuite:(XCTestSuite *) suite {
+    
+    OCSPTestSuite *reportingTestCase = nil;
+    
+    
+    if ( [parser parseErrorOccured] ) {
+        
+        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestSuiteReportXMLParsingSucceeded" result:NO];
+        
+        NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
+        
+        [reportingTestCase setErrorMessage:message];
+        
+    } else if ( [parser testCaseCount] == 0 ) {
+        
+        NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
+        
+        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
+        
+        NSString *message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
+        
+        [reportingTestCase setErrorMessage:message];
+        
+    }
+    
+    [suite addTest:reportingTestCase];
+    
 }
 
 + (OCSPJUnitXMLParser *)testReportParser {

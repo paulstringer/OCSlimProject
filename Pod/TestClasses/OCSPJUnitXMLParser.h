@@ -6,6 +6,8 @@
 
 @property (nonatomic, readonly, nonnull) NSString *testSuiteName;
 
+@property (nonatomic, readonly) BOOL parseErrorOccured;
+
 - (nonnull id)initWithXMLData:(nonnull NSData *) data;
 
 - (void) parse;

@@ -8,7 +8,7 @@
 @implementation OCSPLocalizedMessageTableTests
 
 
-- (void)testErrorMessageEmptyTestSuiteDefined {
+- (void)testErrorMessageEmptyTestSuiteKeyDefined {
     
     NSString *localizedString = NSLocalizedStringFromTableInBundle(@"EmptyTestSuiteErrorMessage", nil, [NSBundle bundleForClass:[self class]], nil);
     
@@ -26,14 +26,13 @@
     
 }
 
-- (void)testErrorMessageTestPageDefined {
+- (void)testErrorMessageTestPageKeyDefined {
     
     NSString *localizedString = NSLocalizedStringFromTableInBundle(@"TestPageErrorMessage", nil, [NSBundle bundleForClass:[self class]], nil);
     
     XCTAssertNotEqualObjects(@"TestPageErrorMessage", localizedString);
     
 }
-
 
 - (void)testLocalizedTestPageErrorMessage {
     
@@ -44,5 +43,25 @@
     XCTAssertEqualObjects(expectedMessage, message);
     
 }
+
+
+- (void)testErrorMessageTestSuiteParsingErrorKeyDefined {
+    
+    NSString *localizedString = NSLocalizedStringFromTableInBundle(@"TestSuiteParsingErrorMessage", nil, [NSBundle bundleForClass:[self class]], nil);
+    
+    XCTAssertNotEqualObjects(@"TestSuiteParsingErrorMessage", localizedString);
+    
+}
+
+- (void)testLocalizedTestSuiteParsingErrorMessage {
+    
+    NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
+    
+    NSString *expectedMessage = [OCSPLocalizedMessageTable localizedMessageWithKey:@"TestSuiteParsingErrorMessage" argument:nil];
+    
+    XCTAssertEqualObjects(expectedMessage, message);
+    
+}
+
 
 @end

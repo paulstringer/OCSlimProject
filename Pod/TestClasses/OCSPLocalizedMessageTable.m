@@ -16,6 +16,11 @@
     
 }
 
++ (NSString *)localizedTestSuiteParsingErrorMessage {
+    
+    return [self localizedMessageWithKey:@"TestSuiteParsingErrorMessage" argument:nil];
+}
+
 + (NSString *)localizedMessageWithKey:(NSString*)key argument:(NSString*)arg {
     
     NSString *localizedString = NSLocalizedStringFromTableInBundle(key, nil, [NSBundle bundleForClass:[self class]], nil);

@@ -5,7 +5,7 @@
 @interface OCSPJUnitXMLParserTests : XCTestCase
 
 @property (nonatomic, strong) OCSPJUnitXMLParser *parser;
-
+@property (nonatomic, strong) NSError *parsingError;
 @end
 
 @implementation OCSPJUnitXMLParserTests
@@ -136,7 +136,6 @@
 }
 
 
-
 #pragma mark - Test Result Tests
 
 - (void)testResultAtIndexWithSuccessfulResults {
@@ -157,6 +156,26 @@
     
     XCTAssertFalse([self.parser testResultForTestCaseAtIndex:0]);
     
+}
+
+#pragma mark - Test XML Errors
+
+- (void)testErrorsReportedGivenNotFoundData {
+    
+    NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:@"NotFound"];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertTrue(self.parser.parseErrorOccured);
+}
+
+- (void)testSuiteNameGivenNotFoundData {
+    
+    NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:@"NotFound"];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertNotNil(self.parser.testSuiteName);
 }
 
 #pragma mark - Test Automators

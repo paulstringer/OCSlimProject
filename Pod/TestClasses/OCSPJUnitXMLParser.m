@@ -6,6 +6,7 @@
 @property (nonatomic, strong) NSString *testSuiteName;
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
+@property (nonatomic, assign) BOOL parseErrorOccured;
 @property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *testCaseResults;
 @property (nonatomic, strong) NSMutableArray<id> *testErrorMessages;
@@ -13,6 +14,8 @@
 @end
 
 @implementation OCSPJUnitXMLParser
+
+NSError *__autoreleasing * outErrorRef;
 
 - (id)initWithXMLData:(nonnull NSData *) data {
     
@@ -67,7 +70,9 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     
-    [NSException exceptionWithName:parseError.localizedDescription reason:parseError.localizedFailureReason userInfo:parseError.userInfo];
+    self.parseErrorOccured = YES;
+
+    self.testSuiteName = @"NotFound";
     
 }
 

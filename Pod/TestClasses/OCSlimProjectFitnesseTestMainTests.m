@@ -180,7 +180,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
-    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
     
     XCTAssertNotNil(testCase);
 }
@@ -190,7 +190,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
-    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
     
     XCTAssertFalse([testCase isPass]);
 }
@@ -199,7 +199,7 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
-    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
     
     XCTAssertEqualObjects(@"EmptyPageTestCaseCountGreaterThanZero", [testCase testCaseName]);
 }
@@ -208,13 +208,51 @@
     
     (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
-    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
     
-    NSString *errorMsg = NSLocalizedStringFromTableInBundle(@"EmptyTestSuiteErrorMessage", nil, [NSBundle bundleForClass:[self class]], nil);
+    NSString *errorMsg = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:@"EmptyPage"];
     
     NSString *message = [NSString stringWithFormat:errorMsg, @"EmptyPage", nil];
     
     XCTAssertEqualObjects(message, [testCase errorMessage]);
+}
+
+- (void)testReportDataNotFoundReturnsFail {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    XCTAssertFalse([testCase isPass]);
+}
+
+- (void)testReportDataNotFoundReturnsInformativeTestName {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"TestSuiteReportXMLParsingSucceeded");
+}
+
+- (void)testReportDataNotFoundTestsReturnsInformativeError {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
+    
+    XCTAssertEqualObjects(message, [testCase errorMessage]);
+}
+
+
+- (void)testReportDataNotFoundNumberOfTestsEqualsOne {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    
+    XCTAssertEqual([[self acceptanceTestSuite] testCaseCount], 1);
+    
 }
 
 #pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.
@@ -239,7 +277,6 @@
 
 #pragma mark - Test Helpers
 
-
 - (void)testStubCreatesTestReportsWithData {
     
     NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
@@ -256,9 +293,9 @@
 
 + (NSData* )stubFailedTestReport {
     
-    NSData *data = [OCSPTestDataManager failedResultData];
+//    NSData *data = [OCSPTestDataManager failedResultData];
     
-    return [self stubTestReportWithData:data];
+    return [self stubFailedTestReportWithFilenameModifier:nil];
     
 }
 
@@ -268,6 +305,14 @@
     
     return [self stubTestReportWithData:data];
 
+}
+
++ (NSData* )stubFailedTestReportWithFilenameModifier:(NSString*)modifier {
+    
+    NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:modifier];
+    
+    return [self stubTestReportWithData:data];
+    
 }
 
 + (NSData *)stubTestReportWithData:(NSData*)data {

@@ -1,3 +1,3 @@
-EmptyTestSuiteErrorMessage="The specified Test Suite contains 0 tests. Either begin by adding tests to this suite or modify the 'FITNESSE__TESTSUITE_NAME=%@' setting of the 'Generate Fitnesse Test Report File' 'build phase' of this target to use a page name that contains the acceptance tests.";
+EmptyTestSuiteErrorMessage="The specified Test Suite contains 0 tests. Either a) Begin by adding tests to this suite or b) Modify the 'Generate Fitnesse Test Report File' 'build phase' of this target and change the 'FITNESSE_SUITE_NAME=%@' setting to use the Fitnesse page name that contains your acceptance tests.";
 
 TestPageErrorMessage="Fitnesse test page failed with message - '%@'";

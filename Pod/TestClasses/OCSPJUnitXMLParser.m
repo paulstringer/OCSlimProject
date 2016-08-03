@@ -4,6 +4,7 @@
 
 @property (nonatomic, strong) NSData *data;
 @property (nonatomic, strong) NSString *testSuiteName;
+@property (nonatomic, assign) NSUInteger testSuiteErrorCount;
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 @property (nonatomic, assign) BOOL parseErrorOccured;
@@ -88,17 +89,13 @@ NSError *__autoreleasing * outErrorRef;
     
     if ([elementName isEqualToString:@"testsuite"]) {
         
-        self.testSuiteName = attributeDict[@"name"];
-        
-        [self takeTestCaseCountFromElementAttributes:attributeDict];
-    
-        [self parseTestSuiteFailuresForElementAttributes:attributeDict];
+        [self takeTestSuiteResultsFromTestSuiteElementAttributes:attributeDict];
         
     }
     
     if ([elementName isEqualToString:@"testcase"]) {
         
-        [self takeTestCaseNameFromElementAttributes:attributeDict];
+        [self takeTestCaseNameFromTestCaseElementAttributes:attributeDict];
         
         [self appendPassTestResult];
         
@@ -110,25 +107,45 @@ NSError *__autoreleasing * outErrorRef;
         [self updateTestResultFailFromElementAttributes:attributeDict];
     }
     
+    
 }
 
-- (void) takeTestCaseCountFromElementAttributes:(NSDictionary*)attributesDict {
+- (void)takeTestSuiteResultsFromTestSuiteElementAttributes:(nonnull NSDictionary *) attributeDict {
     
-    NSUInteger count = [[attributesDict objectForKey:@"tests"] integerValue];
+    self.testSuiteName = attributeDict[@"name"];
+    
+    [self takeTestCaseCountFromElementAttributes:attributeDict];
+    
+    [self takeTestSuiteFailuresFromElementAttributes:attributeDict];
+    
+    [self takeTestSuiteErrorsFromElementAttributes:attributeDict];
+    
+}
+
+- (void) takeTestCaseCountFromElementAttributes:(NSDictionary*)attributeDict {
+    
+    NSUInteger count = [[attributeDict objectForKey:@"tests"] integerValue];
     
     self.testCaseCount = count;
     
 }
 
-- (void) parseTestSuiteFailuresForElementAttributes:(NSDictionary*)attributesDict {
+- (void) takeTestSuiteFailuresFromElementAttributes:(NSDictionary*)attributeDict {
     
-    NSUInteger failuresCount = [[attributesDict objectForKey:@"failures"] integerValue];
+    NSUInteger failuresCount = [[attributeDict objectForKey:@"failures"] integerValue];
     
     self.failedTestSuiteCount += failuresCount;
     
 }
 
-- (void) takeTestCaseNameFromElementAttributes:(NSDictionary*)attributesDict {
+- (void) takeTestSuiteErrorsFromElementAttributes:(NSDictionary*)attributeDict {
+    
+    NSUInteger errorsCount = [[attributeDict objectForKey:@"errors"] integerValue];
+    
+    self.testSuiteErrorCount += errorsCount;
+}
+
+- (void) takeTestCaseNameFromTestCaseElementAttributes:(NSDictionary*)attributesDict {
     
     NSString* name = (NSString *) attributesDict[@"name"];
     

@@ -132,13 +132,21 @@
         
         message = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
         
-    } else if ( parser.parsingSucceeded == YES && [parser testCaseCount] == 0 ) {
+    } else if ( parser.parsingSucceeded == YES && [parser testCaseCount] == 0 && [parser testSuiteErrorCount] == 0) {
         
         NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
         
         reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
         
         message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
+        
+    } else if ( parser.parsingSucceeded == YES && [parser testSuiteErrorCount] ) {
+        
+        NSString *testCaseName = [NSString stringWithFormat:@"%@ErrorCountEqualsZero", [parser testSuiteName]];
+        
+        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
+        
+        message = [OCSPLocalizedMessageTable localizedTestSuiteErrorsOccurredMessageWithCount:parser.testSuiteErrorCount];
         
     }
     

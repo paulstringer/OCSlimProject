@@ -10,6 +10,8 @@
 
 + (NSData *)successResultDataByAppendingHyphenatedFilenameModifier:(NSString *)modifier;
 
++ (NSData *)errorResultData;
+
 + (NSData *)fitnesseTestReportData;
 
 void createDefaultTestReportReaderWithData(NSData *data);

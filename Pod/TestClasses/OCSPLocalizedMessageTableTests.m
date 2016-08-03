@@ -81,5 +81,24 @@
     
 }
 
+- (void)testErrorMessageTestSuiteErrorsOccurredKeyDefined {
+    
+    NSString *localizedString = NSLocalizedStringFromTableInBundle(@"TestSuiteErrorsOccurred", nil, [NSBundle bundleForClass:[self class]], nil);
+    
+    XCTAssertNotEqualObjects(@"TestSuiteErrorsOccurred", localizedString);
+    
+}
+
+
+- (void)testLocalizedTestSuiteErrorsOccurredMessage {
+    
+    NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteErrorsOccurredMessageWithCount:3];
+    
+    NSString *expectedMessage = [OCSPLocalizedMessageTable localizedMessageWithKey:@"TestSuiteErrorsOccurred" argument:@"3"];
+    
+    XCTAssertEqualObjects(expectedMessage, message);
+    
+}
+
 
 @end

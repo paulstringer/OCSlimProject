@@ -27,6 +27,11 @@
     
 }
 
++ (nonnull NSString *) localizedTestSuiteErrorsOccurredMessageWithCount:(NSUInteger)errorCount {
+    
+    return [self localizedMessageWithKey:@"TestSuiteErrorsOccurred" argument:[@(errorCount) stringValue]];
+}
+
 + (NSString *)localizedMessageWithKey:(NSString*)key argument:(NSString*)arg {
     
     NSString *localizedString = NSLocalizedStringFromTableInBundle(key, nil, [NSBundle bundleForClass:[self class]], nil);

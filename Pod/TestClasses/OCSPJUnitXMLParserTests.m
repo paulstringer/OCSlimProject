@@ -210,6 +210,18 @@
     XCTAssertFalse(self.parser.parsingSucceeded);
     
 }
+
+#pragma mark - Test Reports with Errors
+
+- (void)testSuiteErrorCountParsing {
+    
+    NSData *data = [OCSPTestDataManager errorResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertEqual(1, self.parser.testSuiteErrorCount);
+}
+
 #pragma mark - Test Automators
 
 - (void)setupParserWithData:(NSData*)data {

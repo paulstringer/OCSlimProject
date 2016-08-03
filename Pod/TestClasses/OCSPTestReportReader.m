@@ -4,11 +4,14 @@
 
 - (NSData *) read {
     
+    
     NSString *fitnesseTestReportResourceName = @"Fitnesse-Test-Report";
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     
     NSString *path = [bundle pathForResource:fitnesseTestReportResourceName ofType:@"xml"];
+    
+    NSLog(@"[OCSP] INFO: Fitnesse test report output path = %@", path);
     
     if (path == nil ) {
        

@@ -13,11 +13,11 @@ static NSBundle *_bundle;
 
 + (NSString *)failedResultPath {
     
-    NSString *path = [_bundle pathForResource:@"SuiteTestResultFailures" ofType:@"xml"];
+//    NSString *path = [_bundle pathForResource:@"SuiteTestResultFailures" ofType:@"xml"];
+//    
+//    NSParameterAssert(path);
     
-    NSParameterAssert(path);
-    
-    return path;
+    return [self pathForXMLFileResourceNamed:@"SuiteTestResultFailures"];
     
 }
 
@@ -29,17 +29,38 @@ static NSBundle *_bundle;
 
 + (NSString *)successResultPath {
     
-    NSString *path = [_bundle pathForResource:@"SuiteTestResultSuccess" ofType:@"xml"];
+    return [self pathForXMLFileResourceNamed:@"SuiteTestResultSuccess"];
     
-    NSParameterAssert(path);
-    
-    return path;
+//    NSString *path = [_bundle pathForResource:@"SuiteTestResultSuccess" ofType:@"xml"];
+//    
+//    NSParameterAssert(path);
+//    
+//    return path;
     
 }
 
 + (NSData *)successResultData {
     
     return [NSData dataWithContentsOfFile:[self successResultPath]];
+    
+}
+
+
++ (NSString *)errorResultPath {
+    
+    return [self pathForXMLFileResourceNamed:@"SuiteTestResultErrors"];
+    
+//    NSString *path = [_bundle pathForResource:@"SuiteTestResultErrors" ofType:@"xml"];
+//    
+//    NSParameterAssert(path);
+//    
+//    return path;
+    
+}
+
++ (NSData *)errorResultData {
+    
+    return [NSData dataWithContentsOfFile:[self errorResultPath]];
     
 }
 
@@ -84,6 +105,16 @@ static NSBundle *_bundle;
     
 }
 
++ (NSString *)pathForXMLFileResourceNamed:(NSString *)resource {
+ 
+    NSString *path = [_bundle pathForResource:resource ofType:@"xml"];
+    
+    NSParameterAssert(path);
+    
+    return path;
+    
+}
+
 @end
 
 
@@ -118,8 +149,6 @@ static NSBundle *_bundle;
 
 
 void createDefaultTestReportReaderWithData(NSData *data) {
-    
-    
     
     id<OCSPTestReportReader> reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:data];
     

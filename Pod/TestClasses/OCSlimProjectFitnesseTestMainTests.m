@@ -246,7 +246,6 @@
     XCTAssertEqualObjects(message, [testCase errorMessage]);
 }
 
-
 - (void)testReportDataNotFoundNumberOfTestsEqualsOne {
     
     (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
@@ -282,6 +281,40 @@
     
     XCTAssertEqualObjects([testCase errorMessage], errorMessage);
 }
+
+
+- (void)testReportSuiteWithErrorsReturnsFailingTestCase {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    XCTAssertFalse([testCase isPass]);
+    
+}
+
+- (void)testReportSuiteWithErrorsReturnsInformativeName {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    XCTAssertEqualObjects([testCase testCaseName], @"OCSlimProjectExampleSuiteErrorCountEqualsZero");
+    
+}
+
+- (void)testReportSuiteWithErrorsReturnsInformativeErrorMessage {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+
+    NSString *errorMessage = [OCSPLocalizedMessageTable localizedTestSuiteErrorsOccurredMessageWithCount:1];
+
+    XCTAssertEqualObjects([testCase errorMessage], errorMessage);
+    
+}
+
 
 #pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.
 
@@ -322,6 +355,14 @@
 + (NSData* )stubFailedTestReport {
     
     return [self stubFailedTestReportWithFilenameModifier:nil];
+    
+}
+
++ (NSData* )stubErrorTestReport {
+    
+    NSData *data = [OCSPTestDataManager errorResultData];
+    
+    return [self stubTestReportWithData:data];
     
 }
 

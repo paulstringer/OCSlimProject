@@ -4,6 +4,8 @@
 
 @property (nonatomic, readonly) NSUInteger testCaseCount;
 
+@property (nonatomic, readonly) NSUInteger testSuiteErrorCount;
+
 @property (nonatomic, readonly, nonnull) NSString *testSuiteName;
 
 @property (nonatomic, readonly) BOOL parseErrorOccured;
@@ -16,12 +18,10 @@
 
 - (BOOL) result;
 
-- (nullable NSString *) testNameForTestCaseAtIndex:(NSUInteger)index;
-
 - (BOOL) testResultForTestCaseAtIndex:(NSUInteger)index;
 
-- (nullable NSString *) testErrorMessageForTestCaseAtIndex:(NSUInteger)index;
+- (nullable NSString *) testNameForTestCaseAtIndex:(NSUInteger)index;
 
-- (nonnull NSString *) testSuiteName;
+- (nullable NSString *) testErrorMessageForTestCaseAtIndex:(NSUInteger)index;
 
 @end

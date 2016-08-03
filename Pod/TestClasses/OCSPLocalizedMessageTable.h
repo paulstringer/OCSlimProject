@@ -6,7 +6,9 @@
 
 + (nonnull NSString *)localizedTestPageMessageWithUnderlyingMessage:(nonnull NSString *) underlyingMessage;
 
-+ (nonnull NSString *)localizedTestSuiteParsingErrorMessage;
++ (nonnull NSString *) localizedTestSuiteParsingErrorMessage;
+
++ (nonnull NSString *) localizedTestSuiteReportDataNotFound;
 
 + (nullable NSString *)localizedMessageWithKey:(nonnull NSString*)key argument:(nullable NSString*)arg;
 

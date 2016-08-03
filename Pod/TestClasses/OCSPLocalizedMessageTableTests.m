@@ -63,5 +63,23 @@
     
 }
 
+- (void)testErrorMessageTestSuiteDataMissingErrorKeyDefined {
+    
+    NSString *localizedString = NSLocalizedStringFromTableInBundle(@"TestSuiteDataNotFound", nil, [NSBundle bundleForClass:[self class]], nil);
+    
+    XCTAssertNotEqualObjects(@"TestSuiteDataMissing", localizedString);
+    
+}
+
+- (void)testLocalizedTestSuiteDataMissingErrorMessage {
+    
+    NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
+    
+    NSString *expectedMessage = [OCSPLocalizedMessageTable localizedMessageWithKey:@"TestSuiteDataNotFound" argument:nil];
+    
+    XCTAssertEqualObjects(expectedMessage, message);
+    
+}
+
 
 @end

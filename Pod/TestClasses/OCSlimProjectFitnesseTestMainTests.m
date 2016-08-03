@@ -255,6 +255,34 @@
     
 }
 
+- (void)testReportDataNilNumberOfTestsEqualsOne {
+    
+    createDefaultTestReportReaderWithData(nil);
+    
+    XCTAssertEqual([[self acceptanceTestSuite] testCaseCount], 1);
+    
+}
+
+- (void)testReportDataNilReturnsInformativeTestName {
+    
+    createDefaultTestReportReaderWithData(nil);
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+
+    XCTAssertEqualObjects([testCase testCaseName], @"TestSuiteReportDataExists");
+}
+
+- (void)testReportDataNilReturnsInformativeErrorMessage {
+    
+    createDefaultTestReportReaderWithData(nil);
+    
+    OCSPTestSuite *testCase = [self acceptanceTestCase];
+    
+    NSString *errorMessage = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
+    
+    XCTAssertEqualObjects([testCase errorMessage], errorMessage);
+}
+
 #pragma mark - Fix disappearing last test case issue. Xcode hides the last test result. To prevent this a last test is added after adding tests from the test report file. That fake test is then the one to disappear.
 
 - (void)testAcceptanceTestSuiteAddsExtraTest {
@@ -292,8 +320,6 @@
 }
 
 + (NSData* )stubFailedTestReport {
-    
-//    NSData *data = [OCSPTestDataManager failedResultData];
     
     return [self stubFailedTestReportWithFilenameModifier:nil];
     

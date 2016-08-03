@@ -24,6 +24,14 @@
     [super tearDown];
 }
 
+- (void) testSuiteNameNotEmpty {
+    
+    XCTAssertNotNil(self.parser.testSuiteName);
+    
+    XCTAssertNotEqualObjects(@"", self.parser.testSuiteName);
+    
+}
+
 - (void) testSuiteJUnitXMLFailureWillFail {
     
     NSData *data = [OCSPTestDataManager failedResultData];
@@ -40,6 +48,16 @@
     [self setupParserWithData:data];
     
     XCTAssertTrue([self.parser result]);
+    
+}
+
+- (void) testSuiteJUnitXMLSuccessParsingSucceeded {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertTrue([self.parser parsingSucceeded]);
     
 }
 
@@ -178,6 +196,20 @@
     XCTAssertNotNil(self.parser.testSuiteName);
 }
 
+- (void)testSuiteNameGivenNilData {
+    
+    [self setupParserWithData:nil];
+    
+    XCTAssertNotNil(self.parser.testSuiteName);
+}
+
+- (void)testSuiteParsingSucceededGivenNilData {
+    
+    [self setupParserWithData:nil];
+    
+    XCTAssertFalse(self.parser.parsingSucceeded);
+    
+}
 #pragma mark - Test Automators
 
 - (void)setupParserWithData:(NSData*)data {

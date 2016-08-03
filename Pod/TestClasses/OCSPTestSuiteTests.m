@@ -43,8 +43,6 @@
     
     OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
-//    asserter.errorMessage = @"ERROR";
-    
     [asserter run];
     
     XCTAssertEqualObjects(self.recorderSpy.didRecordFailMessage, @"Unspecified Acceptance Test Failure");

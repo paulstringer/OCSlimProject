@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) BOOL parseErrorOccured;
 
+@property (nonatomic, readonly) BOOL parsingSucceeded;
+
 - (nonnull id)initWithXMLData:(nonnull NSData *) data;
 
 - (void) parse;

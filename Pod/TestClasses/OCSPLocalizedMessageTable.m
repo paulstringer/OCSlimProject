@@ -21,6 +21,12 @@
     return [self localizedMessageWithKey:@"TestSuiteParsingErrorMessage" argument:nil];
 }
 
++ (nonnull NSString *) localizedTestSuiteReportDataNotFound {
+    
+    return [self localizedMessageWithKey:@"TestSuiteDataNotFound" argument:nil];
+    
+}
+
 + (NSString *)localizedMessageWithKey:(NSString*)key argument:(NSString*)arg {
     
     NSString *localizedString = NSLocalizedStringFromTableInBundle(key, nil, [NSBundle bundleForClass:[self class]], nil);

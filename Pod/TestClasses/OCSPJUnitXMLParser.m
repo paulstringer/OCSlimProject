@@ -7,6 +7,7 @@
 @property (nonatomic, assign) NSUInteger testCaseCount;
 @property (nonatomic, assign) NSUInteger failedTestSuiteCount;
 @property (nonatomic, assign) BOOL parseErrorOccured;
+@property (nonatomic, assign) BOOL parsingSucceeded;
 @property (nonatomic, strong) NSMutableArray<NSString *> *testCaseNames;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *testCaseResults;
 @property (nonatomic, strong) NSMutableArray<id> *testErrorMessages;
@@ -17,11 +18,19 @@
 
 NSError *__autoreleasing * outErrorRef;
 
+- (id)init {
+    
+    return [self initWithXMLData:[NSData data]];
+    
+}
+
 - (id)initWithXMLData:(nonnull NSData *) data {
     
     if (self == [super init]) {
     
         _data = data;
+        
+        _testSuiteName = [[NSNull null] description];
         
     }
     
@@ -35,8 +44,8 @@ NSError *__autoreleasing * outErrorRef;
     
     parser.delegate = self;
     
-    [parser parse];
-    
+    self.parsingSucceeded = [parser parse];
+        
 }
 
 - (BOOL) result {
@@ -71,8 +80,7 @@ NSError *__autoreleasing * outErrorRef;
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     
     self.parseErrorOccured = YES;
-
-    self.testSuiteName = @"NotFound";
+    
     
 }
 

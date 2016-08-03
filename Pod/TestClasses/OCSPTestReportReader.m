@@ -12,7 +12,7 @@
     
     if (path == nil ) {
        
-        [NSException raise:NSInternalInconsistencyException format:@"The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target has been built. 1. Check you're able to run Acceptance Tests using the command line script 'LaunchFitnesse' located at your projects root directory. 2. Check this targets Run Script build phase for usage of LaunchFitnesse which is responsible for generating the %@ file.", fitnesseTestReportResourceName, fitnesseTestReportResourceName];
+        NSLog(@"[OCSP] WARNING: The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target is being built. 1) Check you're able to run Acceptance Tests using the command line utility 'LaunchFitnesse' located at your projects root directory. 2) Check this targets Run Script build phase for usage of LaunchFitnesse which generates the %@ file.", fitnesseTestReportResourceName, fitnesseTestReportResourceName, nil);
         
     }
     

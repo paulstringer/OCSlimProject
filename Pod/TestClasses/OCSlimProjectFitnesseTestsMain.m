@@ -89,7 +89,6 @@
     XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:testSuiteName];
     
     
-    
     for (int i = 0; i < [parser testCaseCount]; i++ ) {
     
         NSString *testCaseName = [parser testNameForTestCaseAtIndex:i];
@@ -119,26 +118,31 @@
     
     OCSPTestSuite *reportingTestCase = nil;
     
+    NSString *message = nil;
     
-    if ( [parser parseErrorOccured] ) {
+    if ( parser.parseErrorOccured == YES ) {
         
         reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestSuiteReportXMLParsingSucceeded" result:NO];
         
-        NSString *message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
+        message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
         
-        [reportingTestCase setErrorMessage:message];
+    } else if ( parser.parsingSucceeded == NO) {
+      
+        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestSuiteReportDataExists" result:NO];
         
-    } else if ( [parser testCaseCount] == 0 ) {
+        message = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
+        
+    } else if ( parser.parsingSucceeded == YES && [parser testCaseCount] == 0 ) {
         
         NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
         
         reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
         
-        NSString *message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
-        
-        [reportingTestCase setErrorMessage:message];
+        message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
         
     }
+    
+    [reportingTestCase setErrorMessage:message];
     
     [suite addTest:reportingTestCase];
     

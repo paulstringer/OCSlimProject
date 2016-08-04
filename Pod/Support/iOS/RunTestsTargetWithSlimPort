@@ -37,7 +37,8 @@ run_test_system() {
 
 main() {
 	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
-	exit $(run_test_system)
+	run_test_system
+	exit $?
 }
 
 main

@@ -2,8 +2,7 @@
 
 function validateEnvironment {
 	if [ -z "${OCSP_BUNDLE_RESOURCES_DIR}" ]; then
-	   echo "Missing expected OCSlimProject build settings. Running '$ pod update' may fix this problem"
-	   exit 1
+		mkdir -p "${OCSP_BUNDLE_RESOURCES_DIR}"
 	fi
 }
 

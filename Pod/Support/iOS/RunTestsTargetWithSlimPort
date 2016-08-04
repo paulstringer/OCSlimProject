@@ -1,10 +1,10 @@
+#!/bin/sh
 MYPATH=$(dirname $0)
-source ${MYPATH}/env.sh
+source $1
+SLIM_PORT=$2
 
 APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}
-APP_IDENTIFIER=$(/usr/libexec/PlistBuddy $APPLICATION_PATH/Info.plist -c "Print CFBundleIdentifier")
 DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cut -d " " -f1 | rev )
-SLIM_PORT=$1
 DEVICE_TYPE=iPhone
 
 get_app_devicetypeid() {
@@ -28,16 +28,15 @@ ios_sim_launch() {
 
 run_test_system() {
 	local DEVICE_TYPE_IDENTIFIER=$(get_app_devicetypeid)
-	echo "Slim Test System Bundle Identifier: $APP_IDENTIFIER"
-	echo "Slim Test System SDK Deployment Target: $DEPLOYMENT_TARGET_VALUE"
-	echo "Slim Test System Executable Folder Path: $APPLICATION_PATH"
+	echo "Test System SDK Deployment Target: $DEPLOYMENT_TARGET_VALUE"
+	echo "Test System Executable Folder Path: $APPLICATION_PATH"
 	echo "Simulator Device Identifier: $DEVICE_TYPE_IDENTIFIER"
 	ios_sim_launch $APPLICATION_PATH "$DEVICE_TYPE_IDENTIFIER" $SLIM_PORT
 	return $?
 }
 
 main() {
-	echo "== OCSlimProject:RunSlimTestTargetWithSlimPort:$SLIM_PORT =="
+	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
 	exit $(run_test_system)
 }
 

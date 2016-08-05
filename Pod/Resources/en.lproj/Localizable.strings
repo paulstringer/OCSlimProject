@@ -1,8 +1,8 @@
-EmptyTestSuiteErrorMessage="The specified Test Suite contains 0 tests. Either a) Begin by adding tests to this suite or b) Modify the 'Generate Fitnesse Test Report File' 'build phase' of this target and change the 'FITNESSE_SUITE_NAME=%@' setting to use the Fitnesse page name that contains your acceptance tests.";
+EmptyTestSuiteErrorMessage="The specified Test Suite contains 0 tests. Either a) Begin by adding tests to this suite or b) Modify the 'Generate Fitnesse Test Bundle Resource File' 'build phase' of this target and change the 'FITNESSE_SUITE_NAME=%@' setting to use the Fitnesse page name that contains your acceptance tests.";
 
 TestPageErrorMessage="Fitnesse test page failed with message - '%@'";
 
-TestSuiteParsingErrorMessage="Error occured reading the Fitnesse Test Report XML file - the specified test suite likely does not exist (Check the 'Generate Fitnesse Test Report File' 'build phase' setting 'FITNESSE_SUITE_NAME=<Your-Test-Suite-Name>' is set to a valid test suite name)";
+TestSuiteParsingErrorMessage="Error occured reading the Fitnesse Test Report XML file - the specified test suite likely does not exist (Check the 'Generate Fitnesse Test Bundle Resource File' 'build phase' setting 'FITNESSE_SUITE_NAME=<Your-Test-Suite-Name>' is set to a valid test suite name)";
 
 TestSuiteDataNotFound="Fitnesse Test Report Data File Not Found. Check log files for possible [OCSP] warnings or errors.";
 

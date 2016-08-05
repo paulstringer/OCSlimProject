@@ -174,7 +174,7 @@
     XCTAssertEqualObjects([OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:@"1 errors"], testCase.errorMessage);    
 }
 
-#pragma mark - Report Empty Test Suites as probably unexpected
+#pragma mark - Report Empty Test Suites as Failing Test
 
 - (void)testReportDataWithZeroTestsReturnsSingleTest {
     
@@ -312,6 +312,16 @@
     NSString *errorMessage = [OCSPLocalizedMessageTable localizedTestSuiteErrorsOccurredMessageWithCount:1];
 
     XCTAssertEqualObjects([testCase errorMessage], errorMessage);
+    
+}
+
+- (void)testReportSuiteWithErrorsCausedByExceptionsDoesNotAddFailingReportTest {
+    
+    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"Exceptions"];
+    
+    XCTestSuite *suite = [self acceptanceTestSuite];
+    
+    XCTAssertEqual(suite.testCaseCount, 1);
     
 }
 

@@ -118,6 +118,8 @@
 
 }
 
+#pragma mark - Test Failure Messages
+
 - (void)testErrorMessageAtIndexForPass {
     
     NSData *data = [OCSPTestDataManager successResultData];
@@ -138,7 +140,6 @@
     
 }
 
-
 - (void)testErrorMessageAtIndexesForFail {
     
     NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:@"3"];
@@ -150,6 +151,19 @@
     XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:1], @"2 errors");
     
     XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:2], @"3 errors");
+    
+}
+
+
+#pragma mark - Test Exception Messages
+
+- (void) testExceptionsReportedGivenExceptions {
+    
+    NSData *data = [OCSPTestDataManager failedResultDataByAppendingHyphenatedFilenameModifier:@"Exceptions"];
+    
+    [self setupParserWithData:data];
+    
+    XCTAssertEqualObjects([self.parser testErrorMessageForTestCaseAtIndex:0], @"1 exceptions");
     
 }
 

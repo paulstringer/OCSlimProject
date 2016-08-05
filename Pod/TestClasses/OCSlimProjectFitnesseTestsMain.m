@@ -132,7 +132,7 @@
         
         message = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
         
-    } else if ( parser.parsingSucceeded == YES && [parser testCaseCount] == 0 && [parser testSuiteErrorCount] == 0) {
+    } else if ( [self testSuiteIsEmpty:parser] ) {
         
         NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
         
@@ -140,7 +140,7 @@
         
         message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
         
-    } else if ( parser.parsingSucceeded == YES && [parser testSuiteErrorCount] ) {
+    } else if ( [self testSuiteFailedToRun:parser] ) {
         
         NSString *testCaseName = [NSString stringWithFormat:@"%@ErrorCountEqualsZero", [parser testSuiteName]];
         
@@ -155,6 +155,21 @@
     [suite addTest:reportingTestCase];
     
 }
+
++ (BOOL)testSuiteIsEmpty:(OCSPJUnitXMLParser *)parser {
+    
+    return parser.parsingSucceeded == YES && [parser testCaseCount] == 0 && [parser testSuiteErrorCount] == 0;
+    
+}
+
++ (BOOL)testSuiteFailedToRun:(OCSPJUnitXMLParser *)parser {
+    
+    BOOL errorsOccuredOutsideOfTests = parser.testSuiteErrorCount > parser.testCaseCount;
+    
+    return parser.parsingSucceeded == YES && errorsOccuredOutsideOfTests;
+    
+}
+
 
 + (OCSPJUnitXMLParser *)testReportParser {
     

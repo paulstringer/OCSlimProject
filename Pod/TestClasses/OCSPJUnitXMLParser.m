@@ -102,10 +102,12 @@ NSError *__autoreleasing * outErrorRef;
         [self appendNullTestErrorMessage];
     }
     
-    if ([elementName isEqualToString:@"failure"]) {
+    
+    if ( [@[@"failure", @"error"] indexOfObject:elementName] != NSNotFound ) {
         
         [self updateTestResultFailFromElementAttributes:attributeDict];
     }
+    
     
     
 }

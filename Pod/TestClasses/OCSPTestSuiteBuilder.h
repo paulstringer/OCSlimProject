@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-@interface OCSlimProjectFitnesseTestsMain : NSObject <XCTestObservation>
+@interface OCSPTestSuiteBuilder : NSObject <XCTestObservation>
 
 + (XCTestSuite *)testSuite;
 

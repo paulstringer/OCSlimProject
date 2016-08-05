@@ -1,16 +1,16 @@
-#import "OCSlimProjectFitnesseTestsMain.h"
+#import "OCSPTestSuiteBuilder.h"
 #import "OCSPTestReportReader.h"
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
 
-@interface OCSlimProjectFitnesseTestsMain ()
+@interface OCSPTestSuiteBuilder ()
 
 @property (nonatomic, strong) NSString *bundleTestSuiteName;
 
 @end
 
-@implementation OCSlimProjectFitnesseTestsMain
+@implementation OCSPTestSuiteBuilder
 
 - (id)init {
     
@@ -35,7 +35,7 @@
     
     if ( [self isHostTestSuite:testSuite] ) {
     
-        XCTestSuite *acceptanceTestSuite = [OCSlimProjectFitnesseTestsMain testSuite];
+        XCTestSuite *acceptanceTestSuite = [OCSPTestSuiteBuilder testSuite];
         
         [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
     

@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "OCSlimProjectFitnesseTestsMain.h"
+#import "OCSPTestSuiteBuilder.h"
 
 #import "OCSPTestReportReader.h"
 #import "OCSPTestDataManager.h"
@@ -7,18 +7,18 @@
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
 
-@interface OCSlimProjectFitnesseTestMainTests : XCTestCase
+@interface OCSPTestSuiteBuilderTests : XCTestCase
 
-@property (nonatomic, strong) OCSlimProjectFitnesseTestsMain* main;
+@property (nonatomic, strong) OCSPTestSuiteBuilder* main;
 @end
 
-@implementation OCSlimProjectFitnesseTestMainTests
+@implementation OCSPTestSuiteBuilderTests
 
 - (void)setUp {
     
     [super setUp];
     
-    self.main = [[OCSlimProjectFitnesseTestsMain alloc] init];
+    self.main = [[OCSPTestSuiteBuilder alloc] init];
 
     self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
 }
@@ -56,7 +56,7 @@
     
     XCTAssertEqual(1, suite.tests.count);
     
-    XCTAssertEqualObjects([[OCSlimProjectFitnesseTestsMain testSuite] name], [suite.tests.firstObject name]);
+    XCTAssertEqualObjects([[OCSPTestSuiteBuilder testSuite] name], [suite.tests.firstObject name]);
     
 }
 
@@ -79,7 +79,7 @@
 
 - (void)testAcceptanceTestSuiteNumberOfTests {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    (void) [[self class] stubSuccessfulTestReport];
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     
@@ -89,7 +89,7 @@
 
 - (void)testAcceptanceTestSuiteNumberOfTestsWithOtherTestReportData {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
+    (void) [[self class] stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     
@@ -99,7 +99,7 @@
 
 - (void)testAcceptanceTestSuiteNameEqualsSuiteName {
     
-    NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    NSData *data = [[self class] stubSuccessfulTestReport];
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     
@@ -113,7 +113,7 @@
 
 - (void)testAcceptanceTestSuiteTestCaseName {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    (void) [[self class] stubSuccessfulTestReport];
     
     OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
@@ -122,7 +122,7 @@
 
 - (void)testAcceptanceTestSuiteTestCaseNames {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReportWithFilenameModifier:@"3"];
+    (void) [[self class] stubSuccessfulTestReportWithFilenameModifier:@"3"];
     
     OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
@@ -131,7 +131,7 @@
 
 - (void)testAcceptanceTestCaseNameNameDoesNotRemoveTestSuiteComponent {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    (void) [[self class] stubSuccessfulTestReport];
     
     OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] firstObject];
     
@@ -141,14 +141,14 @@
 
 - (void)testAcceptanceTestSuiteResultsAccurate {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    (void) [[self class] stubSuccessfulTestReport];
     
     OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertTrue([testCase isPass]);
     
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    (void) [[self class] stubFailedTestReport];
     
     testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
@@ -158,7 +158,7 @@
 
 - (void)testFailingAcceptanceTestCasesNonNilErrorMessage {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    (void) [[self class] stubFailedTestReport];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -167,7 +167,7 @@
 
 - (void)testFailingAcceptanceTestCaseErrorMessage {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    (void) [[self class] stubFailedTestReport];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
 
@@ -178,7 +178,7 @@
 
 - (void)testReportDataWithZeroTestsReturnsSingleTest {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    (void) [[self class]  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -188,7 +188,7 @@
 
 - (void)testReportDataWithZeroTestsReturnsFail {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    (void) [[self class]  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -197,7 +197,7 @@
 
 - (void)testReportDataWithZeroTestsReturnsInformativeTestName {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    (void) [[self class]  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -206,7 +206,7 @@
 
 - (void)testReportDataWithZeroTestsReturnsInformativeError {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
+    (void) [[self class]  stubSuccessfulTestReportWithFilenameModifier:@"Empty"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -219,7 +219,7 @@
 
 - (void)testReportDataNotFoundReturnsFail {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    (void) [[self class]  stubFailedTestReportWithFilenameModifier:@"NotFound"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -228,7 +228,7 @@
 
 - (void)testReportDataNotFoundReturnsInformativeTestName {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    (void) [[self class]  stubFailedTestReportWithFilenameModifier:@"NotFound"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -237,7 +237,7 @@
 
 - (void)testReportDataNotFoundTestsReturnsInformativeError {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    (void) [[self class]  stubFailedTestReportWithFilenameModifier:@"NotFound"];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -248,7 +248,7 @@
 
 - (void)testReportDataNotFoundNumberOfTestsEqualsOne {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"NotFound"];
+    (void) [[self class]  stubFailedTestReportWithFilenameModifier:@"NotFound"];
     
     XCTAssertEqual([[self acceptanceTestSuite] testCaseCount], 1);
     
@@ -285,7 +285,7 @@
 
 - (void)testReportSuiteWithErrorsReturnsFailingTestCase {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    (void) [[self class]  stubErrorTestReport];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -295,7 +295,7 @@
 
 - (void)testReportSuiteWithErrorsReturnsInformativeName {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    (void) [[self class]  stubErrorTestReport];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
     
@@ -305,7 +305,7 @@
 
 - (void)testReportSuiteWithErrorsReturnsInformativeErrorMessage {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubErrorTestReport];
+    (void) [[self class]  stubErrorTestReport];
     
     OCSPTestSuite *testCase = [self acceptanceTestCase];
 
@@ -317,7 +317,7 @@
 
 - (void)testReportSuiteWithErrorsCausedByExceptionsDoesNotAddFailingReportTest {
     
-    (void) [OCSlimProjectFitnesseTestMainTests  stubFailedTestReportWithFilenameModifier:@"Exceptions"];
+    (void) [[self class]  stubFailedTestReportWithFilenameModifier:@"Exceptions"];
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     
@@ -330,7 +330,7 @@
 
 - (void)testAcceptanceTestSuiteAddsExtraTest {
     
-    (void) [OCSlimProjectFitnesseTestMainTests stubFailedTestReport];
+    (void) [[self class] stubFailedTestReport];
     
     self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = NO;
     
@@ -350,7 +350,7 @@
 
 - (void)testStubCreatesTestReportsWithData {
     
-    NSData *data = [OCSlimProjectFitnesseTestMainTests stubSuccessfulTestReport];
+    NSData *data = [[self class] stubSuccessfulTestReport];
     
     XCTAssertTrue( [[[OCSPTestReportCenter defaultReader] read] isEqualToData:data]);
     

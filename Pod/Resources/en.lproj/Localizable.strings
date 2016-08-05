@@ -6,4 +6,4 @@ TestSuiteParsingErrorMessage="Error occured reading the Fitnesse Test Report XML
 
 TestSuiteDataNotFound="Fitnesse Test Report Data File Not Found. Check log files for possible [OCSP] warnings or errors.";
 
-TestSuiteErrorsOccurred="Fitnesse test suite failed with %@ errors. Run ./LaunchFitnesse to investigate further these errors.";
+TestSuiteErrorsOccurred="Fitnesse test suite failed with %@ errors. Run ./LaunchFitnesse to investigate further these errors manually.";

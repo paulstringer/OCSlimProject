@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.dependency 'cslim'
   s.source_files = 'Pod/Classes/**'
 
-  s.osx.user_target_xcconfig = { 'OCSP_SUPPORT_FILE_DIR' => "${PODS_ROOT}/#{s.name}/Pod/Support/SharedSupport" }
+  s.user_target_xcconfig = { 'OCSP_SUPPORT_FILE_DIR' => "${PODS_ROOT}/#{s.name}/Pod/Support/SharedSupport" }
   s.osx.user_target_xcconfig = { 'OCSP_BUNDLE_RESOURCES_DIR' => "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/#{s.name}-Mac.bundle/Contents/Resources" }
   s.ios.user_target_xcconfig = { 'OCSP_BUNDLE_RESOURCES_DIR' => "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/#{s.name}.bundle" }
 

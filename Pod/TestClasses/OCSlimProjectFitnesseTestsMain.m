@@ -37,7 +37,7 @@
     
         XCTestSuite *acceptanceTestSuite = [OCSlimProjectFitnesseTestsMain testSuite];
         
-        [self applyDisappearingTestCaseFix:acceptanceTestSuite];
+        [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
     
         [testSuite addTest:acceptanceTestSuite];
         
@@ -45,28 +45,15 @@
     
 }
 
-- (void)applyDisappearingTestCaseFix:(XCTestSuite*)suite {
-    
-    
-    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
-        
-        NSString *testCaseName = [suite.name stringByAppendingString:@".TearDown"];
-        
-        OCSPTestSuite *test = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:YES];
-        
-        [suite addTest:test];
-        
-    }
-    
-    
-}
 - (void)testBundleDidFinish:(NSBundle *)testBundle {
     
     [[XCTestObservationCenter sharedTestObservationCenter] removeTestObserver:self];
     
 }
 
-#pragma mark - Don't Peek!
+#pragma mark - Private
+
+#pragma mark - Identifing Target Test Bundle
 
 - (void)registerHostTestBundle:(NSBundle *)bundle {
     
@@ -79,10 +66,12 @@
     return [[suite name] isEqualToString:self.bundleTestSuiteName];
 }
 
+#pragma mark - Test Suite Building
+
 + (XCTestSuite *)testSuite {
     
+    OCSPJUnitXMLParser *parser = [self testReportParsed];
     
-    OCSPJUnitXMLParser *parser = [self testReportParser];
     
     NSString *testSuiteName = [parser testSuiteName];
     
@@ -91,18 +80,8 @@
     
     for (int i = 0; i < [parser testCaseCount]; i++ ) {
     
-        NSString *testCaseName = [parser testNameForTestCaseAtIndex:i];
-        
-        BOOL result = [parser testResultForTestCaseAtIndex:i];
-        
-        OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:result];
-        
-        NSString *testPageErrorMessage = [parser testErrorMessageForTestCaseAtIndex:i];
-        
-        NSString *message = [OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:testPageErrorMessage];
-        
-        [testCase setErrorMessage:message];
-        
+        XCTestCase *testCase = [self testCaseForIndex:i parser:parser];
+
         [acceptanceTestSuite addTest:testCase];
         
     }
@@ -112,6 +91,29 @@
     
     return acceptanceTestSuite;
 
+}
+
+#pragma mark Test Suite Building Helpers
+
++ (XCTestCase *)testCaseForIndex:(NSUInteger)i parser:(OCSPJUnitXMLParser *)parser {
+    
+    NSString *testCaseName = [parser testNameForTestCaseAtIndex:i];
+    
+    BOOL result = [parser testResultForTestCaseAtIndex:i];
+    
+    
+    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:result];
+    
+    
+    NSString *testPageErrorMessage = [parser testErrorMessageForTestCaseAtIndex:i];
+    
+    NSString *message = [OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:testPageErrorMessage];
+    
+    [testCase setErrorMessage:message];
+    
+    
+    return testCase;
+    
 }
 
 + (void)addExceptionParseReportTestCases:(OCSPJUnitXMLParser *)parser testSuite:(XCTestSuite *) suite {
@@ -170,8 +172,7 @@
     
 }
 
-
-+ (OCSPJUnitXMLParser *)testReportParser {
++ (OCSPJUnitXMLParser *)testReportParsed {
     
     NSData *data = [[OCSPTestReportCenter defaultReader] read];
     
@@ -180,6 +181,25 @@
     [parser parse];
     
     return parser;
+}
+
+#pragma mark - Xcode XCTest Rerpoting Fix
+
+
+- (void)applyDisappearingTestCaseUIFix:(XCTestSuite*)suite {
+    
+    
+    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
+        
+        NSString *testCaseName = [suite.name stringByAppendingString:@".TearDown"];
+        
+        OCSPTestSuite *test = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:YES];
+        
+        [suite addTest:test];
+        
+    }
+    
+    
 }
 
 @end

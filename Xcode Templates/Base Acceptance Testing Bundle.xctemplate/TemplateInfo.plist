@@ -30,7 +30,7 @@
 			<array>
 				<dict>
 					<key>Name</key>
-					<string>[___POD_ABBREVIATION___] Generate Fitnesse Test Report File</string>
+					<string>[___POD_ABBREVIATION___] Generate Fitnesse Test Bundle Resource File</string>
 					<key>Class</key>
 					<string>ShellScript</string>
 					<key>ShellPath</key>

@@ -58,7 +58,7 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>&quot;${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh&quot;</string>
+					<string>${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh &quot;${OCSP_BUNDLE_RESOURCES_DIR}&quot;</string>
 				</dict>
 			</array>
 		</dict>

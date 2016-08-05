@@ -46,18 +46,38 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 	<key>Options</key>
 	<array>
 		<dict>
-			<key>Default</key>
-			<string>FrontPage</string>
+			<key>SortOrder</key>
+			<integer>0</integer>
+			<key>EmptyReplacement</key>
+			<string>&lt;Required&gt;</string>
+			<key>Required</key>
+			<true/>
 			<key>Name</key>
-			<string>Fitnesse Suite Name</string>
+			<string>Fitnesse Suite Page Name:</string>
 			<key>Identifier</key>
 			<string>fitnesseSuiteName</string>
 			<key>Description</key>
-			<string>Specify a specific Fitnesse Suite to target</string>
+			<string>Your Fitnesse test suite&apos;s page name (e.g. FrontPage)</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>SortOrder</key>
+			<integer>1</integer>
+			<key>Identifier</key>
+			<string>fitnesseURL</string>
+			<key>Name</key>
+			<string>Fitnesse Suite Test URL:</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Description</key>
+			<string>Your fitnesse test suite URL</string>
+			<key>Default</key>
+			<string>http://localhost:8080/___VARIABLE_fitnesseSuiteName___?suite</string>
+			<key>Type</key>
+			<string>static</string>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -4,7 +4,6 @@
 
 - (NSData *) read {
     
-    
     NSString *fitnesseTestReportResourceName = @"Fitnesse-Test-Report";
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -15,7 +14,7 @@
     
     if (path == nil ) {
        
-        NSLog(@"[OCSP] WARNING: The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target is being built. 1) Check you're able to run Acceptance Tests using the command line utility 'LaunchFitnesse' located at your projects root directory. 2) Check this targets Run Script build phase for usage of LaunchFitnesse which generates the %@ file.", fitnesseTestReportResourceName, fitnesseTestReportResourceName, nil);
+        NSLog(@"[OCSP] WARNING: The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target is being built. 1) Try running 'pod update' to resolve this issue. 2) Manually run Acceptance Tests using the utility 'LaunchFitnesse' located at your projects root directory and investigate any issues.", fitnesseTestReportResourceName, nil);
         
     }
     

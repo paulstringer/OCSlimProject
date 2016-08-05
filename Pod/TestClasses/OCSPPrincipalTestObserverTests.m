@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "OCSPTestSuiteBuilder.h"
+#import "OCSPPrincipalTestObserver.h"
 
 #import "OCSPTestReportReader.h"
 #import "OCSPTestDataManager.h"
@@ -7,18 +7,18 @@
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
 
-@interface OCSPTestSuiteBuilderTests : XCTestCase
+@interface OCSPPrincipalTestObserverTests : XCTestCase
 
-@property (nonatomic, strong) OCSPTestSuiteBuilder* main;
+@property (nonatomic, strong) OCSPPrincipalTestObserver* main;
 @end
 
-@implementation OCSPTestSuiteBuilderTests
+@implementation OCSPPrincipalTestObserverTests
 
 - (void)setUp {
     
     [super setUp];
     
-    self.main = [[OCSPTestSuiteBuilder alloc] init];
+    self.main = [[OCSPPrincipalTestObserver alloc] init];
 
     self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
 }
@@ -44,7 +44,7 @@
     
 }
 
-- (void)testSuiteWillStartWithBundlesTestSuiteDoesReceiveFitnesseTestSuite {
+- (void)testSuiteWillStartWithBundlesTestSuiteContainsAcceptanceTestSuite {
     
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     
@@ -56,7 +56,7 @@
     
     XCTAssertEqual(1, suite.tests.count);
     
-    XCTAssertEqualObjects([[OCSPTestSuiteBuilder testSuite] name], [suite.tests.firstObject name]);
+    XCTAssertEqualObjects([[OCSPPrincipalTestObserver testSuite] name], [suite.tests.firstObject name]);
     
 }
 

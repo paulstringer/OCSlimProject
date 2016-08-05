@@ -1,16 +1,16 @@
-#import "OCSPTestSuiteBuilder.h"
+#import "OCSPPrincipalTestObserver.h"
 #import "OCSPTestReportReader.h"
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
 
-@interface OCSPTestSuiteBuilder ()
+@interface OCSPPrincipalTestObserver ()
 
 @property (nonatomic, strong) NSString *bundleTestSuiteName;
 
 @end
 
-@implementation OCSPTestSuiteBuilder
+@implementation OCSPPrincipalTestObserver
 
 - (id)init {
     
@@ -35,7 +35,7 @@
     
     if ( [self isHostTestSuite:testSuite] ) {
     
-        XCTestSuite *acceptanceTestSuite = [OCSPTestSuiteBuilder testSuite];
+        XCTestSuite *acceptanceTestSuite = [[self class] testSuite];
         
         [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
     

@@ -13,7 +13,7 @@
 		<key>POD_NAME</key>
 		<string>OCSlimProjectTestBundleSupport</string>
 		<key>PRINCIPALCLASSNAME</key>
-		<string>OCSPTestSuiteBuilder</string>
+		<string>OCSPPrincipalTestObserver</string>
 	</dict>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>

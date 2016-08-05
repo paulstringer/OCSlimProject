@@ -36,12 +36,8 @@
 					<key>ShellPath</key>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
-					<string>			
-REPORT_OUTPUT_FILE_PATH=&quot;${OCSLIMPROJECT_FITNESSE_TEST_REPORT_PATH}&quot;
-LOG_FILE_PATH=&quot;${PROJECT_DIR}/${TARGET_NAME}.log&quot;
-FITNESSE_SUITE_NAME=&quot;___VARIABLE_fitnesseSuiteName___&quot;
-${PROJECT_DIR}/LaunchFitnesse -d &quot;${PROJECT_DIR}&quot; -b &quot;$REPORT_OUTPUT_FILE_PATH&quot; --test &quot;$FITNESSE_SUITE_NAME&quot; &gt; &quot;$LOG_FILE_PATH&quot;
-					</string>
+					<string>FITNESSE_SUITE_NAME=&quot;___VARIABLE_fitnesseSuiteName___&quot;
+&quot;${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_NAME&quot;</string>
 				</dict>
 			</array>
 		</dict>

@@ -118,11 +118,6 @@ Pod::Spec.new do |s|
   #
 
   s.framework  = "XCTest"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -131,7 +126,9 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   # s.requires_arc = true
-
-  s.xcconfig = { "OCSLIMPROJECT_FITNESSE_TEST_REPORT_PATH" => "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fitnesse-Test-Report.xml" }
+  
+  s.user_target_xcconfig =  { 'OCSP_TEST_REPORT_FILE_NAME' => 'Fitnesse-Test-Report.xml','OCSP_SUPPORT_FILE_DIR' => "${PODS_ROOT}/#{s.name}/Pod/Support/SharedSupport"}
+  s.osx.user_target_xcconfig = { 'OCSP_TEST_REPORT_FILE_PATH' => "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${OCSP_TEST_REPORT_FILE_NAME}" }
+  s.ios.user_target_xcconfig = { 'OCSP_TEST_REPORT_FILE_PATH' => "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${OCSP_TEST_REPORT_FILE_NAME}" }
 
 end

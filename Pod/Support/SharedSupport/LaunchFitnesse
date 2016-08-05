@@ -15,7 +15,7 @@ FITNESSE_PORT=8080
 FITNESSE_EXECUTABLE_PATH=${BUNDLE_DIR}/fitnesse-standalone.jar
 FITNESSE_ROOT_CONTENT_FILE=FitnesseRoot/content.txt
 FITNESSE_URL=http:"//localhost:${FITNESSE_PORT}/"
-FITNESSE_TEST_OUTPUT=${MY_PATH}/Fitnesse-Test-Report.xml
+FITNESSE_TEST_OUTPUT=${PROJECT_DIR}/Fitnesse-Test-Report.xml
 FITNESSE_ROOT=.
 FITNESSE_TEST_SUITE=
 
@@ -70,6 +70,7 @@ function java_check {
 }
 
 function fitnesse_shutdown {
+	echo "[OSCP_CTL] FITNESSE: Shutdown"
 	curl --silent $FITNESSE_URL?shutdown > /dev/null
 	lsof -n -i4TCP:$FITNESSE_PORT | awk ' { print $2 }' | sed -n 2p | xargs kill -9
 }
@@ -92,16 +93,16 @@ function fitnesse_check {
 }
 
 function fitnesse_start {
-	echo "#### Info ###"
-	echo "# action=${ACTION}"
-	echo "# pwd=$(pwd)"
-	echo "# Jar=${FITNESSE_EXECUTABLE_PATH}"
-	echo "# Port=${FITNESSE_PORT}"
-	echo "# RootPath=${FITNESSE_ROOT}"
+	echo "[OCSP_CTL] action=${ACTION}"
+	echo "[OCSP_CTL] Jar=${FITNESSE_EXECUTABLE_PATH}"
+	echo "[OCSP_CTL] Port=${FITNESSE_PORT}"
+	echo "[OCSP_CTL] RootPath=${FITNESSE_ROOT}"
+	echo "[OCSP_CTL] FITNESSE: Launch"
 	java -jar ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} &
 }
 
 function fitnesse_wait {
+	echo "[OCSP_CTL] FITNESSE: Waiting for Fitnesse..."
 	result=$CURL_CONNECTION_REFUSED_CODE
 	while [ $result -eq $CURL_CONNECTION_REFUSED_CODE ] 
 	do
@@ -109,7 +110,7 @@ function fitnesse_wait {
 		curl -s "http://localhost:${FITNESSE_PORT}" > /dev/null 2>&1 
 		result=$?
 	done
-	echo ""
+	echo "[OCSP_CTL] Fitnesse: Ready"
 }
 
 function fitnesse_setup {
@@ -163,8 +164,13 @@ function fitnesse_generate_test_suite_report {
 }
 
 function fitnesse_write_suite_results {
+	echo "[OCSP_CTL] Run Test Action"
+	echo "[OCSP_CTL] Test Suite=$FITNESSE_TEST_SUITE"
+	echo "[OCSP_CTL] Test Output=$FITNESSE_TEST_OUTPUT"
+	echo "[OCSP_CTL] FITNESSE: Run Tests..."
 	cmd=$FITNESSE_URL$FITNESSE_TEST_SUITE\?suite\&format\=junit 
-	curl $cmd > $FITNESSE_TEST_OUTPUT
+	curl $cmd -s > $FITNESSE_TEST_OUTPUT
+	echo "[OCSP_CTL] Testing Report Generated (curl exit code=$?)"
 }
 
 ########
@@ -175,18 +181,19 @@ function main {
 
 	case "$ACTION" in
 
-	LAUNCH) fitnesse_launch_in_browser
-		echo  "Use --shutdown to stop Fitnesse"
+	LAUNCH) 
+		fitnesse_launch_in_browser
+		echo  "[OCSP_CTL] Use --shutdown to stop Fitnesse"
 		;;
 		
-	SHUTDOWN)  echo "Shutting Down Fitnesse on Port $FITNESSE_PORT"
+	SHUTDOWN)  
+		echo "[OCSP_CTL] Shutting Down Fitnesse on Port $FITNESSE_PORT"
 		fitnesse_shutdown
 		;;
 		
-	TEST)  echo  "Generating Fitnesse Suite Report"
+	TEST)  
 		fitnesse_generate_test_suite_report
 		fitnesse_shutdown
-		echo  "Fitnesse Suite Report Generated Suite=$FITNESSE_TEST_SUITE Output=$FITNESSE_TEST_OUTPUT "
 		;;
 		
 	esac

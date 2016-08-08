@@ -39,7 +39,6 @@ Pod::Spec.new do |s|
   s.source_files  = "Pod/TestClasses/**/*.{h,m}"
   s.exclude_files = "Pod/TestClasses/*Tests.{h,m}"
   s.public_header_files = "Pod/TestClasses/OCSPPrincipalTestObserver.h"
-  s.private_header_files = "Pod/TestClasses/**/*.h"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 

@@ -75,30 +75,39 @@ function fitnesse_process_id {
 
 }
 
-function fitnesse_kill {
-	$(fitnesse_process_id) | xargs kill -9
+function fitnesse_running {
+	
+	local FITNESSE_PID=$(fitnesse_process_id)
+	
+	if [ -n "$FITNESSE_PID" ]; then
+		return 0
+	else
+		return 1
+	fi
+	
 }
 
 function fitnesse_shutdown {
 
-	local FITNESSE_PID=$(fitnesse_process_id)
-	
-	if [ -n "$FITNESSE_PID" ]; then
-		echo "[OSCP_CTL] FITNESSE: $FITNESSE_URL?shutdown (Process=$FITNESSE_PID)"
-		curl --silent "$FITNESSE_URL?shutdown" > /dev/null	
+	if fitnesse_running; then
+		echo "[OSCP_CTL] FITNESSE: $FITNESSE_URL?shutdown (Process=$(fitnesse_process_id))"
+		curl --silent "$FITNESSE_URL?shutdown" > /dev/null
+		if [ -z  "$(fitnesse_process_id)" ]; then
+			echo "[OCSP_CTL] Shutdown (Port:$FITNESSE_PORT) Succeeded"
+		fi
 	else
 		echo "[OSCP_CTL] No Instance of Fitnesse Found Running on Port $FITNESSE_PORT."
-		return 0
 	fi
 	
 	
-	if [ -z  "$(fitnesse_process_id)" ]; then
-		echo "[OCSP_CTL] Shutdown (Port:$FITNESSE_PORT) Succeeded"
-	fi
 	
 }
 
+function fitnesse_kill {
 
+	$(fitnesse_process_id) | xargs kill -9
+	
+}
 
 function fitnesse_check {
 

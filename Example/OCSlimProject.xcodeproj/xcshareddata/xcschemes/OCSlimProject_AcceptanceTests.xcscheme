@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C23FB9C1D401D7F00A09FD5"
+               BuildableName = "OCSlimProject_AcceptanceTests_TestBundle.xctest"
+               BlueprintName = "OCSlimProject_AcceptanceTests_TestBundle"
+               ReferencedContainer = "container:OCSlimProject.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

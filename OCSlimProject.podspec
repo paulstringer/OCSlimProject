@@ -23,17 +23,14 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/paulstringer'
 
   s.dependency 'cslim'
-#  s.dependency 'cslim', :path => "../../ObjectiveCSlim/cslim"
   s.source_files = 'Pod/Classes/**'
-  
-  s.osx.resource_bundles = {
-    'OCSlimProject-Mac' => ['Pod/Support/OSX/*', 'Pod/Support/SharedSupport/*']
-  }
-  s.ios.resource_bundles = {
-    'OCSlimProject' => ['Pod/Support/iOS/*', 'Pod/Support/SharedSupport/*']
-  }
 
-  s.osx.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCSlimProject-Mac.bundle/Contents/Resources' }
-  s.ios.user_target_xcconfig = { 'OCSLIMPROJECT_BUNDLE_RESOURCES_DIR' => '${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/OCSlimProject.bundle' }
- 
- end
+  support_file_path =  'Pod/Support'
+  
+  s.user_target_xcconfig = { 'OCSP_SUPPORT_FILE_DIR' => "${PODS_ROOT}/#{s.name}/#{support_file_path}/SharedSupport" }
+  s.osx.user_target_xcconfig = { 'OCSP_BUNDLE_RESOURCES_DIR' => "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/#{s.name}-Mac.bundle/Contents/Resources" }
+  s.ios.user_target_xcconfig = { 'OCSP_BUNDLE_RESOURCES_DIR' => "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/#{s.name}.bundle" }
+
+  s.preserve_paths  = "#{support_file_path}/*"
+  
+end

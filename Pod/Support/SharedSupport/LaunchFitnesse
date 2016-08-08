@@ -99,8 +99,6 @@ function fitnesse_shutdown {
 		echo "[OSCP_CTL] No Instance of Fitnesse Found Running on Port $FITNESSE_PORT."
 	fi
 	
-	
-	
 }
 
 function fitnesse_kill {
@@ -164,9 +162,6 @@ function fitnesse_main {
 
 	pushd $MY_PATH 2>&1 > /dev/null
 	
-	# Check if Fitnesse is running
-	fitnesse_status
-
 	# Check Java Exists	
 	java_check
 	
@@ -184,9 +179,14 @@ function fitnesse_main {
 }
 
 function fitnesse_run {
-	fitnesse_start
-	fitnesse_wait
-	fitnesse_setup
+	if ! fitnesse_running; then 
+		fitnesse_start
+		fitnesse_wait
+		fitnesse_setup
+	else 
+		echo "[OCSP_CTL] Fitnesse Already Running - $FITNESSE_URL"
+	fi
+	
 }
 
 function fitnesse_launch_in_browser {

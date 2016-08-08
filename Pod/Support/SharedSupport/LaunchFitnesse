@@ -69,11 +69,36 @@ function java_check {
 	fi
 }
 
-function fitnesse_shutdown {
-	echo "[OSCP_CTL] FITNESSE: Shutdown"
-	curl --silent $FITNESSE_URL?shutdown > /dev/null
-	lsof -n -i4TCP:$FITNESSE_PORT | awk ' { print $2 }' | sed -n 2p | xargs kill -9
+function fitnesse_process_id {
+
+	echo $(lsof -n -i4TCP:$FITNESSE_PORT | awk ' { print $2 }' | sed -n 2p)
+
 }
+
+function fitnesse_kill {
+	$(fitnesse_process_id) | xargs kill -9
+}
+
+function fitnesse_shutdown {
+
+	local FITNESSE_PID=$(fitnesse_process_id)
+	
+	if [ -n "$FITNESSE_PID" ]; then
+		echo "[OSCP_CTL] FITNESSE: $FITNESSE_URL?shutdown (Process=$FITNESSE_PID)"
+		curl --silent "$FITNESSE_URL?shutdown" > /dev/null	
+	else
+		echo "[OSCP_CTL] No Instance of Fitnesse Found Running on Port $FITNESSE_PORT."
+		return 0
+	fi
+	
+	
+	if [ -z  "$(fitnesse_process_id)" ]; then
+		echo "[OCSP_CTL] Shutdown (Port:$FITNESSE_PORT) Succeeded"
+	fi
+	
+}
+
+
 
 function fitnesse_check {
 
@@ -130,7 +155,9 @@ function fitnesse_main {
 
 	pushd $MY_PATH 2>&1 > /dev/null
 	
-	
+	# Check if Fitnesse is running
+	fitnesse_status
+
 	# Check Java Exists	
 	java_check
 	
@@ -187,7 +214,6 @@ function main {
 		;;
 		
 	SHUTDOWN)  
-		echo "[OCSP_CTL] Shutting Down Fitnesse on Port $FITNESSE_PORT"
 		fitnesse_shutdown
 		;;
 		

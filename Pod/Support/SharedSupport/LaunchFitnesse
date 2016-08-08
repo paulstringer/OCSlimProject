@@ -47,6 +47,10 @@ while [ "$1" != "" ]; do
         						ACTION=TEST
 								;;
 								
+		-o | --open )			shift
+								ACTION=OPEN
+								;;
+								
 		esac
 		shift
 done
@@ -202,10 +206,25 @@ function fitnesse_run {
 	return $MAIN_RESULT
 }
 
+function fitnesse_open {
+	
+	fitnesse_running
+	
+	if [ 0 -eq $? ]; then
+		echo  "[OCSP_CTL] Open Fitnesse at $FITNESSE_URL"
+		open $FITNESSE_URL
+	else
+		echo  "[OCSP_CTL] Fitnesse is not Running. Aborted."
+		echo  "[OCSP_CTL] Usage: ./LaunchFitnesse [--port PORT]"
+	fi	
+	
+
+}
 function fitnesse_launch_in_browser {
 	fitnesse_main
-	open $FITNESSE_URL
+	fitnesse_open
 }
+
 
 function fitnesse_generate_test_suite_report {
 	
@@ -259,6 +278,10 @@ function main {
 		
 	TEST)  
 		fitnesse_generate_test_suite_report
+		;;
+		
+	OPEN)
+		fitnesse_open
 		;;
 		
 	esac

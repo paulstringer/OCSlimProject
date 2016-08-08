@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
   s.osx.user_target_xcconfig = { 'OCSP_TEST_REPORT_FILE_PATH' => "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${OCSP_TEST_REPORT_FILE_NAME}" }
   s.ios.user_target_xcconfig = { 'OCSP_TEST_REPORT_FILE_PATH' => "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${OCSP_TEST_REPORT_FILE_NAME}" }
 
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.11'
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.8'
 
 end

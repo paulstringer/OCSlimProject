@@ -93,9 +93,6 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 							<key>Path</key>
 							<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 						</dict>
-						<key>Info.plist:PrincipalClass</key>
-						<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;OCSlimProjectFitnesseTestsMain&lt;/string&gt;</string>
 					</dict>
 					<key>Nodes</key>
 					<array>
@@ -111,9 +108,6 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 							<key>Path</key>
 							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
 						</dict>
-						<key>Info.plist:PrincipalClass</key>
-						<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;OCSlimProjectFitnesseTestsMain&lt;/string&gt;</string>
 					</dict>
 					<key>Nodes</key>
 					<array>

@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<testsuite name="OCSlimProjectExampleSuite" tests="1" failures="0" disabled="0" errors="1" time="3.306">
-    <testcase name="OCSlimProjectExampleSuite" assertions="0" time="0.024">
-        <error message="1 exceptions"/>
-		      <system-out>OCSlimProjectExampleSuite?pageHistory&amp;resultDate=20160622112522</system-out>
-    </testcase>
-</testsuite>

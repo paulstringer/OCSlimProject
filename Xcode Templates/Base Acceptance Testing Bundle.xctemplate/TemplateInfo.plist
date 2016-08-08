@@ -137,7 +137,7 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 		</dict>
 		<key>Info.plist:PrincipalClass</key>
 		<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;___OCSLIMPROJECTTESTBUNDLEPRINCIPALCLASS___&lt;/string&gt;</string>
+&lt;string&gt;___PRINCIPALCLASSNAME___&lt;/string&gt;</string>
 	</dict>
 </dict>
 </plist>

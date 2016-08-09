@@ -41,6 +41,8 @@
     
         [testSuite addTest:acceptanceTestSuite];
         
+        (void)[XCTestCase testInvocations];
+        
     }
     
 }
@@ -83,7 +85,7 @@
         XCTestCase *testCase = [self testCaseForIndex:i parser:parser];
 
         [acceptanceTestSuite addTest:testCase];
-        
+    
     }
     
     

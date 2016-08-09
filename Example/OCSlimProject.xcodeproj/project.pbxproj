@@ -12,11 +12,11 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		8C07D1F11C35385100CF88BE /* OCSlimProject_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D1F01C35385100CF88BE /* OCSlimProject_AcceptanceTests.m */; };
-		8C07D1F41C35385100CF88BE /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D1F31C35385100CF88BE /* FixtureExample.swift */; };
-		8C07D2041C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2031C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m */; };
-		8C07D2071C35388000CF88BE /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07D2061C35388000CF88BE /* FixtureExample.swift */; };
-		8C07D20B1C35388000CF88BE /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C07D20A1C35388000CF88BE /* Empty.xib */; };
+		8C464D611D59B7500000EF7B /* OCSlimProject_AcceptanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D601D59B7500000EF7B /* OCSlimProject_AcceptanceTests.m */; };
+		8C464D641D59B7500000EF7B /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D631D59B7500000EF7B /* FixtureExample.swift */; };
+		8C464D741D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D731D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m */; };
+		8C464D771D59B7AA0000EF7B /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D761D59B7AA0000EF7B /* FixtureExample.swift */; };
+		8C464D7B1D59B7AA0000EF7B /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C464D7A1D59B7AA0000EF7B /* Empty.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,19 +28,6 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8C07D1ED1C35385100CF88BE /* OCSlimProject_AcceptanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_AcceptanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C07D1F01C35385100CF88BE /* OCSlimProject_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests.m; sourceTree = "<group>"; };
-		8C07D1F31C35385100CF88BE /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
-		8C07D1F51C35385100CF88BE /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
-		8C07D1F61C35385100CF88BE /* OCSlimProject_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		8C07D1F71C35385100CF88BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OCSlimProject_AcceptanceTests/Info.plist; sourceTree = "<group>"; };
-		8C07D2001C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_AcceptanceTestsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C07D2031C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTestsMac.m; sourceTree = "<group>"; };
-		8C07D2061C35388000CF88BE /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
-		8C07D2081C35388000CF88BE /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
-		8C07D2091C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTestsMac-Bridging-Header.h"; sourceTree = "<group>"; };
-		8C07D20A1C35388000CF88BE /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
-		8C07D20C1C35388000CF88BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OCSlimProject_AcceptanceTestsMac/Info.plist; sourceTree = "<group>"; };
 		8C1011E01D512FA8007243D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C2EB3FA1D369246000C22FA /* OCSPTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestSuite.h; path = ../../Pod/TestClasses/OCSPTestSuite.h; sourceTree = "<group>"; };
 		8C2EB3FB1D369246000C22FA /* OCSPTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuite.m; path = ../../Pod/TestClasses/OCSPTestSuite.m; sourceTree = "<group>"; };
@@ -48,6 +35,19 @@
 		8C464D3E1D58D3290000EF7B /* OCSPPrincipalTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPPrincipalTestObserver.h; path = ../../Pod/TestClasses/OCSPPrincipalTestObserver.h; sourceTree = "<group>"; };
 		8C464D3F1D58D3290000EF7B /* OCSPPrincipalTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPPrincipalTestObserver.m; path = ../../Pod/TestClasses/OCSPPrincipalTestObserver.m; sourceTree = "<group>"; };
 		8C464D401D58D3290000EF7B /* OCSPPrincipalTestObserverTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPPrincipalTestObserverTests.m; path = ../../Pod/TestClasses/OCSPPrincipalTestObserverTests.m; sourceTree = "<group>"; };
+		8C464D5D1D59B7500000EF7B /* OCSlimProject_AcceptanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_AcceptanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C464D601D59B7500000EF7B /* OCSlimProject_AcceptanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTests.m; sourceTree = "<group>"; };
+		8C464D631D59B7500000EF7B /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
+		8C464D651D59B7500000EF7B /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
+		8C464D661D59B7500000EF7B /* OCSlimProject_AcceptanceTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C464D671D59B7500000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_AcceptanceTestsMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C464D731D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceTestsMac.m; sourceTree = "<group>"; };
+		8C464D761D59B7AA0000EF7B /* FixtureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureExample.swift; sourceTree = "<group>"; };
+		8C464D781D59B7AA0000EF7B /* SlimTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlimTables.h; sourceTree = "<group>"; };
+		8C464D791D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTestsMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C464D7A1D59B7AA0000EF7B /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
+		8C464D7C1D59B7AA0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSPAssertRecorder.h; path = ../../Pod/TestClasses/OCSPAssertRecorder.h; sourceTree = "<group>"; };
 		8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSPAssertRecorder.m; path = ../../Pod/TestClasses/OCSPAssertRecorder.m; sourceTree = "<group>"; };
 		8C634EB31D37A1C600E95652 /* OCSPTestReportReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestReportReader.h; path = ../../Pod/TestClasses/OCSPTestReportReader.h; sourceTree = "<group>"; };
@@ -65,9 +65,6 @@
 		8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTable.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTable.m; sourceTree = "<group>"; };
 		8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTableTests.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTableTests.m; sourceTree = "<group>"; };
 		8CCDA9B81D42024000AF6F30 /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-3.xml"; sourceTree = "<group>"; };
-		8CD64CEE1D46A1F0005C792A /* OCSlimProject_AcceptanceTests_UnitTestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCSlimProject_AcceptanceTests_UnitTestBundle.swift; sourceTree = "<group>"; };
-		8CD64CF01D46A1F0005C792A /* OCSlimProjectTestBundleSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTestBundleSupport.m; sourceTree = "<group>"; };
-		8CD64CF21D46A1F0005C792A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CEAFB001D3FB29E0080BE39 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = OCSlimProject_TestBundleSupport_Tests/SuiteTestResultFailures.xml; sourceTree = SOURCE_ROOT; };
 		8CEAFB011D3FB29E0080BE39 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultSuccess.xml; path = OCSlimProject_TestBundleSupport_Tests/SuiteTestResultSuccess.xml; sourceTree = SOURCE_ROOT; };
 		8CEAFB071D3FB6390080BE39 /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Fitnesse-Test-Report.xml"; path = "OCSlimProject_TestBundleSupport_Tests/Fitnesse-Test-Report.xml"; sourceTree = SOURCE_ROOT; };
@@ -83,14 +80,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1E91C35385100CF88BE /* Frameworks */ = {
+		8C464D591D59B7500000EF7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1FC1C35388000CF88BE /* Frameworks */ = {
+		8C464D6C1D59B7AA0000EF7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,9 +102,8 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
-				8CFBB16F1D395E9C00A6C7DC /* Example OCSlimProject iOS Acceptance Tests */,
-				8CFBB16E1D395E7700A6C7DC /* Example OCSlimProject Mac Acceptance Tests (Faster) */,
-				8CD64CED1D46A1F0005C792A /* Example OCSlimProject Acceptance Tests UnitTestBundle */,
+				8C464D5E1D59B7500000EF7B /* Example for OCSlimProject iOS Acceptance Tests */,
+				8C464D711D59B7AA0000EF7B /* Example for OCSlimProject Mac Acceptance Tests (Faster) */,
 				8CBAFE651D1A817D007D52D2 /* OCSlimProject Test Bundle Support Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 			);
@@ -117,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */,
-				8C07D1ED1C35385100CF88BE /* OCSlimProject_AcceptanceTests.app */,
-				8C07D2001C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.app */,
+				8C464D5D1D59B7500000EF7B /* OCSlimProject_AcceptanceTests.app */,
+				8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,45 +151,63 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8C07D1EF1C35385100CF88BE /* Supporting Files */ = {
+		8C464D5E1D59B7500000EF7B /* Example for OCSlimProject iOS Acceptance Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8C07D1F01C35385100CF88BE /* OCSlimProject_AcceptanceTests.m */,
-				8C07D1F51C35385100CF88BE /* SlimTables.h */,
-				8C07D1F61C35385100CF88BE /* OCSlimProject_AcceptanceTests-Bridging-Header.h */,
+				8C464D671D59B7500000EF7B /* Info.plist */,
+				8C464D621D59B7500000EF7B /* Fixtures */,
+				8C464D5F1D59B7500000EF7B /* Supporting Files */,
 			);
-			name = "Supporting Files";
+			name = "Example for OCSlimProject iOS Acceptance Tests";
 			path = OCSlimProject_AcceptanceTests;
 			sourceTree = "<group>";
 		};
-		8C07D1F21C35385100CF88BE /* Fixtures */ = {
+		8C464D5F1D59B7500000EF7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C07D1F31C35385100CF88BE /* FixtureExample.swift */,
-			);
-			name = Fixtures;
-			path = OCSlimProject_AcceptanceTests;
-			sourceTree = "<group>";
-		};
-		8C07D2021C35388000CF88BE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8C07D2031C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m */,
-				8C07D2081C35388000CF88BE /* SlimTables.h */,
-				8C07D2091C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */,
-				8C07D20A1C35388000CF88BE /* Empty.xib */,
+				8C464D601D59B7500000EF7B /* OCSlimProject_AcceptanceTests.m */,
+				8C464D651D59B7500000EF7B /* SlimTables.h */,
+				8C464D661D59B7500000EF7B /* OCSlimProject_AcceptanceTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
-			path = OCSlimProject_AcceptanceTestsMac;
 			sourceTree = "<group>";
 		};
-		8C07D2051C35388000CF88BE /* Fixtures */ = {
+		8C464D621D59B7500000EF7B /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				8C07D2061C35388000CF88BE /* FixtureExample.swift */,
+				8C464D631D59B7500000EF7B /* FixtureExample.swift */,
 			);
 			name = Fixtures;
+			sourceTree = "<group>";
+		};
+		8C464D711D59B7AA0000EF7B /* Example for OCSlimProject Mac Acceptance Tests (Faster) */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D7C1D59B7AA0000EF7B /* Info.plist */,
+				8C464D751D59B7AA0000EF7B /* Fixtures */,
+				8C464D721D59B7AA0000EF7B /* Supporting Files */,
+			);
+			name = "Example for OCSlimProject Mac Acceptance Tests (Faster)";
 			path = OCSlimProject_AcceptanceTestsMac;
+			sourceTree = SOURCE_ROOT;
+		};
+		8C464D721D59B7AA0000EF7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D731D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m */,
+				8C464D781D59B7AA0000EF7B /* SlimTables.h */,
+				8C464D791D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */,
+				8C464D7A1D59B7AA0000EF7B /* Empty.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C464D751D59B7AA0000EF7B /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D761D59B7AA0000EF7B /* FixtureExample.swift */,
+			);
+			name = Fixtures;
 			sourceTree = "<group>";
 		};
 		8C634EC21D37D12B00E95652 /* Test Data Manager */ = {
@@ -251,17 +265,6 @@
 			name = "Localized Message Table";
 			sourceTree = "<group>";
 		};
-		8CD64CED1D46A1F0005C792A /* Example OCSlimProject Acceptance Tests UnitTestBundle */ = {
-			isa = PBXGroup;
-			children = (
-				8CD64CEE1D46A1F0005C792A /* OCSlimProject_AcceptanceTests_UnitTestBundle.swift */,
-				8CD64CF01D46A1F0005C792A /* OCSlimProjectTestBundleSupport.m */,
-				8CD64CF21D46A1F0005C792A /* Info.plist */,
-			);
-			name = "Example OCSlimProject Acceptance Tests UnitTestBundle";
-			path = OCSlimProject_AcceptanceTests_UnitTestBundle;
-			sourceTree = "<group>";
-		};
 		8CEAFB041D3FB2A20080BE39 /* Test Data Example Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,26 +318,6 @@
 			name = "JUnit XML Parser";
 			sourceTree = "<group>";
 		};
-		8CFBB16E1D395E7700A6C7DC /* Example OCSlimProject Mac Acceptance Tests (Faster) */ = {
-			isa = PBXGroup;
-			children = (
-				8C07D20C1C35388000CF88BE /* Info.plist */,
-				8C07D2051C35388000CF88BE /* Fixtures */,
-				8C07D2021C35388000CF88BE /* Supporting Files */,
-			);
-			name = "Example OCSlimProject Mac Acceptance Tests (Faster)";
-			sourceTree = "<group>";
-		};
-		8CFBB16F1D395E9C00A6C7DC /* Example OCSlimProject iOS Acceptance Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8C07D1F71C35385100CF88BE /* Info.plist */,
-				8C07D1F21C35385100CF88BE /* Fixtures */,
-				8C07D1EF1C35385100CF88BE /* Supporting Files */,
-			);
-			name = "Example OCSlimProject iOS Acceptance Tests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,14 +338,14 @@
 			productReference = 607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C07D1EC1C35385100CF88BE /* OCSlimProject_AcceptanceTests */ = {
+		8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C07D1F81C35385100CF88BE /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */;
+			buildConfigurationList = 8C464D681D59B7500000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */;
 			buildPhases = (
-				8C07D1E81C35385100CF88BE /* Sources */,
-				8C07D1E91C35385100CF88BE /* Frameworks */,
-				8C07D1EA1C35385100CF88BE /* Resources */,
-				8C07D1EB1C35385100CF88BE /* ShellScript */,
+				8C464D581D59B7500000EF7B /* Sources */,
+				8C464D591D59B7500000EF7B /* Frameworks */,
+				8C464D5A1D59B7500000EF7B /* Resources */,
+				8C464D5B1D59B7500000EF7B /* [OCSP] Generate Fitnesse Test System Scripts */,
 			);
 			buildRules = (
 			);
@@ -370,17 +353,17 @@
 			);
 			name = OCSlimProject_AcceptanceTests;
 			productName = OCSlimProject_AcceptanceTests;
-			productReference = 8C07D1ED1C35385100CF88BE /* OCSlimProject_AcceptanceTests.app */;
+			productReference = 8C464D5D1D59B7500000EF7B /* OCSlimProject_AcceptanceTests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C07D1FF1C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac */ = {
+		8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C07D20D1C35388000CF88BE /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */;
+			buildConfigurationList = 8C464D7D1D59B7AA0000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */;
 			buildPhases = (
-				8C07D1FB1C35388000CF88BE /* Sources */,
-				8C07D1FC1C35388000CF88BE /* Frameworks */,
-				8C07D1FD1C35388000CF88BE /* Resources */,
-				8C07D1FE1C35388000CF88BE /* ShellScript */,
+				8C464D6B1D59B7AA0000EF7B /* Sources */,
+				8C464D6C1D59B7AA0000EF7B /* Frameworks */,
+				8C464D6D1D59B7AA0000EF7B /* Resources */,
+				8C464D6E1D59B7AA0000EF7B /* [OCSP] Generate Fitnesse Test System Scripts */,
 			);
 			buildRules = (
 			);
@@ -388,7 +371,7 @@
 			);
 			name = OCSlimProject_AcceptanceTestsMac;
 			productName = OCSlimProject_AcceptanceTestsMac;
-			productReference = 8C07D2001C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.app */;
+			productReference = 8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -405,11 +388,11 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
-					8C07D1EC1C35385100CF88BE = {
-						CreatedOnToolsVersion = 7.2;
+					8C464D5C1D59B7500000EF7B = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
-					8C07D1FF1C35388000CF88BE = {
-						CreatedOnToolsVersion = 7.2;
+					8C464D6F1D59B7AA0000EF7B = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -427,8 +410,8 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
-				8C07D1EC1C35385100CF88BE /* OCSlimProject_AcceptanceTests */,
-				8C07D1FF1C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac */,
+				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
+				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
 			);
 		};
 /* End PBXProject section */
@@ -444,49 +427,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1EA1C35385100CF88BE /* Resources */ = {
+		8C464D5A1D59B7500000EF7B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1FD1C35388000CF88BE /* Resources */ = {
+		8C464D6D1D59B7AA0000EF7B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C07D20B1C35388000CF88BE /* Empty.xib in Resources */,
+				8C464D7B1D59B7AA0000EF7B /* Empty.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8C07D1EB1C35385100CF88BE /* ShellScript */ = {
+		8C464D5B1D59B7500000EF7B /* [OCSP] Generate Fitnesse Test System Scripts */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[OCSP] Generate Fitnesse Test System Scripts";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Validate Project Build Settings\nif [ -z \"${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}\" ]; then\n   echo \"Missing expected OCSlimProject build settings. Running '$ pod update' may fix this problem\"\n   exit 1\nfi\n\n# Export Build Environment to Bundle Location\nENV_TARGET=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/env.sh\n\nfunction exportTestRunnerEnv {\n    mkdir -p \"$(dirname \"$ENV_TARGET\")\" && touch \"$ENV_TARGET\"\n    export | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)|(EXECUTABLE_PATH)' > $ENV_TARGET\n}\n\n# Write Test Runner Script To Project Root\nTESTRUNNER_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/RunTestsTargetWithSlimPort\nTESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\nfunction writeTestRunnerScript {\n    \n    if [ -f \"$TESTRUNNER_TARGET\" ]; then\n        rm $TESTRUNNER_TARGET\n    fi\n    \n    echo '#!/bin/sh' > $TESTRUNNER_TARGET\n    echo $TESTRUNNER_SOURCE '$1' >> $TESTRUNNER_TARGET\n    chmod +x $TESTRUNNER_TARGET\n    \n}\n\n# Symbolic Link LaunchFitnesse to Project Root\nLAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse\nLAUNCHFITNESSE_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\nLAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\n\nfunction linkFitnesseScript {\n    \n    if [ -L $LAUNCHFITNESSE_TARGET ]; then\n        unlink $LAUNCHFITNESSE_TARGET\n    fi\n    \n    ln -s $LAUNCHFITNESSE_SOURCE $(dirname \"$LAUNCHFITNESSE_TARGET\")\n}\n\n\n###\n\nexportTestRunnerEnv\nwriteTestRunnerScript\nlinkFitnesseScript";
+			shellScript = "${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh \"${OCSP_BUNDLE_RESOURCES_DIR}\"";
 		};
-		8C07D1FE1C35388000CF88BE /* ShellScript */ = {
+		8C464D6E1D59B7AA0000EF7B /* [OCSP] Generate Fitnesse Test System Scripts */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[OCSP] Generate Fitnesse Test System Scripts";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Validate Project Build Settings\nif [ -z \"${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}\" ]; then\n   echo \"Missing expected OCSlimProject build settings. Running '$ pod update' may fix this problem\"\n   exit 1\nfi\n\n# Export Build Environment to Bundle Location\nENV_TARGET=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/env.sh\n\nfunction exportTestRunnerEnv {\n    mkdir -p \"$(dirname \"$ENV_TARGET\")\" && touch \"$ENV_TARGET\"\n    export | egrep '(INSTALL_DIR)|(PRODUCT_NAME)|(TARGET_BUILD_DIR)|(EXECUTABLE_FOLDER_PATH)|(DEPLOYMENT_TARGET_SUGGESTED_VALUES)|(EXECUTABLE_PATH)' > $ENV_TARGET\n}\n\n# Write Test Runner Script To Project Root\nTESTRUNNER_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/RunTestsTargetWithSlimPort\nTESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh\n\nfunction writeTestRunnerScript {\n    \n    if [ -f \"$TESTRUNNER_TARGET\" ]; then\n        rm $TESTRUNNER_TARGET\n    fi\n    \n    echo '#!/bin/sh' > $TESTRUNNER_TARGET\n    echo $TESTRUNNER_SOURCE '$1' >> $TESTRUNNER_TARGET\n    chmod +x $TESTRUNNER_TARGET\n    \n}\n\n# Symbolic Link LaunchFitnesse to Project Root\nLAUNCHFITNESSE_SCRIPTNAME=LaunchFitnesse\nLAUNCHFITNESSE_SOURCE=${OCSLIMPROJECT_BUNDLE_RESOURCES_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\nLAUNCHFITNESSE_TARGET=${PROJECT_DIR}/$LAUNCHFITNESSE_SCRIPTNAME\n\nfunction linkFitnesseScript {\n    \n    if [ -L $LAUNCHFITNESSE_TARGET ]; then\n        unlink $LAUNCHFITNESSE_TARGET\n    fi\n    \n    ln -s $LAUNCHFITNESSE_SOURCE $(dirname \"$LAUNCHFITNESSE_TARGET\")\n}\n\n\n###\n\nexportTestRunnerEnv\nwriteTestRunnerScript\nlinkFitnesseScript";
+			shellScript = "${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh \"${OCSP_BUNDLE_RESOURCES_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -500,21 +485,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1E81C35385100CF88BE /* Sources */ = {
+		8C464D581D59B7500000EF7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C07D1F41C35385100CF88BE /* FixtureExample.swift in Sources */,
-				8C07D1F11C35385100CF88BE /* OCSlimProject_AcceptanceTests.m in Sources */,
+				8C464D641D59B7500000EF7B /* FixtureExample.swift in Sources */,
+				8C464D611D59B7500000EF7B /* OCSlimProject_AcceptanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C07D1FB1C35388000CF88BE /* Sources */ = {
+		8C464D6B1D59B7AA0000EF7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C07D2071C35388000CF88BE /* FixtureExample.swift in Sources */,
-				8C07D2041C35388000CF88BE /* OCSlimProject_AcceptanceTestsMac.m in Sources */,
+				8C464D771D59B7AA0000EF7B /* FixtureExample.swift in Sources */,
+				8C464D741D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,56 +643,58 @@
 			};
 			name = Release;
 		};
-		8C07D1F91C35385100CF88BE /* Debug */ = {
+		8C464D691D59B7500000EF7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/OCSlimProject_AcceptanceTests-Bridging-Header.h";
 			};
 			name = Debug;
 		};
-		8C07D1FA1C35385100CF88BE /* Release */ = {
+		8C464D6A1D59B7500000EF7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTests/OCSlimProject_AcceptanceTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
-		8C07D20E1C35388000CF88BE /* Debug */ = {
+		8C464D7E1D59B7AA0000EF7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTestsMac";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTestsMac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTestsMac/OCSlimProject_AcceptanceTestsMac-Bridging-Header.h";
 			};
 			name = Debug;
 		};
-		8C07D20F1C35388000CF88BE /* Release */ = {
+		8C464D7F1D59B7AA0000EF7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.cleankit.OCSlimProject-AcceptanceTestsMac";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTestsMac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "OCSlimProject_AcceptanceTestsMac/OCSlimProject_AcceptanceTestsMac-Bridging-Header.h";
@@ -735,23 +722,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C07D1F81C35385100CF88BE /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */ = {
+		8C464D681D59B7500000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C07D1F91C35385100CF88BE /* Debug */,
-				8C07D1FA1C35385100CF88BE /* Release */,
+				8C464D691D59B7500000EF7B /* Debug */,
+				8C464D6A1D59B7500000EF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		8C07D20D1C35388000CF88BE /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */ = {
+		8C464D7D1D59B7AA0000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C07D20E1C35388000CF88BE /* Debug */,
-				8C07D20F1C35388000CF88BE /* Release */,
+				8C464D7E1D59B7AA0000EF7B /* Debug */,
+				8C464D7F1D59B7AA0000EF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

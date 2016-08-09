@@ -9,4 +9,4 @@ script:
 #- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme BuildTestAllTargets-iOS -sdk  iphonesimulator build test
 #- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme BuildTestAllTargets-OSX -sdk  macosx build test
 #- pod lib lint OCSlimProject.podspec --allow-warnings --verbose
-- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings
+- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings --verbose

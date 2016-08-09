@@ -134,7 +134,7 @@ function fitnesse_start {
 	echo "[OCSP_CTL] Port=${FITNESSE_PORT}"
 	echo "[OCSP_CTL] RootPath=${FITNESSE_ROOT}"
 	echo "[OCSP_CTL] FITNESSE: Launch"
-	java -jar ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} 2>&1 &
+	java -jar ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} > /dev/null 2>&1 &
 }
 
 function fitnesse_wait {

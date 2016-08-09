@@ -47,4 +47,6 @@ Pod::Spec.new do |s|
   s.ios.user_target_xcconfig = { 'OCSP_BUNDLE_RESOURCES_DIR' => "${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/#{s.name}.bundle" }
   s.preserve_paths  = "#{support_file_path}/*"
   
+  s.platforms = { ios: "9.0", osx: "10.8" }
+  
 end

@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   Use together with 'OCSlimProject' for fast, rock-solid, non UI based acceptance testing that integrates seamlessly with both Xcode development and CI environments.
                    DESC
 
-  s.homepage     = "https://github.com/paulstringer/OCSlimProject"
+  s.homepage     = "http://paulstringer.github.io/OCSlimProject"
   s.documentation_url = 'http://paulstringer.github.io/OCSlimProject'
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 

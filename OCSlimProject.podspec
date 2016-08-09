@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   acceptance tests that integrates seamlessly with both Xcode development and CI environments.
                        DESC
 
-  s.homepage         = "https://github.com/paulstringer/OCSlimProject"
+  s.homepage         = "http://paulstringer.github.io/OCSlimProject"
   s.documentation_url = 'http://paulstringer.github.io/OCSlimProject'
   
   # ――― Licence ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

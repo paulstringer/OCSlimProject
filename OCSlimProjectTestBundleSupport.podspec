@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/paulstringer/OCSlimProject"
+  s.documentation_url = 'http://paulstringer.github.io/OCSlimProject'
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   # ――― Licence ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

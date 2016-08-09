@@ -95,7 +95,7 @@ function fitnesse_shutdown {
 
 	if fitnesse_running; then
 		echo "[OSCP_CTL] FITNESSE: $FITNESSE_URL?shutdown (Process=$(fitnesse_process_id))"
-		curl --silent "$FITNESSE_URL?shutdown" > /dev/null
+		curl --silent "$FITNESSE_URL?shutdown" >/dev/null  2>/dev/null
 		if [ -z  "$(fitnesse_process_id)" ]; then
 			echo "[OCSP_CTL] Shutdown (Port:$FITNESSE_PORT) Succeeded"
 		fi
@@ -248,13 +248,13 @@ function fitnesse_write_suite_results {
 	cmd=$FITNESSE_URL$FITNESSE_TEST_SUITE\?suite\&format\=junit 
 	echo "[OCSP_CTL] FITNESSE: $cmd"
 	
-	curl $cmd -s > $FITNESSE_TEST_OUTPUT
+	curl $cmd -s >$FITNESSE_TEST_OUTPUT 2>/dev/null
 	CURL_RESULT=$?
 	
 	if [ $CURL_RESULT -eq 1 ]; then
 		echo "[OCSP_CTL] ERROR: Could Not Download Test Report (curl exit code=$CURL_RESULT)"
 	else
-		echo "[OCSP_CTL] Test Succeeded (curl exit code=$CURL_RESULT)"
+		echo "[OCSP_CTL] Test Succeeded (curl exit code=$CURL_RESULT, report)"
 	fi
 	
 }

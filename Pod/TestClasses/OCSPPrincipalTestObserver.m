@@ -41,8 +41,6 @@
     
         [testSuite addTest:acceptanceTestSuite];
         
-        (void)[XCTestCase testInvocations];
-        
     }
     
 }

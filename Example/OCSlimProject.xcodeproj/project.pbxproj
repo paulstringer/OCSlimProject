@@ -43,6 +43,16 @@
 		8C464DB81D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8C464DBD1D59BD850000EF7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C464D5C1D59B7500000EF7B;
+			remoteInfo = OCSlimProject_AcceptanceTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		492AC4917F3A0C8C878E021F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,6 +482,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C464DBE1D59BD850000EF7B /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_AcceptanceUnitTestBundle;
 			productName = OCSlimProject_AcceptanceUnitTestBundle;
@@ -682,6 +693,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C464DBE1D59BD850000EF7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */;
+			targetProxy = 8C464DBD1D59BD850000EF7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {

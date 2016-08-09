@@ -1,4 +1,4 @@
-EmptyTestSuiteErrorMessage="The specified Test Suite contains 0 tests. Either a) Begin by adding tests to this suite or b) Modify the 'Generate Fitnesse Test Bundle Resource File' 'build phase' of this target and change the 'FITNESSE_SUITE_NAME=%@' setting to use the Fitnesse page name that contains your acceptance tests.";
+EmptyTestSuiteErrorMessage="The specified Test Suite '%@' contains 0 tests. Either a) Begin by adding tests to the suite or b) Modify the 'Generate Fitnesse Test Bundle Resource File' 'build phase' of this target and change the 'FITNESSE_SUITE_NAME=' setting to use a Fitnesse page that contains your acceptance tests.";
 
 TestPageErrorMessage="Fitnesse test page failed with message - '%@'";
 

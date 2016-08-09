@@ -39,6 +39,8 @@
 		8C464DAA1D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA11D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml */; };
 		8C464DAB1D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */; };
 		8C464DAC1D59BB9C0000EF7B /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */; };
+		8C464DB61D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */; };
+		8C464DB81D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,10 @@
 		8C464DA11D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-3.xml"; sourceTree = "<group>"; };
 		8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-Empty.xml"; sourceTree = "<group>"; };
 		8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
+		8C464DB31D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_AcceptanceUnitTestBundle.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceUnitTestBundle.m; sourceTree = "<group>"; };
+		8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTestBundleSupport.m; sourceTree = "<group>"; };
+		8C464DB91D59BD1F0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSPAssertRecorder.h; path = ../../Pod/TestClasses/OCSPAssertRecorder.h; sourceTree = "<group>"; };
 		8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSPAssertRecorder.m; path = ../../Pod/TestClasses/OCSPAssertRecorder.m; sourceTree = "<group>"; };
 		8C634EB31D37A1C600E95652 /* OCSPTestReportReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestReportReader.h; path = ../../Pod/TestClasses/OCSPTestReportReader.h; sourceTree = "<group>"; };
@@ -127,6 +133,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C464DAF1D59BD1F0000EF7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,6 +151,7 @@
 				8C464D5E1D59B7500000EF7B /* Example for OCSlimProject iOS Acceptance Tests */,
 				8C464D711D59B7AA0000EF7B /* Example for OCSlimProject Mac Acceptance Tests (Faster) */,
 				8CBAFE651D1A817D007D52D2 /* OCSlimProject Test Bundle Support Tests */,
+				8C464DB41D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
 				607FACD11AFB9204008FA782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +163,7 @@
 				8C464D5D1D59B7500000EF7B /* OCSlimProject_AcceptanceTests.app */,
 				8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */,
 				8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */,
+				8C464DB31D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +274,16 @@
 				8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */,
 			);
 			name = "Assert Recorder";
+			sourceTree = "<group>";
+		};
+		8C464DB41D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */ = {
+			isa = PBXGroup;
+			children = (
+				8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */,
+				8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */,
+				8C464DB91D59BD1F0000EF7B /* Info.plist */,
+			);
+			path = OCSlimProject_AcceptanceUnitTestBundle;
 			sourceTree = "<group>";
 		};
 		8C634EC21D37D12B00E95652 /* Test Data Manager */ = {
@@ -435,6 +460,24 @@
 			productReference = 8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C464DBA1D59BD1F0000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceUnitTestBundle" */;
+			buildPhases = (
+				8C464DAE1D59BD1F0000EF7B /* Sources */,
+				8C464DAF1D59BD1F0000EF7B /* Frameworks */,
+				8C464DB01D59BD1F0000EF7B /* Resources */,
+				8C464DB11D59BD1F0000EF7B /* [OCSP] Generate Fitnesse Test Bundle Resource File */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCSlimProject_AcceptanceUnitTestBundle;
+			productName = OCSlimProject_AcceptanceUnitTestBundle;
+			productReference = 8C464DB31D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -458,6 +501,9 @@
 					8C464D831D59B9500000EF7B = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					8C464DB21D59BD1F0000EF7B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OCSlimProject" */;
@@ -475,6 +521,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
 				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
+				8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
 				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
 				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
 			);
@@ -524,6 +571,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C464DB01D59BD1F0000EF7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -554,6 +608,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-system-scripts.sh \"${OCSP_BUNDLE_RESOURCES_DIR}\"";
+		};
+		8C464DB11D59BD1F0000EF7B /* [OCSP] Generate Fitnesse Test Bundle Resource File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[OCSP] Generate Fitnesse Test Bundle Resource File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FITNESSE_SUITE_NAME=\"OCSlimProjectExamplePage\"\nTEST_REPORT_FILE_PATH=\"${OCSP_TEST_REPORT_FILE_PATH}\"\n${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_NAME $TEST_REPORT_FILE_PATH";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -601,6 +669,15 @@
 				8C464D8C1D59B97C0000EF7B /* OCSPPrincipalTestObserver.m in Sources */,
 				8C464D911D59B9990000EF7B /* OCSPJUnitXMLParser.m in Sources */,
 				8C464D8F1D59B9950000EF7B /* OCSPTestSuite.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C464DAE1D59BD1F0000EF7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C464DB81D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m in Sources */,
+				8C464DB61D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +910,31 @@
 			};
 			name = Release;
 		};
+		8C464DBB1D59BD1F0000EF7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = OCSlimProject_AcceptanceUnitTestBundle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceUnitTestBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8C464DBC1D59BD1F0000EF7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = OCSlimProject_AcceptanceUnitTestBundle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceUnitTestBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -880,6 +982,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8C464DBA1D59BD1F0000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceUnitTestBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C464DBB1D59BD1F0000EF7B /* Debug */,
+				8C464DBC1D59BD1F0000EF7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

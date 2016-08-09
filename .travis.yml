@@ -8,7 +8,7 @@ script:
 - java -version
 # xctool doesn't support dynamic test suites, using xcodebuild instead.
 #- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator build test
-- set -o pipefail && xcrun xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator -verbose test | xcpretty
+- set -o pipefail && xcrun xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator -verbose test
 #- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme BuildTestAllTargets-OSX -sdk  macosx build test
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

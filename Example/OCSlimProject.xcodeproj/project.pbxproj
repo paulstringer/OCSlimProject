@@ -17,6 +17,19 @@
 		8C464D741D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D731D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m */; };
 		8C464D771D59B7AA0000EF7B /* FixtureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D761D59B7AA0000EF7B /* FixtureExample.swift */; };
 		8C464D7B1D59B7AA0000EF7B /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C464D7A1D59B7AA0000EF7B /* Empty.xib */; };
+		8C464D8C1D59B97C0000EF7B /* OCSPPrincipalTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D3F1D58D3290000EF7B /* OCSPPrincipalTestObserver.m */; };
+		8C464D8D1D59B97C0000EF7B /* OCSPPrincipalTestObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D401D58D3290000EF7B /* OCSPPrincipalTestObserverTests.m */; };
+		8C464D8E1D59B9950000EF7B /* OCSPAssertRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */; };
+		8C464D8F1D59B9950000EF7B /* OCSPTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB3FB1D369246000C22FA /* OCSPTestSuite.m */; };
+		8C464D901D59B9950000EF7B /* OCSPTestSuiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EB3FC1D369246000C22FA /* OCSPTestSuiteTests.m */; };
+		8C464D911D59B9990000EF7B /* OCSPJUnitXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */; };
+		8C464D921D59B9990000EF7B /* OCSPJUnitXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */; };
+		8C464D931D59B99F0000EF7B /* OCSPLocalizedMessageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */; };
+		8C464D941D59B99F0000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */; };
+		8C464D951D59B9A20000EF7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1011E11D512FA8007243D0 /* Localizable.strings */; };
+		8C464D981D59BAA50000EF7B /* OCSPTestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB91D37BD4400E95652 /* OCSPTestDataManager.m */; };
+		8C464D991D59BAB90000EF7B /* OCSPTestReportReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB41D37A1C600E95652 /* OCSPTestReportReader.m */; };
+		8C464D9A1D59BAC00000EF7B /* OCSPTestReportReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E91D38DA5E00731FF5 /* OCSPTestReportReaderTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +61,8 @@
 		8C464D791D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCSlimProject_AcceptanceTestsMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		8C464D7A1D59B7AA0000EF7B /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		8C464D7C1D59B7AA0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProjectTestBundleSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C464D971D59BA8A0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSPAssertRecorder.h; path = ../../Pod/TestClasses/OCSPAssertRecorder.h; sourceTree = "<group>"; };
 		8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSPAssertRecorder.m; path = ../../Pod/TestClasses/OCSPAssertRecorder.m; sourceTree = "<group>"; };
 		8C634EB31D37A1C600E95652 /* OCSPTestReportReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestReportReader.h; path = ../../Pod/TestClasses/OCSPTestReportReader.h; sourceTree = "<group>"; };
@@ -60,7 +75,6 @@
 		8CAC17EC1D50BACF0038772F /* SuiteTestResultSuccess-Empty.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-Empty.xml"; sourceTree = "<group>"; };
 		8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParserTests.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParserTests.m; sourceTree = "<group>"; };
 		8CADF8E91D38DA5E00731FF5 /* OCSPTestReportReaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestReportReaderTests.m; path = ../../Pod/TestClasses/OCSPTestReportReaderTests.m; sourceTree = "<group>"; };
-		8CBAFE681D1A817D007D52D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC377061D51E58200863DF2 /* OCSPLocalizedMessageTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPLocalizedMessageTable.h; path = ../../Pod/TestClasses/OCSPLocalizedMessageTable.h; sourceTree = "<group>"; };
 		8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTable.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTable.m; sourceTree = "<group>"; };
 		8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTableTests.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTableTests.m; sourceTree = "<group>"; };
@@ -94,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C464D811D59B9500000EF7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +136,7 @@
 				607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */,
 				8C464D5D1D59B7500000EF7B /* OCSlimProject_AcceptanceTests.app */,
 				8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */,
+				8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +232,14 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		8C464D961D59BA740000EF7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D971D59BA8A0000EF7B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8C634EC21D37D12B00E95652 /* Test Data Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,19 +269,10 @@
 				8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */,
 				8CC377091D51E58600863DF2 /* Localized Message Table */,
 				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
-				8CBAFE721D1A8B4A007D52D2 /* Supporting Files */,
+				8C464D961D59BA740000EF7B /* Supporting Files */,
 			);
 			name = "OCSlimProject Test Bundle Support Tests";
-			path = OCSlimProject_TestBundleSupport_Tests;
-			sourceTree = "<group>";
-		};
-		8CBAFE721D1A8B4A007D52D2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CBAFE681D1A817D007D52D2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			path = ../OCSlimProject_TestBundleSupport_Tests;
+			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		8CC377091D51E58600863DF2 /* Localized Message Table */ = {
@@ -374,6 +395,23 @@
 			productReference = 8C464D701D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C464D891D59B9500000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProjectTestBundleSupportTests" */;
+			buildPhases = (
+				8C464D801D59B9500000EF7B /* Sources */,
+				8C464D811D59B9500000EF7B /* Frameworks */,
+				8C464D821D59B9500000EF7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCSlimProjectTestBundleSupportTests;
+			productName = OCSlimProjectTestBundleSupportTests;
+			productReference = 8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -394,6 +432,9 @@
 					8C464D6F1D59B7AA0000EF7B = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					8C464D831D59B9500000EF7B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OCSlimProject" */;
@@ -412,6 +453,7 @@
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
 				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
 				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
+				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +481,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C464D7B1D59B7AA0000EF7B /* Empty.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C464D821D59B9500000EF7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C464D951D59B9A20000EF7B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +550,25 @@
 			files = (
 				8C464D771D59B7AA0000EF7B /* FixtureExample.swift in Sources */,
 				8C464D741D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C464D801D59B9500000EF7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C464D8E1D59B9950000EF7B /* OCSPAssertRecorder.m in Sources */,
+				8C464D991D59BAB90000EF7B /* OCSPTestReportReader.m in Sources */,
+				8C464D8D1D59B97C0000EF7B /* OCSPPrincipalTestObserverTests.m in Sources */,
+				8C464D981D59BAA50000EF7B /* OCSPTestDataManager.m in Sources */,
+				8C464D901D59B9950000EF7B /* OCSPTestSuiteTests.m in Sources */,
+				8C464D9A1D59BAC00000EF7B /* OCSPTestReportReaderTests.m in Sources */,
+				8C464D931D59B99F0000EF7B /* OCSPLocalizedMessageTable.m in Sources */,
+				8C464D921D59B9990000EF7B /* OCSPJUnitXMLParserTests.m in Sources */,
+				8C464D941D59B99F0000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */,
+				8C464D8C1D59B97C0000EF7B /* OCSPPrincipalTestObserver.m in Sources */,
+				8C464D911D59B9990000EF7B /* OCSPJUnitXMLParser.m in Sources */,
+				8C464D8F1D59B9950000EF7B /* OCSPTestSuite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +770,37 @@
 			};
 			name = Release;
 		};
+		8C464D8A1D59B9500000EF7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = OCSlimProjectTestBundleSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.stringerstheory.OCSlimProjectTestBundleSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8C464D8B1D59B9500000EF7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OCSlimProjectTestBundleSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = net.stringerstheory.OCSlimProjectTestBundleSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -735,6 +835,14 @@
 			buildConfigurations = (
 				8C464D7E1D59B7AA0000EF7B /* Debug */,
 				8C464D7F1D59B7AA0000EF7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C464D891D59B9500000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProjectTestBundleSupportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C464D8A1D59B9500000EF7B /* Debug */,
+				8C464D8B1D59B9500000EF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

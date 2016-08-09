@@ -8,7 +8,7 @@
 
 @end
 
-@interface OCSPXCAssertRecorder : XCTestCase <OCSPAssertRecorder>
+@interface OCSPXCAssertRecorder : NSObject <OCSPAssertRecorder>
 
 
 @end

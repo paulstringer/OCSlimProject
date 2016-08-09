@@ -6,7 +6,9 @@ before_install:
 osx_image: xcode7.3
 script:
 - java -version
-- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator build test
+# xctool doesn't support dynamic test suites, using xcodebuild instead.
+#- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator build test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk  iphonesimulator build test | xcpretty
 #- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme BuildTestAllTargets-OSX -sdk  macosx build test
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

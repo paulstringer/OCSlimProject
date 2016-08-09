@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8C464DBF1D59BFDA0000EF7B /* OCSlimProjectBuildTestAll */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8C464DC01D59BFDA0000EF7B /* Build configuration list for PBXAggregateTarget "OCSlimProjectBuildTestAll" */;
+			buildPhases = (
+			);
+			dependencies = (
+				8C464DC41D59BFE20000EF7B /* PBXTargetDependency */,
+				8C464DC61D59BFE50000EF7B /* PBXTargetDependency */,
+			);
+			name = OCSlimProjectBuildTestAll;
+			productName = OCSlimProjectBuildTestAll;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -50,6 +65,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8C464D5C1D59B7500000EF7B;
 			remoteInfo = OCSlimProject_AcceptanceTests;
+		};
+		8C464DC31D59BFE20000EF7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C464D5C1D59B7500000EF7B;
+			remoteInfo = OCSlimProject_AcceptanceTests;
+		};
+		8C464DC51D59BFE50000EF7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C464D6F1D59B7AA0000EF7B;
+			remoteInfo = OCSlimProject_AcceptanceTestsMac;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -515,6 +544,9 @@
 					8C464DB21D59BD1F0000EF7B = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					8C464DBF1D59BFDA0000EF7B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OCSlimProject" */;
@@ -535,6 +567,7 @@
 				8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
 				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
 				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
+				8C464DBF1D59BFDA0000EF7B /* OCSlimProjectBuildTestAll */,
 			);
 		};
 /* End PBXProject section */
@@ -699,6 +732,16 @@
 			isa = PBXTargetDependency;
 			target = 8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */;
 			targetProxy = 8C464DBD1D59BD850000EF7B /* PBXContainerItemProxy */;
+		};
+		8C464DC41D59BFE20000EF7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */;
+			targetProxy = 8C464DC31D59BFE20000EF7B /* PBXContainerItemProxy */;
+		};
+		8C464DC61D59BFE50000EF7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */;
+			targetProxy = 8C464DC51D59BFE50000EF7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -954,6 +997,20 @@
 			};
 			name = Release;
 		};
+		8C464DC11D59BFDA0000EF7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8C464DC21D59BFDA0000EF7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1007,6 +1064,14 @@
 			buildConfigurations = (
 				8C464DBB1D59BD1F0000EF7B /* Debug */,
 				8C464DBC1D59BD1F0000EF7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8C464DC01D59BFDA0000EF7B /* Build configuration list for PBXAggregateTarget "OCSlimProjectBuildTestAll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C464DC11D59BFDA0000EF7B /* Debug */,
+				8C464DC21D59BFDA0000EF7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

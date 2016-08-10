@@ -14,3 +14,8 @@ target 'OCSlimProject_AcceptanceUnitTestBundle' do
     platform :ios, 9.0
     pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "Fix-XCTest-Compatibility"
  end
+
+target 'OCSlimProject_AcceptanceUnitTestBundleMac' do
+    platform :osx, 10.8
+    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "Fix-XCTest-Compatibility"
+end

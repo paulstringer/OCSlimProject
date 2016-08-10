@@ -1,7 +1,8 @@
 #import <XCTest/XCTest.h>
-#import "OCSPTestSuite.h"
+#import "OCSPTestSuiteTestable.h"
 #import "OCSPAssertRecorder.h"
 #import "OCSPTestDataManager.h"
+#import "OCSPLocalizedMessageTable.h"
 
 @interface OCSPTestSuiteTests : XCTestCase <XCTestObservation>
 @property (nonatomic, strong) OCSPAssertRecorderSpy *recorderSpy;
@@ -11,7 +12,7 @@
 
 - (void)setUp {
     
-    self.recorderSpy = [[OCSPAssertRecorderSpy alloc] init];
+    self.recorderSpy = [OCSPTestSuiteTestable assertRecorder];
     
 }
 
@@ -41,7 +42,7 @@
 
 - (void)testNilErrorMessageForFailureResult {
     
-    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     [asserter run];
     
@@ -51,7 +52,7 @@
 
 - (void)testGivenErrorMessageForFailureResult {
     
-    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     asserter.errorMessage = @"ERROR";
     
@@ -62,7 +63,7 @@
 
 - (void)testInvocationWillRunAssertions {
     
-    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     [asserter forwardInvocation:asserter.invocation];
     
@@ -72,7 +73,7 @@
 
 - (void)testInvocationRunsAssertion {
     
-    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"AnyTestName" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *asserter = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"AnyTestName" result:NO assertRecorder:self.recorderSpy];
     
     [asserter.invocation invokeWithTarget:asserter];
     
@@ -91,7 +92,7 @@
 
 - (void)testInitWithFailedResult {
     
-    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
+    OCSPTestSuite *testCase = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:NO assertRecorder:self.recorderSpy];
     
     [testCase run];
     
@@ -100,7 +101,7 @@
 
 - (void)testInitWithSuccessResult {
     
-    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:YES assertRecorder:self.recorderSpy];
+    OCSPTestSuite *testCase = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:YES assertRecorder:self.recorderSpy];
     
     [testCase run];
     
@@ -116,16 +117,94 @@
     XCTAssertEqualObjects([testCase testCaseName], @"TestPage0");
 }
 
+#pragma mark - Test Invocations Tests
+
+- (void)testInvocationsCountEqualsNumberOfResults {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    createDefaultTestReportReaderWithData(data);
+    
+    NSArray *invocations = [OCSPTestSuiteTestable testInvocations];
+    
+    XCTAssertEqual(invocations.count, 1);
+    
+}
+
+- (void)testInvocationsCountEqualsNumberOfResultsWithOtherReportData {
+
+    NSData *data = [OCSPTestDataManager successResultDataByAppendingHyphenatedFilenameModifier:@"3"];
+    
+    createDefaultTestReportReaderWithData(data);
+
+    NSArray *invocations = [OCSPTestSuiteTestable testInvocations];
+
+    XCTAssertEqual(invocations.count, 3);
+}
+
+- (void)testInvocationSelectorNameEqualsPageName {
+
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    createDefaultTestReportReaderWithData(data);
+
+    NSInvocation *inv = [[OCSPTestSuiteTestable testInvocations] firstObject];
+
+    XCTAssertEqualObjects(NSStringFromSelector(inv.selector), @"OCSlimProjectExampleSuite.TestPage0");
+}
+
+- (void)testForwardInvocationForSuccessReport {
+    
+    NSData *data = [OCSPTestDataManager successResultData];
+    
+    createDefaultTestReportReaderWithData(data);
+    
+    [self runInvocation];
+    
+    XCTAssertTrue(self.recorderSpy.didRecordPass);
+    
+}
+
+- (void)testForwardInvocationForFailReport {
+    
+    NSData *data = [OCSPTestDataManager failedResultData];
+    
+    createDefaultTestReportReaderWithData(data);
+    
+    [self runInvocation];
+    
+    XCTAssertTrue(self.recorderSpy.didRecordFail);
+    
+}
+
+- (void)testGivenErrorMessageForFailureReport{
+    
+    NSData *data = [OCSPTestDataManager failedResultData];
+    
+    createDefaultTestReportReaderWithData(data);
+    
+    [self runInvocation];
+    
+    XCTAssertEqualObjects(self.recorderSpy.didRecordFailMessage, [OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:@"1 errors"]);
+}
 
 #pragma mark - Test Automators
 
 - (void)runAsserterWithResult:(BOOL)result {
     
-    OCSPTestSuite *asserter = [[OCSPTestSuite alloc] initWithTestCaseName:@"" result:result assertRecorder:self.recorderSpy];
+    OCSPTestSuite *testSuite = [[OCSPTestSuiteTestable alloc] initWithTestCaseName:@"" result:result assertRecorder:self.recorderSpy];
     
-    [asserter run];
+    [testSuite run];
     
 }
 
+- (void)runInvocation {
+    
+    NSInvocation *inv = [[OCSPTestSuiteTestable testInvocations] firstObject];
+    
+    OCSPTestSuiteTestable *testCase = [OCSPTestSuiteTestable testCaseWithInvocation:inv];
+    
+    [testCase forwardInvocation:inv];
+}
 
 @end

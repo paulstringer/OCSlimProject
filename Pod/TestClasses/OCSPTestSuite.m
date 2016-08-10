@@ -2,9 +2,9 @@
 #import "OCSPAssertRecorder.h"
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPPrincipalTestObserver.h"
+#import "OCSPTestCaseReport.h"
 
 @interface OCSPTestSuite ()
-@property (nonatomic, strong) id<OCSPAssertRecorder> assertRecorder;
 @property (nonatomic, strong) NSString *testName;
 @property (nonatomic, assign) BOOL testResult;
 @end
@@ -27,7 +27,6 @@
         
         _testResult = result;
         
-        _assertRecorder = recorder;
     }
     
     return self;
@@ -35,15 +34,16 @@
 
 - (void)run {
     
+    
     if ( ![self isPass] ) {
         
         NSString *message = (self.errorMessage) ? self.errorMessage : @"Unspecified Acceptance Test Failure";
         
-        [self.assertRecorder recordFailWithTestCase:self message:message];
+        [[[self class] assertRecorder] recordFailWithTestCase:self message:message];
         
     } else {
         
-        [self.assertRecorder recordPassWithTestCase:self];
+        [[[self class] assertRecorder] recordPassWithTestCase:self];
         
     }
 }
@@ -70,25 +70,34 @@
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     
-    if (self.testName == nil) {
-        
-        self.testName = NSStringFromSelector(anInvocation.selector);
-        
-        NSArray *values = results[self.testName];
-        
-        self.testResult = [values[0] boolValue];
-        
-        self.errorMessage = (NSString*) values[1];
-        
-        self.assertRecorder = (NSString*) values[2];
-        
-    }
+//    if (self.testName == nil) {
+//        
+//        self.testName = NSStringFromSelector(anInvocation.selector);
+//        
+//        NSArray *values = results[self.testName];
+//        
+//        self.testResult = [values[0] boolValue];
+//        
+//        self.errorMessage = (NSString*) values[1];
+//        
+//        self.assertRecorder = (OCSPAssertRecorder*) values[2];
+//        
+//    }
+//
     
-    if  ( anInvocation.selector == NSSelectorFromString(self.testName) ) {
-        
+    self.testName = NSStringFromSelector(anInvocation.selector);
+    
+    OCSPTestCaseReport *associatedReport = reports[self.testName];
+    
+    self.testResult = associatedReport.passed;
+    
+    self.errorMessage = associatedReport.errorMessage;
+    
+//    if  ( anInvocation.selector == NSSelectorFromString(self.testName) ) {
+    
         anInvocation.selector = @selector(run);
         
-    }
+//    }
     
     [anInvocation invokeWithTarget:self];
     
@@ -96,7 +105,7 @@
 
 #pragma mark -- Experimental Dev
 
-static NSMutableDictionary<NSString*,NSArray*> *results;
+static NSMutableDictionary<NSString*,OCSPTestCaseReport*> *reports;
 
 + (void)initialize {
     
@@ -105,28 +114,64 @@ static NSMutableDictionary<NSString*,NSArray*> *results;
 }
 
 + (NSArray *)testInvocations {
+
+    reports = [[NSMutableDictionary alloc] init];
     
     NSMutableArray *invocations = [[NSMutableArray alloc] init];
     
-    XCTestSuite *suite = [OCSPPrincipalTestObserver testSuite];
+    [[[self reportCenter] testCaseReports] enumerateObjectsUsingBlock:^(OCSPTestCaseReport * _Nonnull report, NSUInteger idx, BOOL * _Nonnull stop) {
     
-    NSMutableDictionary * allResults = [[NSMutableDictionary alloc] init];
-    
-    [[suite tests] enumerateObjectsUsingBlock:^(__kindof OCSPTestSuite * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSInvocation *invocation = [self invocationForTestCaseReport:report];
         
-        NSArray *values = @[@(obj.testResult), obj.errorMessage, obj.assertRecorder];
+        [invocations addObject:invocation];
         
-        allResults[NSStringFromSelector(obj.invocation.selector)] =  values;
-        
-        [invocations addObject:[obj invocation]];
+        reports[NSStringFromSelector(invocation.selector)] = report;
         
     }];
     
-    
-    results = [[NSDictionary alloc] initWithDictionary:allResults];
-    
-    return invocations;
+    return [NSArray arrayWithArray:invocations];
+}
 
++ (NSInvocation *)invocationForTestCaseReport:(OCSPTestCaseReport *)report {
+    
+    SEL selector = NSSelectorFromString(report.name);
+    
+    //        NSMethodSignature *dummySig = [self instanceMethodSignatureForSelector:@selector(dummyTest)];
+    
+    NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:"v@:"];
+    
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    
+    invocation.selector = selector;
+    
+    return invocation;
+    
+}
+
++ (id<OCSPTestCaseReportCenter>) reportCenter {
+    
+    static id<OCSPTestCaseReportCenter> reportCenter = nil;
+    
+    if (nil == reportCenter) {
+        
+        reportCenter = [[OCSPPrincipalTestObserver alloc] init];
+        
+    }
+    
+    return reportCenter;
+}
+
++ (id<OCSPAssertRecorder>)assertRecorder {
+    
+    static id<OCSPAssertRecorder> assertRecorder = nil;
+    
+    if (nil == assertRecorder) {
+        
+        assertRecorder = [[OCSPXCAssertRecorder alloc] init];
+        
+    }
+    
+    return assertRecorder;
 }
 
 @end

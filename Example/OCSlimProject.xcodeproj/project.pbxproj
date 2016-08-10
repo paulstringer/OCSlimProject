@@ -1059,7 +1059,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FITNESSE_SUITE_NAME=\"OCSlimProjectExamplePageX\"\nTEST_REPORT_FILE_PATH=\"${OCSP_TEST_REPORT_FILE_PATH}\"\n${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_NAME $TEST_REPORT_FILE_PATH";
+			shellScript = "FITNESSE_SUITE_NAME=\"OCSlimProjectExamplePage\"\nTEST_REPORT_FILE_PATH=\"${OCSP_TEST_REPORT_FILE_PATH}\"\n${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_NAME $TEST_REPORT_FILE_PATH";
 			showEnvVarsInLog = 0;
 		};
 		8C4747471D5B8649005BE970 /* [OCSP] Generate Fitnesse Test Bundle Resource File */ = {

@@ -2,16 +2,15 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'OCSlimProject_AcceptanceTests' do
   platform :ios, 9.0
-  pod "OCSlimProject", :path => "../"
+  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "Fix-XCTest-Compatibility"
+end
+
+target 'OCSlimProject_AcceptanceTestsMac' do
+  platform :osx, 10.8
+  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => Fix-XCTest-Compatibility"
 end
 
 target 'OCSlimProject_AcceptanceUnitTestBundle' do
     platform :ios, 9.0
-    pod 'OCSlimProjectTestBundleSupport', :path => "../"
+    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "Fix-XCTest-Compatibility"
  end
- 
-target 'OCSlimProject_AcceptanceTestsMac' do
-  platform :osx, 10.8
-  pod "OCSlimProject", :path => "../"
-end
-

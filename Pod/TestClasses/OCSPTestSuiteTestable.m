@@ -28,7 +28,7 @@
     
     OCSPTestReportCenter *center = [[OCSPTestReportCenter alloc] init];
     
-    center.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
+    center.xcodeFixDisappearingTestCaseByAppendingDummyTest = YES;
     
     return center;
     

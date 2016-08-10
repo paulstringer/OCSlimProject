@@ -5,7 +5,8 @@
 
 @interface OCSPTestReportCenter : NSObject
 
-@property (nonatomic, assign) BOOL disableFixForXcodeDisappearingTestCaseByAppendingDummyTest;
+@property (nonatomic, assign) BOOL xctoolCompatibilityDisabled;
+@property (nonatomic, assign) BOOL xcodeFixDisappearingTestCaseByAppendingDummyTest;
 
 @property (nonatomic, readonly, nonnull) NSString *testSuiteName;
 

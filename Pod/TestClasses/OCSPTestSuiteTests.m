@@ -150,7 +150,7 @@
 
     NSInvocation *inv = [[OCSPTestSuiteTestable testInvocations] firstObject];
 
-    XCTAssertEqualObjects(NSStringFromSelector(inv.selector), @"OCSlimProjectExampleSuite.TestPage0");
+    XCTAssertEqualObjects(NSStringFromSelector(inv.selector), @"OCSlimProjectExampleSuite_TestPage0");
 }
 
 - (void)testForwardInvocationForSuccessReport {

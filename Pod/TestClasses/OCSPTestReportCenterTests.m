@@ -22,7 +22,9 @@
 
     self.center = [[OCSPTestReportCenter alloc] init];
     
-    self.center.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
+    self.center.xcodeFixDisappearingTestCaseByAppendingDummyTest = YES;
+    
+    self.center.xctoolCompatibilityDisabled = YES;
     
 }
 
@@ -57,6 +59,19 @@
     
     XCTAssertEqualObjects(report.name, @"OCSlimProjectExampleSuite.TestPage0");
 }
+
+
+- (void)testTestCaseReportNameReplacesDotsXCToolCompatibility {
+    
+    (void) [[self class] stubSuccessfulTestReport];
+    
+    self.center.xctoolCompatibilityDisabled = NO;
+    
+    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
+    
+    XCTAssertEqualObjects(report.name, @"OCSlimProjectExampleSuite_TestPage0");
+}
+
 
 - (void)testTestReportResultsSuccess {
     
@@ -100,7 +115,7 @@
     
     (void) [[self class] stubFailedTestReport];
     
-    self.center.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = NO;
+    self.center.xcodeFixDisappearingTestCaseByAppendingDummyTest = NO;
     
     NSArray *reports = [self.center testCaseReports];
     

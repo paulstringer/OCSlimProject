@@ -5,6 +5,7 @@
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
+#import "OCSPTestReportCenter.h"
 
 @interface OCSPPrincipalTestObserverTests : XCTestCase
 
@@ -19,7 +20,9 @@
     
     self.main = [[OCSPPrincipalTestObserver alloc] init];
 
-    self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
+    self.main.reportCenter.xcodeFixDisappearingTestCaseByAppendingDummyTest = YES;
+    
+    self.main.reportCenter.xctoolCompatibilityDisabled = YES;
 }
 
 - (void)testAcceptanceTestCasesAreJUnitAsserts{
@@ -312,7 +315,7 @@
     
     (void) [[self class] stubFailedTestReport];
     
-    self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = NO;
+    self.main.reportCenter.xcodeFixDisappearingTestCaseByAppendingDummyTest = NO;
     
     XCTestSuite *suite = [self acceptanceTestSuite];
     

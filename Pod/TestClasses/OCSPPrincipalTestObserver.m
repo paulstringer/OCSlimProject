@@ -107,7 +107,7 @@
     
     if ( nil == _testCaseReports ) {
         
-        self.reportCenter.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest;
+//        self.reportCenter.xcodeFixDisappearingTestCaseByAppendingDummyTest = self.xcodeFixDisappearingTestCaseByAppendingDummyTest;
         
         _testCaseReports = [self.reportCenter testCaseReports];
         

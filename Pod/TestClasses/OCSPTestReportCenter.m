@@ -71,6 +71,16 @@
 
 - (OCSPTestCaseReport *)testCaseReportForIndex:(NSUInteger)i {
     
+    OCSPTestCaseReport *report = [self reportWithParserResultAtIndex:i];
+    
+    [self updateReportWithXCToolCompatibleName:report];
+
+    return report;
+    
+}
+
+- (OCSPTestCaseReport *)reportWithParserResultAtIndex:(NSUInteger )i {
+    
     OCSPTestCaseReport *report = [[OCSPTestCaseReport alloc] init];
     
     report.name = [self.parser testNameForTestCaseAtIndex:i];
@@ -82,7 +92,6 @@
     report.errorMessage = message;
     
     return report;
-    
 }
 
 - (NSString *)errorMessageForTestCaseReportAtIndex:(NSUInteger )index {
@@ -161,13 +170,12 @@
 }
 
 
-#pragma mark - Xcode UI Fix
+#pragma mark - Xcode/XCTool Fixes
 
 
 - (void)appendDisappearingTestCaseUIFixWithReports:(NSMutableArray<OCSPTestCaseReport*>*)testCaseReports {
     
-    
-    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
+    if (!self.xcodeFixDisappearingTestCaseByAppendingDummyTest) {
         
         [testCaseReports addObject:[self tearDownTestCaseReport]];
         
@@ -175,6 +183,13 @@
     
 }
 
-
+- (void)updateReportWithXCToolCompatibleName:(OCSPTestCaseReport *)report {
+    
+    if (!self.xctoolCompatibilityDisabled) {
+        
+        report.name = [report.name stringByReplacingOccurrencesOfString:@"." withString:@"_"];
+    }
+    
+}
 
 @end

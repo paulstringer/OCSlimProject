@@ -10,11 +10,9 @@
     
     NSString *path = [bundle pathForResource:fitnesseTestReportResourceName ofType:@"xml"];
     
-    NSLog(@"[OCSP] INFO: Fitnesse test report output path = %@", path);
-    
     if (path == nil ) {
        
-        NSLog(@"[OCSP] WARNING: The %@.xml file is missing. Check your 'OCSlimProject' Acceptance Test target is being built. 1) Try running 'pod update' to resolve this issue. 2) Manually run Acceptance Tests using the utility 'LaunchFitnesse' located at your projects root directory and investigate any issues.", fitnesseTestReportResourceName, nil);
+        NSLog(@"[OCSP] ERROR: Could not read data : The file \"%@.xml\" couldn’t be opened because there is no such file: Check your 'OCSlimProject' Acceptance Test target is being built. 1) Try running 'pod update' to resolve this issue. 2) Manually run Acceptance Tests using '$ ./LaunchFitnesse' located at your projects root directory and investigate any issues.", fitnesseTestReportResourceName, nil);
         
     }
     

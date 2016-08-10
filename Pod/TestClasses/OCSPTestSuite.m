@@ -1,6 +1,7 @@
 #import "OCSPTestSuite.h"
 #import "OCSPAssertRecorder.h"
 #import "OCSPJUnitXMLParser.h"
+#import "OCSPPrincipalTestObserver.h"
 
 @interface OCSPTestSuite ()
 @property (nonatomic, strong) id<OCSPAssertRecorder> assertRecorder;
@@ -69,12 +70,63 @@
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     
+    if (self.testName == nil) {
+        
+        self.testName = NSStringFromSelector(anInvocation.selector);
+        
+        NSArray *values = results[self.testName];
+        
+        self.testResult = [values[0] boolValue];
+        
+        self.errorMessage = (NSString*) values[1];
+        
+        self.assertRecorder = (NSString*) values[2];
+        
+    }
+    
     if  ( anInvocation.selector == NSSelectorFromString(self.testName) ) {
+        
         anInvocation.selector = @selector(run);
+        
     }
     
     [anInvocation invokeWithTarget:self];
     
+}
+
+#pragma mark -- Experimental Dev
+
+static NSMutableDictionary<NSString*,NSArray*> *results;
+
++ (void)initialize {
+    
+    [super initialize];
+    
+}
+
++ (NSArray *)testInvocations {
+    
+    NSMutableArray *invocations = [[NSMutableArray alloc] init];
+    
+    XCTestSuite *suite = [OCSPPrincipalTestObserver testSuite];
+    
+    NSMutableDictionary * allResults = [[NSMutableDictionary alloc] init];
+    
+    [[suite tests] enumerateObjectsUsingBlock:^(__kindof OCSPTestSuite * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSArray *values = @[@(obj.testResult), obj.errorMessage, obj.assertRecorder];
+        
+        allResults[NSStringFromSelector(obj.invocation.selector)] =  values;
+        
+        [invocations addObject:[obj invocation]];
+        
+    }];
+    
+    
+    results = [[NSDictionary alloc] initWithDictionary:allResults];
+    
+    return invocations;
+
 }
 
 @end

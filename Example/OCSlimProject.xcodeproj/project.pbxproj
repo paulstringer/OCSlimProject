@@ -64,7 +64,6 @@
 		8C464DAA1D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA11D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml */; };
 		8C464DAB1D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */; };
 		8C464DAC1D59BB9C0000EF7B /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */; };
-		8C464DB61D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */; };
 		8C464DB81D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */; };
 		8C464DEE1D59D4CC0000EF7B /* OCSPPrincipalTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D3F1D58D3290000EF7B /* OCSPPrincipalTestObserver.m */; };
 		8C464DEF1D59D4CC0000EF7B /* OCSPPrincipalTestObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C464D401D58D3290000EF7B /* OCSPPrincipalTestObserverTests.m */; };
@@ -1008,7 +1007,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C464DB81D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m in Sources */,
-				8C464DB61D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

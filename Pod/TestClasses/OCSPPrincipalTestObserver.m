@@ -35,11 +35,11 @@
     
     if ( [self isHostTestSuite:testSuite] ) {
     
-        XCTestSuite *acceptanceTestSuite = [[self class] testSuite];
-        
-        [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
-    
-        [testSuite addTest:acceptanceTestSuite];
+//        XCTestSuite *acceptanceTestSuite = [[self class] testSuite];
+//        
+//        [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
+//    
+//        [testSuite addTest:acceptanceTestSuite];
         
     }
     

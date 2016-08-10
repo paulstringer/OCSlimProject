@@ -20,7 +20,14 @@ class FixtureExample : NSObject, SlimDecisionTable {
     
     var output: NSString {
         get {
-            return ""
+            switch input {
+            case "foo":
+                return "bar"
+            case "bar":
+                return  "baz"
+            default:
+                return ""
+            }
         }
     }
     

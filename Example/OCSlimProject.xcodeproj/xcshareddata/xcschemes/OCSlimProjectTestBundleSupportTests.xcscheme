@@ -21,6 +21,14 @@
                BlueprintName = "OCSlimProjectTestBundleSupportTests"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "OCSPTestSuite">
+               </Test>
+               <Test
+                  Identifier = "OCSPTestSuiteTestable">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <AdditionalOptions>

@@ -144,7 +144,7 @@
 		8C464D7A1D59B7AA0000EF7B /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		8C464D7C1D59B7AA0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C464D841D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProjectTestBundleSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C464D971D59BA8A0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C464D971D59BA8A0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../OCSlimProjectTestBundleSupportTests/Info.plist; sourceTree = "<group>"; };
 		8C464D9B1D59BB9C0000EF7B /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Fitnesse-Test-Report.xml"; sourceTree = "<group>"; };
 		8C464D9C1D59BB9C0000EF7B /* SuiteTestResultErrors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultErrors.xml; sourceTree = "<group>"; };
 		8C464D9D1D59BB9C0000EF7B /* SuiteTestResultFailures-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultFailures-3.xml"; sourceTree = "<group>"; };
@@ -241,12 +241,9 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OCSlimProject */,
-				8C464D5E1D59B7500000EF7B /* Example for OCSlimProject iOS Acceptance Tests */,
-				8CBAFE651D1A817D007D52D2 /* OCSlimProject Test Bundle Support Tests (iOS) */,
-				8C464D711D59B7AA0000EF7B /* Example for OCSlimProject Mac Acceptance Tests (Faster) */,
-				8C464DE61D59D4230000EF7B /* OCSlimProject Test Bundle Support Tests (OS X) */,
-				8C464DB41D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
-				8C464DED1D59D4930000EF7B /* OCSlimProject Test Bundle Support */,
+				8C47472D1D5B73DB005BE970 /* Example Test System for iOS */,
+				8C47472F1D5B752A005BE970 /* Example Test System for OSX (Faster, Recommended) */,
+				8C47472E1D5B7433005BE970 /* OCSlimProject Test Bundle Support - Pod */,
 				607FACD11AFB9204008FA782 /* Products */,
 				E55B299F41CADB7F763224BC /* Pods */,
 				E3E67A42DDCE02F7059AACAD /* Frameworks */,
@@ -298,14 +295,14 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8C464D5E1D59B7500000EF7B /* Example for OCSlimProject iOS Acceptance Tests */ = {
+		8C464D5E1D59B7500000EF7B /* Acceptance Tests (Fitnesse Test System) */ = {
 			isa = PBXGroup;
 			children = (
 				8C464D671D59B7500000EF7B /* Info.plist */,
 				8C464D621D59B7500000EF7B /* Fixtures */,
 				8C464D5F1D59B7500000EF7B /* Supporting Files */,
 			);
-			name = "Example for OCSlimProject iOS Acceptance Tests";
+			name = "Acceptance Tests (Fitnesse Test System)";
 			path = OCSlimProject_AcceptanceTests;
 			sourceTree = "<group>";
 		};
@@ -327,14 +324,14 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
-		8C464D711D59B7AA0000EF7B /* Example for OCSlimProject Mac Acceptance Tests (Faster) */ = {
+		8C464D711D59B7AA0000EF7B /* Acceptance Tests (Fitnesse Test System) */ = {
 			isa = PBXGroup;
 			children = (
 				8C464D7C1D59B7AA0000EF7B /* Info.plist */,
 				8C464D751D59B7AA0000EF7B /* Fixtures */,
 				8C464D721D59B7AA0000EF7B /* Supporting Files */,
 			);
-			name = "Example for OCSlimProject Mac Acceptance Tests (Faster)";
+			name = "Acceptance Tests (Fitnesse Test System)";
 			path = OCSlimProject_AcceptanceTestsMac;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -367,37 +364,25 @@
 			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
-		8C464DB41D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */ = {
+		8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest) */ = {
 			isa = PBXGroup;
 			children = (
 				8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */,
 				8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */,
 				8C464DB91D59BD1F0000EF7B /* Info.plist */,
 			);
+			name = "Acceptance Unit Tests (XCTest)";
 			path = OCSlimProject_AcceptanceUnitTestBundle;
 			sourceTree = "<group>";
 		};
-		8C464DE61D59D4230000EF7B /* OCSlimProject Test Bundle Support Tests (OS X) */ = {
+		8C464DE61D59D4230000EF7B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C464D971D59BA8A0000EF7B /* Info.plist */,
 				8C464DE91D59D4230000EF7B /* Info.plist */,
 			);
-			name = "OCSlimProject Test Bundle Support Tests (OS X)";
+			name = "Support Files";
 			path = OCSlimProjectTestBundleSupportTestsMac;
-			sourceTree = "<group>";
-		};
-		8C464DED1D59D4930000EF7B /* OCSlimProject Test Bundle Support */ = {
-			isa = PBXGroup;
-			children = (
-				8C4747261D5B54FC005BE970 /* Test Report Center */,
-				8CF88A6A1D1ACDB2001C6C5E /* Principal Test Observer */,
-				8CAB865E1D1C074600773B43 /* Test Suite */,
-				8C464DAD1D59BC210000EF7B /* Assert Recorder */,
-				8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */,
-				8CC377091D51E58600863DF2 /* Localized Message Table */,
-				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */,
-			);
-			name = "OCSlimProject Test Bundle Support";
 			sourceTree = "<group>";
 		};
 		8C4747261D5B54FC005BE970 /* Test Report Center */ = {
@@ -428,6 +413,54 @@
 			name = "Test Case Report";
 			sourceTree = "<group>";
 		};
+		8C47472D1D5B73DB005BE970 /* Example Test System for iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D5E1D59B7500000EF7B /* Acceptance Tests (Fitnesse Test System) */,
+				8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest) */,
+			);
+			name = "Example Test System for iOS";
+			sourceTree = "<group>";
+		};
+		8C47472E1D5B7433005BE970 /* OCSlimProject Test Bundle Support - Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8CAB865E1D1C074600773B43 /* Test Suite */,
+				8C4747261D5B54FC005BE970 /* Test Report Center */,
+				8C464DAD1D59BC210000EF7B /* Assert Recorder */,
+				8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */,
+				8CC377091D51E58600863DF2 /* Localized Message Table */,
+				8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Report Data */,
+				8CF88A6A1D1ACDB2001C6C5E /* Principal Test Observer */,
+				8C464DE61D59D4230000EF7B /* Support Files */,
+			);
+			name = "OCSlimProject Test Bundle Support - Pod";
+			sourceTree = "<group>";
+		};
+		8C47472F1D5B752A005BE970 /* Example Test System for OSX (Faster, Recommended) */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D711D59B7AA0000EF7B /* Acceptance Tests (Fitnesse Test System) */,
+			);
+			name = "Example Test System for OSX (Faster, Recommended)";
+			sourceTree = "<group>";
+		};
+		8C4747301D5B7651005BE970 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C464D9B1D59BB9C0000EF7B /* Fitnesse-Test-Report.xml */,
+				8C464D9C1D59BB9C0000EF7B /* SuiteTestResultErrors.xml */,
+				8C464D9D1D59BB9C0000EF7B /* SuiteTestResultFailures-3.xml */,
+				8C464D9E1D59BB9C0000EF7B /* SuiteTestResultFailures-Exceptions.xml */,
+				8C464D9F1D59BB9C0000EF7B /* SuiteTestResultFailures-NotFound.xml */,
+				8C464DA01D59BB9C0000EF7B /* SuiteTestResultFailures.xml */,
+				8C464DA11D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml */,
+				8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */,
+				8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		8C634EC21D37D12B00E95652 /* Test Data Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,15 +483,6 @@
 			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
-		8CBAFE651D1A817D007D52D2 /* OCSlimProject Test Bundle Support Tests (iOS) */ = {
-			isa = PBXGroup;
-			children = (
-				8C464D971D59BA8A0000EF7B /* Info.plist */,
-			);
-			name = "OCSlimProject Test Bundle Support Tests (iOS)";
-			path = OCSlimProjectTestBundleSupportTests;
-			sourceTree = "<group>";
-		};
 		8CC377091D51E58600863DF2 /* Localized Message Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,30 +495,22 @@
 			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
-		8CEAFB041D3FB2A20080BE39 /* Test Data Example Files */ = {
+		8CEAFB041D3FB2A20080BE39 /* Test Data Examples */ = {
 			isa = PBXGroup;
 			children = (
-				8C464D9B1D59BB9C0000EF7B /* Fitnesse-Test-Report.xml */,
-				8C464D9C1D59BB9C0000EF7B /* SuiteTestResultErrors.xml */,
-				8C464D9D1D59BB9C0000EF7B /* SuiteTestResultFailures-3.xml */,
-				8C464D9E1D59BB9C0000EF7B /* SuiteTestResultFailures-Exceptions.xml */,
-				8C464D9F1D59BB9C0000EF7B /* SuiteTestResultFailures-NotFound.xml */,
-				8C464DA01D59BB9C0000EF7B /* SuiteTestResultFailures.xml */,
-				8C464DA11D59BB9C0000EF7B /* SuiteTestResultSuccess-3.xml */,
-				8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */,
-				8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */,
+				8C634EC21D37D12B00E95652 /* Test Data Manager */,
+				8C4747301D5B7651005BE970 /* Files */,
 			);
-			name = "Test Data Example Files";
+			name = "Test Data Examples";
 			sourceTree = "<group>";
 		};
-		8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Data Support */ = {
+		8CF88A661D1ACD4D001C6C5E /* Fitnesse Test Report Data */ = {
 			isa = PBXGroup;
 			children = (
 				8CF88A671D1ACD5C001C6C5E /* Test Data Reader */,
-				8C634EC21D37D12B00E95652 /* Test Data Manager */,
-				8CEAFB041D3FB2A20080BE39 /* Test Data Example Files */,
+				8CEAFB041D3FB2A20080BE39 /* Test Data Examples */,
 			);
-			name = "Fitnesse Test Data Support";
+			name = "Fitnesse Test Report Data";
 			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};

@@ -7,7 +7,7 @@ end
 
 target 'OCSlimProject_AcceptanceTestsMac' do
   platform :osx, 10.8
-  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => Fix-XCTest-Compatibility"
+  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "Fix-XCTest-Compatibility"
 end
 
 target 'OCSlimProject_AcceptanceUnitTestBundle' do

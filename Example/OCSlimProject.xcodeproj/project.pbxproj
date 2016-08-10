@@ -381,13 +381,13 @@
 			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
-		8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest) */ = {
+		8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest Integration) */ = {
 			isa = PBXGroup;
 			children = (
 				8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */,
 				8C464DB91D59BD1F0000EF7B /* Info.plist */,
 			);
-			name = "Acceptance Unit Tests (XCTest)";
+			name = "Acceptance Unit Tests (XCTest Integration)";
 			path = OCSlimProject_AcceptanceUnitTestBundle;
 			sourceTree = "<group>";
 		};
@@ -433,7 +433,7 @@
 			children = (
 				607FACD21AFB9204008FA782 /* Example App (Your iOS App) */,
 				8C464D5E1D59B7500000EF7B /* Acceptance Tests (Fitnesse Test System) */,
-				8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest) */,
+				8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest Integration) */,
 			);
 			name = "Example Test System for iOS";
 			sourceTree = "<group>";
@@ -458,7 +458,7 @@
 			children = (
 				8C47475A1D5B877E005BE970 /* Example App (Your OS X App) */,
 				8C464D711D59B7AA0000EF7B /* Acceptance Tests (Fitnesse Test System) */,
-				8C47474A1D5B8649005BE970 /* Acceptance Unit Tests (XCTest) */,
+				8C47474A1D5B8649005BE970 /* Acceptance Unit Tests (XCTest Integration) */,
 			);
 			name = "Example Test System for OSX (Faster, Recommended)";
 			sourceTree = "<group>";
@@ -479,13 +479,13 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		8C47474A1D5B8649005BE970 /* Acceptance Unit Tests (XCTest) */ = {
+		8C47474A1D5B8649005BE970 /* Acceptance Unit Tests (XCTest Integration) */ = {
 			isa = PBXGroup;
 			children = (
 				8C47474D1D5B8649005BE970 /* OCSlimProjectTestBundleSupport.m */,
 				8C47474F1D5B8649005BE970 /* Info.plist */,
 			);
-			name = "Acceptance Unit Tests (XCTest)";
+			name = "Acceptance Unit Tests (XCTest Integration)";
 			path = OCSlimProject_AcceptanceUnitTestBundleMac;
 			sourceTree = "<group>";
 		};
@@ -830,10 +830,10 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* OCSlimProject_Example */,
-				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
-				8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
 				8C4747581D5B877E005BE970 /* OCSlimProject_ExampleMac */,
+				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
 				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
+				8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
 				8C4747481D5B8649005BE970 /* OCSlimProject_AcceptanceUnitTestBundleMac */,
 				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
 				8C464DE41D59D4230000EF7B /* OCSlimProjectTestBundleSupportTestsMac */,
@@ -1075,6 +1075,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "FITNESSE_SUITE_NAME=\"OCSlimProjectExamplePage\"\nTEST_REPORT_FILE_PATH=\"${OCSP_TEST_REPORT_FILE_PATH}\"\n${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_NAME $TEST_REPORT_FILE_PATH";
+			showEnvVarsInLog = 0;
 		};
 		8EB6CC3B210E4B9765707F9F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

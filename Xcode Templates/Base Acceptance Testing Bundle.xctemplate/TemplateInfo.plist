@@ -13,7 +13,7 @@
 		<key>POD_NAME</key>
 		<string>OCSlimProjectTestBundleSupport</string>
 		<key>PRINCIPALCLASSNAME</key>
-		<string>OCSPPrincipalTestObserver</string>
+		<string>OCSPTestSuite</string>
 	</dict>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
@@ -79,47 +79,9 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 			<key>Type</key>
 			<string>static</string>
 		</dict>
-		<dict>
-			<key>Identifier</key>
-			<string>languageChoice</string>
-			<key>Units</key>
-			<dict>
-				<key>Objective-C</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
-						<key>___PACKAGENAMEASIDENTIFIER___.m</key>
-						<dict>
-							<key>Path</key>
-							<string>___PACKAGENAMEASIDENTIFIER___.m</string>
-						</dict>
-					</dict>
-					<key>Nodes</key>
-					<array>
-						<string>___PACKAGENAMEASIDENTIFIER___.m</string>
-					</array>
-				</dict>
-				<key>Swift</key>
-				<dict>
-					<key>Definitions</key>
-					<dict>
-						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
-						<dict>
-							<key>Path</key>
-							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-						</dict>
-					</dict>
-					<key>Nodes</key>
-					<array>
-						<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-					</array>
-				</dict>
-			</dict>
-		</dict>
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>Info.plist:PrincipalClass</string>
 		<string>___POD_NAME___.m</string>
 	</array>
 	<key>Definitions</key>
@@ -129,9 +91,6 @@ ${OCSP_SUPPORT_FILE_DIR}/ocsp-generate-fitnesse-test-report.sh $FITNESSE_SUITE_N
 			<key>Path</key>
 			<string>___POD_NAME___.m</string>
 		</dict>
-		<key>Info.plist:PrincipalClass</key>
-		<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;___PRINCIPALCLASSNAME___&lt;/string&gt;</string>
 	</dict>
 </dict>
 </plist>

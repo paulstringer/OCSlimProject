@@ -8,7 +8,7 @@
 //
 //
 
-#if __has_include(<OCSlimProjectTestBundleSupport/OCSPPrincipalTestObserver.h>)
+#if __has_include(<OCSlimProjectTestBundleSupport/OCSPTestSuite.h>)
 #else
 #pragma GCC error "Target requires pod 'OCSlimProjectTestBundleSupport'. Add the entry \"pod 'OCSlimProjectTestBundleSupport'\" to your Podfile configuration."
 #endif

@@ -155,7 +155,6 @@
 		8C464DA21D59BB9C0000EF7B /* SuiteTestResultSuccess-Empty.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-Empty.xml"; sourceTree = "<group>"; };
 		8C464DA31D59BB9C0000EF7B /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
 		8C464DB31D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_AcceptanceUnitTestBundle.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProject_AcceptanceUnitTestBundle.m; sourceTree = "<group>"; };
 		8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTestBundleSupport.m; sourceTree = "<group>"; };
 		8C464DB91D59BD1F0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C464DE51D59D4230000EF7B /* OCSlimProjectTestBundleSupportTestsMac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProjectTestBundleSupportTestsMac.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,7 +366,6 @@
 		8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest) */ = {
 			isa = PBXGroup;
 			children = (
-				8C464DB51D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle.m */,
 				8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */,
 				8C464DB91D59BD1F0000EF7B /* Info.plist */,
 			);
@@ -741,9 +739,9 @@
 				8C464DC91D59C5450000EF7B /* BuildTestAllTargets-iOS */,
 				8C464D5C1D59B7500000EF7B /* OCSlimProject_AcceptanceTests */,
 				8C464DB21D59BD1F0000EF7B /* OCSlimProject_AcceptanceUnitTestBundle */,
-				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
 				8C464DCF1D59D3DD0000EF7B /* BuildTestAllTargets-OSX */,
 				8C464D6F1D59B7AA0000EF7B /* OCSlimProject_AcceptanceTestsMac */,
+				8C464D831D59B9500000EF7B /* OCSlimProjectTestBundleSupportTests */,
 				8C464DE41D59D4230000EF7B /* OCSlimProjectTestBundleSupportTestsMac */,
 			);
 		};

@@ -25,9 +25,9 @@
 @end
 
 
-/// OCSlimFitnesseTestReportCenter ///
+/// OCSPTestReportReader ///
 
-@implementation OCSPTestReportCenter
+@implementation OCSPTestReportReader
 
 static id<OCSPTestReportReader> _defaultReader;
 

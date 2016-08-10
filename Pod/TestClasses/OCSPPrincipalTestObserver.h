@@ -1,13 +1,9 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
-#import "OCSPTestCaseReport.h"
 
+@interface OCSPPrincipalTestObserver : NSObject <XCTestObservation>
 
-@interface OCSPPrincipalTestObserver : NSObject <XCTestObservation, OCSPTestCaseReportCenter>
-
-+ (XCTestSuite *)testSuite __attribute__((deprecated));
-
-- (NSArray <OCSPTestCaseReport*> * )testCaseReports;
+- (XCTestSuite *)testSuite __attribute__((deprecated));
 
 @property (nonatomic, assign) BOOL disableFixForXcodeDisappearingTestCaseByAppendingDummyTest;
 

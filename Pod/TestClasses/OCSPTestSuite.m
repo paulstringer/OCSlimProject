@@ -3,6 +3,7 @@
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPPrincipalTestObserver.h"
 #import "OCSPTestCaseReport.h"
+#import "OCSPTestReportCenter.h"
 
 @interface OCSPTestSuite ()
 @property (nonatomic, strong) NSString *testName;
@@ -148,13 +149,13 @@ static NSMutableDictionary<NSString*,OCSPTestCaseReport*> *reports;
     
 }
 
-+ (id<OCSPTestCaseReportCenter>) reportCenter {
++ (OCSPTestReportCenter *) reportCenter {
     
-    static id<OCSPTestCaseReportCenter> reportCenter = nil;
+    static OCSPTestReportCenter *reportCenter = nil;
     
     if (nil == reportCenter) {
         
-        reportCenter = [[OCSPPrincipalTestObserver alloc] init];
+        reportCenter = [[OCSPTestReportCenter alloc] init];
         
     }
     

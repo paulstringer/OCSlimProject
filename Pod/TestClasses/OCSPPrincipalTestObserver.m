@@ -1,14 +1,15 @@
 #import "OCSPPrincipalTestObserver.h"
-#import "OCSPTestReportReader.h"
+
 #import "OCSPTestSuite.h"
-#import "OCSPJUnitXMLParser.h"
-#import "OCSPLocalizedMessageTable.h"
+#import "OCSPTestReportCenter.h"
+#import "OCSPTestCaseReport.h"
 
 @interface OCSPPrincipalTestObserver ()
 
 @property (nonatomic, strong) NSString *bundleTestSuiteName;
+@property (nonatomic, strong) OCSPTestReportCenter *reportCenter;
+@property (nonatomic, strong) NSArray *testCaseReports;
 
-@property (nonatomic, strong) OCSPJUnitXMLParser *parser;
 @end
 
 @implementation OCSPPrincipalTestObserver
@@ -17,7 +18,9 @@
     
     if (self == [super init]) {
         
-//        [[XCTestObservationCenter sharedTestObservationCenter] addTestObserver:self];
+        _reportCenter = [[OCSPTestReportCenter alloc] init];
+        
+        [[XCTestObservationCenter sharedTestObservationCenter] addTestObserver:self];
        
     }
     
@@ -36,9 +39,7 @@
     
     if ( [self isHostTestSuite:testSuite] ) {
     
-        XCTestSuite *acceptanceTestSuite = [[self class] testSuite];
-        
-        [self applyDisappearingTestCaseUIFix:acceptanceTestSuite];
+        XCTestSuite *acceptanceTestSuite = self.testSuite;
     
         [testSuite addTest:acceptanceTestSuite];
         
@@ -69,217 +70,53 @@
 
 #pragma mark - Test Suite Building
 
-+ (XCTestSuite *)testSuite {
+- (XCTestSuite *)testSuite {
     
-    OCSPJUnitXMLParser *parser = [[self class] testReportParsed];
-    
-    NSString *testSuiteName = [parser testSuiteName];
+    NSString *testSuiteName = [self.reportCenter testSuiteName];
     
     XCTestSuite *acceptanceTestSuite = [XCTestSuite testSuiteWithName:testSuiteName];
     
     
-    for (int i = 0; i < [parser testCaseCount]; i++ ) {
+    for (int i = 0; i < self.testCaseReports.count; i++ ) {
     
-        XCTestCase *testCase = [self testCaseForIndex:i parser:parser];
+        XCTestCase *testCase = [self testCaseForIndex:i];
 
         [acceptanceTestSuite addTest:testCase];
     
     }
     
-    
-    [self addExceptionParseReportTestCases:parser testSuite:acceptanceTestSuite];
-    
     return acceptanceTestSuite;
 
 }
 
-- (NSArray *)testCaseReports {
-    
-    NSMutableArray *results = [[NSMutableArray alloc] initWithCapacity:self.parser.testCaseCount];
-    
-    for (int i = 0; i < [self.parser testCaseCount]; i++ ) {
-        
-        OCSPTestCaseReport *report = [self testCaseReportForIndex:i];
-        
-        [results addObject:report];
-        
-    }
-    
-    [self appendDisappearingTestCaseUIFixWithReports:results];
-    
-    return results;
-    
-}
-
-- (OCSPTestCaseReport*)tearDownTestReport {
-    
-    OCSPTestCaseReport *report = [[OCSPTestCaseReport alloc] init];
-    
-    report.name = @"tearDown";
-    
-    report.passed = YES;
-    
-    return report;
-}
-
-
 #pragma mark Test Suite Building Helpers
 
-- (OCSPTestCaseReport *)testCaseReportForIndex:(NSUInteger)i {
+- (XCTestCase *)testCaseForIndex:(NSUInteger)i {
     
-    OCSPTestCaseReport *report = [[OCSPTestCaseReport alloc] init];
+    OCSPTestCaseReport *report = self.testCaseReports[i];
     
-    report.name = [self.parser testNameForTestCaseAtIndex:i];
+    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:report.name result:report.passed];
     
-    report.passed = [self.parser testResultForTestCaseAtIndex:i];
-    
-    NSString *message = [[self class] errorMessageWithUnderlyingMessageForParser:self.parser resultAtIndex:i];
-    
-    report.errorMessage = message;
-    
-    return report;
-    
-}
-
-+ (XCTestCase *)testCaseForIndex:(NSUInteger)i parser:(OCSPJUnitXMLParser *)parser {
-    
-    NSString *testCaseName = [parser testNameForTestCaseAtIndex:i];
-    
-    BOOL result = [parser testResultForTestCaseAtIndex:i];
-    
-    
-    OCSPTestSuite *testCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:result];
-    
-    NSString *message = [self errorMessageWithUnderlyingMessageForParser:parser resultAtIndex:i];
-    
-    [testCase setErrorMessage:message];
-    
+    testCase.errorMessage = report.errorMessage;
     
     return testCase;
     
 }
 
-+ (NSString *)errorMessageWithUnderlyingMessageForParser:(OCSPJUnitXMLParser *)parser resultAtIndex:(NSUInteger )index {
+- (NSArray <OCSPTestCaseReport *> *) testCaseReports {
     
-    NSString *testPageErrorMessage = [parser testErrorMessageForTestCaseAtIndex:index];
-    
-    NSString *message = [OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:testPageErrorMessage];
-    
-    return message;
-    
-}
-
-+ (void)addExceptionParseReportTestCases:(OCSPJUnitXMLParser *)parser testSuite:(XCTestSuite *) suite {
-    
-    OCSPTestSuite *reportingTestCase = nil;
-    
-    NSString *message = nil;
-    
-    if ( parser.parseErrorOccured == YES ) {
+    if ( nil == _testCaseReports ) {
         
-        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestSuiteReportXMLParsingSucceeded" result:NO];
+        self.reportCenter.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest;
         
-        message = [OCSPLocalizedMessageTable localizedTestSuiteParsingErrorMessage];
-        
-    } else if ( parser.parsingSucceeded == NO) {
-      
-        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:@"TestSuiteReportDataExists" result:NO];
-        
-        message = [OCSPLocalizedMessageTable localizedTestSuiteReportDataNotFound];
-        
-    } else if ( [self testSuiteIsEmpty:parser] ) {
-        
-        NSString *testCaseName = [NSString stringWithFormat:@"%@TestCaseCountGreaterThanZero", [parser testSuiteName]];
-        
-        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
-        
-        message = [OCSPLocalizedMessageTable localizedEmptyTestSuiteMessageWithSuiteName:[parser testSuiteName]];
-        
-    } else if ( [self testSuiteFailedToRun:parser] ) {
-        
-        NSString *testCaseName = [NSString stringWithFormat:@"%@ErrorCountEqualsZero", [parser testSuiteName]];
-        
-        reportingTestCase = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:NO];
-        
-        message = [OCSPLocalizedMessageTable localizedTestSuiteErrorsOccurredMessageWithCount:parser.testSuiteErrorCount];
+        _testCaseReports = [self.reportCenter testCaseReports];
         
     }
     
-    [reportingTestCase setErrorMessage:message];
-    
-    [suite addTest:reportingTestCase];
+    return _testCaseReports;
     
 }
 
-+ (BOOL)testSuiteIsEmpty:(OCSPJUnitXMLParser *)parser {
-    
-    return parser.parsingSucceeded == YES && [parser testCaseCount] == 0 && [parser testSuiteErrorCount] == 0;
-    
-}
-
-+ (BOOL)testSuiteFailedToRun:(OCSPJUnitXMLParser *)parser {
-    
-    BOOL errorsOccuredOutsideOfTests = parser.testSuiteErrorCount > parser.testCaseCount;
-    
-    return parser.parsingSucceeded == YES && errorsOccuredOutsideOfTests;
-    
-}
-
-- (OCSPJUnitXMLParser *)parser {
-    
-    if (nil == _parser) {
-        
-        NSData *data = [[OCSPTestReportCenter defaultReader] read];
-        
-        _parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
-        
-        [_parser parse];
-        
-    }
-    
-    return _parser;
-    
-}
-
-+ (OCSPJUnitXMLParser *)testReportParsed {
-    
-    NSData *data = [[OCSPTestReportCenter defaultReader] read];
-    
-    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
-    
-    [parser parse];
-    
-    return parser;
-}
-
-#pragma mark - Xcode XCTest Reporting Fix
-
-
-- (void)applyDisappearingTestCaseUIFix:(XCTestSuite*)suite {
-    
-    
-    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
-        
-        NSString *testCaseName = @"tearDown";
-        
-        OCSPTestSuite *test = [[OCSPTestSuite alloc] initWithTestCaseName:testCaseName result:YES];
-        
-        [suite addTest:test];
-        
-    }
-
-}
-
-- (void)appendDisappearingTestCaseUIFixWithReports:(NSMutableArray<OCSPTestCaseReport*>*)testCaseReports {
-    
-    
-    if (!self.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest) {
-        
-        [testCaseReports addObject:[self tearDownTestReport]];
-        
-    }
-    
-}
 
 @end
 

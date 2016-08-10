@@ -1,6 +1,7 @@
 #import "OCSPTestSuiteTestable.h"
 #import "OCSPPrincipalTestObserver.h"
 #import "OCSPAssertRecorder.h"
+#import "OCSPTestReportCenter.h"
 
 @implementation OCSPTestSuiteTestable
 
@@ -23,13 +24,15 @@
     
 }
 
-+ (id<OCSPTestCaseReportCenter>) reportCenter {
++ (OCSPTestReportCenter *) reportCenter {
     
-    OCSPPrincipalTestObserver *center = [[OCSPPrincipalTestObserver alloc] init];
+    OCSPTestReportCenter *center = [[OCSPTestReportCenter alloc] init];
     
     center.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = YES;
     
     return center;
     
 }
+
+
 @end

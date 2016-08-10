@@ -1,12 +1,10 @@
 #import <XCTest/XCTest.h>
 #import "OCSPPrincipalTestObserver.h"
 
-#import "OCSPTestReportReader.h"
 #import "OCSPTestDataManager.h"
 #import "OCSPTestSuite.h"
 #import "OCSPJUnitXMLParser.h"
 #import "OCSPLocalizedMessageTable.h"
-#import "OCSPTestCaseReport.h"
 
 @interface OCSPPrincipalTestObserverTests : XCTestCase
 
@@ -31,19 +29,6 @@
     XCTAssertEqual([test class], [OCSPTestSuite class]);
 }
 
-- (void)testAcceptanceTestCasesUseTestReportData {
-
-    NSUInteger testCaseCount = [self acceptanceTestSuite].testCaseCount;
-    
-    NSData *data = [[OCSPTestReportCenter defaultReader] read];
-    
-    OCSPJUnitXMLParser *parser = [[OCSPJUnitXMLParser alloc] initWithXMLData:data];
-    
-    [parser parse];
-    
-    XCTAssertEqual(testCaseCount, [parser testCaseCount]);
-    
-}
 
 - (void)testSuiteWillStartWithBundlesTestSuiteContainsAcceptanceTestSuite {
     
@@ -57,10 +42,9 @@
     
     XCTAssertEqual(1, suite.tests.count);
     
-    XCTAssertEqualObjects([[OCSPPrincipalTestObserver testSuite] name], [suite.tests.firstObject name]);
+    XCTAssertEqualObjects(self.main.testSuite.name, [suite.tests.firstObject name]);
     
 }
-
 
 - (void)testSuiteWillStartWithNonBundleTestSuiteDoesNotReceiveFitnesseTests {
     
@@ -131,7 +115,7 @@
 }
 
 
-- (void)testAcceptanceTestSuiteResultsAccurate {
+- (void)testAcceptanceTestSuiteResultsPass {
     
     (void) [[self class] stubSuccessfulTestReport];
     
@@ -139,14 +123,18 @@
     
     XCTAssertTrue([testCase isPass]);
     
+}
+
+- (void)testAcceptanceTestSuiteResultsFail {
     
     (void) [[self class] stubFailedTestReport];
     
-    testCase = [[[self acceptanceTestSuite] tests] lastObject];
+    OCSPTestSuite *testCase = [[[self acceptanceTestSuite] tests] lastObject];
     
     XCTAssertFalse([testCase isPass]);
     
 }
+
 
 - (void)testFailingAcceptanceTestCasesNonNilErrorMessage {
     
@@ -339,102 +327,10 @@
 }
 
 
-- (void)testTestReportsAddsExtraTest {
-    
-    (void) [[self class] stubFailedTestReport];
-    
-    self.main.disableFixForXcodeDisappearingTestCaseByAppendingDummyTest = NO;
-    
-    NSArray *reports = [self.main testCaseReports];
-    
-    XCTAssertEqual(reports.count, 2);
-    
-    OCSPTestCaseReport *lastTestReport = reports.lastObject;
-    
-    XCTAssertTrue(lastTestReport.passed);
-    
-    XCTAssertEqualObjects(lastTestReport.name, @"tearDown");
-    
-}
 
-#pragma mark - Test Report Tests
 
-- (void)testNumberOfTestCaseReports {
-    
-    (void) [[self class] stubSuccessfulTestReport];
-    
-    NSArray *results = [self.main testCaseReports];
-    
-    XCTAssertEqual(results.count, 1);
-    
-}
-
-- (void)testNumberOfTestCaseReportsWithOtherTestReportData {
-    
-    (void) [[self class] stubSuccessfulTestReportWithFilenameModifier:@"3"];
-    
-    NSArray *results = [self.main testCaseReports];
-    
-    XCTAssertEqual(results.count, 3);
-}
-
-- (void)testTestCaseReportName {
-    
-    (void) [[self class] stubSuccessfulTestReport];
-    
-    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
-    
-    XCTAssertEqualObjects(report.name, @"OCSlimProjectExampleSuite.TestPage0");
-}
-
-- (void)testTestReportResultsSuccess {
-    
-    (void) [[self class] stubSuccessfulTestReport];
-    
-    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
-    
-    XCTAssertTrue(report.passed);
-    
-}
-
-- (void)testTestReportResultsFail {
-    
-    (void) [[self class] stubFailedTestReport];
-    
-    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
-    
-    XCTAssertFalse(report.passed);
-    
-}
-
-- (void)testFailingTestCaseReportNonNilErrorMessage {
-    
-    (void) [[self class] stubFailedTestReport];
-    
-    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
-    
-    XCTAssertNotNil(report.errorMessage);
-}
-
-- (void)testFailingTestCaseReportErrorMessage {
-    
-    (void) [[self class] stubFailedTestReport];
-    
-    OCSPTestCaseReport *report = [self acceptanceTestCaseReport];
-    
-    XCTAssertEqualObjects([OCSPLocalizedMessageTable localizedTestPageMessageWithUnderlyingMessage:@"1 errors"], report.errorMessage);
-}
 
 #pragma mark - Test Helpers
-
-- (void)testStubCreatesTestReportsWithData {
-    
-    NSData *data = [[self class] stubSuccessfulTestReport];
-    
-    XCTAssertTrue( [[[OCSPTestReportCenter defaultReader] read] isEqualToData:data]);
-    
-}
-
 
 + (NSData* )stubSuccessfulTestReport {
     
@@ -514,12 +410,6 @@
 
     return (OCSPTestSuite*) test;
 
-}
-
-
-- (OCSPTestCaseReport *)acceptanceTestCaseReport {
-    
-    return [[self.main testCaseReports] firstObject];
 }
 
 @end

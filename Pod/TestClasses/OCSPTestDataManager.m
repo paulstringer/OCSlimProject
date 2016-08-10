@@ -152,6 +152,6 @@ void createDefaultTestReportReaderWithData(NSData *data) {
     
     id<OCSPTestReportReader> reader = [[OCSlimFitnesseTestReportReaderStub alloc] initWithData:data];
     
-    [OCSPTestReportCenter setDefaultReader: reader];
+    [OCSPTestReportReader setDefaultReader: reader];
     
 }

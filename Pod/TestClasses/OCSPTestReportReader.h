@@ -7,7 +7,7 @@
 @end
 
 
-@interface OCSPTestReportCenter : NSObject
+@interface OCSPTestReportReader : NSObject
 
 + (id<OCSPTestReportReader> _Nonnull) defaultReader;
 

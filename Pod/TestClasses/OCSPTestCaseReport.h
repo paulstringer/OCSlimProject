@@ -8,13 +8,9 @@
 
 @property (nonatomic, strong) NSString *errorMessage;
 
-@end
-
-
-@protocol OCSPTestCaseReportCenter
-
-@required
-- (NSArray <OCSPTestCaseReport *> *) testCaseReports;
+- (nonnull id)initWithTestCaseName:(nonnull NSString *)name result:(BOOL)result;
 
 @end
+
+
 

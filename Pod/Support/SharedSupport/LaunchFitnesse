@@ -143,14 +143,14 @@ function fitnesse_start {
 
 function fitnesse_wait {
 	echo "[OCSP_CTL] FITNESSE: Waiting for Fitnesse..."
-	result=$CURL_CONNECTION_REFUSED_CODE
-	while [ $result -eq $CURL_CONNECTION_REFUSED_CODE ] 
+	local RESULT=$CURL_CONNECTION_REFUSED_CODE
+	while [ $RESULT -eq $CURL_CONNECTION_REFUSED_CODE ] 
 	do
 		sleep 0.5
 		curl -s "http://localhost:${FITNESSE_PORT}" > /dev/null 2>&1 
-		result=$?
+		RESULT=$?
 	done
-	echo "[OCSP_CTL] Fitnesse: Ready"
+	echo "[OCSP_CTL] Fitnesse: Ready (curl exit code=$RESULT)"
 }
 
 function fitnesse_setup {

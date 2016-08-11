@@ -32,8 +32,10 @@ function writeTestSystemRunScript {
 		OCSP_PLATFORM="iOS"
 	fi
 
+	TESTRUNNER_SCRIPT_NAME=OCSlimProjectTestRunner
 	TESTRUNNER_SOURCE=$SUPPORT_FILE_PLATFORM_PATH/${OCSP_PLATFORM}/RunTestsTargetWithSlimPort
-	TESTRUNNER_TARGET=${PROJECT_DIR}/OCSlimProjectTestRunner.sh
+	TESTRUNNER_TARGET=${PROJECT_DIR}/$TESTRUNNER_SCRIPT_NAME.sh
+	TESTRUNNER_ERRORLOG=$TESTRUNNER_SCRIPT_NAME-Error.log
 	echo "[OCSP] Selected Test System Platform -> $OCSP_PLATFORM"
 	echo "[OCSP] Selected Test System Run Script -> $TESTRUNNER_SOURCE"	
 	echo "[OCSP] Writing Test System Script -> $TESTRUNNER_TARGET  (This must match the defined TEST_RUNNER value set in 'FitnesseRoot/content.txt')"
@@ -42,10 +44,11 @@ function writeTestSystemRunScript {
         rm $TESTRUNNER_TARGET
     fi
     
-    echo '#!/bin/sh' > $TESTRUNNER_TARGET
+    echo '#!/bin/bash' > $TESTRUNNER_TARGET
     echo SLIM_PORT='$1' >> $TESTRUNNER_TARGET
-	echo ENV_FILE_PATH=$ENV_TARGET >> $TESTRUNNER_TARGET
-    echo $TESTRUNNER_SOURCE '$ENV_FILE_PATH' '$SLIM_PORT' >> $TESTRUNNER_TARGET
+	echo ENV_FILE_PATH=$ENV_TARGET >> $TESTRUNNER_TARGET 
+    echo $TESTRUNNER_SOURCE '$ENV_FILE_PATH' '$SLIM_PORT' 2> >(tee $TESTRUNNER_ERRORLOG >&2) >> $TESTRUNNER_TARGET 
+    echo  "if [ -z $(cat $TESTRUNNER_ERRORLOG) ] ; then rm $TESTRUNNER_ERRORLOG ; fi" >> $TESTRUNNER_TARGET
     chmod +x $TESTRUNNER_TARGET
     
 }

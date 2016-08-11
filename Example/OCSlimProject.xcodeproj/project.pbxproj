@@ -27,7 +27,6 @@
 		8C464D921D59B9990000EF7B /* OCSPJUnitXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */; };
 		8C464D931D59B99F0000EF7B /* OCSPLocalizedMessageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */; };
 		8C464D941D59B99F0000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */; };
-		8C464D951D59B9A20000EF7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1011E11D512FA8007243D0 /* Localizable.strings */; };
 		8C464D981D59BAA50000EF7B /* OCSPTestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB91D37BD4400E95652 /* OCSPTestDataManager.m */; };
 		8C464D991D59BAB90000EF7B /* OCSPTestReportReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB41D37A1C600E95652 /* OCSPTestReportReader.m */; };
 		8C464D9A1D59BAC00000EF7B /* OCSPTestReportReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E91D38DA5E00731FF5 /* OCSPTestReportReaderTests.m */; };
@@ -40,15 +39,10 @@
 		8C464DF31D59D4D40000EF7B /* OCSPJUnitXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */; };
 		8C464DF41D59D4D70000EF7B /* OCSPLocalizedMessageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */; };
 		8C464DF51D59D4D70000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */; };
-		8C464DF61D59D4DA0000EF7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1011E11D512FA8007243D0 /* Localizable.strings */; };
 		8C464DF71D59D4E20000EF7B /* OCSPTestReportReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB41D37A1C600E95652 /* OCSPTestReportReader.m */; };
 		8C464DF81D59D4E20000EF7B /* OCSPTestReportReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF8E91D38DA5E00731FF5 /* OCSPTestReportReaderTests.m */; };
 		8C464DF91D59D4E60000EF7B /* OCSPTestDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB91D37BD4400E95652 /* OCSPTestDataManager.m */; };
 		8C464E031D59D50C0000EF7B /* OCSPAssertRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */; };
-		8C4747241D5B54F6005BE970 /* OCSPTestReportCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747231D5B54F6005BE970 /* OCSPTestReportCenterTests.m */; };
-		8C4747251D5B54F6005BE970 /* OCSPTestReportCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747231D5B54F6005BE970 /* OCSPTestReportCenterTests.m */; };
-		8C4747291D5B551A005BE970 /* OCSPTestReportCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747281D5B551A005BE970 /* OCSPTestReportCenter.m */; };
-		8C47472A1D5B551A005BE970 /* OCSPTestReportCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747281D5B551A005BE970 /* OCSPTestReportCenter.m */; };
 		8C47474E1D5B8649005BE970 /* OCSlimProjectTestBundleSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47474D1D5B8649005BE970 /* OCSlimProjectTestBundleSupport.m */; };
 		8C47475D1D5B877E005BE970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47475C1D5B877E005BE970 /* AppDelegate.m */; };
 		8C4747601D5B877E005BE970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47475F1D5B877E005BE970 /* main.m */; };
@@ -72,8 +66,14 @@
 		8C4747921D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747811D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml */; };
 		8C4747931D5BA68E005BE970 /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747821D5BA68E005BE970 /* SuiteTestResultSuccess.xml */; };
 		8C4747941D5BA68E005BE970 /* SuiteTestResultSuccess.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747821D5BA68E005BE970 /* SuiteTestResultSuccess.xml */; };
-		8C951CB51D5B2A0D000B694A /* OCSPTestCaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB41D5B2A0D000B694A /* OCSPTestCaseReport.m */; };
-		8C951CB61D5B2ACD000B694A /* OCSPTestCaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB41D5B2A0D000B694A /* OCSPTestCaseReport.m */; };
+		8C4747991D5C41A2005BE970 /* OCSPTestReportCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747971D5C41A2005BE970 /* OCSPTestReportCenter.m */; };
+		8C47479A1D5C41A2005BE970 /* OCSPTestReportCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747971D5C41A2005BE970 /* OCSPTestReportCenter.m */; };
+		8C47479B1D5C41A2005BE970 /* OCSPTestReportCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747981D5C41A2005BE970 /* OCSPTestReportCenterTests.m */; };
+		8C47479C1D5C41A2005BE970 /* OCSPTestReportCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4747981D5C41A2005BE970 /* OCSPTestReportCenterTests.m */; };
+		8C47479F1D5C41BC005BE970 /* OCSPTestCaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47479D1D5C41BC005BE970 /* OCSPTestCaseReport.m */; };
+		8C4747A01D5C41BC005BE970 /* OCSPTestCaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47479D1D5C41BC005BE970 /* OCSPTestCaseReport.m */; };
+		8C4747A81D5C426E005BE970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747A61D5C426E005BE970 /* Localizable.strings */; };
+		8C4747A91D5C426E005BE970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747A61D5C426E005BE970 /* Localizable.strings */; };
 		8C951CB91D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 		8C951CBA1D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 		C6FDD49558C7865A584DECA3 /* libPods-OCSlimProject_AcceptanceTestsMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 280C982731FF4335786F5D96 /* libPods-OCSlimProject_AcceptanceTestsMac.a */; };
@@ -115,7 +115,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		66B520EFEA8AADF7D5F7822A /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF5BA8E254EEF55D7ED29F2 /* Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig"; sourceTree = "<group>"; };
-		8C1011E01D512FA8007243D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C2EB3FA1D369246000C22FA /* OCSPTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestSuite.h; path = ../../Pod/TestClasses/OCSPTestSuite.h; sourceTree = "<group>"; };
 		8C2EB3FB1D369246000C22FA /* OCSPTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuite.m; path = ../../Pod/TestClasses/OCSPTestSuite.m; sourceTree = "<group>"; };
 		8C2EB3FC1D369246000C22FA /* OCSPTestSuiteTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuiteTests.m; path = ../../Pod/TestClasses/OCSPTestSuiteTests.m; sourceTree = "<group>"; };
@@ -140,9 +139,6 @@
 		8C464DB71D59BD1F0000EF7B /* OCSlimProjectTestBundleSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTestBundleSupport.m; sourceTree = "<group>"; };
 		8C464DB91D59BD1F0000EF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C464DE51D59D4230000EF7B /* OCSlimProjectTestBundleSupportTestsMac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProjectTestBundleSupportTestsMac.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C4747231D5B54F6005BE970 /* OCSPTestReportCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestReportCenterTests.m; path = ../Pod/TestClasses/OCSPTestReportCenterTests.m; sourceTree = "<group>"; };
-		8C4747271D5B551A005BE970 /* OCSPTestReportCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestReportCenter.h; path = ../Pod/TestClasses/OCSPTestReportCenter.h; sourceTree = "<group>"; };
-		8C4747281D5B551A005BE970 /* OCSPTestReportCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestReportCenter.m; path = ../Pod/TestClasses/OCSPTestReportCenter.m; sourceTree = "<group>"; };
 		8C4747491D5B8649005BE970 /* OCSlimProject_AcceptanceUnitTestBundleMac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCSlimProject_AcceptanceUnitTestBundleMac.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C47474D1D5B8649005BE970 /* OCSlimProjectTestBundleSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSlimProjectTestBundleSupport.m; sourceTree = "<group>"; };
 		8C47474F1D5B8649005BE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,16 +149,22 @@
 		8C4747611D5B877E005BE970 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C4747641D5B877E005BE970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8C4747661D5B877E005BE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C4747791D5BA63B005BE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "OCSlimProjectTestBundleSupportTests-Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
-		8C47477A1D5BA68E005BE970 /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Fitnesse-Test-Report.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/Fitnesse-Test-Report.xml"; sourceTree = SOURCE_ROOT; };
-		8C47477B1D5BA68E005BE970 /* SuiteTestResultErrors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultErrors.xml; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultErrors.xml"; sourceTree = SOURCE_ROOT; };
-		8C47477C1D5BA68E005BE970 /* SuiteTestResultFailures-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "SuiteTestResultFailures-3.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultFailures-3.xml"; sourceTree = SOURCE_ROOT; };
-		8C47477D1D5BA68E005BE970 /* SuiteTestResultFailures-Exceptions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "SuiteTestResultFailures-Exceptions.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultFailures-Exceptions.xml"; sourceTree = SOURCE_ROOT; };
-		8C47477E1D5BA68E005BE970 /* SuiteTestResultFailures-NotFound.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "SuiteTestResultFailures-NotFound.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultFailures-NotFound.xml"; sourceTree = SOURCE_ROOT; };
-		8C47477F1D5BA68E005BE970 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultFailures.xml; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultFailures.xml"; sourceTree = SOURCE_ROOT; };
-		8C4747801D5BA68E005BE970 /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "SuiteTestResultSuccess-3.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultSuccess-3.xml"; sourceTree = SOURCE_ROOT; };
-		8C4747811D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "SuiteTestResultSuccess-Empty.xml"; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultSuccess-Empty.xml"; sourceTree = SOURCE_ROOT; };
-		8C4747821D5BA68E005BE970 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SuiteTestResultSuccess.xml; path = "OCSlimProjectTestBundleSupportTests-Resources/SuiteTestResultSuccess.xml"; sourceTree = SOURCE_ROOT; };
+		8C4747791D5BA63B005BE970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C47477A1D5BA68E005BE970 /* Fitnesse-Test-Report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Fitnesse-Test-Report.xml"; sourceTree = "<group>"; };
+		8C47477B1D5BA68E005BE970 /* SuiteTestResultErrors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultErrors.xml; sourceTree = "<group>"; };
+		8C47477C1D5BA68E005BE970 /* SuiteTestResultFailures-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultFailures-3.xml"; sourceTree = "<group>"; };
+		8C47477D1D5BA68E005BE970 /* SuiteTestResultFailures-Exceptions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultFailures-Exceptions.xml"; sourceTree = "<group>"; };
+		8C47477E1D5BA68E005BE970 /* SuiteTestResultFailures-NotFound.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultFailures-NotFound.xml"; sourceTree = "<group>"; };
+		8C47477F1D5BA68E005BE970 /* SuiteTestResultFailures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultFailures.xml; sourceTree = "<group>"; };
+		8C4747801D5BA68E005BE970 /* SuiteTestResultSuccess-3.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-3.xml"; sourceTree = "<group>"; };
+		8C4747811D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuiteTestResultSuccess-Empty.xml"; sourceTree = "<group>"; };
+		8C4747821D5BA68E005BE970 /* SuiteTestResultSuccess.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SuiteTestResultSuccess.xml; sourceTree = "<group>"; };
+		8C4747961D5C41A2005BE970 /* OCSPTestReportCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSPTestReportCenter.h; sourceTree = "<group>"; };
+		8C4747971D5C41A2005BE970 /* OCSPTestReportCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSPTestReportCenter.m; sourceTree = "<group>"; };
+		8C4747981D5C41A2005BE970 /* OCSPTestReportCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSPTestReportCenterTests.m; sourceTree = "<group>"; };
+		8C47479D1D5C41BC005BE970 /* OCSPTestCaseReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSPTestCaseReport.m; sourceTree = "<group>"; };
+		8C4747A11D5C41CC005BE970 /* OCSPTestCaseReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSPTestCaseReport.h; sourceTree = "<group>"; };
+		8C4747A71D5C426E005BE970 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C634EB01D379FAD00E95652 /* OCSPAssertRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCSPAssertRecorder.h; path = ../../Pod/TestClasses/OCSPAssertRecorder.h; sourceTree = "<group>"; };
 		8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OCSPAssertRecorder.m; path = ../../Pod/TestClasses/OCSPAssertRecorder.m; sourceTree = "<group>"; };
 		8C634EB31D37A1C600E95652 /* OCSPTestReportReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestReportReader.h; path = ../../Pod/TestClasses/OCSPTestReportReader.h; sourceTree = "<group>"; };
@@ -171,8 +173,6 @@
 		8C634EB91D37BD4400E95652 /* OCSPTestDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestDataManager.m; path = ../../Pod/TestClasses/OCSPTestDataManager.m; sourceTree = "<group>"; };
 		8C634EBB1D37BF5500E95652 /* OCSPJUnitXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPJUnitXMLParser.h; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.h; sourceTree = "<group>"; };
 		8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParser.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.m; sourceTree = "<group>"; };
-		8C951CB31D5B2A0D000B694A /* OCSPTestCaseReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestCaseReport.h; path = ../Pod/TestClasses/OCSPTestCaseReport.h; sourceTree = "<group>"; };
-		8C951CB41D5B2A0D000B694A /* OCSPTestCaseReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestCaseReport.m; path = ../Pod/TestClasses/OCSPTestCaseReport.m; sourceTree = "<group>"; };
 		8C951CB71D5B3883000B694A /* OCSPTestSuiteTestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestSuiteTestable.h; path = ../../Pod/TestClasses/OCSPTestSuiteTestable.h; sourceTree = "<group>"; };
 		8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuiteTestable.m; path = ../../Pod/TestClasses/OCSPTestSuiteTestable.m; sourceTree = "<group>"; };
 		8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParserTests.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParserTests.m; sourceTree = "<group>"; };
@@ -378,7 +378,6 @@
 				8C634EB11D379FAD00E95652 /* OCSPAssertRecorder.m */,
 			);
 			name = "Assert Recorder";
-			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		8C464DB41D59BD1F0000EF7B /* Acceptance Unit Tests (XCTest Integration) */ = {
@@ -397,8 +396,8 @@
 				8C4747791D5BA63B005BE970 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = OCSlimProjectTestBundleSupportTestsMac;
-			sourceTree = "<group>";
+			path = "OCSlimProjectTestBundleSupportTests-Resources";
+			sourceTree = SOURCE_ROOT;
 		};
 		8C4747261D5B54FC005BE970 /* Test Report Center */ = {
 			isa = PBXGroup;
@@ -412,9 +411,9 @@
 		8C47472B1D5B5541005BE970 /* Test Case Report Center */ = {
 			isa = PBXGroup;
 			children = (
-				8C4747271D5B551A005BE970 /* OCSPTestReportCenter.h */,
-				8C4747281D5B551A005BE970 /* OCSPTestReportCenter.m */,
-				8C4747231D5B54F6005BE970 /* OCSPTestReportCenterTests.m */,
+				8C4747961D5C41A2005BE970 /* OCSPTestReportCenter.h */,
+				8C4747971D5C41A2005BE970 /* OCSPTestReportCenter.m */,
+				8C4747981D5C41A2005BE970 /* OCSPTestReportCenterTests.m */,
 			);
 			name = "Test Case Report Center";
 			sourceTree = "<group>";
@@ -422,8 +421,8 @@
 		8C47472C1D5B554B005BE970 /* Test Case Report */ = {
 			isa = PBXGroup;
 			children = (
-				8C951CB31D5B2A0D000B694A /* OCSPTestCaseReport.h */,
-				8C951CB41D5B2A0D000B694A /* OCSPTestCaseReport.m */,
+				8C4747A11D5C41CC005BE970 /* OCSPTestCaseReport.h */,
+				8C47479D1D5C41BC005BE970 /* OCSPTestCaseReport.m */,
 			);
 			name = "Test Case Report";
 			sourceTree = "<group>";
@@ -451,6 +450,7 @@
 				8C464DE61D59D4230000EF7B /* Support Files */,
 			);
 			name = "OCSlimProjectTestBundleSupport - Pod";
+			path = ../Pod/TestClasses;
 			sourceTree = "<group>";
 		};
 		8C47472F1D5B752A005BE970 /* Example Test System for OSX (Faster, Recommended) */ = {
@@ -477,7 +477,8 @@
 				8C4747821D5BA68E005BE970 /* SuiteTestResultSuccess.xml */,
 			);
 			name = Files;
-			sourceTree = "<group>";
+			path = "OCSlimProjectTestBundleSupportTests-Resources";
+			sourceTree = SOURCE_ROOT;
 		};
 		8C47474A1D5B8649005BE970 /* Acceptance Unit Tests (XCTest Integration) */ = {
 			isa = PBXGroup;
@@ -530,7 +531,6 @@
 				8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */,
 			);
 			name = "Test Suite";
-			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		8CC377091D51E58600863DF2 /* Localized Message Table */ = {
@@ -539,10 +539,9 @@
 				8CC377061D51E58200863DF2 /* OCSPLocalizedMessageTable.h */,
 				8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */,
 				8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */,
-				8C1011E11D512FA8007243D0 /* Localizable.strings */,
+				8C4747A61D5C426E005BE970 /* Localizable.strings */,
 			);
 			name = "Localized Message Table";
-			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		8CEAFB041D3FB2A20080BE39 /* Test Data Examples */ = {
@@ -561,8 +560,8 @@
 				8CEAFB041D3FB2A20080BE39 /* Test Data Examples */,
 			);
 			name = "Fitnesse Test Report Data";
-			path = OCSlimProjectTestBundleSupportTests;
-			sourceTree = "<group>";
+			path = ../Pod/TestClasses;
+			sourceTree = SOURCE_ROOT;
 		};
 		8CF88A671D1ACD5C001C6C5E /* Test Data Reader */ = {
 			isa = PBXGroup;
@@ -582,7 +581,6 @@
 				8C464D401D58D3290000EF7B /* OCSPPrincipalTestObserverTests.m */,
 			);
 			name = "Principal Test Observer";
-			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		8CF88A6B1D1ACDC6001C6C5E /* JUnit XML Parser */ = {
@@ -593,7 +591,6 @@
 				8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */,
 			);
 			name = "JUnit XML Parser";
-			path = OCSlimProjectTestBundleSupportTests;
 			sourceTree = "<group>";
 		};
 		E3E67A42DDCE02F7059AACAD /* Frameworks */ = {
@@ -876,7 +873,7 @@
 				8C4747851D5BA68E005BE970 /* SuiteTestResultErrors.xml in Resources */,
 				8C4747911D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml in Resources */,
 				8C47478B1D5BA68E005BE970 /* SuiteTestResultFailures-NotFound.xml in Resources */,
-				8C464D951D59B9A20000EF7B /* Localizable.strings in Resources */,
+				8C4747A81D5C426E005BE970 /* Localizable.strings in Resources */,
 				8C4747931D5BA68E005BE970 /* SuiteTestResultSuccess.xml in Resources */,
 				8C47478D1D5BA68E005BE970 /* SuiteTestResultFailures.xml in Resources */,
 				8C47478F1D5BA68E005BE970 /* SuiteTestResultSuccess-3.xml in Resources */,
@@ -900,7 +897,7 @@
 				8C4747861D5BA68E005BE970 /* SuiteTestResultErrors.xml in Resources */,
 				8C4747921D5BA68E005BE970 /* SuiteTestResultSuccess-Empty.xml in Resources */,
 				8C47478C1D5BA68E005BE970 /* SuiteTestResultFailures-NotFound.xml in Resources */,
-				8C464DF61D59D4DA0000EF7B /* Localizable.strings in Resources */,
+				8C4747A91D5C426E005BE970 /* Localizable.strings in Resources */,
 				8C4747941D5BA68E005BE970 /* SuiteTestResultSuccess.xml in Resources */,
 				8C47478E1D5BA68E005BE970 /* SuiteTestResultFailures.xml in Resources */,
 				8C4747901D5BA68E005BE970 /* SuiteTestResultSuccess-3.xml in Resources */,
@@ -1204,16 +1201,16 @@
 				8C464D8E1D59B9950000EF7B /* OCSPAssertRecorder.m in Sources */,
 				8C951CB91D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */,
 				8C464D991D59BAB90000EF7B /* OCSPTestReportReader.m in Sources */,
-				8C4747291D5B551A005BE970 /* OCSPTestReportCenter.m in Sources */,
-				8C951CB51D5B2A0D000B694A /* OCSPTestCaseReport.m in Sources */,
 				8C464D8D1D59B97C0000EF7B /* OCSPPrincipalTestObserverTests.m in Sources */,
 				8C464D981D59BAA50000EF7B /* OCSPTestDataManager.m in Sources */,
 				8C464D901D59B9950000EF7B /* OCSPTestSuiteTests.m in Sources */,
 				8C464D9A1D59BAC00000EF7B /* OCSPTestReportReaderTests.m in Sources */,
 				8C464D931D59B99F0000EF7B /* OCSPLocalizedMessageTable.m in Sources */,
+				8C4747991D5C41A2005BE970 /* OCSPTestReportCenter.m in Sources */,
+				8C47479B1D5C41A2005BE970 /* OCSPTestReportCenterTests.m in Sources */,
 				8C464D921D59B9990000EF7B /* OCSPJUnitXMLParserTests.m in Sources */,
 				8C464D941D59B99F0000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */,
-				8C4747241D5B54F6005BE970 /* OCSPTestReportCenterTests.m in Sources */,
+				8C47479F1D5C41BC005BE970 /* OCSPTestCaseReport.m in Sources */,
 				8C464D8C1D59B97C0000EF7B /* OCSPPrincipalTestObserver.m in Sources */,
 				8C464D911D59B9990000EF7B /* OCSPJUnitXMLParser.m in Sources */,
 				8C464D8F1D59B9950000EF7B /* OCSPTestSuite.m in Sources */,
@@ -1235,16 +1232,16 @@
 				8C464DF01D59D4D10000EF7B /* OCSPTestSuite.m in Sources */,
 				8C951CBA1D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */,
 				8C464DF71D59D4E20000EF7B /* OCSPTestReportReader.m in Sources */,
-				8C47472A1D5B551A005BE970 /* OCSPTestReportCenter.m in Sources */,
-				8C951CB61D5B2ACD000B694A /* OCSPTestCaseReport.m in Sources */,
 				8C464DF11D59D4D10000EF7B /* OCSPTestSuiteTests.m in Sources */,
 				8C464DF41D59D4D70000EF7B /* OCSPLocalizedMessageTable.m in Sources */,
 				8C464E031D59D50C0000EF7B /* OCSPAssertRecorder.m in Sources */,
 				8C464DF31D59D4D40000EF7B /* OCSPJUnitXMLParserTests.m in Sources */,
 				8C464DF81D59D4E20000EF7B /* OCSPTestReportReaderTests.m in Sources */,
+				8C47479A1D5C41A2005BE970 /* OCSPTestReportCenter.m in Sources */,
+				8C47479C1D5C41A2005BE970 /* OCSPTestReportCenterTests.m in Sources */,
 				8C464DEF1D59D4CC0000EF7B /* OCSPPrincipalTestObserverTests.m in Sources */,
 				8C464DF91D59D4E60000EF7B /* OCSPTestDataManager.m in Sources */,
-				8C4747251D5B54F6005BE970 /* OCSPTestReportCenterTests.m in Sources */,
+				8C4747A01D5C41BC005BE970 /* OCSPTestCaseReport.m in Sources */,
 				8C464DEE1D59D4CC0000EF7B /* OCSPPrincipalTestObserver.m in Sources */,
 				8C464DF51D59D4D70000EF7B /* OCSPLocalizedMessageTableTests.m in Sources */,
 				8C464DF21D59D4D40000EF7B /* OCSPJUnitXMLParser.m in Sources */,
@@ -1300,21 +1297,20 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		8C1011E11D512FA8007243D0 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C1011E01D512FA8007243D0 /* en */,
-			);
-			name = Localizable.strings;
-			path = ../../Pod/Resources;
-			sourceTree = "<group>";
-		};
 		8C4747631D5B877E005BE970 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8C4747641D5B877E005BE970 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8C4747A61D5C426E005BE970 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C4747A71D5C426E005BE970 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

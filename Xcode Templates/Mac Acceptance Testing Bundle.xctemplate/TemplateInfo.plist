@@ -5,7 +5,7 @@
 	<key>Macros</key>
 	<dict>
 		<key>POD_PLATFORM_IDENTIFIER</key>
-		<string>osx</string>
+		<string>osx, 10.8</string>
 	</dict>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>

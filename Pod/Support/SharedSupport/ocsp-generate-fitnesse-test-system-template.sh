@@ -5,6 +5,6 @@ ENV_FILE_PATH=%s
 ERROR_LOG_FILE=%s
 
 $TEST_RUNNER_SCRIPT $ENV_FILE_PATH $SLIM_PORT 2> >(tee $ERROR_LOG_FILE >&2)
-if [ -z $ERROR_LOG_FILE ] ; then 
+if [ -z "$(cat $ERROR_LOG_FILE)" ] ; then 
 	rm $ERROR_LOG_FILE
 fi

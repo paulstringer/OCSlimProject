@@ -11,8 +11,9 @@ function main {
 function report_errors {
 
 	if [ -f "$TEST_RUNNER_ERROR_LOGFILE" ]; then
-		echo "[OCSP_TEST] FATAL: Errors Occured, Aborting..."
+		echo "[OCSP_TEST] FATAL: ERROR OUTPUT GENERATED: $TEST_RUNNER_ERROR_LOGFILE"
 		>&2 echo "$(<$TEST_RUNNER_ERROR_LOGFILE)"
+		echo "[OCSP_TEST] FATAL: UNEXPECTED ERROR OCCURRED, ABORT..."
 		RETURN_CODE=1
 	fi
 }

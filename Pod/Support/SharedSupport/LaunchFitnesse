@@ -247,23 +247,30 @@ function fitnesse_write_suite_results {
 	
 	REPORT_URL=$FITNESSE_URL$FITNESSE_TEST_SUITE\?suite\&format\=junit 
 	
-	echo "[OCSP_CTL] Run Test"
+	echo "[OCSP_CTL] Run Tests"
 	echo "[OCSP_CTL] Test Suite=$FITNESSE_TEST_SUITE"
-	echo "[OCSP_CTL] Test Output=$FITNESSE_TEST_OUTPUT"
 	echo "[OCSP_CTL] FITNESSE: $REPORT_URL"
-	
-	curl -s -S -o $FITNESSE_TEST_OUTPUT $REPORT_URL
-	CURL_RESULT=$?
-	
-	if [ $CURL_RESULT -eq 0 ]; then
 
-		echo "[OCSP_CTL] Test Succeeded (curl exit code=$CURL_RESULT)"
-		echo "[OCSP_CTL] Report File Info: " $(stat "$FITNESSE_TEST_OUTPUT")	
+	touch /tmp/curl-fitnesse-dump.html
+	touch $FITNESSE_TEST_OUTPUT
+	
+	curl -S $REPORT_URL
+	curl -S -o /tmp/curl-fitnesse-dump.html http://localhost:8080 # homepage -> tmp
+	stat /tmp/curl-fitnesse-dump.html
+	curl -S -v -o /tmp/fitnesse-report.xml $REPORT_URL # test result -> tmp
+	stat /tmp/fitnesse-report.xml
+	curl -S -v -o "$FITNESSE_TEST_OUTPUT" "$REPORT_URL" # test -> output [debug]
+	sudo curl -S -v -o "$FITNESSE_TEST_OUTPUT" "$REPORT_URL" # test -> output [debug]
+	DOWNLOAD_RESULT=$?
+	echo "[OCSP_CTL] Test Output: " $(stat "$FITNESSE_TEST_OUTPUT" 2>&1    ) 
+	
+	if [ $DOWNLOAD_RESULT -eq 0 ]; then
+		echo "[OCSP_CTL] Test Succeeded (curl exit code=$DOWNLOAD_RESULT)"
 		if [ $VERBOSE -eq 1 ]; then
 			echo $(cat "$FITNESSE_TEST_OUTPUT")
 		fi
 	else
-		echo "[OCSP_CTL] ERROR: Could Not Download Test Report (curl exit code=$CURL_RESULT)"		
+		echo "[OCSP_CTL] ERROR: Download Test Report Failed (error=$DOWNLOAD_RESULT)"		
 	fi
 	
 }

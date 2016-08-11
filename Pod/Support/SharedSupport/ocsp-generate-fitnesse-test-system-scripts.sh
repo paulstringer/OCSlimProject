@@ -44,11 +44,8 @@ function writeTestSystemRunScript {
         rm $TESTRUNNER_TARGET
     fi
     
-    echo '#!/bin/bash' > $TESTRUNNER_TARGET
-    echo SLIM_PORT='$1' >> $TESTRUNNER_TARGET
-	echo ENV_FILE_PATH=$ENV_TARGET >> $TESTRUNNER_TARGET 
-    echo "$TESTRUNNER_SOURCE '$ENV_FILE_PATH' '$SLIM_PORT' 2> >(tee $TESTRUNNER_ERRORLOG >&2)" >> $TESTRUNNER_TARGET 
-    echo  "if [ -z $(cat $TESTRUNNER_ERRORLOG) ] ; then rm $TESTRUNNER_ERRORLOG ; fi" >> $TESTRUNNER_TARGET
+	SCRIPT_SRC=$(cat "$SHARED_SUPPORT_FILE_PATH/ocsp-generate-fitnesse-test-system-template.sh")
+	printf "$SCRIPT_SRC" "$TESTRUNNER_SOURCE" "$ENV_TARGET" "$TESTRUNNER_ERRORLOG" > $TESTRUNNER_TARGET
     chmod +x $TESTRUNNER_TARGET
     
 }

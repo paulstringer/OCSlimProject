@@ -224,11 +224,11 @@ function fitnesse_open {
 	
 
 }
+
 function fitnesse_launch_in_browser {
 	fitnesse_main
 	fitnesse_open
 }
-
 
 function fitnesse_generate_test_suite_report {
 	
@@ -262,12 +262,11 @@ function fitnesse_write_suite_results {
 		echo "[OCSP_CTL] ERROR: Download Test Report Failed (error=$DOWNLOAD_RESULT)"
 	fi
 	
-	if [ $VERBOSE -eq 1 && -f "$FITNESSE_TEST_OUTPUT" ]; then
+	if [ $VERBOSE -eq 1 ]; then
 		echo $(cat "$FITNESSE_TEST_OUTPUT")
 	fi
 	
 }
-
 
 ########
 # Main #

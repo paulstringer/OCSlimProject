@@ -140,7 +140,7 @@ function fitnesse_start {
 	echo "[OCSP_CTL] Timeout=${FITNESSE_TIMEOUT_SECONDS}"
 	echo "[OCSP_CTL] RootPath=${FITNESSE_ROOT}"
 	echo "[OCSP_CTL] FITNESSE: Launch"
-	java -jar -Dslim.timeout=$FITNESSE_TIMEOUT_SECONDS ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} 2>/dev/null &
+	java -jar -Dslim.timeout=120 ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} 2>/dev/null &
 }
 
 function fitnesse_wait {

@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
+pod 'cslim', :git => "https://github.com/paulstringer/cslim.git", :branch => "ocslim-debug"
+
 target 'OCSlimProject_AcceptanceTests' do
   platform :ios, 9.0
   pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "12-XCTest-Extend-Slim-Timeout"

@@ -16,6 +16,7 @@ FITNESSE_EXECUTABLE_PATH=${BUNDLE_DIR}/fitnesse-standalone.jar
 FITNESSE_ROOT_CONTENT_FILE=FitnesseRoot/content.txt
 FITNESSE_URL=http:"//localhost:${FITNESSE_PORT}/"
 FITNESSE_TEST_OUTPUT=/tmp/Fitnesse-Test-Report.xml
+FITNESSE_TIMEOUT_SECONDS=90
 FITNESSE_ROOT=.
 FITNESSE_TEST_SUITE=
 VERBOSE=0
@@ -136,9 +137,10 @@ function fitnesse_start {
 	echo "[OCSP_CTL] action=${ACTION}"
 	echo "[OCSP_CTL] Jar=${FITNESSE_EXECUTABLE_PATH}"
 	echo "[OCSP_CTL] Port=${FITNESSE_PORT}"
+	echo "[OCSP_CTL] Timeout=${FITNESSE_TIMEOUT_SECONDS}"
 	echo "[OCSP_CTL] RootPath=${FITNESSE_ROOT}"
 	echo "[OCSP_CTL] FITNESSE: Launch"
-	java -jar ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} 2>/dev/null &
+	java -jar -Dslim.timeout=$FITNESSE_TIMEOUT_SECONDS ${FITNESSE_EXECUTABLE_PATH} -e 0 -p ${FITNESSE_PORT} -d ${FITNESSE_ROOT} 2>/dev/null &
 }
 
 function fitnesse_wait {
@@ -204,7 +206,7 @@ function fitnesse_run {
 		MAIN_RESULT=0
 	else 
 		MAIN_RESULT=1
-		echo "[OCSP_CTL] Fitnesse Already Running - $FITNESSE_URL"
+		echo "[OCSP_CTL] Fitnesse Running - $FITNESSE_URL"
 	fi
 	
 	return $MAIN_RESULT
@@ -252,7 +254,7 @@ function fitnesse_write_suite_results {
 	echo "[OCSP_CTL] Test Suite=$FITNESSE_TEST_SUITE"
 	echo "[OCSP_CTL] FitNesse Command: $REPORT_URL"
 
-	curl -S -o "$FITNESSE_TEST_OUTPUT" "$REPORT_URL"
+	curl -s -S -o "$FITNESSE_TEST_OUTPUT" "$REPORT_URL"
 	DOWNLOAD_RESULT=$?
 	echo "[OCSP_CTL] Test Output: " $(stat "$FITNESSE_TEST_OUTPUT" 2>&1 ) 
 	

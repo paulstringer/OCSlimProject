@@ -23,7 +23,7 @@ get_app_devicetypeid() {
 
 ios_sim_launch() {
 	echo "== Begin Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
-	$MYPATH/ios-sim launch "$1" --verbose --devicetypeid "$2" --args  "$3" 
+	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --verbose --args $3
 }
 
 run_test_system() {

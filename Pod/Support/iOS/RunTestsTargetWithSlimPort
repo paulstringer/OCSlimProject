@@ -25,11 +25,10 @@ ios_sim_launch() {
 	echo "== Begin Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
 	ERR_LOG=$MYPATH/$SLIM_PORT.err.log
 	OUT_LOG=$MYPATH/$SLIM_PORT.out.log
-	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stdout $OUT_LOG --stderr $ERR_LOG --verbose --args $3
-	echo "== APP STDERR ==" >&2
+	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stdout $OUT_LOG --stderr $ERR_LOG --verbose --args $3 2>&1
 	echo "$(more $ERR_LOG)" >&2
-	echo "== APP STDOUT ==" >&2
-	echo "$(more $OUT_LOG)" >&2
+	echo "== APP STDOUT ==" >&1
+	echo "$(more $OUT_LOG)" >&1
 }
 
 run_test_system() {

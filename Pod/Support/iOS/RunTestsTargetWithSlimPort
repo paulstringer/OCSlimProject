@@ -51,9 +51,6 @@ run_test_system() {
 	return $?
 }
 
-clean_log_files() [
-
-}
 main() {
 	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
 	run_test_system

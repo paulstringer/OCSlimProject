@@ -22,21 +22,40 @@ get_app_devicetypeid() {
 }
 
 ios_sim_launch() {
-	echo "== Begin Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
-	$MYPATH/ios-sim launch $1 --devicetypeid "$2" --args $3 
+	
+	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
+
+	local STDERR_LOG=$MYPATH/$(basename $1)-tmp-err.log
+	local STDOUT_LOG=$MYPATH/$(basename $1)-tmp-out.log
+	
+	# Route ios-sim errors to stdout, keeps error stream clear for errors from App 
+
+	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stdout "$STDOUT_LOG" --stderr "$STDERR_LOG"  --args "$3" 2>&1
+
+	# Report logged results to stdout/err
+	echo "$(more $STDERR_LOG)" >&2
+	echo "$(more $STDOUT_LOG)" >&1
+	
+	# Clean Log Files
+	
+	rm $STDERR_LOG
+	rm $STDOUT_LOG
 }
 
 run_test_system() {
+
 	local DEVICE_TYPE_IDENTIFIER=$(get_app_devicetypeid)
-	echo "Test System SDK Deployment Target: $DEPLOYMENT_TARGET_VALUE"
-	echo "Test System Executable Folder Path: $APPLICATION_PATH"
-	echo "Simulator Device Identifier: $DEVICE_TYPE_IDENTIFIER"
-	ios_sim_launch $APPLICATION_PATH "$DEVICE_TYPE_IDENTIFIER" $SLIM_PORT
+
+	echo "[OCSP_RUN] Info: Test System SDK Deployment Target: $DEPLOYMENT_TARGET_VALUE"
+	echo "[OCSP_RUN] Info: Test System Executable Folder Path: $APPLICATION_PATH"
+	echo "[OCSP_RUN] Info: Simulator Device Identifier: $DEVICE_TYPE_IDENTIFIER"
+
+	ios_sim_launch "$APPLICATION_PATH" "$DEVICE_TYPE_IDENTIFIER" "$SLIM_PORT"
 	return $?
 }
 
 main() {
-	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
+	echo "[OCSP_RUN] == RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
 	run_test_system
 	exit $?
 }

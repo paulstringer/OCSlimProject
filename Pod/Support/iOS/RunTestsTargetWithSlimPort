@@ -22,13 +22,24 @@ get_app_devicetypeid() {
 }
 
 ios_sim_launch() {
-	echo "== Begin Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
-	STDERR_LOG=$MYPATH/$SLIM_PORT.err.log
-	STDOUT_LOG=$MYPATH/$SLIM_PORT.out.log
-	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stdout "$STDOUT_LOG" --verbose --args "$3" 2>&1
-	#echo "$(more $ERR_LOG)" >&2
-	#echo "== APP STDOUT ==" >&1
+	
+	echo "== Start Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
+
+	local STDERR_LOG=$MYPATH/$(basename $1).err.log
+#	local STDOUT_LOG=$MYPATH/$(basename $1)-tmp-out.log
+	
+	# Route ios-sim errors to stdout, keeps error stream clear for errors from App 
+	
+	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stderr "$STDERR_LOG"  --verbose --args "$3" 2>&1
+
+	# Report logged results to stdout/err
+	echo "$(more $STDERR_LOG)" >&2
 	#echo "$(more $STDOUT_LOG)" >&1
+	
+	# Clean Log Files
+	
+	rm $STDERR_LOG
+	#rm $STDOUT_LOG
 }
 
 run_test_system() {
@@ -40,6 +51,9 @@ run_test_system() {
 	return $?
 }
 
+clean_log_files() [
+
+}
 main() {
 	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
 	run_test_system

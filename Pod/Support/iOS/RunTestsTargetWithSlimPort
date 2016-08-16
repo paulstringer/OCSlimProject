@@ -23,7 +23,7 @@ get_app_devicetypeid() {
 
 ios_sim_launch() {
 	
-	echo "[OCSP_RUN] Start Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
+	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
 
 	local STDERR_LOG=$MYPATH/$(basename $1)-tmp-err.log
 	local STDOUT_LOG=$MYPATH/$(basename $1)-tmp-out.log

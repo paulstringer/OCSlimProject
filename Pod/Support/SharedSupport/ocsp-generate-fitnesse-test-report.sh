@@ -12,9 +12,12 @@ function main {
 function report_errors {
 
 	if [ -f "$TEST_RUNNER_ERROR_LOGFILE" ]; then
-		echo "[OCSP_TEST] FATAL: ERROR OUTPUT GENERATED: $TEST_RUNNER_ERROR_LOGFILE"
+		echo "[OCSP_TEST] ERROR: Slim Test System Generated Errors During Test" >&2 
+		echo "[OCSP_TEST] ==== Begin Log $TEST_RUNNER_ERROR_LOGFILE) =====" >&2 
 		echo "$(<$TEST_RUNNER_ERROR_LOGFILE)" >&2 
-		echo "[OCSP_TEST] FATAL: UNEXPECTED ERROR OCCURRED. ABORT..."
+		echo "[OCSP_TEST] ==== End Log ===== " >&2 
+		echo "[OCSP_TEST] FATAL: Build Has Failed. Abort..." >&2 
+		echo "[OCSP_TEST] Bye"
 		RETURN_CODE=1
 	fi
 }

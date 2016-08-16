@@ -7,7 +7,7 @@ osx_image: xcode7.3
 script:
 - set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -sdk iphonesimulator test
 - set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
-#- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -sdk iphonesimulator test
-#- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
+- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -sdk iphonesimulator test
+- set -o pipefail && xctool -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

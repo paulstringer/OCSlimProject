@@ -6,58 +6,63 @@
 [![Platform](https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
 
 
-###OCSlimProject is an Xcode project template and CocoaPod for creating fast, rock solid, automated acceptance tests on iOS and OS X using [Fitnesse](http://fitnesse.org). Fitnesse is a powerful and fully integrated standalone wiki and acceptance testing framework designed for ATDD and BDD style software development.
+OCSlimProject is a CocoaPod for iOS and macOS that lets you creat fast, rock solid, automated *Acceptance Tests* with Fitnesse. 
 
+[Fitnesse](http://fitnesse.org) is a powerful and fully integrated standalone wiki and acceptance testing framework designed for ATDD and BDD style software development.
+
+--
 
 ### Usage
-
-To run the example CocoaPod project, clone the repo, and run `pod install` from the Example directory first.
+To run the example clone the repo, and run `pod install` in the Example directory. Then open the OCSlimProject.xcworkspace file for examples of Mac and iOS Acceptance Test targets integrated into boiler plate Xcode projects.
 
 ### Requirements
 - Xcode 7
 - CocoaPods
-- [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (required for Fitnesse)
+- [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 
-### Installation
 
-OCSlimProject is available to your own projects through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
 
-```ruby
-#iOS
-platform :ios, 9.0
-pod 'OCSlimProject'
+## How it Works
+OCSlimProject works by creating a seperate target of your app. This *'Acceptance Tests'* target is one that only needs to include your apps business logic + simple 'fixtures'. 
 
-#Mac
-platform :osx, 10.8
-pod 'OCSlimProject'
+Fixtures are the glue code you write in Swift or Obj-C that provide a thin wrapper around your App that Fitnesse uses to execute the Acceptance Tests for the features of your software. Fixtures should be nothing other than very simple classes that delegate calls to and from your own code.
+
+Fitnesse communicates with your App using a communications protocol called Slim (Simple List Invocation Method). The work of implementing this protocol is provided via the [cslim project](https://github.com/dougbradbury/cslim) which contains an Objective-C implementation. When writing fixtures in Swift this requires your fixtures are subclasses of NSObject. 
+
+----
+
+#Get Started
+
+###OCSlimProject is available to your own projects through [CocoaPods](https://cocoapods.org/?q=OCSlim). It is designed to be integrated by the use of Xcode Templates. These templates automate the steps of intergrating your App and Fitnesse. 
+
+## 1. Install the Templates
+
+###OCSlimProject uses Xcode templates to 
+
+* Download [OCSlimProjectXcodeTemplates](https://github.com/paulstringer/OCSlimProjectXcodeTemplates) from GitHub and then run *make*
+
+```
+$ cd OCSlimProjectXcodeTemplates
+$ make
 ```
 
-## Installing the Xcode Templates
+This adds the Xcode project templates for creating Acceptance Test targets within Xcode for iOS & OS X. These are installed at ~/Library/Developer/Xcode/Templates/Test  (e.g.  unaffected by Xcode updates or new versions)
 
-
-###OCSlimProject uses Xcode templates to simplify integration between your App and Fitnesse. Downloading the templates is the first step to getting started.
-
-* Download [OCSlimProject](http://paulstringer.github.io/OCSlimProject/) from GitHub
-
-* Run ```$ make```. This adds the Xcode project templates for creating Acceptance Test targets within Xcode (iOS & OS X). These are installed at ~/Library/Developer/Xcode/Templates/Test  (e.g.  unaffected by Xcode updates or new versions)
-
-* Look under the Test section of Xcode's New Target setup. In both iOS and OS X you should see the addition of two new types of testing target:
+* Look under the *'Test'* section of Xcode's *'New Target'* setup. In both iOS and OS X you will see two new types of testing target:
 	* Acceptance Tests
 	
 	> This target builds an iOS/OS X Application for Acceptance Testing your App using the Fitnesse framework. Requires a project that uses CocoaPods.
 	
 	* Acceptance Unit Tests Bundle
 
-	> This target builds an iOS/OS X unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode using the XCTest framework.
+	> This target builds an iOS/OS X unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode as XCTest results.
 	
-## How to Add 'Acceptance Tests' Targets to your Project
+## 2. Add 'Acceptance Tests' Targets to your Project
 
-###OCSlimProject works by creating a special flavour of your app, one that contains just your apps business logic + simple 'fixtures' - simple glue code you write in Swift or Obj-C that provides an entry / exit point for Fitnesse to check the behaviour of your iOS/OSX software. 
 
-###Creating an 'Acceptance Tests' target is the next step in your setup. After following this step your ready to begin writing and automating acceptance tests.
+###Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.
 
-* Add an 'AcceptanceTests' target to your Project using the 'Acceptance Tests' templates installed under 'Test' templates. (Templates are installed for both iOS and OS X.)
+* Add an 'AcceptanceTests' target to your Project using the 'Acceptance Tests' templates installed under 'Test' templates. (Templates are available for both iOS and OS X.). OS X targets run faster, iOS targets allow you to use classes with dependancies on UIKit.
 
 * Using CocoaPods link OCSlimProject to your 'AcceptanceTests' target with the following Podfile entry
     
@@ -67,7 +72,7 @@ pod 'OCSlimProject'
 	    pod 'OCSlimProject'
     end
 	```
-* Run either ```pod install``` or ```pod update``` as needed
+* Run either ```pod install``` or ```pod update``` as necessary
 
 * Build the 'AcceptanceTests' target to generate the Application (repeat this after each code change)
 

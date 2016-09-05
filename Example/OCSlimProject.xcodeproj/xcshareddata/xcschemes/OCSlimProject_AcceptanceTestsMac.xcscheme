@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C464D6F1D59B7AA0000EF7B"
+               BlueprintIdentifier = "8C4186FA1D7DADC4006FDB55"
                BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
                BlueprintName = "OCSlimProject_AcceptanceTestsMac"
                ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -28,11 +28,21 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C4747481D5B8649005BE970"
+               BuildableName = "OCSlimProject_AcceptanceUnitTestBundleMac.xctest"
+               BlueprintName = "OCSlimProject_AcceptanceUnitTestBundleMac"
+               ReferencedContainer = "container:OCSlimProject.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C464D6F1D59B7AA0000EF7B"
+            BlueprintIdentifier = "8C4186FA1D7DADC4006FDB55"
             BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
             BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -55,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C464D6F1D59B7AA0000EF7B"
+            BlueprintIdentifier = "8C4186FA1D7DADC4006FDB55"
             BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
             BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">
@@ -74,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C464D6F1D59B7AA0000EF7B"
+            BlueprintIdentifier = "8C4186FA1D7DADC4006FDB55"
             BuildableName = "OCSlimProject_AcceptanceTestsMac.app"
             BlueprintName = "OCSlimProject_AcceptanceTestsMac"
             ReferencedContainer = "container:OCSlimProject.xcodeproj">

@@ -46,25 +46,12 @@ slim_system_wait() {
 ios_sim_launch() {
 	
 	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $(ios-sim --version)) =="
-
-	#local STDERR_LOG=$MYPATH/$(basename $1)-tmp-err.log
-	#local STDOUT_LOG=$MYPATH/$(basename $1)-tmp-out.log
-
+	
 	# Route ios-sim errors to stdout, keeps error stream clear for errors from App 
-	#ios-sim launch "$1" --devicetypeid "$2" --stdout "$STDOUT_LOG" --stderr "$STDERR_LOG"  --args "$3" --verbose &
 	ios-sim launch "$1" --devicetypeid "$2" --args "$3" --verbose &
 	
 	# Wait whilst the system runs
 	slim_system_wait
-		
-	# Report logged results to stdout/err
-	#echo "$(more $STDERR_LOG)" >&2
-	#echo "$(more $STDOUT_LOG)" >&1
-	
-	# Clean Log Files
-	
-	#rm $STDERR_LOG
-	#rm $STDOUT_LOG
 }
 
 run_test_system() {

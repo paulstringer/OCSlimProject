@@ -19,8 +19,9 @@ To run the example clone the repo, and run `pod install` in the Example director
 ### Requirements
 - Xcode 7
 - CocoaPods
-- [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
-
+- [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (required for Fitnesse)
+- [ios-sim](http://github.com/phonegap/ios-sim)
+- [Node.js](http://blog.teamtreehouse.com/install-node-js-npm-mac) (required for ios-sim)
 
 
 ## How it Works
@@ -61,6 +62,8 @@ This adds the Xcode project templates for creating Acceptance Test targets withi
 ## 2. Add 'Acceptance Tests' Targets to your Project
 
 
+>You will need to have installed both Node.js (via Homebrew works best) and ios-sim to run iOS based Acceptance Tests
+
 ###Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.
 
 * Add an 'AcceptanceTests' target to your Project using the 'Acceptance Tests' templates installed under 'Test' templates. (Templates are available for both iOS and OS X.). OS X targets run faster, iOS targets allow you to use classes with dependancies on UIKit.
@@ -81,13 +84,12 @@ This adds the Xcode project templates for creating Acceptance Test targets withi
 
 * Follow the prompt to download [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) if needed.
 
-<!- This next step is awkward, do something better -->
+* Now with Fitnesse running, check out the [example](http://localhost:8080/OCSlimProjectExamplePage) and run the tests
 
-* Copy the folder at OCSlimProject/Example/FitNesseRoot/OCSlimProjectExamplePage into your project's own FitNesseRoot folder
+	*Check for any errors in the 'Execution Log' and install Node.js and ios-sim as instructed*
 
-* With Fitnesse running, check out the [example](http://localhost:8080/OCSlimProjectExamplePage) you just copied.
 
-* You're ready to begin writing [Acceptance tests and Fixtures](http://stringerstheory.net/acceptance-testing-with-ios/)  in Obj-C or Swift.
+**Congratulations** - You're now ready and setup to begin writing rock-solid, blazing fast [Acceptance tests and Fixtures](http://stringerstheory.net/acceptance-testing-with-ios/) for iOS and macOS apps.
 
 
 ## Integrating with XCTest using 'Acceptance Unit Tests Bundle'

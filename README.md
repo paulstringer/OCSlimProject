@@ -1,10 +1,11 @@
+<img src="Icon.png" width="128" height="128"/>
+
 # OCSlimProject
 
 [![CI Status](http://img.shields.io/travis/paulstringer/OCSlimProject.svg?style=flat)](https://travis-ci.org/paulstringer/OCSlimProject)
 [![Version](https://img.shields.io/cocoapods/v/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
 [![License](https://img.shields.io/cocoapods/l/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
 [![Platform](https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat)](http://cocoapods.org/pods/OCSlimProject)
-
 
 OCSlimProject is a CocoaPod for iOS and macOS that lets you creat fast, rock solid, automated *Acceptance Tests* with Fitnesse. 
 

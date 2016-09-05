@@ -596,10 +596,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C4187081D7DADC5006FDB55 /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */;
 			buildPhases = (
+				7D3D2C47017FD153BEB2982A /* [CP] Check Pods Manifest.lock */,
 				8C4186F61D7DADC4006FDB55 /* Sources */,
 				8C4186F71D7DADC4006FDB55 /* Frameworks */,
 				8C4186F81D7DADC4006FDB55 /* Resources */,
 				8C4186F91D7DADC4006FDB55 /* [OCSP] Generate Fitnesse Test System Scripts */,
+				E2E0497290D7E32573E629C2 /* [CP] Embed Pods Frameworks */,
+				0B1404F72640221217DC916A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -866,7 +869,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundleMac/Pods-OCSlimProject_AcceptanceUnitTestBundleMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0B1404F72640221217DC916A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		617A1BEE9FE77DDC1A05F013 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D3D2C47017FD153BEB2982A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -982,6 +1015,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundle/Pods-OCSlimProject_AcceptanceUnitTestBundle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E0497290D7E32573E629C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF207B1EAB3F6BC2A5E8CE6F /* [CP] Embed Pods Frameworks */ = {
@@ -1482,6 +1530,7 @@
 				8C4186F51D7DAD42006FDB55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C4187081D7DADC5006FDB55 /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTestsMac" */ = {
 			isa = XCConfigurationList;
@@ -1490,6 +1539,7 @@
 				8C41870A1D7DADC5006FDB55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C464D891D59B9500000EF7B /* Build configuration list for PBXNativeTarget "OCSlimProjectTestBundleSupportTests" */ = {
 			isa = XCConfigurationList;

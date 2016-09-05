@@ -77,6 +77,23 @@
 		8C951CBA1D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8C41870B1D7DBD3F006FDB55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C4186E71D7DAD42006FDB55;
+			remoteInfo = OCSlimProject_AcceptanceTests;
+		};
+		8C41870D1D7DBD4A006FDB55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C4186FA1D7DADC4006FDB55;
+			remoteInfo = OCSlimProject_AcceptanceTestsMac;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		492AC4917F3A0C8C878E021F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -645,6 +662,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C41870C1D7DBD3F006FDB55 /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_AcceptanceUnitTestBundle;
 			productName = OCSlimProject_AcceptanceUnitTestBundle;
@@ -683,6 +701,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8C41870E1D7DBD4A006FDB55 /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_AcceptanceUnitTestBundleMac;
 			productName = OCSlimProject_AcceptanceUnitTestBundleMac;
@@ -1149,6 +1168,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C41870C1D7DBD3F006FDB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C4186E71D7DAD42006FDB55 /* OCSlimProject_AcceptanceTests */;
+			targetProxy = 8C41870B1D7DBD3F006FDB55 /* PBXContainerItemProxy */;
+		};
+		8C41870E1D7DBD4A006FDB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C4186FA1D7DADC4006FDB55 /* OCSlimProject_AcceptanceTestsMac */;
+			targetProxy = 8C41870D1D7DBD4A006FDB55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {

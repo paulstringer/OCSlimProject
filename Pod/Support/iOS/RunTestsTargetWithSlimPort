@@ -7,6 +7,11 @@ APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}
 DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cut -d " " -f1 | rev )
 DEVICE_TYPE=iPhone
 
+
+get_app_executable_name() {
+	echo $(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APPLICATION_PATH/Info.plist")
+}
+
 get_app_devicetypeid() {
 
 	local BOOTED_DEVICETYPE_ID=
@@ -21,25 +26,32 @@ get_app_devicetypeid() {
 	echo "$BOOTED_DEVICETYPE_ID, $DEPLOYMENT_TARGET_VALUE"
 }
 
+slim_system_wait() {
+	
+	local EXECUTABLE_PID=
+	local EXECUTABLE_NAME=$(get_app_executable_name)
+	
+	echo "[OCSP_RUN] Waiting for Slim Test System To Launch"
+	while [ -z "$EXECUTABLE_PID" ] 
+	do
+		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
+	done
+	
+	echo "[OCSP_RUN] Slim System Detected ($EXECUTABLE_PID)"
+	while [[ "$EXECUTABLE_PID" ]]
+	do
+		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
+		sleep 0.5
+	done
+}
+
 ios_sim_launch() {
 	
-	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $($MYPATH/ios-sim --version)) =="
+	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $(ios-sim --version), Node Version: $(node -v)) =="
 
-	local STDERR_LOG=$MYPATH/$(basename $1)-tmp-err.log
-	local STDOUT_LOG=$MYPATH/$(basename $1)-tmp-out.log
+	ios-sim launch "$1" --devicetypeid "$2" --args "$3" --verbose &
 	
-	# Route ios-sim errors to stdout, keeps error stream clear for errors from App 
-
-	$MYPATH/ios-sim launch "$1" --devicetypeid "$2" --stdout "$STDOUT_LOG" --stderr "$STDERR_LOG"  --args "$3" 2>&1
-
-	# Report logged results to stdout/err
-	echo "$(more $STDERR_LOG)" >&2
-	echo "$(more $STDOUT_LOG)" >&1
-	
-	# Clean Log Files
-	
-	rm $STDERR_LOG
-	rm $STDOUT_LOG
+	slim_system_wait
 }
 
 run_test_system() {
@@ -54,8 +66,24 @@ run_test_system() {
 	return $?
 }
 
+check_node_exists() {
+	type npm >/dev/null 2>&1 || { echo >&2 "[OCSP_RUN] ERROR: Dependancy Check Failed: iOS based Acceptance Testing requires 'Node' and ios-sim (http://github.com/phonegap/ios-sim)\n[OCSP_INFO] ERROR: For details of how to install Node visit http://blog.teamtreehouse.com/install-node-js-npm-mac"; exit 1; }
+}
+
+preflight_iossim() {
+	type ios-sim >/dev/null 2>&1 || { echo >&2 "[OCSP_RUN] ERROR: Dependancy Check Failed: iOS based Acceptance Testing requires ios-sim (http://github.com/phonegap/ios-sim)\n[OCSP_INFO] ERROR: Install using the Node Package Manager\n[OCSP_INFO] ERROR: Use '$ npm install ios-sim -g'"; exit 1; }
+	npm update ios-sim
+}	
+
+check_test_system() {
+
+	check_node_exists
+	preflight_iossim
+	
+}
 main() {
 	echo "[OCSP_RUN] == RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
+	check_test_system
 	run_test_system
 	exit $?
 }

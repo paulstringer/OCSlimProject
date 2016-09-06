@@ -7,7 +7,7 @@ before_install:
 - brew update # Since Travis is not always on latest version
 - npm install ios-sim -g
 script:
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' -destination-timeout 90 test
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test

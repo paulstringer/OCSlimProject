@@ -254,7 +254,8 @@ function fitnesse_write_suite_results {
 	echo "[OCSP_CTL] Run Tests"
 	echo "[OCSP_CTL] Test Suite=$FITNESSE_TEST_SUITE"
 	echo "[OCSP_CTL] FitNesse Command: $REPORT_URL"
-
+	echo "[OCSP_CTL] Timestamp: $(date)"
+	
 	curl -s -S -o "$FITNESSE_TEST_OUTPUT" "$REPORT_URL"
 	DOWNLOAD_RESULT=$?
 	echo "[OCSP_CTL] Test Output: " $(stat "$FITNESSE_TEST_OUTPUT" 2>&1 ) 
@@ -268,6 +269,8 @@ function fitnesse_write_suite_results {
 	if [ $VERBOSE -eq 1 ]; then
 		echo $(cat "$FITNESSE_TEST_OUTPUT")
 	fi
+	
+	echo "[OCSP_CTL] Timestamp: $(date)"
 	
 }
 

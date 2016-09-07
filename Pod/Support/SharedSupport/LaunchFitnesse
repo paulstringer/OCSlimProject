@@ -17,7 +17,7 @@ FITNESSE_ROOT_DIR=FitNesseRoot
 #FITNESSE_ROOT_CONTENT_FILE=$FITNESSE_ROOT/content.txt
 FITNESSE_URL=http:"//localhost:${FITNESSE_PORT}/"
 FITNESSE_TEST_OUTPUT=/tmp/Fitnesse-Test-Report.xml
-FITNESSE_TIMEOUT_SECONDS=120
+FITNESSE_TIMEOUT_SECONDS=600
 FITNESSE_ROOT=.
 FITNESSE_TEST_SUITE=
 VERBOSE=0
@@ -66,17 +66,13 @@ done
 ###############
 
 function java_check {
-	if ! type java &> /dev/null ;  then
-		echo "Java (JRE) not found"
-    	echo "Download the latest version of Java?"
-		select yn in "Get Java for Mac" "Not Now"; do
-			case $yn in 
-				"Get Java for Mac" ) open "http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html"; break;;
-				"Not Now" ) break;;
-			esac
-		done
-		exit 0
-	fi
+
+    java -version
+
+    if [ $? -eq 1 ]; then
+        exit 1
+    fi
+
 }
 
 function fitnesse_process_id {

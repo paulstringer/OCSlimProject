@@ -75,6 +75,10 @@
 		8C4747A91D5C426E005BE970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747A61D5C426E005BE970 /* Localizable.strings */; };
 		8C951CB91D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 		8C951CBA1D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
+		91C1A1030848F7C800880B2F /* libPods-OCSlimProject_AcceptanceTestsMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1151F768803BA2C6C804BDD2 /* libPods-OCSlimProject_AcceptanceTestsMac.a */; };
+		B11A703092468F88D0FAF3D8 /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BAC5A5FE98F92B19C0D515 /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a */; };
+		EAC5742BDAB04F9DE1F8B3F5 /* libPods-OCSlimProject_AcceptanceUnitTestBundle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8B425C1E7FF8DED3D1D1B8 /* libPods-OCSlimProject_AcceptanceUnitTestBundle.a */; };
+		FC3CE88A64449175B79C5FA5 /* libPods-OCSlimProject_AcceptanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6650AA54D6131FA419DD2F6 /* libPods-OCSlimProject_AcceptanceTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,10 +96,28 @@
 			remoteGlobalIDString = 8C4186FA1D7DADC4006FDB55;
 			remoteInfo = OCSlimProject_AcceptanceTestsMac;
 		};
+		8CCAA2F81D7ED16B004F7AB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = OCSlimProject_Example;
+		};
+		8CCAA2FA1D7ED170004F7AB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C4747581D5B877E005BE970;
+			remoteInfo = OCSlimProject_ExampleMac;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1151F768803BA2C6C804BDD2 /* libPods-OCSlimProject_AcceptanceTestsMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceTestsMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C2EBC0E7CB61D73955937E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceUnitTestBundle.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundle/Pods-OCSlimProject_AcceptanceUnitTestBundle.release.xcconfig"; sourceTree = "<group>"; };
+		2588EE9272D1E7F244A22094 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceUnitTestBundleMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundleMac/Pods-OCSlimProject_AcceptanceUnitTestBundleMac.debug.xcconfig"; sourceTree = "<group>"; };
 		492AC4917F3A0C8C878E021F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		49DCE1F17929763054EEFA16 /* Pods-OCSlimProject_AcceptanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTests/Pods-OCSlimProject_AcceptanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OCSlimProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCSlimProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +125,8 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7888DA70329FF95B539E6A2E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceUnitTestBundle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundle/Pods-OCSlimProject_AcceptanceUnitTestBundle.debug.xcconfig"; sourceTree = "<group>"; };
+		8A36D800C0FC2C268EB152E5 /* Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig"; sourceTree = "<group>"; };
 		8C2EB3FA1D369246000C22FA /* OCSPTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestSuite.h; path = ../../Pod/TestClasses/OCSPTestSuite.h; sourceTree = "<group>"; };
 		8C2EB3FB1D369246000C22FA /* OCSPTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuite.m; path = ../../Pod/TestClasses/OCSPTestSuite.m; sourceTree = "<group>"; };
 		8C2EB3FC1D369246000C22FA /* OCSPTestSuiteTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuiteTests.m; path = ../../Pod/TestClasses/OCSPTestSuiteTests.m; sourceTree = "<group>"; };
@@ -169,7 +193,13 @@
 		8CC377071D51E58200863DF2 /* OCSPLocalizedMessageTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTable.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTable.m; sourceTree = "<group>"; };
 		8CC3770A1D51E5C400863DF2 /* OCSPLocalizedMessageTableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPLocalizedMessageTableTests.m; path = ../../Pod/TestClasses/OCSPLocalizedMessageTableTests.m; sourceTree = "<group>"; };
 		8CEDB5D71C1369E0009E0997 /* OCSlimProject.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = OCSlimProject.podspec; path = ../OCSlimProject.podspec; sourceTree = "<group>"; };
+		A901D26EE89811043A2D7ED2 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceUnitTestBundleMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundleMac/Pods-OCSlimProject_AcceptanceUnitTestBundleMac.release.xcconfig"; sourceTree = "<group>"; };
 		C64212E34011403DA3EA430E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C6650AA54D6131FA419DD2F6 /* libPods-OCSlimProject_AcceptanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC13D2145ED0C6300A87FDA1 /* Pods-OCSlimProject_AcceptanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTests/Pods-OCSlimProject_AcceptanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC8B425C1E7FF8DED3D1D1B8 /* libPods-OCSlimProject_AcceptanceUnitTestBundle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceUnitTestBundle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1BAC5A5FE98F92B19C0D515 /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFD2821C2B293612F9D2C992 /* Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC3CE88A64449175B79C5FA5 /* libPods-OCSlimProject_AcceptanceTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C1A1030848F7C800880B2F /* libPods-OCSlimProject_AcceptanceTestsMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC5742BDAB04F9DE1F8B3F5 /* libPods-OCSlimProject_AcceptanceUnitTestBundle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11A703092468F88D0FAF3D8 /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +274,8 @@
 				8C47472F1D5B752A005BE970 /* Example Test System for OSX (Faster, Recommended) */,
 				8C47472E1D5B7433005BE970 /* OCSlimProjectTestBundleSupport - Pod */,
 				607FACD11AFB9204008FA782 /* Products */,
+				C2C47AAC8F38E8791AE8AFF6 /* Pods */,
+				BC1A241596C9C6D53E877580 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -571,6 +607,32 @@
 			name = "JUnit XML Parser";
 			sourceTree = "<group>";
 		};
+		BC1A241596C9C6D53E877580 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6650AA54D6131FA419DD2F6 /* libPods-OCSlimProject_AcceptanceTests.a */,
+				1151F768803BA2C6C804BDD2 /* libPods-OCSlimProject_AcceptanceTestsMac.a */,
+				DC8B425C1E7FF8DED3D1D1B8 /* libPods-OCSlimProject_AcceptanceUnitTestBundle.a */,
+				E1BAC5A5FE98F92B19C0D515 /* libPods-OCSlimProject_AcceptanceUnitTestBundleMac.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2C47AAC8F38E8791AE8AFF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49DCE1F17929763054EEFA16 /* Pods-OCSlimProject_AcceptanceTests.debug.xcconfig */,
+				CC13D2145ED0C6300A87FDA1 /* Pods-OCSlimProject_AcceptanceTests.release.xcconfig */,
+				8A36D800C0FC2C268EB152E5 /* Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig */,
+				EFD2821C2B293612F9D2C992 /* Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig */,
+				7888DA70329FF95B539E6A2E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.debug.xcconfig */,
+				23C2EBC0E7CB61D73955937E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.release.xcconfig */,
+				2588EE9272D1E7F244A22094 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.debug.xcconfig */,
+				A901D26EE89811043A2D7ED2 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -595,14 +657,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C4186F31D7DAD42006FDB55 /* Build configuration list for PBXNativeTarget "OCSlimProject_AcceptanceTests" */;
 			buildPhases = (
+				B5D829606CE1EF3DAC034EFA /* [CP] Check Pods Manifest.lock */,
 				8C4186E31D7DAD42006FDB55 /* Sources */,
 				8C4186E41D7DAD42006FDB55 /* Frameworks */,
 				8C4186E51D7DAD42006FDB55 /* Resources */,
 				8C4186E61D7DAD42006FDB55 /* [OCSP] Generate Fitnesse Test System Scripts */,
+				5443D3098353BD4EBC6967E2 /* [CP] Embed Pods Frameworks */,
+				653D3C5B1E2F0A452E0263CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8CCAA2F91D7ED16B004F7AB8 /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_AcceptanceTests;
 			productName = OCSlimProject_AcceptanceTests;
@@ -624,6 +690,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8CCAA2FB1D7ED170004F7AB8 /* PBXTargetDependency */,
 			);
 			name = OCSlimProject_AcceptanceTestsMac;
 			productName = OCSlimProject_AcceptanceTestsMac;
@@ -905,6 +972,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTestsMac/Pods-OCSlimProject_AcceptanceTestsMac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5443D3098353BD4EBC6967E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTests/Pods-OCSlimProject_AcceptanceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		617A1BEE9FE77DDC1A05F013 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -918,6 +1000,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		653D3C5B1E2F0A452E0263CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceTests/Pods-OCSlimProject_AcceptanceTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D3D2C47017FD153BEB2982A /* [CP] Check Pods Manifest.lock */ = {
@@ -1021,6 +1118,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OCSlimProject_AcceptanceUnitTestBundle/Pods-OCSlimProject_AcceptanceUnitTestBundle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5D829606CE1EF3DAC034EFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CA9CA61C70DF3647BA480DBF /* [CP] Copy Pods Resources */ = {
@@ -1182,6 +1294,16 @@
 			target = 8C4186FA1D7DADC4006FDB55 /* OCSlimProject_AcceptanceTestsMac */;
 			targetProxy = 8C41870D1D7DBD4A006FDB55 /* PBXContainerItemProxy */;
 		};
+		8CCAA2F91D7ED16B004F7AB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* OCSlimProject_Example */;
+			targetProxy = 8CCAA2F81D7ED16B004F7AB8 /* PBXContainerItemProxy */;
+		};
+		8CCAA2FB1D7ED170004F7AB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C4747581D5B877E005BE970 /* OCSlimProject_ExampleMac */;
+			targetProxy = 8CCAA2FA1D7ED170004F7AB8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1333,6 +1455,7 @@
 		};
 		8C4186F41D7DAD42006FDB55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49DCE1F17929763054EEFA16 /* Pods-OCSlimProject_AcceptanceTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1347,6 +1470,7 @@
 		};
 		8C4186F51D7DAD42006FDB55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC13D2145ED0C6300A87FDA1 /* Pods-OCSlimProject_AcceptanceTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTests/Info.plist;
@@ -1360,6 +1484,7 @@
 		};
 		8C4187091D7DADC5006FDB55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A36D800C0FC2C268EB152E5 /* Pods-OCSlimProject_AcceptanceTestsMac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1376,6 +1501,7 @@
 		};
 		8C41870A1D7DADC5006FDB55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD2821C2B293612F9D2C992 /* Pods-OCSlimProject_AcceptanceTestsMac.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1422,6 +1548,7 @@
 		};
 		8C464DBB1D59BD1F0000EF7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7888DA70329FF95B539E6A2E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1435,6 +1562,7 @@
 		};
 		8C464DBC1D59BD1F0000EF7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C2EBC0E7CB61D73955937E /* Pods-OCSlimProject_AcceptanceUnitTestBundle.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceUnitTestBundle/Info.plist;
@@ -1478,6 +1606,7 @@
 		};
 		8C4747501D5B8649005BE970 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2588EE9272D1E7F244A22094 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1493,6 +1622,7 @@
 		};
 		8C4747511D5B8649005BE970 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A901D26EE89811043A2D7ED2 /* Pods-OCSlimProject_AcceptanceUnitTestBundleMac.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";

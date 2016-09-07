@@ -52,10 +52,11 @@ slim_system_wait() {
 ios_sim_launch() {
 	
 	echo >&2 "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $(ios-sim --version), Node Version: $(node -v)) =="
-
-	ios-sim launch "$1" --devicetypeid "$2" --args "$3" --verbose 1>&2
+	ios-sim start --devicetypeid "$2"
+	echo >&2 "[OCSP_RUN] == Started UP =="
+	ios-sim launch "$1" --devicetypeid "$2" --args "$3" --verbose 1>&2 &
 	
-	#slim_system_wait
+	slim_system_wait
 }
 
 run_test_system() {

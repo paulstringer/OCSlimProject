@@ -7,12 +7,13 @@ before_install:
 - brew update # Since Travis is not always on latest version
 - npm install ios-sim -g
 script:
-# OCSlimProjectTestBundleSupport Pod Unit Tests
-#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
-#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test
 # OCSlimProject Example Acceptance Tests
-#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone 6s' test
 - set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
+# OCSlimProjectTestBundleSupport Pod Unit Tests
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
 # Pod Lib Lint
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

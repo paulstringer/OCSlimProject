@@ -7,8 +7,8 @@ before_install:
 - npm install ios-sim -g
 script:
 # OCSlimProject Example Acceptance Tests
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone 6s' -destination-timeout 30 test
-#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone 6s' -destination-timeout 300 test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
 # OCSlimProjectTestBundleSupport Pod Unit Tests
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test

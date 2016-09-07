@@ -6,10 +6,11 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - brew update # Since Travis is not always on latest version
 - npm install ios-sim -g
+- ios-sim start --devicetypeid iPhone-6s
 script:
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' -destination-timeout 90 test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
+- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

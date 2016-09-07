@@ -6,7 +6,7 @@ RETURN_CODE=0
 function main {
 	echo "[OCSP_TEST] Fitnesse Test Suite=$FITNESSE_SUITE_NAME"	
 	echo "[OCSP_TEST] Destination Report File Path=$TEST_REPORT_FILE_PATH"
-	${PROJECT_DIR}/LaunchFitnesse --verbose -d "${PROJECT_DIR}"  -b "$TEST_REPORT_FILE_PATH" --test "$FITNESSE_SUITE_NAME" >&1 
+	${PROJECT_DIR}/LaunchFitnesse -d "${PROJECT_DIR}" -b "$TEST_REPORT_FILE_PATH" --test "$FITNESSE_SUITE_NAME" >&1 
 }
 
 function report_errors {
@@ -17,7 +17,6 @@ function report_errors {
 		echo "$(<$TEST_RUNNER_ERROR_LOGFILE)" >&2 
 		echo "[OCSP_TEST] ==== End Log ===== " >&2 
 		echo "[OCSP_TEST] FATAL: Build Has Failed. Abort..." >&2 
-		echo "[OCSP_TEST] Info: $(date)" >&2
 		echo "[OCSP_TEST] Bye"
 		RETURN_CODE=1
 	fi

@@ -4,12 +4,11 @@ podfile: Example/Podfile
 osx_image: xcode8
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
-- brew update # Since Travis is not always on latest version
 - npm install ios-sim -g
 script:
 # OCSlimProject Example Acceptance Tests
 - set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone 6s' test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone 6s' test
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
 # OCSlimProjectTestBundleSupport Pod Unit Tests
 #- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone 6s' test

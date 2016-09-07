@@ -14,10 +14,9 @@ CURL_CONNECTION_REFUSED_CODE=7
 FITNESSE_PORT=8080
 FITNESSE_EXECUTABLE_PATH=${BUNDLE_DIR}/fitnesse-standalone.jar
 FITNESSE_ROOT_DIR=FitNesseRoot
-#FITNESSE_ROOT_CONTENT_FILE=$FITNESSE_ROOT/content.txt
 FITNESSE_URL=http:"//localhost:${FITNESSE_PORT}/"
 FITNESSE_TEST_OUTPUT=/tmp/Fitnesse-Test-Report.xml
-FITNESSE_TIMEOUT_SECONDS=600
+FITNESSE_TIMEOUT_SECONDS=300
 FITNESSE_ROOT=.
 FITNESSE_TEST_SUITE=
 VERBOSE=0
@@ -265,8 +264,6 @@ function fitnesse_write_suite_results {
 	if [ $VERBOSE -eq 1 ]; then
 		echo $(cat "$FITNESSE_TEST_OUTPUT")
 	fi
-	
-	echo "[OCSP_CTL] Timestamp: $(date)"
 	
 }
 

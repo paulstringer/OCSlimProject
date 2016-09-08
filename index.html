@@ -19,8 +19,23 @@
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="ocslimproject" class="anchor" href="#ocslimproject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject</h1>
+      <p>`</p><h1 align="center">
+<a id="ocslimproject" class="anchor" href="#ocslimproject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><img src="Images/Icon.png" width="128" height="128"><br>OCSlimProject</h1>
+
+<h3>
+<a id="ocslimproject-is-a-cocoapod-for-ios-and-macos-that-lets-you-create-fast-rock-solid-automated-acceptance-tests-with-xcode-and-fitnesse" class="anchor" href="#ocslimproject-is-a-cocoapod-for-ios-and-macos-that-lets-you-create-fast-rock-solid-automated-acceptance-tests-with-xcode-and-fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject is a CocoaPod for iOS and macOS that lets you create <em>fast</em>, <em>rock-solid</em>, <em>automated</em> <em>Acceptance Tests</em> with Xcode and Fitnesse.</h3>
+
+<h3>
+<a id="fitnesse-is-a-powerful-and-fully-integrated-standalone-wiki-and-acceptance-testing-framework-it-is-designed-for-atdd-and-bdd-style-software-development" class="anchor" href="#fitnesse-is-a-powerful-and-fully-integrated-standalone-wiki-and-acceptance-testing-framework-it-is-designed-for-atdd-and-bdd-style-software-development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://fitnesse.org">Fitnesse</a> is a powerful and fully integrated standalone wiki and acceptance testing framework. It is designed for ATDD and BDD style software development.</h3>
+
+<h4>
+<a id="why-use-fitnesse" class="anchor" href="#why-use-fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why use Fitnesse?</h4>
+
+<blockquote>
+<p>"FitNesse is a tool for specifying and verifying application acceptance criteria (requirements). It acts as a bridge between the different stakeholders (disciplines) in a software delivery process. It's wiki server makes it easy to document the software.It's test execution capabilities allow you to verify the documentation against the software, ensuring the documentation remains up to date and the software is not facing regression." - <a href="http://fitnesse.org/FitNesse.UserGuide">Fitnesse User Guide</a></p>
+</blockquote>
+
+<h2></h2>
 
 <p><a href="https://travis-ci.org/paulstringer/OCSlimProject"><img src="http://img.shields.io/travis/paulstringer/OCSlimProject.svg?style=flat" alt="CI Status"></a>
 <a href="http://cocoapods.org/pods/OCSlimProject"><img src="https://img.shields.io/cocoapods/v/OCSlimProject.svg?style=flat" alt="Version"></a>
@@ -28,54 +43,186 @@
 <a href="http://cocoapods.org/pods/OCSlimProject"><img src="https://img.shields.io/cocoapods/p/OCSlimProject.svg?style=flat" alt="Platform"></a></p>
 
 <h3>
-<a id="ocslimproject-is-a-lightweight-xcode-project-template-and-set-of-scripts-for-creating-fast-rock-solid-non-ui-based-acceptance-tests-on-ios-and-os-x-using-fitnesse" class="anchor" href="#ocslimproject-is-a-lightweight-xcode-project-template-and-set-of-scripts-for-creating-fast-rock-solid-non-ui-based-acceptance-tests-on-ios-and-os-x-using-fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject is a lightweight Xcode project template and set of scripts for creating fast, rock solid, non UI based Acceptance Tests on iOS and OS X using <a href="http://fitnesse.org">Fitnesse</a>.</h3>
-
-<h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first. 
-Check out this <a href="http://stringerstheory.net/nslondon-video/">video from NSLondon</a> to see it in action.</p>
+<p>To run the example:</p>
+
+<ul>
+<li>Clone the repo, and run <code>pod install</code> in the Example directory. </li>
+<li>Open OCSlimProject.xcworkspace to see examples of both Mac and iOS Acceptance Tests integrated with a vanilla Xcode project.</li>
+</ul>
 
 <h3>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
 
 <ul>
 <li>Xcode 7</li>
+<li>CocoaPods</li>
 <li>
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java 1.8</a> (required for Fitnesse)</li>
+<li><a href="http://github.com/phonegap/ios-sim">ios-sim</a></li>
+<li>
+<a href="http://blog.teamtreehouse.com/install-node-js-npm-mac">Node.js</a> (required for ios-sim)</li>
 </ul>
 
+<h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it Works</h2>
+
+<p>OCSlimProject works by creating a seperate target of your app. This <em>'Acceptance Tests'</em> target is one that contains your apps business logic code (the 'System Under Test') + simple <em>fixtures</em> . </p>
+
+<p>Fixtures are glue code you write in Swift or Obj-C that provide a thin wrapper around your App's business logic. This is the integration point between your App's code and Fitnesse. Think of Fitnesse as an alternative UI for using your App.  As such fixtures (just like View Controllers) should be nothing more than very simple classes that delegate calls to and from your business logic code.</p>
+
+<p><strong>Architecture of an Acceptance Testing App compared with a regular App</strong></p>
+
+<p><img src="Images/Fitnesse-App-Architecture-Diagram.jpeg" alt="Fitnesse App Architecture Diagram"></p>
+
+<p>Fitnesse communicates with your App using a communications protocol called <a href="http://fitnesse.org/FitNesse.UserGuide.WritingAcceptanceTests.SliM.SlimProtocol">Slim</a> (Simple List Invocation Method). The work of implementing this protocol is provided via the <a href="https://github.com/dougbradbury/cslim">cslim project</a> which contains an <a href="https://github.com/ericmeyer/ObjectiveCSlim">Objective-C</a> implementation written by Erik Myer. When choosing to write fixture with Swift it's required that your fixtures are subclasses of NSObject. </p>
+
+<hr>
+
+<h1>
+<a id="get-started" class="anchor" href="#get-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Started</h1>
+
 <h3>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
-
-<p>OCSlimProject is available to your own projects through <a href="http://cocoapods.org">CocoaPods</a>. To install
-it, simply add the following line to your Podfile:</p>
-
-<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">"</span>OCSlimProject<span class="pl-pds">"</span></span></pre></div>
+<a id="ocslimproject-is-available-to-your-projects-through-cocoapods-it-is-designed-to-be-integrated-through-xcode-templates-these-templates-encapsulate-the-work-of-integrating-your-app-with-fitnesse" class="anchor" href="#ocslimproject-is-available-to-your-projects-through-cocoapods-it-is-designed-to-be-integrated-through-xcode-templates-these-templates-encapsulate-the-work-of-integrating-your-app-with-fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject is available to your projects through <a href="https://cocoapods.org/?q=OCSlim">CocoaPods</a>. It is designed to be integrated through Xcode Templates. These templates encapsulate the work of integrating your App with Fitnesse.</h3>
 
 <h2>
-<a id="how-to-use-in-your-own-project" class="anchor" href="#how-to-use-in-your-own-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use in your own Project</h2>
+<a id="1-install-the-templates" class="anchor" href="#1-install-the-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Install the Templates</h2>
 
 <ul>
-<li>Download OCSlimProject</li>
-<li>Run <code>$ make</code>. This adds the Xcode project templates for creating Acceptance Test targets within Xcode (iOS &amp; OS X).</li>
-<li>Add an 'AcceptanceTests' target to your Project using the Acceptance Test templates now installed under the Test project categories</li>
+<li>Download <a href="https://github.com/paulstringer/OCSlimProjectXcodeTemplates">OCSlimProjectXcodeTemplates</a> from GitHub and run <em>make</em>
+</li>
+</ul>
+
+<pre><code>$ git clone https://github.com/paulstringer/OCSlimProjectXcodeTemplates.git
+$ cd OCSlimProjectXcodeTemplates
+$ make
+</code></pre>
+
+<p>This adds the Xcode project templates for creating Acceptance Test targets for iOS &amp; macOS. These are installed at <em>~/Library/Developer/Xcode/Templates/Test</em>.</p>
+
+<ul>
+<li>
+<p>Navigate to the <em>'Test'</em> section of Xcode's <em>'New Target'</em> setup. In both iOS and macOS you will see two new types of testing target:</p>
+
+<ul>
+<li>Acceptance Tests</li>
+</ul>
+
+<blockquote>
+<p>This target builds an iOS/macOS Application for Acceptance Testing your App using the Fitnesse framework. Requires a project that uses CocoaPods.</p>
+</blockquote>
+
+<ul>
+<li>Acceptance Unit Tests Bundle</li>
+</ul>
+
+<blockquote>
+<p>This target builds an iOS/macOS unit test bundle that generates results from your Acceptance Tests target using Fitnesse and then reports them within Xcode as XCTest results.</p>
+</blockquote>
+</li>
+</ul>
+
+<h2>
+<a id="2-add-an-acceptance-tests-targets-to-your-project" class="anchor" href="#2-add-an-acceptance-tests-targets-to-your-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Add an 'Acceptance Tests' Targets to your Project</h2>
+
+<h3>
+<a id="creating-an-acceptance-tests-target-is-the-next-step-after-following-this-step-your-ready-to-begin-writing-acceptance-tests" class="anchor" href="#creating-an-acceptance-tests-target-is-the-next-step-after-following-this-step-your-ready-to-begin-writing-acceptance-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.</h3>
+
+<div align="center"><img src="Images/iOS-Acceptance-Test-Template.png"></div>
+
+<ul>
+<li><p>Add an 'AcceptanceTests' target to your Project using the 'Acceptance Tests' template. Templates are available for both iOS and macOS. macOS targets run faster, iOS targets allow you to use classes with dependancies on UIKit.</p></li>
 <li>
 <p>Using CocoaPods link OCSlimProject to your 'AcceptanceTests' target with the following Podfile entry</p>
 
-<div class="highlight highlight-source-ruby"><pre>target <span class="pl-s"><span class="pl-pds">'</span>AcceptanceTests<span class="pl-pds">'</span></span> <span class="pl-k">do</span>
-    platform <span class="pl-c1">:ios</span>
-    pod <span class="pl-s"><span class="pl-pds">'</span>OCSlimProject<span class="pl-pds">'</span></span>
-<span class="pl-k">end</span></pre></div>
+<pre><code>target 'AcceptanceTests' do
+    platform :ios, 9.0
+    pod 'OCSlimProject'
+end
+</code></pre>
 </li>
-<li>Run either <code>pod install</code> or <code>pod update</code> as needed</li>
-<li>Build the 'AcceptanceTests' target to generate the Application (repeat this after each code change)</li>
-<li>Launch Fitnesse by running the script <code>./LaunchFitnesse</code> that's generated automatically in your project's root directory</li>
-<li>Follow the prompt to download <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java 1.8</a> if needed.</li>
-<li>Copy the folder at OCSlimProject/Example/FitNesseRoot/OCSlimProjectExamplePage into your project's own FitNesseRoot folder</li>
-<li>With Fitnesse running, check out the <a href="http://localhost:8080/OCSlimProjectExamplePage">example</a> you just copied.</li>
-<li>You're now ready to start writing <a href="http://stringerstheory.net/acceptance-testing-with-ios/">Acceptance tests and Fixtures</a>  in Obj-C or Swift and excercising them with Fitnesse.</li>
+<li><p>Run either <code>pod install</code> or <code>pod update</code> as necessary</p></li>
+<li><p>Build the 'AcceptanceTests' target to generate the App (repeat this after code changes)</p></li>
+<li><p>Launch Fitnesse by running the script <code>./LaunchFitnesse</code> in your project's root directory</p></li>
+<li><p>Follow the prompt to download <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">Java 1.8</a> if needed.</p></li>
+<li>
+<p>Now with Fitnesse running, check out the <a href="http://localhost:8080/OCSlimProjectExamplePage">example</a> and run the tests</p>
+
+<p><em>Check for any errors in the 'Execution Log' and install Node.js and ios-sim as instructed</em></p>
+</li>
 </ul>
+
+<h2>
+<a id="3-develop-rock-solid-blazing-fast-acceptance-tests" class="anchor" href="#3-develop-rock-solid-blazing-fast-acceptance-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Develop rock-solid, blazing fast Acceptance Tests!</h2>
+
+<h3>
+<a id="youre-now-ready-and-setup-to-begin-developing-rock-solid-blazing-fast-automated-acceptance-tests-for-ios-and-macos-apps" class="anchor" href="#youre-now-ready-and-setup-to-begin-developing-rock-solid-blazing-fast-automated-acceptance-tests-for-ios-and-macos-apps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps.</h3>
+
+<ul>
+<li><p>For a very basic introduction follow this step by step tutorial introducing writing an example App with Acceptance Tests.</p></li>
+<li><p>For more in depth tutorials on developing software using BDD and Fitnesse checkout the following <a href="https://cleancoders.com/videos/clean-code/bdd">Clean Coder video tutorials</a>.</p></li>
+</ul>
+
+<hr>
+
+<h1>
+<a id="integration-with-xctest" class="anchor" href="#integration-with-xctest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Integration with XCTest</h1>
+
+<h3>
+<a id="ocslimproject-integrates-seamlessly-into-your-development-and-ci-worfklows-by-supporting-xctest-run-and-see-reports-of-your-fitnesse-acceptance-test-results-right-within-xcode-or-with-xcodebuild" class="anchor" href="#ocslimproject-integrates-seamlessly-into-your-development-and-ci-worfklows-by-supporting-xctest-run-and-see-reports-of-your-fitnesse-acceptance-test-results-right-within-xcode-or-with-xcodebuild" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlimProject integrates seamlessly into your development and CI worfklows by supporting XCTest. Run and see reports of your Fitnesse Acceptance Test results right within Xcode or with xcodebuild.</h3>
+
+<div align="center"><img src="Images/iOS-Acceptance-Unit-Test-Template.png"></div>
+
+<ul>
+<li>
+<p>Add an 'AcceptanceUnitTests' target to your Project using the 'Acceptance Unit Test Bundle' template*.</p>
+
+<p><em>The template you initially chose should match the platform of the Acceptance Test target. E.g. if you have an iOS Acceptance Tests app, use the iOS Acceptance Unit Test Bundle</em></p>
+</li>
+<li><p>Enter 'OCSlimProjectExamplePage' as the 'Fitnesse Suite Page Name' in the project settings.</p></li>
+<li>
+<p>Edit your Podfile and add the following Podfile entry</p>
+
+<pre><code>target 'AcceptanceUnitTests' do
+    platform :ios, 9.0
+    pod 'OCSlimProjectTestBundleSupport'
+end
+</code></pre>
+</li>
+<li><p>Run <code>pod update</code></p></li>
+<li><p><strong>IMPORTANT</strong> Add your 'AcceptanceTests' target as a 'Target Dependancy' of this new target in Build Phases. This ensures that it the latest code has been built prior to the tests being run.</p></li>
+<li><p>Hit CMD-U and verify your Acceptance Tests run and display the same results seen when running in Fitnesse.</p></li>
+</ul>
+
+<h3>
+<a id="finally" class="anchor" href="#finally" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Finally</h3>
+
+<ul>
+<li>Add the 'AcceptanceUnitTest' target to the test phase of any schemes where you want the Acceptance Tests to be run as part of your develop and test workflow. E.g. Add 'AcceptanceUnitTest' to the test phase of your main apps target. This will then run acceptance tests at the same time as running your regular unit tests.</li>
+</ul>
+
+<h4>
+<a id="known-xcode-8--ci-integration-issue" class="anchor" href="#known-xcode-8--ci-integration-issue" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known Xcode 8 / CI Integration Issue</h4>
+
+<p>Due to an abnormally long delay in starting a simulator from a fresh image of Xcode 8 there is a known issue when integrating with CI systems such as Travis. (It can be assumed this likely affects other CI systems that use fresh VM images for each integration.)</p>
+
+<pre><code>** CI System Script **
+xcodebuild -workspace &lt;Workspace&gt; -scheme &lt;AcceptanceUnitTestBundleScheme&gt; -destination 'platform=iOS Simulator,name=iPhone 6s' test
+
+** TEST FAILED **
+The command "set -o pipefail &amp;&amp; xcodebuild -workspace &lt;Workspace&gt; -scheme &lt;AcceptanceUnitTestBundleScheme&gt; -destination 'platform=iOS Simulator,name=iPhone 6s' test" exited with 65.
+</code></pre>
+
+<p>The error reveals itself as a failure when attempting to run only an iOS based 'Acceptance Unit Test Bundles' as seen in this example. Inconclusive investigations seem to point to it being the result of XCTest timing out waiting for the Build Phase responsible for generating the Fitnesse Test Results. This itself is dependant on starting the Simulator. This never completes for some unknown reason.</p>
+
+<p><strong>Workaround</strong></p>
+
+<p>A workaround is simply to run some other Unit Tests first before running your scheme. Typically this will involve just ensuring your actual Unit Tests have been run first. This seems to prepare the Simulator so that when Fitnesse comes to need it, it's ready.</p>
+
+<p>Check out the <a href=".travis.ynl">Travis Configuration</a> of this project for an example.</p>
+
+<hr>
 
 <h1>
 <a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgements</h1>
@@ -85,14 +232,14 @@ it, simply add the following line to your Podfile:</p>
 <h3>
 <a id="fitnesse" class="anchor" href="#fitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fitnesse</h3>
 
-<p>Created by: Fitnesse.org</p>
+<p>Created by: Robert Martin, Micah Martin &amp; Fitnesse.org contributors.</p>
 
 <p><a href="http://fitnesse.org">http://fitnesse.org</a></p>
 
 <h3>
 <a id="ocslim-runteststargetwithslimport" class="anchor" href="#ocslim-runteststargetwithslimport" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OCSlim, RunTestsTargetWithSlimPort</h3>
 
-<p>Created by: Erik Meyer, 8th Light </p>
+<p>Created by: Erik Meyer, Doug Bradbury, 8th Light.</p>
 
 <p><a href="https://github.com/ericmeyer/ObjectiveCSlim">https://github.com/ericmeyer/ObjectiveCSlim</a></p>
 
@@ -113,11 +260,11 @@ it, simply add the following line to your Podfile:</p>
 <p><a href="https://github.com/jonreid/XcodeCoverage">https://github.com/jonreid/XcodeCoverage</a></p>
 
 <h3>
-<a id="xcode-project-templates-launchfitnesse" class="anchor" href="#xcode-project-templates-launchfitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Xcode Project Templates, LaunchFitnesse</h3>
+<a id="xcode-project-templates-ocslimprojecttestbundlesupport-launchfitnesse" class="anchor" href="#xcode-project-templates-ocslimprojecttestbundlesupport-launchfitnesse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Xcode Project Templates, OCSlimProjectTestBundleSupport, LaunchFitnesse</h3>
 
 <p>Created by: Paul Stringer</p>
 
-<p><a href="https://github.com/paulstringer/Slim-iOS-TestRunner">https://github.com/paulstringer/Slim-iOS-TestRunner</a></p>
+<p><a href="https://github.com/paulstringer/OCSlimProject">https://github.com/paulstringer/OCSlimProject</a></p>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>

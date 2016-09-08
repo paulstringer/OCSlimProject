@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<testsuite name="OCSlimProjectExampleSuite" tests="1" failures="0" disabled="0" errors="0" time="0.165">
+<testcase name="OCSlimProjectExampleSuite.TestPage0" assertions="1" time="0.004">
+<system-out>OCSlimProjectExampleSuite?pageHistory&amp;resultDate=20160622121535</system-out>
+</testcase>
+</testsuite>

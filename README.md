@@ -73,7 +73,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 ###Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.
 
-<div align=center><img src="Images/iOS-Acceptance-Test-Template.png"/></div>
+![iOS Acceptance Tests Template](Images/iOS-Acceptance-Test-Template.png)
 
 * Add an 'AcceptanceTests' target to your Project using the 'Acceptance Tests' template. Templates are available for both iOS and macOS. macOS targets run faster, iOS targets allow you to use classes with dependancies on UIKit.
 
@@ -112,7 +112,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 ###OCSlimProject integrates seamlessly into your development and CI worfklows by supporting XCTest. Run and see reports of your Fitnesse Acceptance Test results right within Xcode or with xcodebuild.
 
-<div align=center><img src="Images/iOS-Acceptance-Unit-Test-Template.png"/></div>
+![iOS Acceptance Unit Tests Template](Images/iOS-Acceptance-Unit-Test-Template.png)
 
 * Add an 'AcceptanceUnitTests' target to your Project using the 'Acceptance Unit Test Bundle' template*.
 

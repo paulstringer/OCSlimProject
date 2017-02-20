@@ -102,7 +102,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 ###You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps. 
 
-* For a very basic introduction follow this [step by step tutorial]((http://stringerstheory.net/acceptance-testing-with-ios/)) introducing writing an example App with Acceptance Tests.
+* For a very basic introduction follow this [step by step tutorial](http://stringerstheory.net/acceptance-testing-with-ios/) introducing writing an example App with Acceptance Tests.
 
 * Check out the example projects [TicTacToe](https://github.com/paulstringer/TicTacToe) and [CosyHome](https://github.com/paulstringer/CosyHome) for real world examples of projects that make use of OCSlimProject.
 

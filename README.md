@@ -104,6 +104,8 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 * For a very basic introduction follow this [step by step tutorial]((http://stringerstheory.net/acceptance-testing-with-ios/)) introducing writing an example App with Acceptance Tests.
 
+* Check out the example projects [TicTacToe](https://github.com/paulstringer/TicTacToe) and [CosyHome](https://github.com/paulstringer/CosyHome) for real world examples of projects that make use of OCSlimProject.
+
 * For more in depth tutorials on developing software using BDD and Fitnesse checkout the following [Clean Coder video tutorials](https://cleancoders.com/videos/clean-code/bdd).
 
 ---
@@ -137,8 +139,6 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 ### Finally 
 
 * Add the 'AcceptanceUnitTest' target to the test phase of any schemes where you want the Acceptance Tests to be run as part of your develop and test workflow. E.g. Add 'AcceptanceUnitTest' to the test phase of your main apps target. This will then run acceptance tests at the same time as running your regular unit tests.
-	
-
  
 #### Known Xcode 8 / CI Integration Issue
 

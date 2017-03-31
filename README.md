@@ -143,9 +143,13 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 * Add the 'AcceptanceUnitTest' target to the test phase of any schemes where you want the Acceptance Tests to be run as part of your develop and test workflow. E.g. Add 'AcceptanceUnitTest' to the test phase of your main apps target. This will then run acceptance tests at the same time as running your regular unit tests.
  
-#### Known Xcode 8 / CI Integration Issue
+#### Some Known Issues
 
+##### Cloud CI e.g. Travis
 Due to an abnormally long delay in starting a simulator from a fresh image of Xcode 8 there is a known issue when integrating with CI systems such as Travis. (It can be assumed this likely affects other CI systems that use fresh VM images for each integration.)
+
+##### Issues with --no-integrate 
+Projects that use the option ```pod install --no-integrate``` are not currently supported. Check [this issue](https://github.com/paulstringer/OCSlimProject/issues/19) for details on how to resolve workaround.
 
 ```
 ** CI System Script **

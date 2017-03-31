@@ -1,12 +1,11 @@
 `<h1 align=center><img src="Images/Icon.png" width="128" height="128"/><br/>OCSlimProject</h1>
 
 
-###OCSlimProject is a CocoaPod for iOS and macOS that lets you create *fast*, *rock-solid*, *automated* *Acceptance Tests* with Xcode and Fitnesse. 
+### OCSlimProject is a CocoaPod for iOS and macOS that lets you create *fast*, *rock-solid*, *automated* *Acceptance Tests* with Xcode and Fitnesse. 
 
+### [Fitnesse](http://fitnesse.org) is a powerful and fully integrated standalone wiki and acceptance testing framework. It is designed for ATDD and BDD style software development.
 
-###[Fitnesse](http://fitnesse.org) is a powerful and fully integrated standalone wiki and acceptance testing framework. It is designed for ATDD and BDD style software development.
-
-####Why use Fitnesse?
+#### Why use Fitnesse?
 
 > "FitNesse is a tool for specifying and verifying application acceptance criteria (requirements). It acts as a bridge between the different stakeholders (disciplines) in a software delivery process. It's wiki server makes it easy to document the software.It's test execution capabilities allow you to verify the documentation against the software, ensuring the documentation remains up to date and the software is not facing regression." - [Fitnesse User Guide](http://fitnesse.org/FitNesse.UserGuide)
 
@@ -44,9 +43,9 @@ Fitnesse communicates with your App using a communications protocol called [Slim
 
 ----
 
-#Get Started
+# Get Started
 
-###OCSlimProject is available to your projects through [CocoaPods](https://cocoapods.org/?q=OCSlim). It is designed to be integrated through Xcode Templates. These templates encapsulate the work of integrating your App with Fitnesse. 
+### OCSlimProject is available to your projects through [CocoaPods](https://cocoapods.org/?q=OCSlim). It is designed to be integrated through Xcode Templates. These templates encapsulate the work of integrating your App with Fitnesse. 
 
 ## 1. Install the Templates
 
@@ -71,7 +70,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 	
 ## 2. Add an 'Acceptance Tests' Targets to your Project
 
-###Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.
+### Creating an 'Acceptance Tests' target is the next step. After following this step your ready to begin writing acceptance tests.
 
 ![iOS Acceptance Tests Template](Images/iOS-Acceptance-Test-Template.png)
 
@@ -100,7 +99,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 ## 3. Develop rock-solid, blazing fast Acceptance Tests!
 
-###You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps. 
+### You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps. 
 
 * For a very basic introduction follow this [step by step tutorial](http://stringerstheory.net/acceptance-testing-with-ios/) introducing writing an example App with Acceptance Tests.
 
@@ -112,7 +111,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 # Integration with XCTest
 
-###OCSlimProject integrates seamlessly into your development and CI worfklows by supporting XCTest. Run and see reports of your Fitnesse Acceptance Test results right within Xcode or with xcodebuild.
+### OCSlimProject integrates seamlessly into your development and CI worfklows by supporting XCTest. Run and see reports of your Fitnesse Acceptance Test results right within Xcode or with xcodebuild.
 
 ![iOS Acceptance Unit Tests Template](Images/iOS-Acceptance-Unit-Test-Template.png)
 

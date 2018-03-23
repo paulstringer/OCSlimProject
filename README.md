@@ -105,7 +105,12 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 * For a very basic introduction follow this [step by step tutorial](http://stringerstheory.net/acceptance-testing-with-ios/) introducing writing an example App with Acceptance Tests.
 
-* Check out the example projects [TicTacToe](https://github.com/paulstringer/TicTacToe) and [CosyHome](https://github.com/paulstringer/CosyHome) for real world examples of projects that make use of OCSlimProject.
+* Check out the example projects 
+	- [TicTacToe](https://github.com/paulstringer/TicTacToe)
+	- [CosyHome](https://github.com/paulstringer/CosyHome)
+	- [RemixStarBrowser](https://github.com/dcutting/RemixStarBrowser) via @dcutting
+
+* For an example of
 
 * For more in depth tutorials on developing software using BDD and Fitnesse checkout the following [Clean Coder video tutorials](https://cleancoders.com/videos/clean-code/bdd).
 

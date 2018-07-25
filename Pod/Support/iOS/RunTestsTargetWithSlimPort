@@ -7,7 +7,6 @@ APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}
 DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cut -d " " -f1 | rev )
 DEVICE_TYPE=iPhone
 
-
 get_app_executable_name() {
 	echo $(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APPLICATION_PATH/Info.plist")
 }
@@ -45,7 +44,7 @@ slim_system_wait() {
 	done
 }
 
-ios_sim_launch() {
+iphonesimulator_launch() {
 	
 	echo "[OCSP_RUN] == Start Slim Test Sytem (ios-sim version $(ios-sim --version), Node Version: $(node -v)) =="
 
@@ -62,7 +61,7 @@ run_test_system() {
 	echo "[OCSP_RUN] Info: Test System Executable Folder Path: $APPLICATION_PATH"
 	echo "[OCSP_RUN] Info: Simulator Device Identifier: $DEVICE_TYPE_IDENTIFIER"
 
-	ios_sim_launch "$APPLICATION_PATH" "$DEVICE_TYPE_IDENTIFIER" "$SLIM_PORT"
+	iphonesimulator_launch "$APPLICATION_PATH" "$DEVICE_TYPE_IDENTIFIER" "$SLIM_PORT"
 	return $?
 }
 
@@ -76,11 +75,10 @@ preflight_iossim() {
 }	
 
 check_test_system() {
-
 	check_node_exists
 	preflight_iossim
-	
 }
+
 main() {
 	echo "[OCSP_RUN] == RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT =="
 	check_test_system

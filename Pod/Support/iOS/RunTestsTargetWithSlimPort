@@ -50,7 +50,8 @@ iphonesimulator_launch() {
 
 	ios-sim launch "$1" --devicetypeid "$2" --args "$3" --verbose &
 	
-	slim_system_wait
+	#slim_system_wait
+	exit 1
 }
 
 run_test_system() {

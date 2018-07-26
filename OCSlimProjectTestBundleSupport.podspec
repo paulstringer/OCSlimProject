@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.name         = "OCSlimProjectTestBundleSupport"
-  s.version      = "1.3"
+  s.version      = "1.4"
   s.summary      = "Integrate Fitnesse with XCTest to provide running and reporting of fast Fitnesse based BDD/Acceptance Tests right from within Xcode."
   s.description  = <<-DESC
   OCSlimProjectTestBundleSupport enables OSX and iOS Unit Test targets to dynamically run test suites that run and display the results of Fitnesse based Acceptance Tests conveniently right within Xcode.

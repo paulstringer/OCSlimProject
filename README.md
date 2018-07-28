@@ -1,6 +1,5 @@
 `<h1 align=center><img src="Images/Icon.png" width="128" height="128"/><br/>OCSlimProject</h1>
 
-
 ### OCSlimProject is a CocoaPod for iOS and macOS that lets you create *fast*, *rock-solid*, *automated* *Acceptance Tests* with Xcode and Fitnesse. 
 
 ### [Fitnesse](http://fitnesse.org) is a powerful and fully integrated standalone wiki and acceptance testing framework. It is designed for ATDD and BDD style software development.
@@ -26,9 +25,6 @@ To run the example:
 - Xcode 7
 - CocoaPods
 - [Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) (required for Fitnesse)
-- [ios-sim](http://github.com/phonegap/ios-sim)
-- [Node.js](http://blog.teamtreehouse.com/install-node-js-npm-mac) (required for ios-sim)
-
 
 ## How it Works
 OCSlimProject works by creating a seperate target of your app. This *'Acceptance Tests'* target is one that contains your apps business logic code (the 'System Under Test') + simple *fixtures* . 
@@ -96,9 +92,6 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 * Now with Fitnesse running, check out the [example](http://localhost:8080/OCSlimProjectExamplePage) and run the tests
 
-	*Check for any errors in the 'Execution Log' and install Node.js and ios-sim as instructed*
-
-
 ## 3. Develop rock-solid, blazing fast Acceptance Tests!
 
 ### You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps. 
@@ -151,7 +144,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 #### Some Known Issues
 
 ##### Cloud CI e.g. Travis
-Due to an abnormally long delay in starting a simulator from a fresh image of Xcode 8 there is a known issue when integrating with CI systems such as Travis. (It can be assumed this likely affects other CI systems that use fresh VM images for each integration.)
+Due to an abnormally long delay in starting a simulator from a fresh image of Xcode there is a known issue when integrating with CI systems such as Travis. (It can be assumed this likely affects other CI systems that use fresh VM images for each integration.)
 
 ##### Issues with --no-integrate 
 Projects that use the option ```pod install --no-integrate``` are not currently supported. Check [this issue](https://github.com/paulstringer/OCSlimProject/issues/19) for details on how to resolve workaround.
@@ -190,11 +183,6 @@ Created by: Erik Meyer, Doug Bradbury, 8th Light.
 <https://github.com/ericmeyer/ObjectiveCSlim>
 
 <https://github.com/dougbradbury/cslim/tree/ocslim>
-
-### ios-sim
-Created by: Phonegap
-
-<https://github.com/phonegap/ios-sim>
 
 ### exportenv.sh
 Created by: Jon Reid

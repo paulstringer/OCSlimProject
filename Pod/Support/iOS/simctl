@@ -1,0 +1,96 @@
+#!/bin/sh
+
+APPLICATION_PATH=$1
+SLIMSERVER_PORT=$2
+
+## HELP ROUTINE
+
+while [ "$1" != "" ]; do
+
+    case $1 in
+		
+		-h | --help )			echo "Utility to 'xcrun simctl' for installing and launching iOS based acceptance test apps\n\nUsage: simctl <path-to-application-bundle> <slim-server-port-arg>"
+								exit 0
+                                ;;
+		esac
+		shift
+done
+
+
+## MAIN ROUTINE
+APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
+
+check_device_booted() {
+	xcrun simctl list devices | grep -i booted
+}
+
+boot_device() {
+	DEVICE_ID=$(get_device_id)
+	log "Found Device $(xcrun simctl list devices | grep $DEVICE_ID)"
+	log "Booting $DEVICE_ID"
+	xcrun simctl boot $DEVICE_ID
+}
+
+get_device_id() {
+    xcrun simctl list devices | grep -i iphone | grep -i -v unavailable | tail -n1 | cut -d "(" -f2 | cut -d ")" -f1
+}
+
+log() {
+	echo "[OCSP_SIMCTL] $1"
+}
+
+error() {
+	>&2 echo "[OCSP_SIMCTL] $1"
+}
+
+preflight() {
+	if ! check_device_booted; then 
+		log "No Device Booted"
+		boot_device
+	fi
+}
+
+install() {
+	log "Installing App Identifier:$APP_IDENTIFIER"
+	xcrun simctl install booted $APPLICATION_PATH
+}
+
+launch() {
+	log "Launching... (App Identifer:$APP_IDENTIFIER, Slim Port: $SLIMSERVER_PORT)"
+	local PID_FILE=.simctl.pid
+	rm $PID_FILE 2> /dev/null
+	echo $(xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT) | cut -d " " -f2 > $PID_FILE
+}
+
+main() {
+	log "== Launching Slim Host App $(xcrun simctl --version)  =="
+	preflight
+	if install; then
+		launch
+	else
+		error "** ABORTING ** Error encountered launching app. (Check usage with --help)"
+	fi
+	exit $?
+}
+
+main
+
+
+
+# Command line utility to control the Simulator
+
+# For subcommands that require a <device> argument, you may specify a device UDID
+# or the special "booted" string which will cause simctl to pick a booted device.
+# If multiple devices are booted when the "booted" device is selected, simctl
+# will choose one of them.
+
+# Subcommands:
+# 	create              Create a new device.
+# 	delete              Delete a device or all unavailable devices.
+# 	boot                Boot a device.
+# 	shutdown            Shutdown a device.
+# 	install             Install an app on a device.
+#  usage: simctl install <device> <path>
+# 	launch              Launch an application by identifier on a device.
+#  usage: simctl launch [-w | --wait-for-debugger] [--console|--console-pty] [--stdout=<path>] [--stderr=<path>] <device> <app identifier> [<argv 1> <argv 2> ... <argv n>]
+# 	list                List available devices, device types, runtimes, or device pairs.

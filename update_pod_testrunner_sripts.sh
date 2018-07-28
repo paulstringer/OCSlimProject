@@ -1,36 +1,28 @@
 #!/bin/sh
 
-####################################
-# Command Line Argument Processing #
-####################################
-ACTION=UPDATE-POD-INSTALL
+################################################################
+# DEV TOOL FOR UPDATING POD SUPPORT SCRIPTS DURING DEVELOPMENT #
+################################################################
+
+POD_SUPPORT_PATH=Pod/Support
+POD_LOCAL_INSTALL_SUPPORT_PATH=Example/Pods/OCSlimProject/Pod/Support
 
 while [ "$1" != "" ]; do
 
     case $1 in
 		
-		-i | --install )		shift
-								ACTION=UPDATE-POD-INSTALL
+		-i | --install )		copy $POD_SUPPORT_PATH POD_LOCAL_INSTALL_SUPPORT_PATH
                                 ;;
 								
-		-r | --update-reverse )	shift
-								ACTION=COPY-FROM-LOCAL-POD-INSTALL
+		-r | --update-reverse )	copy POD_LOCAL_INSTALL_SUPPORT_PATH $POD_SUPPORT_PATH 
 								;;
 		
 		esac
 		shift
 done
 
-case "$ACTION" in
 
-	UPDATE-POD-INSTALL) 
-		cp Pod/Support/iOS/* Example/Pods/OCSlimProject/Pod/Support/iOS
-		cp Pod/Support/OSX/* Example/Pods/OCSlimProject/Pod/Support/OSX
-		;;
-		
-	COPY-FROM-LOCAL-POD-INSTALL)
-		cp Example/Pods/OCSlimProject/Pod/Support/iOS/* Pod/Support/iOS
-		cp Example/Pods/OCSlimProject/Pod/Support/OSX/* Pod/Support/OSX
-		;;
-		
-esac
+copy() {
+	cp $1/iOS/* $2/iOS
+	cp $1/OSX/* $2/OSX
+}

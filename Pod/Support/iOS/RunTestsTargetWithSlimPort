@@ -53,8 +53,8 @@ run_test_system() {
  	if [ $? == 0 ]; then 
 	 	slim_system_wait; 
 	else 
-		log "**ABORT** (See Error Log)"
-	 	error "**ABORT** Exit code error when executing Slim Test Sytem (ocsp-simctl)"
+		log "**ABORTING** For details click the red/green 'Execution Log' button in Fitnesse to view stdout and stderr logs"
+	 	error "**ABORTING** Exit Code error detected when executing Slim Test Sytem with ($MYPATH/simctl)"
 	 	return 1; 
 	fi
 }

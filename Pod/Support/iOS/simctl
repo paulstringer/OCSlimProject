@@ -52,7 +52,6 @@ main() {
 main
 
 
-
 # Command line utility to control the Simulator
 
 # For subcommands that require a <device> argument, you may specify a device UDID

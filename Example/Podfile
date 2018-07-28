@@ -1,21 +1,23 @@
  'https://github.com/CocoaPods/Specs.git'
 
+version      = "1.4"
+
 target 'OCSlimProject_AcceptanceTests' do
   platform :ios, 9.0
-  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "npm-begone"
+  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end
 
 target 'OCSlimProject_AcceptanceTestsMac' do
   platform :osx, 10.8
-  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "npm-begone"
+  pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end
 
 target 'OCSlimProject_AcceptanceUnitTestBundle' do
     platform :ios, 9.0
-    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "npm-begone"
+    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
  end
 
 target 'OCSlimProject_AcceptanceUnitTestBundleMac' do
     platform :osx, 10.8
-    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :branch => "npm-begone"
+    pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end

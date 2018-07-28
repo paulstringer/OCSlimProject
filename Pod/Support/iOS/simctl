@@ -13,7 +13,6 @@ boot_device() {
 	log "Found Device $(xcrun simctl list devices | grep $DEVICE_ID)"
 	log "Booting $DEVICE_ID"
 	xcrun simctl boot $DEVICE_ID
-
 }
 
 get_device_id() {
@@ -43,7 +42,7 @@ launch() {
 }
 
 main() {
-	log "== Launching App In iOS Simulator =="
+	log "== Launching Slim Host App $(xcrun simctl --version)  =="
 	preflight
 	install
 	launch

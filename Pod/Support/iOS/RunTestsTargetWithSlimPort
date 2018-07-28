@@ -7,7 +7,6 @@ DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cu
 
 get_app_executable_name() {
 	echo $(defaults read $APPLICATION_PATH/Info CFBundleExecutable)
-	#echo $(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APPLICATION_PATH/Info.plist")
 }
 
 get_app_devicetypeid() {
@@ -22,7 +21,7 @@ get_app_devicetypeid() {
 	fi
 	
 	if [ -z "$DEVICETYPE_ID" ]; then
-		echo "Device Type Identifier For $DEVICE_TYPE Missing"
+		log "Device Type Identifier For $DEVICE_TYPE Missing"
 		exit 1
 	fi
 
@@ -34,13 +33,13 @@ slim_system_wait() {
 	local EXECUTABLE_PID=
 	local EXECUTABLE_NAME=$(get_app_executable_name)
 	
-	echo "[OCSP_RUN] Waiting for Slim Test System To Launch"
+	log "Waiting for Slim Test System To Launch"
 	while [ -z "$EXECUTABLE_PID" ] 
 	do
 		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
 	done
 	
-	echo "[OCSP_RUN] Slim System Detected ($EXECUTABLE_PID)"
+	log "Slim System Detected ($EXECUTABLE_PID)"
 	while [[ "$EXECUTABLE_PID" ]]
 	do
 		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
@@ -49,17 +48,31 @@ slim_system_wait() {
 }
 
 run_test_system() {
-	echo "[OCSP_RUN] == Start Slim Test Sytem (Simulator System $(xcrun simctl --version) =="
-	$MYPATH/ocsp-simctl $APPLICATION_PATH $SLIM_PORT
- 	if [ $? == 0 ]; then slim_system_wait; else return 1; fi
+	log "Start Slim Test Sytem"
+	$MYPATH/simctl $APPLICATION_PATH $SLIM_PORT
+ 	if [ $? == 0 ]; then 
+	 	slim_system_wait; 
+	else 
+		log "**ABORT** (See Error Log)"
+	 	error "**ABORT** Exit code error when executing Slim Test Sytem (ocsp-simctl)"
+	 	return 1; 
+	fi
 }
 
 main() {
-	echo "[OCSP_RUN] == RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT $(date)=="
-	echo "[OCSP_RUN] Info: Test System Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
-	echo "[OCSP_RUN] Info: Test System Path: $APPLICATION_PATH"
-	run_test_system
+	log "== RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT $(date)=="
+	log "Info: Test System Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
+	log "Info: Test System Path: $APPLICATION_PATH"
+	run_test_system 
 	exit $?
+}
+
+log() {
+	echo "[OCSP_RUN] $1"
+}
+
+error() {
+	>&2 echo "[OCSP_RUN] $1"
 }
 
 main

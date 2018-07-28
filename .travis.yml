@@ -7,7 +7,7 @@ before_install:
 
 script:
 # OCSlimProject Example Acceptance Tests (iOS, macOS)
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone X' -destination-timeout 300 test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_AcceptanceUnitTestBundle_SimulatorWarmUpExcercise -destination 'platform=iOS Simulator,name=iPhone X' -destination-timeout 300 test
 - set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination 'platform=iOS Simulator,name=iPhone X' test
 - set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
 # OCSlimProjectTestBundleSupport Pod Unit Tests (iOS, macOS)

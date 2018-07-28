@@ -2,6 +2,22 @@
 
 APPLICATION_PATH=$1
 SLIMSERVER_PORT=$2
+
+## HELP ROUTINE
+
+while [ "$1" != "" ]; do
+
+    case $1 in
+		
+		-h | --help )			echo "Utility to 'xcrun simctl' for installing and launching iOS based acceptance test apps\n\nUsage: simctl <path-to-application-bundle> <slim-server-port-arg>"
+								exit 0
+                                ;;
+		esac
+		shift
+done
+
+
+## MAIN ROUTINE
 APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
 
 check_device_booted() {
@@ -23,6 +39,10 @@ log() {
 	echo "[OCSP_SIMCTL] $1"
 }
 
+error() {
+	>&2 echo "[OCSP_SIMCTL] $1"
+}
+
 preflight() {
 	if ! check_device_booted; then 
 		log "No Device Booted"
@@ -31,10 +51,9 @@ preflight() {
 }
 
 install() {
-	log "Installing $APP_IDENTIFIER"
+	log "Installing App Identifier:$APP_IDENTIFIER"
 	xcrun simctl install booted $APPLICATION_PATH
 }
-
 
 launch() {
 	log "Launching... (Slim Port: $SLIMSERVER_PORT)"
@@ -44,12 +63,16 @@ launch() {
 main() {
 	log "== Launching Slim Host App $(xcrun simctl --version)  =="
 	preflight
-	install
-	launch
+	if install; then
+		launch
+	else
+		error "** ABORTING ** Error encountered launching app. (Check usage with --help)"
+	fi
 	exit $?
 }
 
 main
+
 
 
 # Command line utility to control the Simulator

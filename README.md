@@ -96,7 +96,7 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 
 ### You're now ready and setup to begin developing rock-solid, blazing fast, automated Acceptance tests for iOS and macOS apps. 
 
-* For a very basic introduction follow this [step by step tutorial](http://stringerstheory.net/acceptance-testing-with-ios/) introducing writing an example App with Acceptance Tests.
+* For a very basic introduction follow this [step by step tutorial](https://stringers-theory.ghost.io/acceptance-testing-with-ios/) introducing writing an example App with Acceptance Tests.
 
 * Check out the example projects 
 	- [TicTacToe](https://github.com/paulstringer/TicTacToe)
@@ -140,7 +140,11 @@ This adds the Xcode project templates for creating Acceptance Test targets for i
 ### Finally 
 
 * Add the 'AcceptanceUnitTest' target to the test phase of any schemes where you want the Acceptance Tests to be run as part of your develop and test workflow. E.g. Add 'AcceptanceUnitTest' to the test phase of your main apps target. This will then run acceptance tests at the same time as running your regular unit tests.
- 
+
+### How Does It Work?
+
+An included sequence diagram (created with [Sequence Diagram for Mac](https://itunes.apple.com/us/app/sequence-diagram/id1195426709>)) provides a detailed description of what's happening under the hood.
+
 #### Some Known Issues
 
 ##### Cloud CI e.g. Travis
@@ -193,7 +197,6 @@ Created by: Jon Reid
 Created by: Paul Stringer
 
 <https://github.com/paulstringer/OCSlimProject>
-
 
 ### License
 OCSlimProject is available under the MIT license. See the LICENSE file for more info.

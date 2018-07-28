@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/paulstringer/OCSlimProject.svg?branch=master)](https://travis-ci.org/paulstringer/OCSlimProject)
 `<h1 align=center><img src="Images/Icon.png" width="128" height="128"/><br/>OCSlimProject</h1>
 
 

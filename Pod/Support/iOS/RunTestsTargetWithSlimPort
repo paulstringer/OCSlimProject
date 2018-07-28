@@ -5,10 +5,6 @@ SLIM_PORT=$2
 APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}
 DEPLOYMENT_TARGET_VALUE=$( echo "$DEPLOYMENT_TARGET_SUGGESTED_VALUES" | rev | cut -d " " -f1 | rev )
 
-get_app_executable_name() {
-	echo $(defaults read $APPLICATION_PATH/Info CFBundleExecutable)
-}
-
 get_app_devicetypeid() {
 
 	local DEVICETYPE_ID=
@@ -30,21 +26,16 @@ get_app_devicetypeid() {
 
 slim_system_wait() {
 	
-	local EXECUTABLE_PID=
-	local EXECUTABLE_NAME=$(get_app_executable_name)
+	local EXECUTABLE_PID=$(<.simctl.pid)
 	
-	log "Waiting for Slim Test System To Launch"
-	while [ -z "$EXECUTABLE_PID" ] 
+	log "Waiting for Slim System... ($EXECUTABLE_PID) $(date)"
+	
+	while ps -p $EXECUTABLE_PID
 	do
-		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
+		sleep 1
 	done
 	
-	log "Slim System Detected ($EXECUTABLE_PID)"
-	while [[ "$EXECUTABLE_PID" ]]
-	do
-		EXECUTABLE_PID=$(pgrep "$EXECUTABLE_NAME")
-		sleep 0.5
-	done
+	log "Slim System Exited $(date)"
 }
 
 run_test_system() {
@@ -55,7 +46,6 @@ run_test_system() {
 	else 
 		log "**ABORTING** For details click the red/green 'Execution Log' button in Fitnesse to view stdout and stderr logs"
 	 	error "**ABORTING** Exit Code error detected when executing Slim Test Sytem with ($MYPATH/simctl)"
-	 	return 1; 
 	fi
 }
 
@@ -73,6 +63,7 @@ log() {
 
 error() {
 	>&2 echo "[OCSP_RUN] $1"
+	exit 1
 }
 
 main

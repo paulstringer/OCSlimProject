@@ -56,8 +56,10 @@ install() {
 }
 
 launch() {
-	log "Launching... (Slim Port: $SLIMSERVER_PORT)"
-	xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT
+	log "Launching... (App Identifer:$APP_IDENTIFIER, Slim Port: $SLIMSERVER_PORT)"
+	local PID_FILE=.simctl.pid
+	rm $PID_FILE 2> /dev/null
+	echo $(xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT) | cut -d " " -f2 > $PID_FILE
 }
 
 main() {

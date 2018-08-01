@@ -1,5 +1,5 @@
 import Foundation
-
+import os.log
 @objc(FixtureExample)
 
 class FixtureExample : NSObject, SlimDecisionTable {
@@ -16,7 +16,7 @@ class FixtureExample : NSObject, SlimDecisionTable {
         // 2. Run your SUT
         // 3. Take values from the SUT and return via outputs
     }
-    
+
     //MARK: Outputs
     
     var output: NSString? {
@@ -30,6 +30,26 @@ class FixtureExample : NSObject, SlimDecisionTable {
                 return nil
             }
         }
+    }
+
+
+    //MARK: Calling Methods
+
+    func log() -> Bool {
+
+        // Only prints to a running Xcode console
+        print("*WARNING* Swift's print function is not a logging function and will only print to Xcode's console.")
+
+        // Use NSLog to print to the system log as a default message type
+        NSLog("NSLog() statements")
+
+        // Use os_log (recommended) to print to the system log with the related type
+        os_log("os_log() .default log statement", type: .default)
+        os_log("os_log() .info log statement", type: .info)
+        os_log("os_log() .error log statement", type: .error)
+        os_log("Log files can be found in the current directory in ./Log/<DATETIME_STAMP>.log", type: .info)
+
+        return true
     }
     
 }

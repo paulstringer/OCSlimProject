@@ -2,6 +2,9 @@
 
 APPLICATION_PATH=$1
 SLIMSERVER_PORT=$2
+PID_FILE=.simctl.pid
+ACTION=MAIN
+LOG_START_DATE=
 
 ## HELP ROUTINE
 
@@ -12,13 +15,15 @@ while [ "$1" != "" ]; do
 		-h | --help )			echo "Utility to 'xcrun simctl' for installing and launching iOS based acceptance test apps\n\nUsage: simctl <path-to-application-bundle> <slim-server-port-arg>"
 								exit 0
                                 ;;
+
+		log )					shift
+								ACTION=LOG
+								LOG_START_DATE="$1"
+								;;
 		esac
 		shift
 done
 
-
-## MAIN ROUTINE
-APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
 
 check_device_booted() {
 	xcrun simctl list devices | grep -i booted
@@ -36,11 +41,11 @@ get_device_id() {
 }
 
 log() {
-	echo "[OCSP_SIMCTL] $1"
+	echo "[OCSP_SIMCTL] INFO: $1"
 }
 
 error() {
-	>&2 echo "[OCSP_SIMCTL] $1"
+	>&2 echo "[OCSP_SIMCTL] ERROR: $1"
 }
 
 preflight() {
@@ -57,23 +62,63 @@ install() {
 
 launch() {
 	log "Launching... (App Identifer:$APP_IDENTIFIER, Slim Port: $SLIMSERVER_PORT)"
-	local PID_FILE=.simctl.pid
 	rm $PID_FILE 2> /dev/null
 	echo $(xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT) | cut -d " " -f2 > $PID_FILE
 }
 
+pid() {
+	cat $PID_FILE
+}
+
+write_logs() {
+
+	# DO NOT ECHO FROM HERE. OUTPUT IS RESERVERD FOR RETURNING THE FILENAME
+	
+	PID_ID=$(cat $PID_FILE)
+	local LOGDIR="Logs"
+	local LOGPATH="$(pwd)/$LOGDIR"
+	local LOGFILENAME="$(date +%Y%m%d-%H%M%S).log"
+	local LOGFILE="$LOGPATH/$LOGFILENAME"
+
+	mkdir -p $LOGPATH
+	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" > $LOGFILE
+
+	# Check number of lines in logfile before returning a log file
+	if [ $(grep -c '' $LOGFILE) -eq 1 ]; then
+		rm $LOGFILE
+	else
+		echo $LOGFILE
+	fi
+	
+}
+
 main() {
+
 	log "== Launching Slim Host App $(xcrun simctl --version)  =="
+	APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
+
 	preflight
+	
 	if install; then
 		launch
 	else
-		error "** ABORTING ** Error encountered launching app. (Check usage with --help)"
+		error '** ABORTING ** Error encountered launching app. (Check usage with --help)'
 	fi
+
 	exit $?
 }
 
-main
+case $ACTION in
+	'LOG')	
+			write_logs
+			;;
+	*)
+			
+			main
+			;;
+
+esac
+
 
 
 

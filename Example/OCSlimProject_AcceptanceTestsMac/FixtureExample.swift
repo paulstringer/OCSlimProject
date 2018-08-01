@@ -31,5 +31,12 @@ class FixtureExample : NSObject, SlimDecisionTable {
             }
         }
     }
+
+    //MARK: Calling Methods
+
+    func log() -> Bool {
+        print("[OCSP] \(self) Log Statements Just Like Normal (and see them in fitnesses execution log)")
+        return true
+    }
     
 }

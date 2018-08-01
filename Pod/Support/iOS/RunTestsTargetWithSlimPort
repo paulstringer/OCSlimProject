@@ -39,30 +39,57 @@ slim_system_wait() {
 }
 
 run_test_system() {
+
+	local START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+	start_slim
+
+ 	if [ $? == 0 ]; then 
+	 	slim_system_wait
+		print_test_system_log $START_TIME
+	else 
+		log_simctl_error
+	fi
+}
+
+start_slim() {
 	log "Start Slim Test Sytem"
 	$MYPATH/simctl $APPLICATION_PATH $SLIM_PORT
- 	if [ $? == 0 ]; then 
-	 	slim_system_wait; 
-	else 
-		log "**ABORTING** For details click the red/green 'Execution Log' button in Fitnesse to view stdout and stderr logs"
-	 	error "**ABORTING** Exit Code error detected when executing Slim Test Sytem with ($MYPATH/simctl)"
+}
+
+print_test_system_log() {
+	local LOGFILE=$($MYPATH/simctl log $1)
+	if [ -z $LOGFILE ]; then
+		log "*WARNING* No test system log messages were found (use os_log() or NSLog())"
+	else
+		print_logfile_contents $LOGFILE
 	fi
+}
+
+log_simctl_error() {
+	log "**ABORTING** Slim Test System reported an error. Check the executiong log for more details"
+	error "**ABORTING** Exit Code error detected when executing Slim Test Sytem with ($MYPATH/simctl)"
+}
+
+print_logfile_contents() {
+	log "********* $1 *********"
+	cat $1
+	log "********* End of Log ***********"
 }
 
 main() {
 	log "== RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT $(date)=="
-	log "Info: Test System Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
-	log "Info: Test System Path: $APPLICATION_PATH"
+	log "Test System Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
+	log "Test System Path: $APPLICATION_PATH"
 	run_test_system 
 	exit $?
 }
 
 log() {
-	echo "[OCSP_RUN] $1"
+	echo "[OCSP_RUN]: INFO $1"
 }
 
 error() {
-	>&2 echo "[OCSP_RUN] $1"
+	>&2 echo "[OCSP_RUN]: ERROR $1"
 	exit 1
 }
 

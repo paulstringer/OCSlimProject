@@ -2,11 +2,14 @@
 source $1
 ENVIRONMENT_SRC=$1
 SLIM_PORT=$2
-APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
+EXECUTABLE_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
+APP_PATH=${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app
 
 run_test_system() {
-	log "Test System Executable Folder Path: $APPLICATION_PATH"
-	$APPLICATION_PATH $SLIM_PORT
+	log "Test System Executable = $EXECUTABLE_PATH"
+	log "*** Launching ${PRODUCT_NAME}.app ***"
+	$EXECUTABLE_PATH $SLIM_PORT
+	log "*** App Exited ***"
 	return $?
 }
 

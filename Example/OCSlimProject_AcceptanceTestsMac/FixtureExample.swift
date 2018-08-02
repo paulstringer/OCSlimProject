@@ -44,7 +44,11 @@ class FixtureExample : NSObject, SlimDecisionTable {
         // NSLog("NSLog() statements (directs to standard error output)")
 
         // os_log is unsupported for logging and will not be reprted
-        os_log("*WARNING* os_log() statements not supported on OS X")
+        if #available(OSX 10.12, *) {
+            os_log("*WARNING* os_log() statements not supported on OS X")
+        } else {
+            // Fallback on earlier versions
+        }
 
         return true
     }

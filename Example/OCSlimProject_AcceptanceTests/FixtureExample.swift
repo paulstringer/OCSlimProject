@@ -38,7 +38,7 @@ class FixtureExample : NSObject, SlimDecisionTable {
     func log() -> Bool {
 
         // Only prints to a running Xcode console
-        print("*WARNING* Swift's print function is not a logging function and will only print to Xcode's console.")
+        print("*WARNING* Swift's print function on iOS only print to the Xcode console not to logs.")
 
         // Use NSLog to print to the system log as a default message type
         NSLog("NSLog() statements")

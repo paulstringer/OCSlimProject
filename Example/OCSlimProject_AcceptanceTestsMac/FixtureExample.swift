@@ -1,4 +1,5 @@
 import Foundation
+import os.log
 
 @objc(FixtureExample)
 
@@ -35,7 +36,16 @@ class FixtureExample : NSObject, SlimDecisionTable {
     //MARK: Calling Methods
 
     func log() -> Bool {
-        print("[OCSP] \(self) Log Statements Just Like Normal (and see them in fitnesses execution log)")
+
+        // Use Swift print to log statements on OS X (recommended)
+        print("Swift print() log statement (OSX only)")
+
+        // or NSLog which will direct to stderr on OS X
+        NSLog("NSLog() statements (directs to standard error output)")
+
+        // os_log is unsupported for logging
+        os_log("*WARNING* os_log() statements not supported on OS X")
+
         return true
     }
     

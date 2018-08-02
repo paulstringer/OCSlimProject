@@ -5,16 +5,24 @@ SLIM_PORT=$2
 APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
 
 run_test_system() {
-	echo "Test System Executable Folder Path: $APPLICATION_PATH"
+	log "Test System Executable Folder Path: $APPLICATION_PATH"
 	$APPLICATION_PATH $SLIM_PORT
 	return $?
 }
 
 main() {
-	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~OSX:$SLIM_PORT =="
-	echo "Test System Executable Environment: $ENVIRONMENT_SRC"
+	log "== RunSlimTestTargetWithSlimPort~OSX:$SLIM_PORT =="
 	run_test_system
 	exit $?
+}
+
+log() {
+	echo "[OCSP_RUN]: INFO $1"
+}
+
+error() {
+	>&2 echo "[OCSP_RUN]: ERROR $1"
+	exit 1
 }
 
 main

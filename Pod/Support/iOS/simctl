@@ -81,7 +81,7 @@ write_logs() {
 	local LOGFILE="$LOGPATH/$LOGFILENAME"
 
 	mkdir -p $LOGPATH
-	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" > $LOGFILE
+	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" > $LOGFILE 2>&1
 
 	# Check number of lines in logfile before returning a log file
 	if [ $(grep -c '' $LOGFILE) -eq 1 ]; then

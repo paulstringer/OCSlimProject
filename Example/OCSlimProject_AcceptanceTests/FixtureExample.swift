@@ -44,11 +44,12 @@ class FixtureExample : NSObject, SlimDecisionTable {
         NSLog("NSLog() statements")
 
         // Use os_log (recommended) to print to the system log with the related type
-        os_log("os_log() .default log statement", type: .default)
-        os_log("os_log() .info log statement", type: .info)
-        os_log("os_log() .error log statement", type: .error)
-        os_log("Log files can be found in the current directory in ./Log/<DATETIME_STAMP>.log", type: .info)
-
+        if #available(iOS 10.0, *) {
+            os_log("os_log() .default log statement", type: .default)
+            os_log("os_log() .info log statement", type: .info)
+            os_log("os_log() .error log statement", type: .error)
+            os_log("Log files can be found in the current directory in ./Log/<DATETIME_STAMP>.log", type: .info)
+        }
         return true
     }
     

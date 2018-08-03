@@ -17,12 +17,13 @@ Click 'Test' to run this page and see this in action. After that check out ''!-F
 
 !3 Logging Platform Differences
 
+* Find log files for each test run in the current directory ./Logs/<DATE>.log. 
+!note Empty logs will not generate a log file.
+
 !4 iOS Logging
- * Find log files for each test run in the current directory ./Logs/<DATE>.log
  * Calls to os_log() or NSLog will be captured by the log file. 
  * Swift's print() function '''does not by design write''' to the iOS simulator system log.
  
 !4 OS X Logging
- * Use Swift's print() function to log messages on OS X
- * NSLog is directed to the execution logs standard error
+ * Use Swift's print() or NSLog() functions to log messages on OS X
 

@@ -5,19 +5,59 @@ SLIM_PORT=$2
 EXECUTABLE_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
 APP_PATH=${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app
 
+# Main Subroutines
+
+main() {
+	log "== RunSlimTestTargetWithSlimPort~macOSX:$SLIM_PORT =="
+	run_test_system
+	exit $?
+}
+
 run_test_system() {
 	log "Test System Executable = $EXECUTABLE_PATH"
-	log "*** Launching ${PRODUCT_NAME}.app ***"
-	$EXECUTABLE_PATH $SLIM_PORT
+	local LOGFILE=$(get_log_file_path)
+	launch_osx_app $LOGFILE
+	write_logs_to_console $LOGFILE
 	log "*** App Exited ***"
 	return $?
 }
 
-main() {
-	log "== RunSlimTestTargetWithSlimPort~OSX:$SLIM_PORT =="
-	run_test_system
-	exit $?
+launch_osx_app() {
+	log "*** Launching ${PRODUCT_NAME}.app ***"
+	local LOGFILE=$1
+	$EXECUTABLE_PATH $SLIM_PORT 2>&1 1>$LOGFILE
 }
+
+## Logging Subroutines
+
+write_logs_to_console() {
+	local LOGFILE=$1
+	tidy_zero_line_app_log_file $LOGFILE
+	if [ $? -eq 1 ]; then
+		cat $LOGFILE 
+	fi
+}
+
+get_log_file_path() {
+	local LOGDIR="Logs"
+	local LOGPATH="$(pwd)/$LOGDIR"
+	local LOGFILENAME="$(date +%Y%m%d-%H%M%S).log"
+	local LOGFILE="$LOGPATH/$LOGFILENAME"
+	mkdir -p $LOGPATH
+	echo $LOGFILE
+}
+
+tidy_zero_line_app_log_file(){
+	# Check number of lines in logfile before returning a log file
+	if [ ! $(grep -c '' $1) ]; then
+		rm $1
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Logging Subroutined
 
 log() {
 	echo "[OCSP_RUN]: INFO $1"
@@ -27,5 +67,7 @@ error() {
 	>&2 echo "[OCSP_RUN]: ERROR $1"
 	exit 1
 }
+
+# Main Routine
 
 main

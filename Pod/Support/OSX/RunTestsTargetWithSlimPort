@@ -25,7 +25,7 @@ run_test_system() {
 launch_osx_app() {
 	log "*** Launching ${PRODUCT_NAME}.app ***"
 	local LOGFILE=$1
-	$EXECUTABLE_PATH $SLIM_PORT 2>&1 1>$LOGFILE
+	$EXECUTABLE_PATH $SLIM_PORT > $LOGFILE 2>&1
 }
 
 ## Logging Subroutines

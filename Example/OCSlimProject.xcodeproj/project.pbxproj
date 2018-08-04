@@ -1425,7 +1425,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTestsMac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1441,7 +1441,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				INFOPLIST_FILE = OCSlimProject_AcceptanceTestsMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.stringerstheory.OCSlimProject-AcceptanceTestsMac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

@@ -37,15 +37,13 @@ class FixtureExample : NSObject, SlimDecisionTable {
 
     func log() -> Bool {
 
-        // Use Swift print to log statements on OS X (recommended)
-        print("Swift print() log statement (OSX only)")
-
-        // *WARNING* NSLog will direct to stderr on OS X which results in a build being marked as a failure. Use print() instead
-        // NSLog("NSLog() statements (directs to standard error output)")
+        // Logging Examples
+        print("Swift print() displays simple log statements (OSX only)")
+        NSLog("NSLog() statements include more detailed logging details such as date/time (recommended)")
 
         // os_log is unsupported for logging and will not be reprted
         if #available(OSX 10.12, *) {
-            os_log("*WARNING* os_log() statements not supported on OS X")
+            os_log("*WARNING* os_log() statements not captured on OS X")
         } else {
             // Fallback on earlier versions
         }

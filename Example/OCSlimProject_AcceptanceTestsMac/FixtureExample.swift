@@ -38,14 +38,14 @@ class FixtureExample : NSObject, SlimDecisionTable {
     func log() -> Bool {
 
         // Logging Examples
-        print("Swift print() displays simple log statements (OSX only)")
-        NSLog("NSLog() statements include more detailed logging details such as date/time (recommended)")
+        
+        print("Swift print() (OSX only)")
+        NSLog("NSLog() statement (recommended)")
 
-        // os_log is unsupported for logging and will not be reprted
+        // os_log is unsupported
+
         if #available(OSX 10.12, *) {
-            os_log("*WARNING* os_log() statements not captured on OS X")
-        } else {
-            // Fallback on earlier versions
+            os_log("*WARNING* os_log() statements such as this one are not captured on OS X")
         }
 
         return true

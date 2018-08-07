@@ -27,15 +27,17 @@ get_app_devicetypeid() {
 slim_system_wait() {
 	
 	local EXECUTABLE_PID=$(<.simctl.pid)
-	
-	log "Waiting for Slim System... ($EXECUTABLE_PID) $(date)"
-	
-	while ps -p $EXECUTABLE_PID
+	local INTERVAL=1
+	local COUNT=0
+
+	log_hrule
+	log "Waiting for System Under Test... (ProcessID: $EXECUTABLE_PID)";
+	while ps -p $EXECUTABLE_PID > /dev/null
 	do
-		sleep 1
+		sleep $INTERVAL;
+		((COUNT++))
 	done
-	
-	log "Slim System Exited $(date)"
+	log "System Under Test exited (running for $COUNT second(s))"
 }
 
 run_test_system() {
@@ -52,17 +54,16 @@ run_test_system() {
 }
 
 start_slim() {
-	log "Start Slim Test Sytem"
+	log "Starting System Under Test"
+	log_hrule
 	$MYPATH/simctl $APPLICATION_PATH $SLIM_PORT
 }
 
 print_test_system_log() {
-	local LOGFILE=$($MYPATH/simctl log $1)
-	if [ -z $LOGFILE ]; then
-		log "*WARNING* No test system log messages were found (use os_log() or NSLog())"
-	else
-		print_logfile_contents $LOGFILE
-	fi
+	local STARTTIME=$1
+	local LOGFILE=$($MYPATH/simctl log $STARTTIME)
+	log "Reading log file: $LOGFILE"
+	cat $LOGFILE
 }
 
 log_simctl_error() {
@@ -70,26 +71,25 @@ log_simctl_error() {
 	error "**ABORTING** Exit Code error detected when executing Slim Test Sytem with ($MYPATH/simctl)"
 }
 
-print_logfile_contents() {
-	log "********* $1 *********"
-	cat $1
-	log "********* End of Log ***********"
-}
-
 main() {
-	log "== RunSlimTestTargetWithSlimPort~iOS:$SLIM_PORT $(date)=="
-	log "Test System Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
-	log "Test System Path: $APPLICATION_PATH"
+	log "RunSlimTestTargetWithSlimPort~iOS"
+	log "Fitnesse Slim Port: $SLIM_PORT"
+	log "Xcode Suggested SDK: $DEPLOYMENT_TARGET_VALUE"
+	log "Xcode Build Product: $APPLICATION_PATH"
 	run_test_system 
 	exit $?
 }
 
 log() {
-	echo "[OCSP_RUN]: INFO $1"
+	echo "[OCSP_RUN] INFO: $1"
+}
+
+log_hrule() {
+	log "------------------------------------------------"
 }
 
 error() {
-	>&2 echo "[OCSP_RUN]: ERROR $1"
+	>&2 echo "[OCSP_RUN] ERROR: $1"
 	exit 1
 }
 

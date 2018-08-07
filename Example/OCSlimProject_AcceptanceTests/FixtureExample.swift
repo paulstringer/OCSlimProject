@@ -38,18 +38,21 @@ class FixtureExample : NSObject, SlimDecisionTable {
     func log() -> Bool {
 
         // Only prints to a running Xcode console
+
         print("*WARNING* Swift's print function on iOS only print to the Xcode console not to logs.")
 
         // Use NSLog to print to the system log as a default message type
-        NSLog("NSLog() statements")
 
-        // Use os_log (recommended) to print to the system log with the related type
+        NSLog("NSLog() statement")
+
+        // Use os_log to print to the system log with related type  (recommended)
+
         if #available(iOS 10.0, *) {
             os_log("os_log() .default log statement", type: .default)
             os_log("os_log() .info log statement", type: .info)
             os_log("os_log() .error log statement", type: .error)
-            os_log("Log files can be found in the current directory in ./Log/<DATETIME_STAMP>.log", type: .info)
         }
+        
         return true
     }
     

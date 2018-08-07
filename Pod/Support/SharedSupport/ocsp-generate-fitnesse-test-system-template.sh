@@ -9,11 +9,11 @@ $TEST_RUNNER_SCRIPT $ENV_FILE_PATH $SLIM_PORT 2> >(tee $ERROR_LOG_FILE >&2)
 ERROR_LOG_NO_WHITESPACE=$(more "$ERROR_LOG_FILE" | sed 's/ *$//')
 
 log() {
-	echo "[OCSP_RUN]: INFO $1"
+	echo "[OCSP_RUN] INFO: $1"
 }
 
 error() {
-	>&2 echo "[OCSP_RUN]: ERROR $1"
+	>&2 echo "[OCSP_RUN] ERROR: $1"
 	exit 1
 }
 

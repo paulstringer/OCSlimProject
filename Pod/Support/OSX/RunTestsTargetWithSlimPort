@@ -8,34 +8,35 @@ APP_PATH=${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app
 # Main Subroutines
 
 main() {
-	log "== RunSlimTestTargetWithSlimPort~macOSX:$SLIM_PORT =="
+	log "RunSlimTestTargetWithSlimPort~macOSX"
+	log "Fitnesse Slim Port: $SLIM_PORT"
+	log "Xcode Build Product $APP_PATH"
 	run_test_system
 	exit $?
 }
 
 run_test_system() {
-	log "Test System Executable = $EXECUTABLE_PATH"
+	
 	local LOGFILE=$(get_log_file_path)
 	launch_osx_app $LOGFILE
 	write_logs_to_console $LOGFILE
-	log "*** App Exited ***"
 	return $?
 }
 
 launch_osx_app() {
-	log "*** Launching ${PRODUCT_NAME}.app ***"
+	log "Launching '${PRODUCT_NAME}.app'"
 	local LOGFILE=$1
-	$EXECUTABLE_PATH $SLIM_PORT > $LOGFILE 2>&1
+	log "macOS System log started" > $LOGFILE 
+	$EXECUTABLE_PATH $SLIM_PORT >> $LOGFILE 2>&1
+	log "macOS System log ended" >> $LOGFILE
 }
 
 ## Logging Subroutines
 
 write_logs_to_console() {
 	local LOGFILE=$1
-	tidy_zero_line_app_log_file $LOGFILE
-	if [ $? -eq 1 ]; then
-		cat $LOGFILE 
-	fi
+	log "Reading log file: $LOGFILE"
+	cat $LOGFILE 
 }
 
 get_log_file_path() {
@@ -60,11 +61,11 @@ tidy_zero_line_app_log_file(){
 # Logging Subroutined
 
 log() {
-	echo "[OCSP_RUN]: INFO $1"
+	echo "[OCSP_RUN] INFO: $1"
 }
 
 error() {
-	>&2 echo "[OCSP_RUN]: ERROR $1"
+	>&2 echo "[OCSP_RUN] ERROR: $1"
 	exit 1
 }
 

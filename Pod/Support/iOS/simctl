@@ -41,11 +41,12 @@ get_device_id() {
 }
 
 log() {
-	echo "[OCSP_SIMCTL] INFO: $1"
+	local LINE="[OCSP_SIM] INFO: $1"
+	echo $LINE
 }
 
 error() {
-	>&2 echo "[OCSP_SIMCTL] ERROR: $1"
+	>&2 echo "[OCSP_SIM] ERROR: $1"
 }
 
 preflight() {
@@ -56,12 +57,12 @@ preflight() {
 }
 
 install() {
-	log "Installing App Identifier:$APP_IDENTIFIER"
+	log "Installing App Bundle '$APP_IDENTIFIER'"
 	xcrun simctl install booted $APPLICATION_PATH
 }
 
 launch() {
-	log "Launching... (App Identifer:$APP_IDENTIFIER, Slim Port: $SLIMSERVER_PORT)"
+	log "Launching... (Slim Port: $SLIMSERVER_PORT)"
 	rm $PID_FILE 2> /dev/null
 	echo $(xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT) | cut -d " " -f2 > $PID_FILE
 }
@@ -73,28 +74,22 @@ pid() {
 write_logs() {
 
 	# DO NOT ECHO FROM HERE. OUTPUT IS RESERVERD FOR RETURNING THE FILENAME
-	
 	PID_ID=$(cat $PID_FILE)
 	local LOGDIR="Logs"
 	local LOGPATH="$(pwd)/$LOGDIR"
 	local LOGFILENAME="$(date +%Y%m%d-%H%M%S).log"
 	local LOGFILE="$LOGPATH/$LOGFILENAME"
-
 	mkdir -p $LOGPATH
-	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" > $LOGFILE 2>&1
 
-	# Check number of lines in logfile before returning a log file
-	if [ $(grep -c '' $LOGFILE) -eq 1 ]; then
-		rm $LOGFILE
-	else
-		echo $LOGFILE
-	fi
-	
+	log "Show Simulator log process: $PID_ID, date: $LOG_START_DATE" >> $LOGFILE
+	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" >> $LOGFILE 2>&1
+	log "Simulator log ended" >> $LOGFILE
+	echo $LOGFILE
 }
 
 main() {
 
-	log "== Launching Slim Host App $(xcrun simctl --version)  =="
+	log "Launching Slim Host App $(xcrun simctl --version)"
 	APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
 
 	preflight

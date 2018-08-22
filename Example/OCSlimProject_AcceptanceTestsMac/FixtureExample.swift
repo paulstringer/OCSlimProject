@@ -1,4 +1,5 @@
 import Foundation
+import os.log
 
 @objc(FixtureExample)
 
@@ -30,6 +31,24 @@ class FixtureExample : NSObject, SlimDecisionTable {
                 return nil
             }
         }
+    }
+
+    //MARK: Calling Methods
+
+    func log() -> Bool {
+
+        // Logging Examples
+        
+        print("Swift print() (OSX only)")
+        NSLog("NSLog() statement (recommended)")
+
+        // os_log is unsupported
+
+        if #available(OSX 10.12, *) {
+            os_log("*WARNING* os_log() statements such as this one are not captured on OS X")
+        }
+
+        return true
     }
     
 }

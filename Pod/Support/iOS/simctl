@@ -2,6 +2,9 @@
 
 APPLICATION_PATH=$1
 SLIMSERVER_PORT=$2
+PID_FILE=.simctl.pid
+ACTION=MAIN
+LOG_START_DATE=
 
 ## HELP ROUTINE
 
@@ -12,13 +15,15 @@ while [ "$1" != "" ]; do
 		-h | --help )			echo "Utility to 'xcrun simctl' for installing and launching iOS based acceptance test apps\n\nUsage: simctl <path-to-application-bundle> <slim-server-port-arg>"
 								exit 0
                                 ;;
+
+		log )					shift
+								ACTION=LOG
+								LOG_START_DATE="$1"
+								;;
 		esac
 		shift
 done
 
-
-## MAIN ROUTINE
-APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
 
 check_device_booted() {
 	xcrun simctl list devices | grep -i booted
@@ -36,11 +41,12 @@ get_device_id() {
 }
 
 log() {
-	echo "[OCSP_SIMCTL] $1"
+	local LINE="[OCSP_SIM] INFO: $1"
+	echo $LINE
 }
 
 error() {
-	>&2 echo "[OCSP_SIMCTL] $1"
+	>&2 echo "[OCSP_SIM] ERROR: $1"
 }
 
 preflight() {
@@ -51,29 +57,63 @@ preflight() {
 }
 
 install() {
-	log "Installing App Identifier:$APP_IDENTIFIER"
+	log "Installing App Bundle '$APP_IDENTIFIER'"
 	xcrun simctl install booted $APPLICATION_PATH
 }
 
 launch() {
-	log "Launching... (App Identifer:$APP_IDENTIFIER, Slim Port: $SLIMSERVER_PORT)"
-	local PID_FILE=.simctl.pid
+	log "Launching... (Slim Port: $SLIMSERVER_PORT)"
 	rm $PID_FILE 2> /dev/null
 	echo $(xcrun simctl launch booted $APP_IDENTIFIER $SLIMSERVER_PORT) | cut -d " " -f2 > $PID_FILE
 }
 
+pid() {
+	cat $PID_FILE
+}
+
+write_logs() {
+
+	# DO NOT ECHO FROM HERE. OUTPUT IS RESERVERD FOR RETURNING THE FILENAME
+	PID_ID=$(cat $PID_FILE)
+	local LOGDIR="Logs"
+	local LOGPATH="$(pwd)/$LOGDIR"
+	local LOGFILENAME="$(date +%Y%m%d-%H%M%S).log"
+	local LOGFILE="$LOGPATH/$LOGFILENAME"
+	mkdir -p $LOGPATH
+
+	log "Show Simulator log process: $PID_ID, date: $LOG_START_DATE" >> $LOGFILE
+	xcrun simctl spawn booted log show --start $LOG_START_DATE --style compact --info --predicate "processID == $PID_ID" >> $LOGFILE 2>&1
+	log "Simulator log ended" >> $LOGFILE
+	echo $LOGFILE
+}
+
 main() {
-	log "== Launching Slim Host App $(xcrun simctl --version)  =="
+
+	log "Launching Slim Host App $(xcrun simctl --version)"
+	APP_IDENTIFIER=$(defaults read $APPLICATION_PATH/Info CFBundleIdentifier)
+
 	preflight
+	
 	if install; then
 		launch
 	else
-		error "** ABORTING ** Error encountered launching app. (Check usage with --help)"
+		error '** ABORTING ** Error encountered launching app. (Check usage with --help)'
 	fi
+
 	exit $?
 }
 
-main
+case $ACTION in
+	'LOG')	
+			write_logs
+			;;
+	*)
+			
+			main
+			;;
+
+esac
+
 
 
 

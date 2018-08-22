@@ -2,19 +2,73 @@
 source $1
 ENVIRONMENT_SRC=$1
 SLIM_PORT=$2
-APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
+EXECUTABLE_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}
+APP_PATH=${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app
 
-run_test_system() {
-	echo "Test System Executable Folder Path: $APPLICATION_PATH"
-	$APPLICATION_PATH $SLIM_PORT
-	return $?
-}
+# Main Subroutines
 
 main() {
-	echo "== OCSlimProject: RunSlimTestTargetWithSlimPort~OSX:$SLIM_PORT =="
-	echo "Test System Executable Environment: $ENVIRONMENT_SRC"
+	log "RunSlimTestTargetWithSlimPort~macOSX"
+	log "Fitnesse Slim Port: $SLIM_PORT"
+	log "Xcode Build Product $APP_PATH"
 	run_test_system
 	exit $?
 }
+
+run_test_system() {
+	
+	local LOGFILE=$(get_log_file_path)
+	launch_osx_app $LOGFILE
+	write_logs_to_console $LOGFILE
+	return $?
+}
+
+launch_osx_app() {
+	log "Launching '${PRODUCT_NAME}.app'"
+	local LOGFILE=$1
+	log "macOS System log started" > $LOGFILE 
+	$EXECUTABLE_PATH $SLIM_PORT >> $LOGFILE 2>&1
+	log "macOS System log ended" >> $LOGFILE
+}
+
+## Logging Subroutines
+
+write_logs_to_console() {
+	local LOGFILE=$1
+	log "Reading log file: $LOGFILE"
+	cat $LOGFILE 
+}
+
+get_log_file_path() {
+	local LOGDIR="Logs"
+	local LOGPATH="$(pwd)/$LOGDIR"
+	local LOGFILENAME="$(date +%Y%m%d-%H%M%S).log"
+	local LOGFILE="$LOGPATH/$LOGFILENAME"
+	mkdir -p $LOGPATH
+	echo $LOGFILE
+}
+
+tidy_zero_line_app_log_file(){
+	# Check number of lines in logfile before returning a log file
+	if [ ! $(grep -c '' $1) ]; then
+		rm $1
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Logging Subroutined
+
+log() {
+	echo "[OCSP_RUN] INFO: $1"
+}
+
+error() {
+	>&2 echo "[OCSP_RUN] ERROR: $1"
+	exit 1
+}
+
+# Main Routine
 
 main

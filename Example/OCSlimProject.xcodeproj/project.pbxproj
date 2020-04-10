@@ -74,6 +74,7 @@
 		8C4747A01D5C41BC005BE970 /* OCSPTestCaseReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47479D1D5C41BC005BE970 /* OCSPTestCaseReport.m */; };
 		8C4747A81D5C426E005BE970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747A61D5C426E005BE970 /* Localizable.strings */; };
 		8C4747A91D5C426E005BE970 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4747A61D5C426E005BE970 /* Localizable.strings */; };
+		8C6C2E5D2440987E002DE587 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C6C2E5C2440987E002DE587 /* Default-568h@2x.png */; };
 		8C951CB91D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 		8C951CBA1D5B3883000B694A /* OCSPTestSuiteTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */; };
 		AB2C6EDEAE13C993C2913465 /* libPods-OCSlimProject_AcceptanceTestsMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FDA2EDAF50A3DCDF3663E5 /* libPods-OCSlimProject_AcceptanceTestsMac.a */; };
@@ -188,6 +189,7 @@
 		8C634EB91D37BD4400E95652 /* OCSPTestDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestDataManager.m; path = ../../Pod/TestClasses/OCSPTestDataManager.m; sourceTree = "<group>"; };
 		8C634EBB1D37BF5500E95652 /* OCSPJUnitXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPJUnitXMLParser.h; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.h; sourceTree = "<group>"; };
 		8C634EBC1D37BF5500E95652 /* OCSPJUnitXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParser.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParser.m; sourceTree = "<group>"; };
+		8C6C2E5C2440987E002DE587 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8C951CB71D5B3883000B694A /* OCSPTestSuiteTestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCSPTestSuiteTestable.h; path = ../../Pod/TestClasses/OCSPTestSuiteTestable.h; sourceTree = "<group>"; };
 		8C951CB81D5B3883000B694A /* OCSPTestSuiteTestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPTestSuiteTestable.m; path = ../../Pod/TestClasses/OCSPTestSuiteTestable.m; sourceTree = "<group>"; };
 		8CADF8E71D38DA4A00731FF5 /* OCSPJUnitXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCSPJUnitXMLParserTests.m; path = ../../Pod/TestClasses/OCSPJUnitXMLParserTests.m; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				8C6C2E5C2440987E002DE587 /* Default-568h@2x.png */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				8C47472D1D5B73DB005BE970 /* Example Test System for iOS */,
 				8C47472F1D5B752A005BE970 /* Example Test System for OSX (Faster, Recommended) */,
@@ -877,6 +880,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6C2E5D2440987E002DE587 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

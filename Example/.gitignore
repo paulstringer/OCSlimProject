@@ -97,3 +97,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 .simctl.pid
+Podfile.local

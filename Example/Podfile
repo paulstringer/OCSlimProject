@@ -1,5 +1,10 @@
  'https://github.com/CocoaPods/Specs.git'
 
+# Local development dependancies override
+local_podfile = "Podfile.local"
+eval(File.open(local_podfile).read) if File.exist? local_podfile
+
+# OCSlimProject Version
 version      = "1.4"
 
 target 'OCSlimProject_AcceptanceTests' do

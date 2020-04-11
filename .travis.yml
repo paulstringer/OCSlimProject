@@ -8,14 +8,25 @@ before_install:
 env:
  global:
    - DEVICE_NAME='iphone 11'
+   
+xcode_workspace: Example/OCSlimProject.xcworkspace
+
+jobs:
+  include:
+    - xcode_scheme: OCSlimProject_ExampleMac
+    - xcode_scheme: OCSlimProjectTestBundleSupportTestsMac
+    - xcode_scheme: OCSlimProject_Example
+      xcode_destination: platform=iOS Simulator,name=$DEVICE_NAME
+    - xcode_scheme: OCSlimProjectTestBundleSupportTests
+      xcode_destination: platform=iOS Simulator,name=$DEVICE_NAME
 
 script:
 # OCSlimProject Example Acceptance Tests (iOS, macOS)
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination "platform=iOS Simulator,name=$DEVICE_NAME" -destination-timeout 300 test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_Example -destination "platform=iOS Simulator,name=$DEVICE_NAME" -destination-timeout 300 test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProject_ExampleMac test
 # OCSlimProjectTestBundleSupport Pod Unit Tests (iOS, macOS)
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone X' test
-- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTests -destination 'platform=iOS Simulator,name=iPhone X' test
+#- set -o pipefail && xcodebuild -workspace Example/OCSlimProject.xcworkspace -scheme OCSlimProjectTestBundleSupportTestsMac test
 # Pod Lib Lint (unavailable on xcode 8)
 #- pod lib lint OCSlimProject.podspec --allow-warnings
 #- pod lib lint OCSlimProjectTestBundleSupport.podspec --use-libraries --allow-warnings

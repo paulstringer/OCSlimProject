@@ -10,15 +10,17 @@ env:
    - DEVICE_NAME='iphone 11'
    
 xcode_workspace: Example/OCSlimProject.xcworkspace
-
+xcode_destination: platform=iOS Simulator,name=iphone 11
+      
 jobs:
   include:
-    - xcode_scheme: OCSlimProject_ExampleMac
-    - xcode_scheme: OCSlimProjectTestBundleSupportTestsMac
     - xcode_scheme: OCSlimProject_Example
-      xcode_destination: platform=iOS Simulator,name=$DEVICE_NAME
     - xcode_scheme: OCSlimProjectTestBundleSupportTests
-      xcode_destination: platform=iOS Simulator,name=$DEVICE_NAME
+    - xcode_scheme: OCSlimProject_ExampleMac
+      xcode_destination: platform=macOS
+    - xcode_scheme: OCSlimProjectTestBundleSupportTestsMac
+      xcode_destination: platform=macOS
+
 
 script:
 # OCSlimProject Example Acceptance Tests (iOS, macOS)

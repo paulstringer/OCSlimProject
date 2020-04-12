@@ -1,23 +1,28 @@
  'https://github.com/CocoaPods/Specs.git'
 
+# Local development dependancies override
+local_podfile = "Podfile.local"
+eval(File.open(local_podfile).read) if File.exist? local_podfile
+
+# OCSlimProject Version
 version      = "1.4"
 
 target 'OCSlimProject_AcceptanceTests' do
-  platform :ios, 9.0
+  platform :ios, 13.0
   pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end
 
 target 'OCSlimProject_AcceptanceTestsMac' do
-  platform :osx, 10.8
+  platform :osx, 10.15
   pod "OCSlimProject", :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end
 
 target 'OCSlimProject_AcceptanceUnitTestBundle' do
-    platform :ios, 9.0
+    platform :ios, 13.0
     pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
  end
 
 target 'OCSlimProject_AcceptanceUnitTestBundleMac' do
-    platform :osx, 10.8
+    platform :osx, 10.15
     pod 'OCSlimProjectTestBundleSupport', :git => "https://github.com/paulstringer/OCSlimProject.git", :tag => version.to_s
 end

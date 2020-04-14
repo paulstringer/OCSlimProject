@@ -156,7 +156,7 @@ function install_fitnesse_root_dir {
 	local fitnesse_root_dir_project_path="$FITNESSE_ROOT/$FITNESSE_ROOT_DIR"
 	if [ ! -d "$fitnesse_root_dir_project_path" ]; then
 		echo "[OCSP_CTL] Preparing FitNesseRoot Folder"
-		cp -r $BUNDLE_DIR/$FITNESSE_ROOT_DIR $FITNESSE_ROOT
+		cp -r "$BUNDLE_DIR"/$FITNESSE_ROOT_DIR $FITNESSE_ROOT
 	fi
 }
 

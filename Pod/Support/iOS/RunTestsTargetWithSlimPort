@@ -1,5 +1,5 @@
 #!/bin/sh
-MYPATH=$(dirname $0)
+MYPATH=$(dirname "$0")
 source $1
 SLIM_PORT=$2
 APPLICATION_PATH=${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}
@@ -40,7 +40,7 @@ slim_system_wait() {
 
 run_test_system() {
 	log "Start Slim Test Sytem"
-	$MYPATH/simctl $APPLICATION_PATH $SLIM_PORT
+	"$MYPATH/simctl" $APPLICATION_PATH $SLIM_PORT
  	if [ $? == 0 ]; then 
 	 	slim_system_wait; 
 	else 

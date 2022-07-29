@@ -1,6 +1,6 @@
 #!/bin/sh
-TEST_SYSTEM_DIR=$1
-SHARED_SUPPORT_FILE_PATH=$(dirname $0)
+TEST_SYSTEM_DIR="$1"
+SHARED_SUPPORT_FILE_PATH=$(dirname "$0")
 SUPPORT_FILE_PLATFORM_PATH=$SHARED_SUPPORT_FILE_PATH/..
 
 # Validate Project Build Settings
@@ -41,12 +41,12 @@ function writeTestSystemRunScript {
 	echo "[OCSP] Writing Test System Script -> $TESTRUNNER_TARGET  (This must match the defined TEST_RUNNER value set in 'FitnesseRoot/content.txt')"
 
     if [ -f "$TESTRUNNER_TARGET" ]; then
-        rm $TESTRUNNER_TARGET
+        rm "$TESTRUNNER_TARGET"
     fi
     
 	SCRIPT_SRC=$(cat "$SHARED_SUPPORT_FILE_PATH/ocsp-generate-fitnesse-test-system-template.sh")
 	printf "$SCRIPT_SRC" "$TESTRUNNER_SOURCE" "$ENV_TARGET" "$TESTRUNNER_ERRORLOG" > $TESTRUNNER_TARGET
-    chmod +x $TESTRUNNER_TARGET
+    chmod +x "$TESTRUNNER_TARGET"
     
 }
 
@@ -57,15 +57,18 @@ function linkCtlScriptToProjectRoot {
     local CTL_SCRIPTNAME="LaunchFitnesse"
 	local CTL_SOURCE=$SHARED_SUPPORT_FILE_PATH/$CTL_SCRIPTNAME
 	local CTL_TARGET=${PROJECT_DIR}/$CTL_SCRIPTNAME
+    local CTL_TARGET_DIR=$(dirname "$CTL_TARGET")
 
 	echo "[OCSP] Control Script Resource Path -> $CTL_SOURCE"	
-	echo "[OCSP] Linking Control Script $ ./$CTL_SCRIPTNAME -> $CTL_TARGET"	
-	
-    if [ -L $CTL_TARGET ]; then
-        unlink $CTL_TARGET
+	echo "[OCSP] Linking Control Script $ ./$CTL_SCRIPTNAME -> $CTL_TARGET_DIR"
+
+    # Unlink previous if existing
+    if [ -L "$CTL_TARGET" ]; then
+        unlink "$CTL_TARGET"
     fi
-    
-    ln -s $CTL_SOURCE $(dirname "$CTL_TARGET")
+
+    # Create symbolic link
+    ln -s "$CTL_SOURCE" "$CTL_TARGET_DIR"
 }
 
 function main {
